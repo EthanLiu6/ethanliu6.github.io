@@ -1732,7 +1732,7 @@ pre code {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  width: 80%;
+  width: 70%;
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -1741,12 +1741,12 @@ pre code {
 }
 @media (min-width: 1200px) {
   .footer-inner {
-    width: 88%;
+    width: 80%;
   }
 }
 @media (min-width: 1600px) {
   .footer-inner {
-    width: 95%;
+    width: 90%;
   }
 }
 .use-motion .footer {
@@ -2751,7 +2751,7 @@ mjx-container[display='true'] + br {
 }
 header.header {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 @media (max-width: 991px) {
@@ -2764,7 +2764,7 @@ header.header {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  width: 80%;
+  width: 70%;
 }
 @media (max-width: 767px) {
   .main {
@@ -2773,12 +2773,12 @@ header.header {
 }
 @media (min-width: 1200px) {
   .main {
-    width: 88%;
+    width: 80%;
   }
 }
 @media (min-width: 1600px) {
   .main {
-    width: 95%;
+    width: 90%;
   }
 }
 @media (max-width: 991px) {
@@ -2788,7 +2788,7 @@ header.header {
   }
 }
 .main-inner {
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-sizing: border-box;
   width: calc(100% - 262px);
 }
@@ -2918,7 +2918,7 @@ header.header {
 }
 .sidebar-inner {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   box-sizing: border-box;
   color: var(--text-color);
@@ -2977,11 +2977,11 @@ header.header {
 .main-inner .comment-position .comments,
 .main-inner .pagination {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 20px 20px 20px 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
 .main-inner .post-block:not(:first-child):not(:first-child) {
-  border-radius: initial;
+  border-radius: 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   margin-top: 12px;
 }
@@ -2999,7 +2999,7 @@ header.header {
 .main-inner > .comments,
 .main-inner .comment-position .comments,
 .main-inner .pagination {
-  border-radius: initial;
+  border-radius: 20px;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12), 0 -1px 0.5px 0 rgba(0,0,0,0.09);
   margin-top: 12px;
 }
@@ -3071,28 +3071,39 @@ body {
   background-attachment: fixed;
   background-position: center;
 }
-.main-inner {
-  background-color: rgba(255,255,255,0.5);
-  padding: 20px 40px 40px 40px;
-}
-.post-block {
-  background-color: rgba(255,255,255,0.9);
-  margin-bottom: 24px;
-  padding: 20px;
-  border-radius: 30px 50px 30px 50px;
-  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+.content-wrap {
+  opacity: 1;
 }
 .header-inner {
-  border-radius: 30px 30px 30px 30px;
-  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  background: #fff;
+}
+.popup {
+  opacity: 0.8;
+}
+.post-block {
+  background: #fff none repeat scroll !important;
 }
 .sidebar-inner {
-  border-radius: 30px 30px 30px 30px;
-  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+  background: #fff none repeat scroll !important;
 }
-.pagination {
-  border-radius: 30px 80px 30px 80px;
-  box-shadow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
+.comments {
+  background: rgba(255,255,255,0.7) none repeat scroll !important;
+}
+.post {
+  margin-top: 60px;
+  padding: 20px;
+  margin-bottom: 60px;
+  -webkit-box-shadow: 0 0 5px #788072;
+  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+@media (max-width: 991px) {
+  .sidebar-toggle,
+  .sidebar {
+    display: none;
+  }
+}
+.archive .collection-title {
+  display: always !important;
 }
 span#inline-toc {
   display: inline-block;
@@ -3102,15 +3113,6 @@ span#inline-toc {
   padding: 0.05em 0.4em;
   margin: 2px 5px 2px 0px;
   line-height: 1.5;
-}
-@media (max-width: 991px) {
-  .sidebar-toggle,
-  .sidebar {
-    display: none;
-  }
-}
-.archive .collection-title {
-  display: none !important;
 }
 a#download {
   display: inline-block;
