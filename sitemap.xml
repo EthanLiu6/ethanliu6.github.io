@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/Love/index.html</loc>
+    <loc>http://ethanliu6.github.io/categories/Love/index.html</loc>
     
     <lastmod>2024-04-13</lastmod>
     
@@ -101,6 +101,13 @@
 
   
   <url>
+    <loc>http://ethanliu6.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <lastmod>2024-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://ethanliu6.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2024-04-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -109,13 +116,6 @@
   
   <url>
     <loc>http://ethanliu6.github.io/tags/PyTorch/</loc>
-    <lastmod>2024-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2024-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -138,14 +138,14 @@
 
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/d2l/</loc>
+    <loc>http://ethanliu6.github.io/categories/blogSet/</loc>
     <lastmod>2024-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/blogSet/</loc>
+    <loc>http://ethanliu6.github.io/categories/d2l/</loc>
     <lastmod>2024-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
