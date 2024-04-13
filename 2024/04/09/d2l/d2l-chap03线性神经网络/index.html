@@ -1,237 +1,417 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Hexo+NexT博客搭建及美化1</title>
-    <url>/2024/04/11/BlogSet/ethanliu6.github.io/</url>
-    <content><![CDATA[<blockquote class="blockquote-center">
-<p>第一篇：该篇章主要讲解我的博客搭建的过程和主题美化流程。</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.1.1">
 
-</blockquote>
-<span id="more"></span>
-<h2 id="1-Hexo依赖环境安装">1. Hexo依赖环境安装</h2>
-<h3 id="1-1-安装nodejs">1.1 安装<span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL3poLWNuLw==">nodejs<i class="fa fa-external-link-alt"></i></span></h3>
-<p>查看是否安装成功</p>
-<p><img src="/images/setBlog/01_nodejs%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC.png" alt="nodejs版本"></p>
-<h5 id="npm版本"><img src="/images/setBlog/02_npm%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC.png" alt="npm版本"></h5>
-<h3 id="1-2安装-Git">1.2安装 <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS8=">Git<i class="fa fa-external-link-alt"></i></span></h3>
-<p><img src="/images/setBlog/03_git%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC.png" alt="git版本"></p>
-<h3 id="1-3安装-Hexo">1.3安装 Hexo</h3>
-<p>先创建一个空仓库（文件夹）作为你的博客，然后终端进入该仓库</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 hexo 框架</span></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 初始化文件夹</span></span><br><span class="line">hexo init</span><br><span class="line"><span class="comment"># 安装 hexo 依赖包</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>如果以上安装出现错误的，请<code>更换镜像源</code>或者选择<code>科学上网</code>(请自行查阅)</p>
-<h3 id="1-4-检测Hexo">1.4 检测<code>Hexo</code></h3>
-<p><code>hexo  clean &amp;&amp; hexo g &amp;&amp; hexo s</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hexo  clean:</span><br><span class="line">hexo g:</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p><img src="/images/setBlog/04_Hexo%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%90%AF%E5%8A%A8.png" alt="Hexo启动"></p>
-<h3 id="1-5-更换主题">1.5 更换主题</h3>
-<p>这里以<code>NexT</code>主题为例</p>
-<ol>
-<li>在你的仓库文件夹下<code>clone</code>(选择好自己的版本，版本之间的设置有差别)</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p><img src="/images/setBlog/05_NexT%E7%89%88%E6%9C%AC%E6%9F%A5%E7%9C%8B.png" alt="NexT版本"></p>
-<ol start="2">
-<li>根配置<code>_config.yml</code></li>
-</ol>
-<p><img src="/images/setBlog/06_NexT%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE.png" alt="NexT主题配置"></p>
-<h3 id="1-6-GitHub部署">1.6 <code>GitHub</code>部署</h3>
-<ol>
-<li>Install <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWRlcGxveWVyLWdpdA==">hexo-deployer-git<i class="fa fa-external-link-alt"></i></span>.</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 需要安装插件</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<ol>
-<li>配置站点 <code>_config.yml</code></li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repo</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">repository</span> <span class="attr">url</span>&gt;</span> #https://xxxx/johnsmith.bitbucket.io</span></span><br><span class="line"><span class="language-xml">  branch: [branch]</span></span><br><span class="line"><span class="language-xml">  message: [message]</span></span><br></pre></td></tr></table></figure>
-<h2 id="2-Hexo主题配置">2. Hexo主题配置</h2>
-<h4 id="1-说明">1. 说明</h4>
-<p>我的主题版本<code>NexT8.19.2</code>，<a href="https://ethanliu6.github.io/">点击查看最终效果</a></p>
-<blockquote>
-<p>[!NOTE]</p>
-<p><code>NexT</code>主题拥有不同的版本，GitHub开源地址也不同</p>
-<p>主要版本：NexT5.0+；NexT7.0+；NexT8.0+</p>
-</blockquote>
-<p>参考文献：<span class="exturl" data-url="aHR0cHM6Ly9zbGFtLWxlYXJuZXIuZ2l0aHViLmlvLzIwMjQvMDIvMDcvJUU3JThFJUFGJUU1JUEyJTgzJUU5JTg1JThEJUU3JUJEJUFFL0hleG8rTmV4dCVFOSU4NSU4RCVFNyVCRCVBRSVFNSU4RCU5QSVFNSVBRSVBMi8jJUU1JUIwJTg2JUU1JThEJTlBJUU1JUFFJUEyJUU5JTgzJUE4JUU3JUJEJUIyJUU4JTg3JUIzJUU0JUJBJTkxJUU3JUFCJUFG">Hexo+Next配置博客<i class="fa fa-external-link-alt"></i></span><span class="exturl" data-url="aHR0cHM6Ly9zbGFtLWxlYXJuZXIuZ2l0aHViLmlvLzIwMjQvMDIvMDcvJUU3JThFJUFGJUU1JUEyJTgzJUU5JTg1JThEJUU3JUJEJUFFL0hleG8rTmV4dCVFOSU4NSU4RCVFNyVCRCVBRSVFNSU4RCU5QSVFNSVBRSVBMi8jJUU1JUIwJTg2JUU1JThEJTlBJUU1JUFFJUEyJUU5JTgzJUE4JUU3JUJEJUIyJUU4JTg3JUIzJUU0JUJBJTkxJUU3JUFCJUFG">^1<i class="fa fa-external-link-alt"></i></span></p>
-<h4 id="2-添加背景">2. 添加背景</h4>
-<ol>
-<li>主题配置文件的<code>custom_file_path</code>选项取消<code>style</code>注释</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path</span>: </span><br><span class="line">  #<span class="attr">style</span>: source/_data/styles.<span class="property">styl</span> <span class="comment">// 修改前</span></span><br><span class="line">  <span class="attr">style</span>: source/_data/styles.<span class="property">styl</span> <span class="comment">// 取消后</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>站点新建文件夹<code>_data/</code>和文件<code>styles.styl</code>，即： <code>/source/_data/styles.styl</code></li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// styles.styl中添加内容</span></span><br><span class="line">body &#123;</span><br><span class="line">    <span class="attr">background</span>: <span class="title function_">url</span>(<span class="regexp">/images/</span>background.<span class="property">png</span>); <span class="comment">//是主题NexT的images</span></span><br><span class="line">    background-<span class="attr">repeat</span>: no-repeat; <span class="comment">//不重复</span></span><br><span class="line">    background-<span class="attr">attachment</span>: fixed; <span class="comment">// 滚动后背景也填充</span></span><br><span class="line">    background-<span class="attr">size</span>: cover;      <span class="comment">//是否填充，cover填充</span></span><br><span class="line">    background-<span class="attr">position</span>: center; <span class="comment">//背景图片位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="3-文章">3. 文章</h4>
-<ul>
-<li>
-<p>公式：参考文献：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTUxMTE4OS9hcnRpY2xlL2RldGFpbHMvMTE1Nzk4NTYz">hexo博客next主题添加对数学公式的支持<i class="fa fa-external-link-alt"></i></span><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTUxMTE4OS9hcnRpY2xlL2RldGFpbHMvMTE1Nzk4NTYz">^2<i class="fa fa-external-link-alt"></i></span></p>
-<p>这种我对行间的不成功，所以用了<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL21hdGgtZXF1YXRpb25zLmh0bWw/aGlnaGxpZ2h0PW1hdGg=">官方文档<i class="fa fa-external-link-alt"></i></span>提供的<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLXJlbmRlcmVyLXBhbmRvYw==">panco<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-<li>
-<p>主题字体：参考文献： <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hxd2VheS9hcnRpY2xlL2RldGFpbHMvMTA3NTc5MzY0">Hexo Next 主题字体相关配置<i class="fa fa-external-link-alt"></i></span><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hxd2VheS9hcnRpY2xlL2RldGFpbHMvMTA3NTc5MzY0">^3<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-<li>
-<p>样式：</p>
-<ul>
-<li>
-<p>主题一些很nice的自定样式<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2FkdmFuY2VkLXNldHRpbmdzL2N1c3RvbS1maWxlcw==">官网<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-<li>
-<p>好看的post字样：<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL25vdGUuaHRtbD9oaWdobGlnaHQ9YmFja2dyb3VuZA==">官网Note (Bootstrap Callout)<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dyb3dpbmdfcG90YXRvL2FydGljbGUvZGV0YWlscy8xMTM5MjY4NTY=">next主题美化——背景图片、页面透明化、阴影、圆角、动画<i class="fa fa-external-link-alt"></i></span><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dyb3dpbmdfcG90YXRvL2FydGljbGUvZGV0YWlscy8xMTM5MjY4NTY=">^6<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-</ul>
-</li>
-<li>
-<p>文章加密：<span class="exturl" data-url="aHR0cHM6Ly9hbGV4LW1jYXZveS5naXRodWIuaW8vaGV4by80ODM5MzllMC5odG1s">文章加密Next 7.0+ 实现文章加密<i class="fa fa-external-link-alt"></i></span><span class="exturl" data-url="aHR0cHM6Ly9hbGV4LW1jYXZveS5naXRodWIuaW8vaGV4by80ODM5MzllMC5odG1s">^4<i class="fa fa-external-link-alt"></i></span> <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mi9hcnRpY2xlL2RldGFpbHMvMTE2NjE0NjIy">Hexo博客技巧：对文章进行加密<i class="fa fa-external-link-alt"></i></span><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mi9hcnRpY2xlL2RldGFpbHMvMTE2NjE0NjIy">^5<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-<li>
-<p>复选框：<span class="exturl" data-url="aHR0cHM6Ly93d3cucGFub3NodS50b3AvYmxvZy8yYzNmOWUzOC8=">Hexo Stellar 和 Next 主题支持 KaTex 公式与 Markdown 复杂表格<i class="fa fa-external-link-alt"></i></span><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dyb3dpbmdfcG90YXRvL2FydGljbGUvZGV0YWlscy8xMTM5MjY4NTY=">^6<i class="fa fa-external-link-alt"></i></span>，这个在我上面会有冲突，所以我卸载了，打算以后需要使用复选框再想办法弄</p>
-<p>复选框效果：<img src="/images/07_%E5%A4%8D%E9%80%89%E6%A1%86%E5%B1%95%E7%A4%BA.jpg" alt="复选框效果"></p>
-</li>
-</ul>
-<h4 id="4-主题配置：">4. 主题配置：</h4>
-<ul>
-<li>缓存</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"># <span class="title class_">Remove</span> unnecessary files after hexo generate.</span><br><span class="line"><span class="attr">minify</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>PDF支持：<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL3BkZg==">PDF<i class="fa fa-external-link-alt"></i></span></p>
-</li>
-<li>
-<p>站点地图</p>
-</li>
-</ul>
-<p><code> npm install hexo-generator-sitemap --save</code></p>
-<p>这个相当于是对指定浏览器收录自己文章，这里按照官网的操作执行就行，我选择了Bing的配置设置</p>
-<p>README.md跳过</p>
-<h4 id="5-新增导航栏">5. 新增导航栏</h4>
-<p>这里我以自己的<code>Love</code>导航设置为例</p>
-<ol>
-<li>
-<h5 id="站点source文件添加Love文件夹并配置index-md">站点source文件添加<code>Love</code>文件夹并配置<code>index.md</code></h5>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Hexo</span> <span class="keyword">new</span> page <span class="title class_">Love</span>/</span><br><span class="line"> <span class="comment">//进入Love文件夹，修改index.md内容</span></span><br><span class="line"><span class="attr">title</span>: 我和珠珠</span><br><span class="line"><span class="attr">date</span>: <span class="number">2024</span>-<span class="number">04</span>-<span class="number">11</span> <span class="number">23</span>:<span class="number">29</span>:<span class="number">36</span></span><br><span class="line"><span class="attr">categories</span>: <span class="title class_">Love</span></span><br><span class="line"><span class="attr">type</span>: <span class="title class_">Love</span>   </span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>
-<h5 id="主题配置文件下的menu菜单添加：">主题配置文件下的<code>menu</code>菜单添加：</h5>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Love</span>: <span class="regexp">/categories/</span><span class="title class_">Love</span>/ || fas fa-heart</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>
-<h5 id="source-posts-下添加love-文件夹"><code>source/_posts/</code>下添加<code>love/</code>文件夹</h5>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 主要是用于文章整理分类</span></span><br><span class="line">cd source/_posts/</span><br><span class="line">mkdir love</span><br><span class="line">cd love</span><br><span class="line">touch <span class="variable constant_">XXX</span>.<span class="property">md</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<h5 id="XXX-md配置并写入内容"><code>XXX.md</code>配置并写入内容</h5>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">title</span>: 每日记录<span class="number">2024</span>-<span class="number">04</span>-<span class="number">13</span></span><br><span class="line"><span class="attr">date</span>:</span><br><span class="line"><span class="attr">categories</span>: <span class="title class_">Love</span></span><br><span class="line"><span class="attr">tags</span>: </span><br><span class="line">  - 日记</span><br><span class="line">  - love</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>
-<h5 id="注意">注意</h5>
-<p>如果在<code>_post/</code>之外的markdown文件配置有<code>togs</code>时候，会报错，在GitHub的issues里有人解释</p>
-<p>例如：<img src="/images/setBlog/08_tags%E8%AF%AF%E7%94%A8%E6%A1%88%E4%BE%8B.png" alt="tags误用案例"></p>
-<p>issues分析：<img src="/images/setBlog/08_bug-tag%E9%97%AE%E9%A2%98.png" alt="tags报错"></p>
-</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2 id="3-参考文献">3. 参考文献</h2>
-]]></content>
-      <categories>
-        <category>blogSet</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>欢迎来到 Ethan の Blog！</title>
-    <url>/2024/04/12/Home/Ethan-%E3%81%AE-Blog-%E4%B8%BB%E9%A1%B5/</url>
-    <content><![CDATA[<blockquote class="blockquote-center">
-<p>欢迎来到Ethan‘s Blog！励志做一个无私、专注、好学、干净、热爱生活的人。</p>
-<p>“用爱开始，用爱坚持”。</p>
-<p>——<strong>Ethan</strong></p>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+  <link rel="mask-icon" href="/images/avatar.jpg" color="#222">
+  <meta name="msvalidate.01" content="4AF2328B2035748153A041B7EEF3D15C">
 
-</blockquote>
-<span id="more"></span> 
-<h3 id="我想说">我想说</h3>
-<ul>
-<li>
-<p>学习东西很简单。</p>
-</li>
-<li>
-<p>[x] 我的学习公式:</p>
-</li>
-</ul>
-<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.643ex;" xmlns="http://www.w3.org/2000/svg" width="89.724ex" height="2.417ex" role="img" focusable="false" viewBox="0 -784.1 39657.9 1068.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtable"><g data-mml-node="mtr" transform="translate(0,34.1)"><g data-mml-node="mtd"><g data-mml-node="mi"><path data-c="394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></g><g data-mml-node="msub" transform="translate(833,0)"><g data-mml-node="mi"><path data-c="1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path></g><g data-mml-node="TeXAtom" transform="translate(882,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">知</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">识</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">增</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">量</text></g></g></g></g><g data-mml-node="mtd" transform="translate(4593.4,0)"><g data-mml-node="mi"></g><g data-mml-node="mo" transform="translate(277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mi" transform="translate(1333.6,0)"><path data-c="1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></g><g data-mml-node="msub" transform="translate(2082.6,0)"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="TeXAtom" transform="translate(714,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">学</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">习</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">流</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">量</text></g></g></g><g data-mml-node="mo" transform="translate(5897.2,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msub" transform="translate(6897.4,0)"><g data-mml-node="mi"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g><g data-mml-node="TeXAtom" transform="translate(824,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">知</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">识</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">质</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">量</text></g></g></g><g data-mml-node="mo" transform="translate(10822.1,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mo" transform="translate(11822.3,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(12211.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="msub" transform="translate(12915.3,0)"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="TeXAtom" transform="translate(646,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">技</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">能</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">树</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">构</text><text data-variant="normal" transform="translate(4000,0) scale(1,-1)" font-size="884px" font-family="serif">建</text></g></g></g><g data-mml-node="mo" transform="translate(17369.1,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(18369.3,0)"><path data-c="1D437" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path></g><g data-mml-node="msub" transform="translate(19197.3,0)"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="TeXAtom" transform="translate(646,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">深</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">度</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">思</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">考</text></g></g></g><g data-mml-node="mi" transform="translate(22721.7,0)"><path data-c="26" d="M156 540Q156 620 201 668T302 716Q354 716 377 671T401 578Q401 505 287 386L274 373Q309 285 416 148L429 132L437 142Q474 191 543 309L562 341V349Q562 368 541 376T498 385H493V431H502L626 428Q709 428 721 431H727V385H712Q688 384 669 379T639 369T618 354T603 337T591 316T578 295Q537 223 506 176T464 117T454 104Q454 102 471 85T497 62Q543 24 585 24Q618 24 648 48T682 113V121H722V112Q721 94 714 75T692 32T646 -7T574 -22Q491 -19 414 42L402 51L391 42Q312 -22 224 -22Q144 -22 93 25T42 135Q42 153 46 169T55 197T74 225T96 249T125 278T156 308L195 347L190 360Q185 372 182 382T174 411T165 448T159 491T156 540ZM361 576Q361 613 348 646T305 679Q272 679 252 649T232 572Q232 497 255 426L259 411L267 420Q361 519 361 576ZM140 164Q140 103 167 64T240 24Q271 24 304 36T356 61T374 77Q295 156 235 262L220 292L210 310L193 293Q177 277 169 268T151 229T140 164Z"></path></g><g data-mml-node="mo" transform="translate(23721.9,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(24722.1,0)"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g><g data-mml-node="msub" transform="translate(25486.1,0)"><g data-mml-node="mi"><path data-c="1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path></g><g data-mml-node="TeXAtom" transform="translate(675,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">刻</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">意</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">练</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">习</text></g></g></g><g data-mml-node="mo" transform="translate(29261.8,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(30262,0)"><path data-c="1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path></g><g data-mml-node="msub" transform="translate(31151,0)"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="TeXAtom" transform="translate(646,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">知</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">识</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">总</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">结</text></g></g></g><g data-mml-node="mo" transform="translate(34675.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></g></g></g></svg></mjx-container></p>
-<h3 id="反馈">反馈</h3>
-<ul>
-<li>请选择<span class="exturl" data-url="bWFpbHRvOmxpdWUyMzM2QGdtYWlsLmNvbQ==">邮箱<i class="fa fa-external-link-alt"></i></span>与我交流。</li>
-<li>备注：问题描述。</li>
-</ul>
-<h3 id="本博客所用框架">本博客所用框架</h3>
-<p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2luZGV4Lmh0bWw=">Hexo: 7.1.1<i class="fa fa-external-link-alt"></i></span> + <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9uZXh0LTgtMTktMi1yZWxlYXNlZC8=">NexT 8.19.2 <i class="fa fa-external-link-alt"></i></span></p>
-<!--more-->
-<h3 id="博客进度">博客进度</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">时间</th>
-<th style="text-align:center">内容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>24/04/09</code></td>
-<td style="text-align:center"><a href="./d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C.md">d2l-chap03线性神经网络</a></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>24/04/12</code></td>
-<td style="text-align:center"><a href="(https://ethanliu6.github.io/)">博客主页</a></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>24/04/12</code></td>
-<td style="text-align:center"><a href="ethanliu6.github.io/aboutme/">关于我</a></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-  </entry>
-  <entry>
-    <title>每日记录2024-04-13</title>
-    <url>/2024/04/13/love/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，请找管理索要密码哦~" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="f5b53e564fb4cb41b9d57821f023cbd6d5d63d3aa092dc19163d6baba88f4986">258c87c5b37c4f7cd7fa7ddc0853291b685c88091a3f5a1b2fc089a99e77759b69e06510c118835d4cf1c426c47493265916c590941e4f70b213dac0ca9b8cdcbbe8f8177789c7af5f300449b8fcede3443be15aa88040de24b99ceb1edcfc93a7ca67eddde47d4ecd7058d51a9a4218200270172a5a69e9bd931bd4e531174291debb5c5311ccb4be810bf26c1f1ad2c5eaf6cbafb901f6d34b14050440091a973d2d80ca714bfe74097419e4971ea7704862a335fe74689273d9e6984909115b85944511b4f38a620b61122af9853969db01e7b825d7250afdadb3d333e69c6596013661c167f1bffd07a18d606d0bbf3e4b6e492b2586f515ab6b2f109b8c2ddc3665c0b7cb850f509909886b91cb2d6fbec5960c11c5433229996d52630a7f617bda6f3470cafe621f12ca04c67f7fb5e25ebf2365fea07cf7537be6e9d692f80b0f3effcaff82cf5ccf1c654f0e10efe2d8678eb2ed46759a09f177dfad30d9c55e917865a72876e2aeb3dd16507b4994f8840ca18da1aa6574f97dd07a76270879c939504748304cde7273895bc3b7954a65ef3acd304fd9b05ec166faed51250a2ce0c73cf4ae2b19f8d24b0384eda8fc591b6eb9e0ace04e341b0874771933df68b59df68012982853750b8aee33b9b965523f60fa6e1bcedcc75fba34c4fa8e0fc2e5725277a002f9c104ae</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-xray">
-      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">该类文章属于私密文章，请输入密码。</span>
-      </label>
-      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
-        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
-      </svg>
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CLobster:300,300italic,400,400italic,700,700italic%7CPingFang+SC:300,300italic,400,400italic,700,700italic%7CRoboto+Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","width":250,"display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="线性回归（linear regression）可以追溯到19世纪初， 它在回归的各种标准工具中最简单而且最流行。 线性回归基于几个简单的假设： 首先，假设自变量和因变量之间的关系是线性的， 即可以表示为中元素的加权和，这里通常允许包含观测值的一些噪声； 其次，我们假设任何噪声都比较正常，如噪声遵循正态分布。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第三章、线性神经网络">
+<meta property="og:url" content="http://ethanliu6.github.io/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="Ethan の Blog">
+<meta property="og:description" content="线性回归（linear regression）可以追溯到19世纪初， 它在回归的各种标准工具中最简单而且最流行。 线性回归基于几个简单的假设： 首先，假设自变量和因变量之间的关系是线性的， 即可以表示为中元素的加权和，这里通常允许包含观测值的一些噪声； 其次，我们假设任何噪声都比较正常，如噪声遵循正态分布。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ethanliu6.github.io/images/d2l/chap03-01%E6%95%B0%E6%8D%AE%E5%88%86%E5%B8%83.svg">
+<meta property="article:published_time" content="2024-04-09T12:45:05.000Z">
+<meta property="article:modified_time" content="2024-04-12T20:25:30.843Z">
+<meta property="article:author" content="Ethan Liu">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="PyTorch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ethanliu6.github.io/images/d2l/chap03-01%E6%95%B0%E6%8D%AE%E5%88%86%E5%B8%83.svg">
+
+
+<link rel="canonical" href="http://ethanliu6.github.io/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/","path":"2024/04/09/d2l/d2l-chap03线性神经网络/","title":"第三章、线性神经网络"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>第三章、线性神经网络 | Ethan の Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Ethan の Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"><font color='#9370DB' size=3>清醒的停留，胜过——盲目的前行</font></p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>Love</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-        <tag>love</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>第三章、线性神经网络</title>
-    <url>/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<blockquote class="blockquote-center">
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">5</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">4</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC3-1%E8%8A%82-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="nav-text">第3.1节 线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-1-%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="nav-text">3.1.1 理论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E6%95%B0%E6%8D%AE"><span class="nav-text">1. 数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-text">2. 损失函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E4%BC%98%E5%8C%96%E5%87%BD%E6%95%B0"><span class="nav-text">3. 优化函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%E2%80%94%E2%80%94%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D"><span class="nav-text">4. 优化方法——梯度下降</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E6%80%BB%E7%BB%93"><span class="nav-text">4.总结</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-2-%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="nav-text">3.1.2 从零实现线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E6%95%B0%E6%8D%AE%E6%9E%84%E5%BB%BA"><span class="nav-text">1.数据构建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%8F%96"><span class="nav-text">2. 数据读取</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%9E%8B"><span class="nav-text">3. 构建模型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E5%AE%9A%E4%B9%89%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="nav-text">4. 定义损失函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E5%AE%9A%E4%B9%89%E4%BC%98%E5%8C%96%E5%99%A8"><span class="nav-text">5. 定义优化器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="nav-text">6. 模型训练</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-%E4%B8%8E%E7%9C%9F%E5%AE%9E%E5%8F%82%E6%95%B0%E5%81%9A%E5%AF%B9%E6%AF%94"><span class="nav-text">7.与真实参数做对比</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-3-%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0"><span class="nav-text">3.1.3 线性回归简单实现</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ethan Liu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Ethan Liu</p>
+  <div class="site-description" itemprop="description"><font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2V0aGFubGl1Ng==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ethanliu6"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxpdWUyMzM2QGdtYWlsLmNvbQ==" title="E-Mail → mailto:liue2336@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMTMyNzA5OTk3Nw==" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1327099977"><i class="fa-brands fa-bilibili fa-fw"></i>BiliBili</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/love/" title="Love → &#x2F;love&#x2F;" rel="noopener me"><i class="fa fa-heart fa-fw"></i>Love</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Ethan Liu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ethan の Blog">
+      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="第三章、线性神经网络 | Ethan の Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          第三章、线性神经网络<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9kMmwvZDJsLWNoYXAwM+e6v+aAp+elnue7j+e9kee7nC5tZA==" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-04-09 20:45:05" itemprop="dateCreated datePublished" datetime="2024-04-09T20:45:05+08:00">2024-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-13 04:25:30" itemprop="dateModified" datetime="2024-04-13T04:25:30+08:00">2024-04-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/d2l/" itemprop="url" rel="index"><span itemprop="name">d2l</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="第三章、线性神经网络" href="/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::e7dd47cb3dd9c61d5017f451c5e14f82" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
 <p><em>线性回归</em>（linear regression）可以追溯到19世纪初， 它在回归的各种标准工具中最简单而且最流行。 线性回归基于几个简单的假设： 首先，假设自变量<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.294ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 572 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g></g></g></svg></mjx-container>和因变量<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex;" xmlns="http://www.w3.org/2000/svg" width="1.109ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 490 647"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>之间的关系是线性的， 即<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex;" xmlns="http://www.w3.org/2000/svg" width="1.109ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 490 647"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>可以表示为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.294ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 572 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g></g></g></svg></mjx-container>中元素的加权和，这里通常允许包含观测值的一些噪声； 其次，我们假设任何噪声都比较正常，如噪声遵循正态分布。</p>
 
 </blockquote>
@@ -313,11 +493,11 @@ $$\begin{aligned} \mathcal{L}<em>{(\mathbf{X},\mathbf{y},\mathbf{w},b)} &amp;=  
 </ul>
 <h4 id="3-1-2-从零实现线性回归">3.1.2 从零实现线性回归</h4>
 <p>数据、模型、损失函数、优化器</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> random, torch</span><br><span class="line"><span class="keyword">from</span> d2l <span class="keyword">import</span> torch <span class="keyword">as</span> d2l</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> random, torch</span><br><span class="line"><span class="keyword">from</span> d2l <span class="keyword">import</span> torch <span class="keyword">as</span> d2l</span><br></pre></td></tr></table></figure>
 <h5 id="1-数据构建">1.数据构建</h5>
 <p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="33.755ex" height="2.728ex" role="img" focusable="false" viewBox="0 -955.8 14919.9 1205.8"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D430" d="M624 444Q636 441 722 441Q797 441 800 444H805V382H741L593 11Q592 10 590 8T586 4T584 2T581 0T579 -2T575 -3T571 -3T567 -4T561 -4T553 -4H542Q525 -4 518 6T490 70Q474 110 463 137L415 257L367 137Q357 111 341 72Q320 17 313 7T289 -4H277Q259 -4 253 -2T238 11L90 382H25V444H32Q47 441 140 441Q243 441 261 444H270V382H222L310 164L382 342L366 382H303V444H310Q322 441 407 441Q508 441 523 444H531V382H506Q481 382 481 380Q482 376 529 259T577 142L674 382H617V444H624Z"></path></g></g><g data-mml-node="mo" transform="translate(1108.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msup" transform="translate(2164.6,0)"><g data-mml-node="mrow"><g data-mml-node="mo"><path data-c="5B" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(278,0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(778,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1222.7,0)"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"></path><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(778,0)"></path></g></g><g data-mml-node="mo" transform="translate(2500.7,0)"><path data-c="5D" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path></g></g><g data-mml-node="TeXAtom" transform="translate(2811.7,477.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g></g></g><g data-mml-node="mo" transform="translate(5524,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mstyle" transform="translate(5802,0)"><g data-mml-node="mspace"></g></g><g data-mml-node="mi" transform="translate(6468.7,0)"><path data-c="1D44F" d="M73 647Q73 657 77 670T89 683Q90 683 161 688T234 694Q246 694 246 685T212 542Q204 508 195 472T180 418L176 399Q176 396 182 402Q231 442 283 442Q345 442 383 396T422 280Q422 169 343 79T173 -11Q123 -11 82 27T40 150V159Q40 180 48 217T97 414Q147 611 147 623T109 637Q104 637 101 637H96Q86 637 83 637T76 640T73 647ZM336 325V331Q336 405 275 405Q258 405 240 397T207 376T181 352T163 330L157 322L136 236Q114 150 114 114Q114 66 138 42Q154 26 178 26Q211 26 245 58Q270 81 285 114T318 219Q336 291 336 325Z"></path></g><g data-mml-node="mo" transform="translate(7175.5,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(8231.2,0)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500,0)"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(778,0)"></path></g><g data-mml-node="mo" transform="translate(9509.2,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mstyle" transform="translate(9787.2,0)"><g data-mml-node="mspace"></g></g><g data-mml-node="mtext" transform="translate(10453.9,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">噪</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">声</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">项</text></g><g data-mml-node="mi" transform="translate(13453.9,0)"><text data-variant="italic" transform="scale(1,-1)" font-size="884px" font-family="serif" font-style="italic">：</text></g><g data-mml-node="mi" transform="translate(14453.9,0)"><path data-c="1D700" d="M190 -22Q124 -22 76 11T27 107Q27 174 97 232L107 239L99 248Q76 273 76 304Q76 364 144 408T290 452H302Q360 452 405 421Q428 405 428 392Q428 381 417 369T391 356Q382 356 371 365T338 383T283 392Q217 392 167 368T116 308Q116 289 133 272Q142 263 145 262T157 264Q188 278 238 278H243Q308 278 308 247Q308 206 223 206Q177 206 142 219L132 212Q68 169 68 112Q68 39 201 39Q253 39 286 49T328 72T345 94T362 105Q376 103 376 88Q376 79 365 62T334 26T275 -8T190 -22Z"></path></g></g></g></svg></mjx-container></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">generate_data</span>(<span class="params">w, b, num_examples</span>):</span><br><span class="line">    <span class="string">"""生成 y = wX + b + 噪声"""</span></span><br><span class="line">    X = torch.normal(<span class="number">2</span>, <span class="number">0.3</span>, (num_examples, <span class="built_in">len</span>(w)))</span><br><span class="line">    y = torch.matmul(X, w) + b</span><br><span class="line">    y += torch.normal(<span class="number">0</span>, <span class="number">0.2</span>, y.shape)</span><br><span class="line">    <span class="keyword">return</span> X, y.reshape((-<span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ture_w = torch.tensor([<span class="number">2</span>, <span class="number">0.6</span>])</span><br><span class="line">ture_b = <span class="number">0.2</span></span><br><span class="line">features, labels = generate_data(ture_w, ture_b, <span class="number">8000</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">features[:<span class="number">3</span>, :], labels[:<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">generate_data</span>(<span class="params">w, b, num_examples</span>):</span><br><span class="line">    <span class="string">"""生成 y = wX + b + 噪声"""</span></span><br><span class="line">    X = torch.normal(<span class="number">2</span>, <span class="number">0.3</span>, (num_examples, <span class="built_in">len</span>(w)))</span><br><span class="line">    y = torch.matmul(X, w) + b</span><br><span class="line">    y += torch.normal(<span class="number">0</span>, <span class="number">0.2</span>, y.shape)</span><br><span class="line">    <span class="keyword">return</span> X, y.reshape((-<span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ture_w = torch.tensor([<span class="number">2</span>, <span class="number">0.6</span>])</span><br><span class="line">ture_b = <span class="number">0.2</span></span><br><span class="line">features, labels = generate_data(ture_w, ture_b, <span class="number">8000</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">features[:<span class="number">3</span>, :], labels[:<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
 <pre><code>(tensor([[2.3478, 2.4763],
          [1.7897, 2.3384],
          [1.6261, 2.0841]]),
@@ -325,12 +505,12 @@ $$\begin{aligned} \mathcal{L}<em>{(\mathbf{X},\mathbf{y},\mathbf{w},b)} &amp;=  
          [5.0191],
          [4.6524]]))
 </code></pre>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d2l.set_figsize()</span><br><span class="line">d2l.plt.scatter(features[:<span class="number">1000</span>, <span class="number">0</span>].detach().numpy(),</span><br><span class="line">                labels[:<span class="number">1000</span>].detach().numpy(), <span class="number">1</span>)</span><br><span class="line">d2l.plt.scatter(features[:<span class="number">1000</span>, <span class="number">1</span>].detach().numpy(),</span><br><span class="line">                labels[:<span class="number">1000</span>].detach().numpy(), <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">d2l.set_figsize()</span><br><span class="line">d2l.plt.scatter(features[:<span class="number">1000</span>, <span class="number">0</span>].detach().numpy(),</span><br><span class="line">                labels[:<span class="number">1000</span>].detach().numpy(), <span class="number">1</span>)</span><br><span class="line">d2l.plt.scatter(features[:<span class="number">1000</span>, <span class="number">1</span>].detach().numpy(),</span><br><span class="line">                labels[:<span class="number">1000</span>].detach().numpy(), <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x7fe64fc797c0&gt;
 </code></pre>
 <p><img src="/images/d2l/chap03-01%E6%95%B0%E6%8D%AE%E5%88%86%E5%B8%83.svg" alt="01-数据分布图"></p>
 <h5 id="2-数据读取">2. 数据读取</h5>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 按照一个batch地获取</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data_iter</span>(<span class="params">batch_size, features, labels</span>):</span><br><span class="line">    num_examples = <span class="built_in">len</span>(features)</span><br><span class="line">    idxs = <span class="built_in">list</span>(<span class="built_in">range</span>(num_examples))</span><br><span class="line">    random.shuffle(idxs)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, num_examples, batch_size):</span><br><span class="line">        batch_idxs = torch.tensor(</span><br><span class="line">            idxs[i: <span class="built_in">min</span>(batch_size + i, num_examples)]</span><br><span class="line">        )</span><br><span class="line">        <span class="keyword">yield</span> features[batch_idxs, :], labels[batch_idxs]</span><br><span class="line"></span><br><span class="line">batch_size = <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> X, y <span class="keyword">in</span> get_data_iter(batch_size, features, labels):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"训练数据："</span>, X, <span class="string">'\n'</span>, <span class="string">"训练目标："</span>, y)</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按照一个batch地获取</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data_iter</span>(<span class="params">batch_size, features, labels</span>):</span><br><span class="line">    num_examples = <span class="built_in">len</span>(features)</span><br><span class="line">    idxs = <span class="built_in">list</span>(<span class="built_in">range</span>(num_examples))</span><br><span class="line">    random.shuffle(idxs)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, num_examples, batch_size):</span><br><span class="line">        batch_idxs = torch.tensor(</span><br><span class="line">            idxs[i: <span class="built_in">min</span>(batch_size + i, num_examples)]</span><br><span class="line">        )</span><br><span class="line">        <span class="keyword">yield</span> features[batch_idxs, :], labels[batch_idxs]</span><br><span class="line"></span><br><span class="line">batch_size = <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> X, y <span class="keyword">in</span> get_data_iter(batch_size, features, labels):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"训练数据："</span>, X, <span class="string">'\n'</span>, <span class="string">"训练目标："</span>, y)</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <pre><code>训练数据： tensor([[2.4767, 1.9958],
         [2.2292, 2.3632],
         [2.1951, 2.1529],
@@ -353,16 +533,16 @@ $$\begin{aligned} \mathcal{L}<em>{(\mathbf{X},\mathbf{y},\mathbf{w},b)} &amp;=  
         [4.8499]])
 </code></pre>
 <h5 id="3-构建模型">3. 构建模型</h5>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">### 随机初始化模型参数</span></span><br><span class="line">w = torch.normal(<span class="number">0</span>, <span class="number">1</span>, size=(<span class="number">2</span>, <span class="number">1</span>), requires_grad=<span class="literal">True</span>)</span><br><span class="line">b = torch.ones(<span class="number">1</span>, requires_grad=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">### 定义模型</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">liner_model</span>(<span class="params">X, w, b</span>):</span><br><span class="line">    <span class="keyword">return</span> torch.matmul(X, w) + b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">liner_model(features, w, b).shape</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 随机初始化模型参数</span></span><br><span class="line">w = torch.normal(<span class="number">0</span>, <span class="number">1</span>, size=(<span class="number">2</span>, <span class="number">1</span>), requires_grad=<span class="literal">True</span>)</span><br><span class="line">b = torch.ones(<span class="number">1</span>, requires_grad=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 定义模型</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">liner_model</span>(<span class="params">X, w, b</span>):</span><br><span class="line">    <span class="keyword">return</span> torch.matmul(X, w) + b</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">liner_model(features, w, b).shape</span><br></pre></td></tr></table></figure>
 <pre><code>torch.Size([8000, 1])
 </code></pre>
 <h5 id="4-定义损失函数">4. 定义损失函数</h5>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ms_loss</span>(<span class="params">y_hat, y</span>):</span><br><span class="line">    <span class="string">"""定义均方损失"""</span></span><br><span class="line">    <span class="keyword">return</span> (y_hat - y.reshape(y_hat.shape)) ** <span class="number">2</span> / <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ms_loss</span>(<span class="params">y_hat, y</span>):</span><br><span class="line">    <span class="string">"""定义均方损失"""</span></span><br><span class="line">    <span class="keyword">return</span> (y_hat - y.reshape(y_hat.shape)) ** <span class="number">2</span> / <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <h5 id="5-定义优化器">5. 定义优化器</h5>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sgd</span>(<span class="params">params, lr, batch_size</span>):</span><br><span class="line">    <span class="string">"""小批量随机梯度下降"""</span></span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        <span class="keyword">for</span> param <span class="keyword">in</span> params:</span><br><span class="line">            param -= lr * param.grad / batch_size</span><br><span class="line">            param.grad.zero_()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">sgd</span>(<span class="params">params, lr, batch_size</span>):</span><br><span class="line">    <span class="string">"""小批量随机梯度下降"""</span></span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        <span class="keyword">for</span> param <span class="keyword">in</span> params:</span><br><span class="line">            param -= lr * param.grad / batch_size</span><br><span class="line">            param.grad.zero_()</span><br></pre></td></tr></table></figure>
 <h5 id="6-模型训练">6. 模型训练</h5>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">### 超参数</span></span><br><span class="line">lr = <span class="number">0.1</span></span><br><span class="line">num_epochs = <span class="number">5</span></span><br><span class="line">net_model = liner_model</span><br><span class="line">loss = ms_loss</span><br><span class="line"></span><br><span class="line"><span class="comment">### 训练</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">    <span class="keyword">for</span> X, y <span class="keyword">in</span> get_data_iter(batch_size, features, labels):</span><br><span class="line">        l = loss(net_model(X, w, b), y)</span><br><span class="line">        l.<span class="built_in">sum</span>().backward()</span><br><span class="line">        sgd([w, b], lr, batch_size)</span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        train_l = loss(net_model(features, w, b), labels)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f'epoch <span class="subst">{epoch + <span class="number">1</span> :<span class="number">2</span>}</span>, loss <span class="subst">{train_l.mean() :<span class="number">.8</span>f}</span>'</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 超参数</span></span><br><span class="line">lr = <span class="number">0.1</span></span><br><span class="line">num_epochs = <span class="number">5</span></span><br><span class="line">net_model = liner_model</span><br><span class="line">loss = ms_loss</span><br><span class="line"></span><br><span class="line"><span class="comment">### 训练</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">    <span class="keyword">for</span> X, y <span class="keyword">in</span> get_data_iter(batch_size, features, labels):</span><br><span class="line">        l = loss(net_model(X, w, b), y)</span><br><span class="line">        l.<span class="built_in">sum</span>().backward()</span><br><span class="line">        sgd([w, b], lr, batch_size)</span><br><span class="line">    <span class="keyword">with</span> torch.no_grad():</span><br><span class="line">        train_l = loss(net_model(features, w, b), labels)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f'epoch <span class="subst">{epoch + <span class="number">1</span> :<span class="number">2</span>}</span>, loss <span class="subst">{train_l.mean() :<span class="number">.8</span>f}</span>'</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <pre><code>epoch  1, loss 0.02702038
 epoch  2, loss 0.02084376
 epoch  3, loss 0.02002947
@@ -370,18 +550,18 @@ epoch  4, loss 0.02400172
 epoch  5, loss 0.01999601
 </code></pre>
 <h5 id="7-与真实参数做对比">7.与真实参数做对比</h5>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f'w的误差: <span class="subst">{ture_w - w.reshape(ture_w.shape)}</span>'</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f'b的误差: <span class="subst">{(ture_b - b)}</span>'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f'w的误差: <span class="subst">{ture_w - w.reshape(ture_w.shape)}</span>'</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f'b的误差: <span class="subst">{(ture_b - b)}</span>'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>w的误差: tensor([0.0069, 0.0213], grad_fn=&lt;SubBackward0&gt;)
 b的误差: tensor([-0.0697], grad_fn=&lt;RsubBackward1&gt;)
 </code></pre>
 <h4 id="3-1-3-线性回归简单实现">3.1.3 线性回归简单实现</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data</span><br><span class="line"><span class="keyword">from</span> d2l <span class="keyword">import</span> torch <span class="keyword">as</span> d2l</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ture_w, ture_b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data</span><br><span class="line"><span class="keyword">from</span> d2l <span class="keyword">import</span> torch <span class="keyword">as</span> d2l</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ture_w, ture_b</span><br></pre></td></tr></table></figure>
 <pre><code>(tensor([2.0000, 0.6000]), 0.2)
 </code></pre>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">true_w = torch.tensor([<span class="number">2</span>, <span class="number">0.6</span>], requires_grad=<span class="literal">True</span>)</span><br><span class="line">true_b = torch.ones(<span class="number">1</span>, requires_grad=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">features, labels = generate_data(true_w, true_b, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_array</span>(<span class="params">data_arrays, batch_size, is_train=<span class="literal">True</span></span>):</span><br><span class="line">    dataset = data.TensorDataset(*data_arrays)</span><br><span class="line">    <span class="keyword">return</span> data.DataLoader(dataset, batch_size, shuffle=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">batch_size = <span class="number">10</span></span><br><span class="line">data_iter = load_array((features, labels), batch_size)</span><br><span class="line"><span class="built_in">next</span>(<span class="built_in">iter</span>(data_iter))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">true_w = torch.tensor([<span class="number">2</span>, <span class="number">0.6</span>], requires_grad=<span class="literal">True</span>)</span><br><span class="line">true_b = torch.ones(<span class="number">1</span>, requires_grad=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">features, labels = generate_data(true_w, true_b, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">load_array</span>(<span class="params">data_arrays, batch_size, is_train=<span class="literal">True</span></span>):</span><br><span class="line">    dataset = data.TensorDataset(*data_arrays)</span><br><span class="line">    <span class="keyword">return</span> data.DataLoader(dataset, batch_size, shuffle=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">batch_size = <span class="number">10</span></span><br><span class="line">data_iter = load_array((features, labels), batch_size)</span><br><span class="line"><span class="built_in">next</span>(<span class="built_in">iter</span>(data_iter))</span><br></pre></td></tr></table></figure>
 <pre><code>[tensor([[2.5015, 2.3537],
          [1.5924, 1.8605],
          [2.1028, 2.1819],
@@ -403,31 +583,156 @@ b的误差: tensor([-0.0697], grad_fn=&lt;RsubBackward1&gt;)
          [6.5749],
          [4.7918]], grad_fn=&lt;StackBackward0&gt;)]
 </code></pre>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">net = nn.Sequential(nn.Linear(<span class="number">2</span>, <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">net[<span class="number">0</span>].weight.data.normal_(<span class="number">0</span>, <span class="number">0.1</span>)</span><br><span class="line">net[<span class="number">0</span>].bias.data.fill_(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net = nn.Sequential(nn.Linear(<span class="number">2</span>, <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net[<span class="number">0</span>].weight.data.normal_(<span class="number">0</span>, <span class="number">0.1</span>)</span><br><span class="line">net[<span class="number">0</span>].bias.data.fill_(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>tensor([0.])
 </code></pre>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">loss = nn.MSELoss()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 实例化SGD</span></span><br><span class="line">trainer = torch.optim.SGD(net.parameters(), lr=<span class="number">0.01</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 训练</span></span><br><span class="line">num_epochs = <span class="number">5</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">    <span class="keyword">for</span> X, y <span class="keyword">in</span> data_iter:</span><br><span class="line">        l = loss(net(X), y)</span><br><span class="line">        trainer.zero_grad()</span><br><span class="line">        l.backward(retain_graph=<span class="literal">True</span>)</span><br><span class="line">        trainer.step()</span><br><span class="line">    l = loss(net(features), labels)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'epoch <span class="subst">{epoch + <span class="number">1</span> :<span class="number">2</span>}</span>, loss <span class="subst">{l:f}</span>'</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loss = nn.MSELoss()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 实例化SGD</span></span><br><span class="line">trainer = torch.optim.SGD(net.parameters(), lr=<span class="number">0.01</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 训练</span></span><br><span class="line">num_epochs = <span class="number">5</span></span><br><span class="line"><span class="keyword">for</span> epoch <span class="keyword">in</span> <span class="built_in">range</span>(num_epochs):</span><br><span class="line">    <span class="keyword">for</span> X, y <span class="keyword">in</span> data_iter:</span><br><span class="line">        l = loss(net(X), y)</span><br><span class="line">        trainer.zero_grad()</span><br><span class="line">        l.backward(retain_graph=<span class="literal">True</span>)</span><br><span class="line">        trainer.step()</span><br><span class="line">    l = loss(net(features), labels)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'epoch <span class="subst">{epoch + <span class="number">1</span> :<span class="number">2</span>}</span>, loss <span class="subst">{l:f}</span>'</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <pre><code>epoch  1, loss 0.096368
 epoch  2, loss 0.077876
 epoch  3, loss 0.067644
 epoch  4, loss 0.059806
 epoch  5, loss 0.054634
 </code></pre>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f'w的误差: <span class="subst">{true_w - w.reshape(true_w.shape)}</span>'</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f'b的误差: <span class="subst">{(true_b - b)}</span>'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f'w的误差: <span class="subst">{true_w - w.reshape(true_w.shape)}</span>'</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f'b的误差: <span class="subst">{(true_b - b)}</span>'</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>w的误差: tensor([0.0495, 0.0135], grad_fn=&lt;SubBackward0&gt;)
 b的误差: tensor([0.7791], grad_fn=&lt;SubBackward0&gt;)
 </code></pre>
-]]></content>
-      <categories>
-        <category>d2l</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>PyTorch</tag>
-      </tags>
-  </entry>
-</search>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wChat.png" alt="Ethan Liu 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+              <a href="/tags/PyTorch/" rel="tag"><i class="fa fa-tag"></i> PyTorch</a>
+          </div>
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_tiktok"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/04/11/BlogSet/ethanliu6.github.io/" rel="next" title="Hexo+NexT博客搭建及美化1">
+                  Hexo+NexT博客搭建及美化1 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="e7dd47cb3dd9c61d5017f451c5e14f82"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">true</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">5k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4 分钟</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni8=" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyxf6tytI","appkey":"90987f30c4b5248baad5a04c7a6abfe1","count":true}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>
