@@ -1,190 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo+NexT博客搭建及美化(一)</title>
-    <url>/2024/04/11/BlogSet/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%B8%80)/</url>
-    <content><![CDATA[<blockquote class="blockquote-center">
-<p>第一篇：该篇章主要讲解我的博客搭建的过程和主题美化流程。</p>
-
-</blockquote>
-<span id="more"></span>
-<h2 id="hexo依赖环境安装">Hexo依赖环境安装</h2>
-<h3 id="安装nodejs查看是否安装成功">安装<span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL3poLWNuLw==">nodejs<i class="fa fa-external-link-alt"></i></span>查看是否安装成功</h3>
-<p>如图：</p>
-<figure>
-<img src="/images/setBlog/02_npm查看版本.png" alt="npm版本" /><figcaption aria-hidden="true">npm版本</figcaption>
-</figure>
-<figure>
-<img src="/images/setBlog/01_nodejs查看版本.png" alt="nodejs版本" /><figcaption aria-hidden="true">nodejs版本</figcaption>
-</figure>
-<h3 id="安装-git">安装 <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS8=">Git<i class="fa fa-external-link-alt"></i></span></h3>
-<figure>
-<img src="/images/setBlog/03_git查看版本.png" alt="git版本" /><figcaption aria-hidden="true">git版本</figcaption>
-</figure>
-<h3 id="安装-hexo">安装 Hexo</h3>
-<p>先创建一个空仓库（文件夹）作为你的博客，然后终端进入该仓库</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 hexo 框架</span></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 初始化文件夹</span></span><br><span class="line">hexo init</span><br><span class="line"><span class="comment"># 安装 hexo 依赖包</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>如果以上安装出现错误的，请<code>更换镜像源</code>或者选择<code>科学上网</code>(请自行查阅)</p>
-<h3 id="检测hexo">检测<code>Hexo</code></h3>
-<p><code>hexo  clean &amp;&amp; hexo g &amp;&amp; hexo s</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hexo  clean:</span><br><span class="line">hexo g:</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/images/setBlog/04_Hexo第一次启动.png" alt="Hexo启动" /><figcaption aria-hidden="true">Hexo启动</figcaption>
-</figure>
-<h3 id="更换主题">更换主题</h3>
-<p>这里以<code>NexT</code>主题为例</p>
-<p>在你的仓库文件夹下<code>clone</code>(选择好自己的版本，版本之间的设置有差别)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/images/setBlog/05_NexT版本查看.png" alt="NexT版本" /><figcaption aria-hidden="true">NexT版本</figcaption>
-</figure>
-<p>根配置<code>_config.yml</code></p>
-<figure>
-<img src="/images/setBlog/06_NexT主题配置.png" alt="NexT主题配置" /><figcaption aria-hidden="true">NexT主题配置</figcaption>
-</figure>
-<h3 id="github部署"><code>GitHub</code>部署</h3>
-<p>Install <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWRlcGxveWVyLWdpdA==">hexo-deployer-git<i class="fa fa-external-link-alt"></i></span>.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 需要安装插件</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>配置站点 <code>_config.yml</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repo</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">repository</span> <span class="attr">url</span>&gt;</span> #https://xxxx/johnsmith.bitbucket.io</span></span><br><span class="line"><span class="language-xml">  branch: [branch]</span></span><br><span class="line"><span class="language-xml">  message: [message]</span></span><br></pre></td></tr></table></figure>
-<h2 id="hexo主题配置">Hexo主题配置</h2>
-<h3 id="说明">说明</h3>
-<p>我的主题版本<code>NexT8.19.2</code>，<a href="https://ethanliu6.github.io/">点击查看最终效果</a></p>
-<blockquote>
-<p>注意：</p>
-<p><code>NexT</code>主题拥有不同的版本，GitHub开源地址也不同</p>
-<p>主要版本：NexT5.0+；NexT7.0+；NexT8.0+</p>
-</blockquote>
-<p>参考文献：<span class="exturl" data-url="aHR0cHM6Ly9zbGFtLWxlYXJuZXIuZ2l0aHViLmlvLzIwMjQvMDIvMDcvJUU3JThFJUFGJUU1JUEyJTgzJUU5JTg1JThEJUU3JUJEJUFFL0hleG8rTmV4dCVFOSU4NSU4RCVFNyVCRCVBRSVFNSU4RCU5QSVFNSVBRSVBMi8jJUU1JUIwJTg2JUU1JThEJTlBJUU1JUFFJUEyJUU5JTgzJUE4JUU3JUJEJUIyJUU4JTg3JUIzJUU0JUJBJTkxJUU3JUFCJUFG">Hexo+Next配置博客<i class="fa fa-external-link-alt"></i></span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<h3 id="添加背景">添加背景</h3>
-<p>主题配置文件的<code>custom_file_path</code>选项取消<code>style</code>注释</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path</span>: </span><br><span class="line">  #<span class="attr">style</span>: source/_data/styles.<span class="property">styl</span> <span class="comment">// 修改前</span></span><br><span class="line">  <span class="attr">style</span>: source/_data/styles.<span class="property">styl</span> <span class="comment">// 取消后</span></span><br></pre></td></tr></table></figure>
-<p>站点新建文件夹<code>_data/</code>和文件<code>styles.styl</code>，即： <code>/source/_data/styles.styl</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// styles.styl中添加内容</span></span><br><span class="line">body &#123;</span><br><span class="line">    <span class="attr">background</span>: <span class="title function_">url</span>(<span class="regexp">/images/</span>background.<span class="property">png</span>); <span class="comment">//是主题NexT的images</span></span><br><span class="line">    background-<span class="attr">repeat</span>: no-repeat; <span class="comment">//不重复</span></span><br><span class="line">    background-<span class="attr">attachment</span>: fixed; <span class="comment">// 滚动后背景也填充</span></span><br><span class="line">    background-<span class="attr">size</span>: cover;      <span class="comment">//是否填充，cover填充</span></span><br><span class="line">    background-<span class="attr">position</span>: center; <span class="comment">//背景图片位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="文章">文章</h3>
-<ul>
-<li><p>公式：参考文献：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTUxMTE4OS9hcnRpY2xlL2RldGFpbHMvMTE1Nzk4NTYz">hexo博客next主题添加对数学公式的支持<i class="fa fa-external-link-alt"></i></span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>这种我对行间的不成功，所以用了<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL21hdGgtZXF1YXRpb25zLmh0bWw/aGlnaGxpZ2h0PW1hdGg=">官方文档<i class="fa fa-external-link-alt"></i></span>提供的<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLXJlbmRlcmVyLXBhbmRvYw==">panco<i class="fa fa-external-link-alt"></i></span></p></li>
-<li><p>主题字体：参考文献： <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hxd2VheS9hcnRpY2xlL2RldGFpbHMvMTA3NTc5MzY0">Hexo Next 主题字体相关配置<i class="fa fa-external-link-alt"></i></span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p></li>
-<li><p>样式：</p>
-<ul>
-<li><p>主题一些很nice的自定样式<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2FkdmFuY2VkLXNldHRpbmdzL2N1c3RvbS1maWxlcw==">官网<i class="fa fa-external-link-alt"></i></span></p></li>
-<li><p>好看的post字样：<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL25vdGUuaHRtbD9oaWdobGlnaHQ9YmFja2dyb3VuZA==">官网Note (Bootstrap Callout)<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dyb3dpbmdfcG90YXRvL2FydGljbGUvZGV0YWlscy8xMTM5MjY4NTY=">next主题美化——背景图片、页面透明化、阴影、圆角、动画<i class="fa fa-external-link-alt"></i></span><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p></li>
-</ul></li>
-<li><p>文章加密：<span class="exturl" data-url="aHR0cHM6Ly9hbGV4LW1jYXZveS5naXRodWIuaW8vaGV4by80ODM5MzllMC5odG1s">文章加密Next 7.0+ 实现文章加密<i class="fa fa-external-link-alt"></i></span><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mi9hcnRpY2xlL2RldGFpbHMvMTE2NjE0NjIy">Hexo博客技巧：对文章进行加密<i class="fa fa-external-link-alt"></i></span><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p></li>
-<li><p>复选框：<span class="exturl" data-url="aHR0cHM6Ly93d3cucGFub3NodS50b3AvYmxvZy8yYzNmOWUzOC8=">Hexo Stellar 和 Next 主题支持 KaTex 公式与 Markdown 复杂表格<i class="fa fa-external-link-alt"></i></span><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>，这个在我上面会有冲突，所以我卸载了，打算以后需要使用复选框再想办法弄</p>
-<p>复选框效果：<img src="/images/setBlog/07_复选框展示.jpg" alt="复选框效果" /></p></li>
-</ul>
-<h3 id="主题配置">主题配置</h3>
-<ul>
-<li>缓存</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"># <span class="title class_">Remove</span> unnecessary files after hexo generate.</span><br><span class="line"><span class="attr">minify</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>PDF支持：<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL3BkZg==">PDF<i class="fa fa-external-link-alt"></i></span></p></li>
-<li><p>站点地图</p></li>
-</ul>
-<p><code>npm install hexo-generator-sitemap --save</code></p>
-<p>这个相当于是对指定浏览器收录自己文章，这里按照官网的操作执行就行，我选择了Bing的配置设置</p>
-<p>README.md跳过</p>
-<h3 id="新增导航栏">新增导航栏</h3>
-<p>这里我以自己的<code>Love</code>导航设置为例</p>
-<p>站点source文件添加<code>Love</code>文件夹并配置<code>index.md</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Hexo</span> <span class="keyword">new</span> page <span class="title class_">Love</span>/</span><br><span class="line"> <span class="comment">//进入Love文件夹，修改index.md内容</span></span><br><span class="line"><span class="attr">title</span>: 我和珠珠</span><br><span class="line"><span class="attr">date</span>: <span class="number">2024</span>-<span class="number">04</span>-<span class="number">11</span> <span class="number">23</span>:<span class="number">29</span>:<span class="number">36</span></span><br><span class="line"><span class="attr">categories</span>: <span class="title class_">Love</span></span><br><span class="line"><span class="attr">type</span>: <span class="title class_">Love</span>   </span><br></pre></td></tr></table></figure>
-<p>主题配置文件下的<code>menu</code>菜单添加：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Love</span>: <span class="regexp">/categories/</span><span class="title class_">Love</span>/ || fas fa-heart</span><br></pre></td></tr></table></figure>
-<p>source/_posts/<code>下添加</code>love/`文件夹</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 主要是用于文章整理分类</span></span><br><span class="line">cd source/_posts/</span><br><span class="line">mkdir love</span><br><span class="line">cd love</span><br><span class="line">touch <span class="variable constant_">XXX</span>.<span class="property">md</span></span><br></pre></td></tr></table></figure>
-<p>XXX.md`配置并写入内容</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">title</span>: 每日记录<span class="number">2024</span>-<span class="number">04</span>-<span class="number">13</span></span><br><span class="line"><span class="attr">date</span>:</span><br><span class="line"><span class="attr">categories</span>: <span class="title class_">Love</span></span><br><span class="line"><span class="attr">tags</span>: </span><br><span class="line">  - 日记</span><br><span class="line">  - love</span><br></pre></td></tr></table></figure>
-<p>注意:</p>
-<p>如果在<code>_post/</code>之外的markdown文件配置有<code>togs</code>时候，会报错，在GitHub的issues里有人解释</p>
-<p>例如：</p>
-<figure>
-<img src="/images/setBlog/08_tags误用案例.png" alt="tags误用案例" /><figcaption aria-hidden="true">tags误用案例</figcaption>
-</figure>
-<p>issues分析：</p>
-<figure>
-<img src="/images/setBlog/09_bug-tag问题.png" alt="tags报错" /><figcaption aria-hidden="true">tags报错</figcaption>
-</figure>
-<h2 id="参考文献">参考文献</h2>
-<section class="footnotes" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1" role="doc-endnote"><p>https://slam-learner.github.io/2024/02/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Hexo+Next%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/#%E5%B0%86%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E8%87%B3%E4%BA%91%E7%AB%AF<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>https://blog.csdn.net/weixin_45511189/article/details/115798563<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>https://blog.csdn.net/hqweay/article/details/107579364<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>https://blog.csdn.net/Growing_potato/article/details/113926856<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>https://alex-mcavoy.github.io/hexo/483939e0.html<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6" role="doc-endnote"><p>https://blog.csdn.net/weixin_58068682/article/details/116614622<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7" role="doc-endnote"><p>https://blog.csdn.net/Growing_potato/article/details/113926856<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>blogSet</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>欢迎来到 Ethan の Blog！</title>
-    <url>/2024/04/12/Home/Ethan-%E3%81%AE-Blog-%E4%B8%BB%E9%A1%B5/</url>
-    <content><![CDATA[<blockquote class="blockquote-center">
-<p>励志做一个无私、专注、好学、干净、热爱生活的人。</p>
-<p>“用爱开始，用爱坚持”。</p>
-
-</blockquote>
-<span id="more"></span>
-<h3 id="我想说">我想说</h3>
-<ul>
-<li>学习东西很简单。</li>
-<li>我的学习公式:</li>
-</ul>
-<p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.19ex;" xmlns="http://www.w3.org/2000/svg" width="61.799ex" height="5.512ex" role="img" focusable="false" viewBox="0 -1468.2 27315.1 2436.3"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtable"><g data-mml-node="mtr" transform="translate(0,718.2)"><g data-mml-node="mtd"><g data-mml-node="mi"><path data-c="394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></g><g data-mml-node="msub" transform="translate(833,0)"><g data-mml-node="mi"><path data-c="1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path></g><g data-mml-node="TeXAtom" transform="translate(882,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">知</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">识</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">增</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">量</text></g></g></g></g><g data-mml-node="mtd" transform="translate(4593.4,0)"><g data-mml-node="mi"></g><g data-mml-node="mo" transform="translate(277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mi" transform="translate(1333.6,0)"><path data-c="1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></g><g data-mml-node="msub" transform="translate(2082.6,0)"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="TeXAtom" transform="translate(714,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">学</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">习</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">流</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">量</text></g></g></g><g data-mml-node="mo" transform="translate(5897.2,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msub" transform="translate(6897.4,0)"><g data-mml-node="mi"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g><g data-mml-node="TeXAtom" transform="translate(824,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">知</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">识</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">质</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">量</text></g></g></g><g data-mml-node="mo" transform="translate(10822.1,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mo" transform="translate(11822.3,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(12211.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="msub" transform="translate(12915.3,0)"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="TeXAtom" transform="translate(646,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">技</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">能</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">树</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">构</text><text data-variant="normal" transform="translate(4000,0) scale(1,-1)" font-size="884px" font-family="serif">建</text></g></g></g><g data-mml-node="mo" transform="translate(17369.1,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(18369.3,0)"><path data-c="1D437" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path></g><g data-mml-node="msub" transform="translate(19197.3,0)"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="TeXAtom" transform="translate(646,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">深</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">度</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">思</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">考</text></g></g></g></g></g><g data-mml-node="mtr" transform="translate(0,-650)"><g data-mml-node="mtd" transform="translate(4593.4,0)"></g><g data-mml-node="mtd" transform="translate(4593.4,0)"><g data-mml-node="mi"></g><g data-mml-node="mo" transform="translate(222.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(1222.4,0)"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g><g data-mml-node="msub" transform="translate(1986.4,0)"><g data-mml-node="mi"><path data-c="1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path></g><g data-mml-node="TeXAtom" transform="translate(675,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">刻</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">意</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">练</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">习</text></g></g></g><g data-mml-node="mo" transform="translate(5762.1,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(6762.3,0)"><path data-c="1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path></g><g data-mml-node="msub" transform="translate(7651.3,0)"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="TeXAtom" transform="translate(646,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">知</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">识</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">总</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">结</text></g></g></g><g data-mml-node="mo" transform="translate(11175.7,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></g></g></g></svg></mjx-container></span>​​</p>
-<h3 id="反馈">反馈</h3>
-<ul>
-<li>请选择<span class="exturl" data-url="bWFpbHRvOmxpdWUyMzM2QGdtYWlsLmNvbQ==">邮箱<i class="fa fa-external-link-alt"></i></span>与我交流。</li>
-<li>备注：问题描述。</li>
-</ul>
-<h3 id="本博客所用框架">本博客所用框架</h3>
-<p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2luZGV4Lmh0bWw=">Hexo: 7.1.1<i class="fa fa-external-link-alt"></i></span> + <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9uZXh0LTgtMTktMi1yZWxlYXNlZC8=">NexT 8.19.2<i class="fa fa-external-link-alt"></i></span></p>
-<!--more-->
-<h3 id="博客进度">博客进度</h3>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">时间</th>
-<th style="text-align: center;">内容</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">24/04/09</td>
-<td style="text-align: center;"><a href="https://ethanliu6.github.io/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">d2l-chap03线性神经网络</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">24/04/12</td>
-<td style="text-align: center;"><a href="https://ethanliu6.github.io/">博客主页</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">24/04/12</td>
-<td style="text-align: center;"><a href="ethanliu6.github.io/aboutme/">关于我</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">24/04/13</td>
-<td style="text-align: center;"><a href="https://ethanliu6.github.io/2024/04/11/BlogSet/Hexo+NexT博客搭建及美化(一)/">Hexo+NexT博客搭建及美化(一)</a></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-  </entry>
-  <entry>
     <title>第三章、线性神经网络</title>
     <url>/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<blockquote class="blockquote-center">
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
 <p><em>线性回归</em>（linear regression）可以追溯到19世纪初， 它在回归的各种标准工具中最简单而且最流行。 线性回归基于几个简单的假设： 首先，假设自变量<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.294ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 572 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g></g></g></svg></mjx-container></span>和因变量<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex;" xmlns="http://www.w3.org/2000/svg" width="1.109ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 490 647"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container></span>之间的关系是线性的， 即<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex;" xmlns="http://www.w3.org/2000/svg" width="1.109ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 490 647"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D466" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container></span>可以表示为<span class="math inline"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.294ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 572 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g></g></g></svg></mjx-container></span>中元素的加权和，这里通常允许包含观测值的一些噪声； 其次，我们假设任何噪声都比较正常，如噪声遵循正态分布。</p>
 
 </blockquote>
@@ -268,7 +87,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">d2l.set_figsize()</span><br><span class="line">d2l.plt.scatter(features[:<span class="number">1000</span>, <span class="number">0</span>].detach().numpy(),</span><br><span class="line">                labels[:<span class="number">1000</span>].detach().numpy(), <span class="number">1</span>)</span><br><span class="line">d2l.plt.scatter(features[:<span class="number">1000</span>, <span class="number">1</span>].detach().numpy(),</span><br><span class="line">                labels[:<span class="number">1000</span>].detach().numpy(), <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <pre><code>&lt;matplotlib.collections.PathCollection at 0x7fe64fc797c0&gt;</code></pre>
 <figure>
-<img src="/images/d2l/chap03-01数据分布.svg" alt="01-数据分布图"><figcaption aria-hidden="true">01-数据分布图</figcaption>
+<img data-src="/images/d2l/chap03-01数据分布.svg" alt="01-数据分布图"><figcaption aria-hidden="true">01-数据分布图</figcaption>
 </figure>
 <h5 id="数据读取">2. 数据读取</h5>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 按照一个batch地获取</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_data_iter</span>(<span class="params">batch_size, features, labels</span>):</span><br><span class="line">    num_examples = <span class="built_in">len</span>(features)</span><br><span class="line">    idxs = <span class="built_in">list</span>(<span class="built_in">range</span>(num_examples))</span><br><span class="line">    random.shuffle(idxs)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, num_examples, batch_size):</span><br><span class="line">        batch_idxs = torch.tensor(</span><br><span class="line">            idxs[i: <span class="built_in">min</span>(batch_size + i, num_examples)]</span><br><span class="line">        )</span><br><span class="line">        <span class="keyword">yield</span> features[batch_idxs, :], labels[batch_idxs]</span><br><span class="line"></span><br><span class="line">batch_size = <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> X, y <span class="keyword">in</span> get_data_iter(batch_size, features, labels):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">"训练数据："</span>, X, <span class="string">'\n'</span>, <span class="string">"训练目标："</span>, y)</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
@@ -363,10 +182,203 @@ b的误差: tensor([0.7791], grad_fn=&lt;SubBackward0&gt;)</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>欢迎来到 Ethan の Blog！</title>
+    <url>/2024/04/12/Home/Ethan-%E3%81%AE-Blog-%E4%B8%BB%E9%A1%B5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>励志做一个无私、专注、好学、干净、热爱生活的人。</p>
+<p>“用爱开始，用爱坚持”。</p>
+
+</blockquote>
+<span id="more"></span>
+<h3 id="我想说">我想说</h3>
+<ul>
+<li>学习东西很简单。</li>
+<li>我的学习公式:</li>
+</ul>
+<p><span class="math display"><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -2.19ex;" xmlns="http://www.w3.org/2000/svg" width="61.799ex" height="5.512ex" role="img" focusable="false" viewBox="0 -1468.2 27315.1 2436.3"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtable"><g data-mml-node="mtr" transform="translate(0,718.2)"><g data-mml-node="mtd"><g data-mml-node="mi"><path data-c="394" d="M51 0Q46 4 46 7Q46 9 215 357T388 709Q391 716 416 716Q439 716 444 709Q447 705 616 357T786 7Q786 4 781 0H51ZM507 344L384 596L137 92L383 91H630Q630 93 507 344Z"></path></g><g data-mml-node="msub" transform="translate(833,0)"><g data-mml-node="mi"><path data-c="1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path></g><g data-mml-node="TeXAtom" transform="translate(882,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">知</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">识</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">增</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">量</text></g></g></g></g><g data-mml-node="mtd" transform="translate(4593.4,0)"><g data-mml-node="mi"></g><g data-mml-node="mo" transform="translate(277.8,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mi" transform="translate(1333.6,0)"><path data-c="1D439" d="M48 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H742Q749 676 749 669Q749 664 736 557T722 447Q720 440 702 440H690Q683 445 683 453Q683 454 686 477T689 530Q689 560 682 579T663 610T626 626T575 633T503 634H480Q398 633 393 631Q388 629 386 623Q385 622 352 492L320 363H375Q378 363 398 363T426 364T448 367T472 374T489 386Q502 398 511 419T524 457T529 475Q532 480 548 480H560Q567 475 567 470Q567 467 536 339T502 207Q500 200 482 200H470Q463 206 463 212Q463 215 468 234T473 274Q473 303 453 310T364 317H309L277 190Q245 66 245 60Q245 46 334 46H359Q365 40 365 39T363 19Q359 6 353 0H336Q295 2 185 2Q120 2 86 2T48 1Z"></path></g><g data-mml-node="msub" transform="translate(2082.6,0)"><g data-mml-node="mi"><path data-c="1D43F" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g><g data-mml-node="TeXAtom" transform="translate(714,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">学</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">习</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">流</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">量</text></g></g></g><g data-mml-node="mo" transform="translate(5897.2,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msub" transform="translate(6897.4,0)"><g data-mml-node="mi"><path data-c="1D444" d="M399 -80Q399 -47 400 -30T402 -11V-7L387 -11Q341 -22 303 -22Q208 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435Q740 255 592 107Q529 47 461 16L444 8V3Q444 2 449 -24T470 -66T516 -82Q551 -82 583 -60T625 -3Q631 11 638 11Q647 11 649 2Q649 -6 639 -34T611 -100T557 -165T481 -194Q399 -194 399 -87V-80ZM636 468Q636 523 621 564T580 625T530 655T477 665Q429 665 379 640Q277 591 215 464T153 216Q153 110 207 59Q231 38 236 38V46Q236 86 269 120T347 155Q372 155 390 144T417 114T429 82T435 55L448 64Q512 108 557 185T619 334T636 468ZM314 18Q362 18 404 39L403 49Q399 104 366 115Q354 117 347 117Q344 117 341 117T337 118Q317 118 296 98T274 52Q274 18 314 18Z"></path></g><g data-mml-node="TeXAtom" transform="translate(824,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">知</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">识</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">质</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">量</text></g></g></g><g data-mml-node="mo" transform="translate(10822.1,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mo" transform="translate(11822.3,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(12211.3,0)"><path data-c="1D447" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path></g><g data-mml-node="msub" transform="translate(12915.3,0)"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="TeXAtom" transform="translate(646,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">技</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">能</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">树</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">构</text><text data-variant="normal" transform="translate(4000,0) scale(1,-1)" font-size="884px" font-family="serif">建</text></g></g></g><g data-mml-node="mo" transform="translate(17369.1,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(18369.3,0)"><path data-c="1D437" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path></g><g data-mml-node="msub" transform="translate(19197.3,0)"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="TeXAtom" transform="translate(646,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">深</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">度</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">思</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">考</text></g></g></g></g></g><g data-mml-node="mtr" transform="translate(0,-650)"><g data-mml-node="mtd" transform="translate(4593.4,0)"></g><g data-mml-node="mtd" transform="translate(4593.4,0)"><g data-mml-node="mi"></g><g data-mml-node="mo" transform="translate(222.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(1222.4,0)"><path data-c="1D438" d="M492 213Q472 213 472 226Q472 230 477 250T482 285Q482 316 461 323T364 330H312Q311 328 277 192T243 52Q243 48 254 48T334 46Q428 46 458 48T518 61Q567 77 599 117T670 248Q680 270 683 272Q690 274 698 274Q718 274 718 261Q613 7 608 2Q605 0 322 0H133Q31 0 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q146 66 215 342T285 622Q285 629 281 629Q273 632 228 634H197Q191 640 191 642T193 659Q197 676 203 680H757Q764 676 764 669Q764 664 751 557T737 447Q735 440 717 440H705Q698 445 698 453L701 476Q704 500 704 528Q704 558 697 578T678 609T643 625T596 632T532 634H485Q397 633 392 631Q388 629 386 622Q385 619 355 499T324 377Q347 376 372 376H398Q464 376 489 391T534 472Q538 488 540 490T557 493Q562 493 565 493T570 492T572 491T574 487T577 483L544 351Q511 218 508 216Q505 213 492 213Z"></path></g><g data-mml-node="msub" transform="translate(1986.4,0)"><g data-mml-node="mi"><path data-c="1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path></g><g data-mml-node="TeXAtom" transform="translate(675,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">刻</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">意</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">练</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">习</text></g></g></g><g data-mml-node="mo" transform="translate(5762.1,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mi" transform="translate(6762.3,0)"><path data-c="1D43E" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path></g><g data-mml-node="msub" transform="translate(7651.3,0)"><g data-mml-node="mi"><path data-c="1D446" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path></g><g data-mml-node="TeXAtom" transform="translate(646,-176.7) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mtext"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">知</text><text data-variant="normal" transform="translate(1000,0) scale(1,-1)" font-size="884px" font-family="serif">识</text><text data-variant="normal" transform="translate(2000,0) scale(1,-1)" font-size="884px" font-family="serif">总</text><text data-variant="normal" transform="translate(3000,0) scale(1,-1)" font-size="884px" font-family="serif">结</text></g></g></g><g data-mml-node="mo" transform="translate(11175.7,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></g></g></g></svg></mjx-container></span>​​</p>
+<h3 id="反馈">反馈</h3>
+<ul>
+<li>请选择<span class="exturl" data-url="bWFpbHRvOmxpdWUyMzM2QGdtYWlsLmNvbQ==">邮箱<i class="fa fa-external-link-alt"></i></span>与我交流。</li>
+<li>备注：问题描述。</li>
+</ul>
+<h3 id="本博客所用框架">本博客所用框架</h3>
+<p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2luZGV4Lmh0bWw=">Hexo: 7.1.1<i class="fa fa-external-link-alt"></i></span> + <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9uZXh0LTgtMTktMi1yZWxlYXNlZC8=">NexT 8.19.2<i class="fa fa-external-link-alt"></i></span></p>
+<!--more-->
+<h3 id="博客进度">博客进度</h3>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">时间</th>
+<th style="text-align: center;">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">24/04/09</td>
+<td style="text-align: center;"><a href="https://ethanliu6.github.io/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">d2l-chap03线性神经网络</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">24/04/12</td>
+<td style="text-align: center;"><a href="https://ethanliu6.github.io/">博客主页</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">24/04/12</td>
+<td style="text-align: center;"><a href="ethanliu6.github.io/aboutme/">关于我</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">24/04/13</td>
+<td style="text-align: center;"><a href="https://ethanliu6.github.io/2024/04/11/BlogSet/Hexo+NexT博客搭建及美化(一)/">Hexo+NexT博客搭建及美化(一)</a></td>
+</tr>
+</tbody>
+</table>
+<p>珠珠出去玩了</p>
+<video src="url=https://www.douyin.com/video/7357307099329678633" preload="metadata" controlslist="nodownload" controls="" playsinline="" poster=""></video>
+<p>使用</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<iframe src="https://www.douyin.com/video/7357307099329678633">
+</iframe>
+<iframe src="https://www.douyin.com/video/7357307099329678633" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true">
+</iframe>
+<video width="320" height="240" controls="">
+<source src="https://www.douyin.com/video/7357307099329678633" type="video/mp4">
+</video>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hexo+NexT博客搭建及美化(一)</title>
+    <url>/2024/04/11/BlogSet/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%B8%80)/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>该篇章主要讲解我的博客搭建的过程和主题美化流程（上）。</p>
+
+</blockquote>
+<span id="more"></span>
+<h2 id="hexo依赖环境安装">Hexo依赖环境安装</h2>
+<h3 id="安装nodejs查看是否安装成功">安装<span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL3poLWNuLw==">nodejs<i class="fa fa-external-link-alt"></i></span>查看是否安装成功</h3>
+<p>如图：</p>
+<figure>
+<img data-src="/images/setBlog/02_npm查看版本.png" alt="npm版本" /><figcaption aria-hidden="true">npm版本</figcaption>
+</figure>
+<figure>
+<img data-src="/images/setBlog/01_nodejs查看版本.png" alt="nodejs版本" /><figcaption aria-hidden="true">nodejs版本</figcaption>
+</figure>
+<h3 id="安装-git">安装 <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS8=">Git<i class="fa fa-external-link-alt"></i></span></h3>
+<figure>
+<img data-src="/images/setBlog/03_git查看版本.png" alt="git版本" /><figcaption aria-hidden="true">git版本</figcaption>
+</figure>
+<h3 id="安装-hexo">安装 Hexo</h3>
+<p>先创建一个空仓库（文件夹）作为你的博客，然后终端进入该仓库</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 hexo 框架</span></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 初始化文件夹</span></span><br><span class="line">hexo init</span><br><span class="line"><span class="comment"># 安装 hexo 依赖包</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>如果以上安装出现错误的，请<code>更换镜像源</code>或者选择<code>科学上网</code>(请自行查阅)</p>
+<h3 id="检测hexo">检测<code>Hexo</code></h3>
+<p><code>hexo  clean &amp;&amp; hexo g &amp;&amp; hexo s</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hexo  clean:</span><br><span class="line">hexo g:</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="/images/setBlog/04_Hexo第一次启动.png" alt="Hexo启动" /><figcaption aria-hidden="true">Hexo启动</figcaption>
+</figure>
+<h3 id="更换主题">更换主题</h3>
+<p>这里以<code>NexT</code>主题为例</p>
+<p>在你的仓库文件夹下<code>clone</code>(选择好自己的版本，版本之间的设置有差别)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<figure>
+<img data-src="/images/setBlog/05_NexT版本查看.png" alt="NexT版本" /><figcaption aria-hidden="true">NexT版本</figcaption>
+</figure>
+<p>根配置<code>_config.yml</code></p>
+<figure>
+<img data-src="/images/setBlog/06_NexT主题配置.png" alt="NexT主题配置" /><figcaption aria-hidden="true">NexT主题配置</figcaption>
+</figure>
+<h3 id="github部署"><code>GitHub</code>部署</h3>
+<p>Install <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWRlcGxveWVyLWdpdA==">hexo-deployer-git<i class="fa fa-external-link-alt"></i></span>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 需要安装插件</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>配置站点 <code>_config.yml</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repo</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">repository</span> <span class="attr">url</span>&gt;</span> #https://xxxx/johnsmith.bitbucket.io</span></span><br><span class="line"><span class="language-xml">  branch: [branch]</span></span><br><span class="line"><span class="language-xml">  message: [message]</span></span><br></pre></td></tr></table></figure>
+<h2 id="hexo主题配置">Hexo主题配置</h2>
+<h3 id="说明">说明</h3>
+<p>我的主题版本<code>NexT8.19.2</code>，<a href="https://ethanliu6.github.io/">点击查看最终效果</a></p>
+<blockquote>
+<p>注意：</p>
+<p><code>NexT</code>主题拥有不同的版本，GitHub开源地址也不同</p>
+<p>主要版本：NexT5.0+；NexT7.0+；NexT8.0+</p>
+</blockquote>
+<p>参考文献：<span class="exturl" data-url="aHR0cHM6Ly9zbGFtLWxlYXJuZXIuZ2l0aHViLmlvLzIwMjQvMDIvMDcvJUU3JThFJUFGJUU1JUEyJTgzJUU5JTg1JThEJUU3JUJEJUFFL0hleG8rTmV4dCVFOSU4NSU4RCVFNyVCRCVBRSVFNSU4RCU5QSVFNSVBRSVBMi8jJUU1JUIwJTg2JUU1JThEJTlBJUU1JUFFJUEyJUU5JTgzJUE4JUU3JUJEJUIyJUU4JTg3JUIzJUU0JUJBJTkxJUU3JUFCJUFG">Hexo+Next配置博客<i class="fa fa-external-link-alt"></i></span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<h3 id="添加背景">添加背景</h3>
+<p>主题配置文件的<code>custom_file_path</code>选项取消<code>style</code>注释</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path</span>: </span><br><span class="line">  #<span class="attr">style</span>: source/_data/styles.<span class="property">styl</span> <span class="comment">// 修改前</span></span><br><span class="line">  <span class="attr">style</span>: source/_data/styles.<span class="property">styl</span> <span class="comment">// 取消后</span></span><br></pre></td></tr></table></figure>
+<p>站点新建文件夹<code>_data/</code>和文件<code>styles.styl</code>，即： <code>/source/_data/styles.styl</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// styles.styl中添加内容</span></span><br><span class="line">body &#123;</span><br><span class="line">    <span class="attr">background</span>: <span class="title function_">url</span>(<span class="regexp">/images/</span>background.<span class="property">png</span>); <span class="comment">//是主题NexT的images</span></span><br><span class="line">    background-<span class="attr">repeat</span>: no-repeat; <span class="comment">//不重复</span></span><br><span class="line">    background-<span class="attr">attachment</span>: fixed; <span class="comment">// 滚动后背景也填充</span></span><br><span class="line">    background-<span class="attr">size</span>: cover;      <span class="comment">//是否填充，cover填充</span></span><br><span class="line">    background-<span class="attr">position</span>: center; <span class="comment">//背景图片位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="文章">文章</h3>
+<ul>
+<li><p>公式：参考文献：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTUxMTE4OS9hcnRpY2xlL2RldGFpbHMvMTE1Nzk4NTYz">hexo博客next主题添加对数学公式的支持<i class="fa fa-external-link-alt"></i></span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>这种我对行间的不成功，所以用了<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL21hdGgtZXF1YXRpb25zLmh0bWw/aGlnaGxpZ2h0PW1hdGg=">官方文档<i class="fa fa-external-link-alt"></i></span>提供的<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLXJlbmRlcmVyLXBhbmRvYw==">panco<i class="fa fa-external-link-alt"></i></span></p></li>
+<li><p>主题字体：参考文献： <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hxd2VheS9hcnRpY2xlL2RldGFpbHMvMTA3NTc5MzY0">Hexo Next 主题字体相关配置<i class="fa fa-external-link-alt"></i></span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p></li>
+<li><p>样式：</p>
+<ul>
+<li><p>主题一些很nice的自定样式<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2FkdmFuY2VkLXNldHRpbmdzL2N1c3RvbS1maWxlcw==">官网<i class="fa fa-external-link-alt"></i></span></p></li>
+<li><p>好看的post字样：<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL25vdGUuaHRtbD9oaWdobGlnaHQ9YmFja2dyb3VuZA==">官网Note (Bootstrap Callout)<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dyb3dpbmdfcG90YXRvL2FydGljbGUvZGV0YWlscy8xMTM5MjY4NTY=">next主题美化——背景图片、页面透明化、阴影、圆角、动画<i class="fa fa-external-link-alt"></i></span><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p></li>
+</ul></li>
+<li><p>文章加密：<span class="exturl" data-url="aHR0cHM6Ly9hbGV4LW1jYXZveS5naXRodWIuaW8vaGV4by80ODM5MzllMC5odG1s">文章加密Next 7.0+ 实现文章加密<i class="fa fa-external-link-alt"></i></span><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mi9hcnRpY2xlL2RldGFpbHMvMTE2NjE0NjIy">Hexo博客技巧：对文章进行加密<i class="fa fa-external-link-alt"></i></span><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p></li>
+<li><p>复选框：<span class="exturl" data-url="aHR0cHM6Ly93d3cucGFub3NodS50b3AvYmxvZy8yYzNmOWUzOC8=">Hexo Stellar 和 Next 主题支持 KaTex 公式与 Markdown 复杂表格<i class="fa fa-external-link-alt"></i></span><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>，这个在我上面会有冲突，所以我卸载了，打算以后需要使用复选框再想办法弄</p>
+<p>复选框效果：<img data-src="/images/setBlog/07_复选框展示.jpg" alt="复选框效果" /></p></li>
+</ul>
+<h3 id="主题配置">主题配置</h3>
+<ul>
+<li>缓存</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"># <span class="title class_">Remove</span> unnecessary files after hexo generate.</span><br><span class="line"><span class="attr">minify</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>PDF支持：<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL3BkZg==">PDF<i class="fa fa-external-link-alt"></i></span></p></li>
+<li><p>站点地图</p></li>
+</ul>
+<p><code>npm install hexo-generator-sitemap --save</code></p>
+<p>这个相当于是对指定浏览器收录自己文章，这里按照官网的操作执行就行，我选择了Bing的配置设置</p>
+<p>README.md跳过</p>
+<h3 id="新增导航栏">新增导航栏</h3>
+<p>这里我以自己的<code>Love</code>导航设置为例</p>
+<p>站点source文件添加<code>Love</code>文件夹并配置<code>index.md</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Hexo</span> <span class="keyword">new</span> page <span class="title class_">Love</span>/</span><br><span class="line"> <span class="comment">//进入Love文件夹，修改index.md内容</span></span><br><span class="line"><span class="attr">title</span>: 我和珠珠</span><br><span class="line"><span class="attr">date</span>: <span class="number">2024</span>-<span class="number">04</span>-<span class="number">11</span> <span class="number">23</span>:<span class="number">29</span>:<span class="number">36</span></span><br><span class="line"><span class="attr">categories</span>: <span class="title class_">Love</span></span><br><span class="line"><span class="attr">type</span>: <span class="title class_">Love</span>   </span><br></pre></td></tr></table></figure>
+<p>主题配置文件下的<code>menu</code>菜单添加：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Love</span>: <span class="regexp">/categories/</span><span class="title class_">Love</span>/ || fas fa-heart</span><br></pre></td></tr></table></figure>
+<p>source/_posts/<code>下添加</code>love/`文件夹</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 主要是用于文章整理分类</span></span><br><span class="line">cd source/_posts/</span><br><span class="line">mkdir love</span><br><span class="line">cd love</span><br><span class="line">touch <span class="variable constant_">XXX</span>.<span class="property">md</span></span><br></pre></td></tr></table></figure>
+<p>XXX.md`配置并写入内容</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">title</span>: 每日记录<span class="number">2024</span>-<span class="number">04</span>-<span class="number">13</span></span><br><span class="line"><span class="attr">date</span>:</span><br><span class="line"><span class="attr">categories</span>: <span class="title class_">Love</span></span><br><span class="line"><span class="attr">tags</span>: </span><br><span class="line">  - 日记</span><br><span class="line">  - love</span><br></pre></td></tr></table></figure>
+<p>注意:</p>
+<p>如果在<code>_post/</code>之外的markdown文件配置有<code>togs</code>时候，会报错，在GitHub的issues里有人解释</p>
+<p>例如：</p>
+<figure>
+<img data-src="/images/setBlog/08_tags误用案例.png" alt="tags误用案例" /><figcaption aria-hidden="true">tags误用案例</figcaption>
+</figure>
+<p>issues分析：</p>
+<figure>
+<img data-src="/images/setBlog/09_bug-tag问题.png" alt="tags报错" /><figcaption aria-hidden="true">tags报错</figcaption>
+</figure>
+<h2 id="参考文献">参考文献</h2>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>https://slam-learner.github.io/2024/02/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Hexo+Next%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/#%E5%B0%86%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E8%87%B3%E4%BA%91%E7%AB%AF<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>https://blog.csdn.net/weixin_45511189/article/details/115798563<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>https://blog.csdn.net/hqweay/article/details/107579364<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>https://blog.csdn.net/Growing_potato/article/details/113926856<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>https://alex-mcavoy.github.io/hexo/483939e0.html<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>https://blog.csdn.net/weixin_58068682/article/details/116614622<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>https://blog.csdn.net/Growing_potato/article/details/113926856<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>blogSet</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>每日记录2024-04-13</title>
     <url>/2024/04/13/love/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，请找管理索要密码哦~" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="d927aefcdca0292053f3eeb094d55dfc9c0ead4a5af30f2e9d478c99cfb9583e">258c87c5b37c4f7cd7fa7ddc0853291b685c88091a3f5a1b2fc089a99e77759b69e06510c118835d4cf1c426c47493265916c590941e4f70b213dac0ca9b8cdcbbe8f8177789c7af5f300449b8fcede3443be15aa88040de24b99ceb1edcfc93a7ca67eddde47d4ecd7058d51a9a4218200270172a5a69e9bd931bd4e531174291debb5c5311ccb4be810bf26c1f1ad2f53a1b595c1ff6f12800982ad9842b39a2226361e641b58ecef5a8f7a9ee2967268bc987dac69c0c465a4883108ab576f798c0d0717bb597825eadaee43d151048b294d027ae0364f4291d6a9be1be2e9eccd4fe06f14aaa2ea020632d7f8975e214a2cb17beb4ff70d292f53a571c952fea8c51946482d92a780ca3cebac8efc74b4294395934b9f93e36e3d4f33a59a73ec638ff9aa8321a6bf9aadd0755b0030ec7f8a71d23036cfbfe657c1358cc117f1af35248ee4a738817423c782ca6acf81cb18e71887cde6bbcaea05df34ee8ee23c139bb4c98c040c992d5f5f6c111ea0f4d1999a136ff1814af38930e67e3658a81b0f9ef14b839b636b3cdc48d95a6d9e32389e8ae43ff9ea33249a2b7712e687d7f2c770de240353f764fdcd4584d40f5d20221a388c817c1b1d2ad37e8c943cc373f1da39f93a8df5ea9ff2e107c05f4de2f0f2fa4addd735a6df6b24293f76ac1fd78661233246d33dfff2f</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="f9150a94ec470ce28100371ed71dffcab2699b47094f776f0923c42e13110480">258c87c5b37c4f7cd7fa7ddc0853291bace6240d7aa6c339526fc6553f22ae50de2cac0537c2fbdd3b1cb36b1e754bfb647045a28028da113f3f2e5fec8f6c4309ec6043e48c7a808bb7901f5cd768c37b98a77c7fd5dbbff5563401bea1006d6f945ee5d441f6c09d6424af244bf488359d5f9aeffb98bc3428d4ed027906e50546e4d1e9562c79d18b3ed79937dedae11cec1c967c32ac7d5b721462caa540335387e80b90496e5516784aa9991353c295764efab8f1d7eb6215a3c1664a86cf54b20c45b039c5783ac08e64a778766ec76a71933b5360039855cf7fe8c8d4bd6dea48cebaad47e6f9f53b84a8637326a5bf231b17cd198514f1fed0b1b0b36f1c19eee9272dad8ac021d06c40db84166957cea0156859213da2fd6204329eb3b605f24f2df033e45a3441e626627afb000686244c8f9f0bf08fadb6177fce744cbeb926206429bfaa7e42f0a6fec9465839d0e8cb7344caa6c91c34bb5311e45a6955b3588591200cc8e77bc66d6cc813f07ccc356b96eb14f8fba7e4ec19a831676ebf244b86f4565f5a9ac5b66e38c78521dda025b12e75dba331a4f58383238d664f7208adcf4ae4ee2b8c81414817b15bee7d670c2f040d33ababccd7385a84f796e7c80eacbeacfeceb7bbca4a591b454a90663b87e63618b0885fe0adf8e138860351f5c01c39766085549119284ef4803c9e9b40dccd5ab19b565f506ce17eb029b646ce10111764625ca7172d16e416f5cccffe2ed19814169eb921dfe9f937a5bf6f4a18d0aedcbab5dd0c99ea72efa91e5af98cb81e749a3c04f8061a7a0649f1d5210edcbfc868fc063032fc068679e5e35c4a68dac2047768caf2b2635f8b5386300390fe8d6a58bc43713c5004fa873cc1a5314885449a066f0bef0c96a3e0a4c75ee34edb459626249a48c4f43382dee3bfc8acadcd6704c109a054a9b132a53a933b6c1c8b04bfabaaaf2fb344e999d5326001e2b4b099de60936a3eaee42af61037b12520c814cee863866cec685f81d1ba0c97b3c1921ff7e4ffb4c51bed0c0df994cbcdedf22523c696f98ac42e9070fe1070c1d1cc5d8e3c552854164b372c51772d328927916165fc31e15bb185c72e91450281a4fa2342d017c13a17cbd9870a54a2cad0153f1e3471f307d6ff3cbf0a70839b342b63de7df718c1b0df8da7ce6cfb7362048b435cfe00d4f314ed8587e21b80d1ef40c9a55b4223273f02ec2ed36dfdaf527ccf207bcb8e6a7366ae694b6580358f026cb02ccc16e6e0832afbfffa901b55832f64e3a80b8ea31399fd68692d028ae36833ecc4759169b4ab8e85f8549e235d4671e8129edc33a74b7dd46e72cd15794177af946ba4ed7df026f6aed5c0a3c1b76fada76bac9267a6619664a21df9ee960a8345c05e7803e854da70857e338e84a49b8fb778cd411dcaaacd2fff46288ed0286a9df54d9e10daab9daf50ac422b8812166f3ee9c3edebf5fb57c186ccc67f62e4f87ff8361f30947fa81b</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-xray">
       <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
