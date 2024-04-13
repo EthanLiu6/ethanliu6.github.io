@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ethanliu6.github.io/2024/04/11/BlogSet/ethanliu6.github.io/</loc>
+    
+    <lastmod>2024-04-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ethanliu6.github.io/2024/04/12/Home/Ethan-%E3%81%AE-Blog-%E4%B8%BB%E9%A1%B5/</loc>
     
     <lastmod>2024-04-13</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>http://ethanliu6.github.io/Love/index.html</loc>
-    
-    <lastmod>2024-04-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/2024/04/11/BlogSet/ethanliu6.github.io/</loc>
     
     <lastmod>2024-04-13</lastmod>
     
