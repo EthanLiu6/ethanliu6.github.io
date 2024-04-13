@@ -10,10 +10,10 @@ http://ethanliu6.github.io/categories/index.html
 http://ethanliu6.github.io/tags/index.html
 http://ethanliu6.github.io/
 http://ethanliu6.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/
-http://ethanliu6.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
-http://ethanliu6.github.io/tags/PyTorch/
 http://ethanliu6.github.io/tags/%E6%97%A5%E8%AE%B0/
 http://ethanliu6.github.io/tags/love/
+http://ethanliu6.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/
+http://ethanliu6.github.io/tags/PyTorch/
 http://ethanliu6.github.io/categories/blogSet/
-http://ethanliu6.github.io/categories/d2l/
 http://ethanliu6.github.io/categories/Love/
+http://ethanliu6.github.io/categories/d2l/

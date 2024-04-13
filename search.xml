@@ -182,6 +182,33 @@
 ]]></content>
   </entry>
   <entry>
+    <title>每日记录2024-04-13</title>
+    <url>/2024/04/13/love/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，请找管理索要密码哦~" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="d927aefcdca0292053f3eeb094d55dfc9c0ead4a5af30f2e9d478c99cfb9583e">258c87c5b37c4f7cd7fa7ddc0853291b685c88091a3f5a1b2fc089a99e77759b69e06510c118835d4cf1c426c47493265916c590941e4f70b213dac0ca9b8cdcbbe8f8177789c7af5f300449b8fcede3443be15aa88040de24b99ceb1edcfc93a7ca67eddde47d4ecd7058d51a9a4218200270172a5a69e9bd931bd4e531174291debb5c5311ccb4be810bf26c1f1ad2f53a1b595c1ff6f12800982ad9842b39a2226361e641b58ecef5a8f7a9ee2967268bc987dac69c0c465a4883108ab576f798c0d0717bb597825eadaee43d151048b294d027ae0364f4291d6a9be1be2e9eccd4fe06f14aaa2ea020632d7f8975e214a2cb17beb4ff70d292f53a571c952fea8c51946482d92a780ca3cebac8efc74b4294395934b9f93e36e3d4f33a59a73ec638ff9aa8321a6bf9aadd0755b0030ec7f8a71d23036cfbfe657c1358cc117f1af35248ee4a738817423c782ca6acf81cb18e71887cde6bbcaea05df34ee8ee23c139bb4c98c040c992d5f5f6c111ea0f4d1999a136ff1814af38930e67e3658a81b0f9ef14b839b636b3cdc48d95a6d9e32389e8ae43ff9ea33249a2b7712e687d7f2c770de240353f764fdcd4584d40f5d20221a388c817c1b1d2ad37e8c943cc373f1da39f93a8df5ea9ff2e107c05f4de2f0f2fa4addd735a6df6b24293f76ac1fd78661233246d33dfff2f</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-xray">
+      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">该类文章属于私密文章，请输入密码。</span>
+      </label>
+      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
+        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>Love</category>
+      </categories>
+      <tags>
+        <tag>日记</tag>
+        <tag>love</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>第三章、线性神经网络</title>
     <url>/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</url>
     <content><![CDATA[<blockquote class="blockquote-center">
@@ -360,33 +387,6 @@ b的误差: tensor([0.7791], grad_fn=&lt;SubBackward0&gt;)</code></pre>
       <tags>
         <tag>深度学习</tag>
         <tag>PyTorch</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>每日记录2024-04-13</title>
-    <url>/2024/04/13/love/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，请找管理索要密码哦~" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="d927aefcdca0292053f3eeb094d55dfc9c0ead4a5af30f2e9d478c99cfb9583e">258c87c5b37c4f7cd7fa7ddc0853291b685c88091a3f5a1b2fc089a99e77759b69e06510c118835d4cf1c426c47493265916c590941e4f70b213dac0ca9b8cdcbbe8f8177789c7af5f300449b8fcede3443be15aa88040de24b99ceb1edcfc93a7ca67eddde47d4ecd7058d51a9a4218200270172a5a69e9bd931bd4e531174291debb5c5311ccb4be810bf26c1f1ad2f53a1b595c1ff6f12800982ad9842b39a2226361e641b58ecef5a8f7a9ee2967268bc987dac69c0c465a4883108ab576f798c0d0717bb597825eadaee43d151048b294d027ae0364f4291d6a9be1be2e9eccd4fe06f14aaa2ea020632d7f8975e214a2cb17beb4ff70d292f53a571c952fea8c51946482d92a780ca3cebac8efc74b4294395934b9f93e36e3d4f33a59a73ec638ff9aa8321a6bf9aadd0755b0030ec7f8a71d23036cfbfe657c1358cc117f1af35248ee4a738817423c782ca6acf81cb18e71887cde6bbcaea05df34ee8ee23c139bb4c98c040c992d5f5f6c111ea0f4d1999a136ff1814af38930e67e3658a81b0f9ef14b839b636b3cdc48d95a6d9e32389e8ae43ff9ea33249a2b7712e687d7f2c770de240353f764fdcd4584d40f5d20221a388c817c1b1d2ad37e8c943cc373f1da39f93a8df5ea9ff2e107c05f4de2f0f2fa4addd735a6df6b24293f76ac1fd78661233246d33dfff2f</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-xray">
-      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">该类文章属于私密文章，请输入密码。</span>
-      </label>
-      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
-        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
-      </svg>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>Love</category>
-      </categories>
-      <tags>
-        <tag>日记</tag>
-        <tag>love</tag>
       </tags>
   </entry>
 </search>
