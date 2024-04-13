@@ -1732,7 +1732,7 @@ pre code {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  width: 70%;
+  width: 75%;
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -2764,7 +2764,7 @@ header.header {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  width: 70%;
+  width: 75%;
 }
 @media (max-width: 767px) {
   .main {
