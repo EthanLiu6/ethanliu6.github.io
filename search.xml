@@ -23,7 +23,7 @@
 <p><code>hexo  clean &amp;&amp; hexo g &amp;&amp; hexo s</code></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hexo  clean:</span><br><span class="line">hexo g:</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
 <p><img src="/images/setBlog/04_Hexo%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%90%AF%E5%8A%A8.png" alt="Hexo启动"></p>
-<h3 id="1-5-更换主题">1.5 更换主题</h3>
+<h2 id="1-5-更换主题">1.5 更换主题</h2>
 <p>这里以<code>NexT</code>主题为例</p>
 <ol>
 <li>在你的仓库文件夹下<code>clone</code>(选择好自己的版本，版本之间的设置有差别)</li>
@@ -90,7 +90,7 @@
 <p>复选框效果：<img src="/images/07_%E5%A4%8D%E9%80%89%E6%A1%86%E5%B1%95%E7%A4%BA.jpg" alt="复选框效果"></p>
 </li>
 </ul>
-<h4 id="4-主题配置：">4. 主题配置：</h4>
+<h4 id="4-主题配置">4. 主题配置</h4>
 <ul>
 <li>缓存</li>
 </ul>
@@ -133,7 +133,7 @@
 <h5 id="注意">注意</h5>
 <p>如果在<code>_post/</code>之外的markdown文件配置有<code>togs</code>时候，会报错，在GitHub的issues里有人解释</p>
 <p>例如：<img src="/images/setBlog/08_tags%E8%AF%AF%E7%94%A8%E6%A1%88%E4%BE%8B.png" alt="tags误用案例"></p>
-<p>issues分析：<img src="/images/setBlog/08_bug-tag%E9%97%AE%E9%A2%98.png" alt="tags报错"></p>
+<p>issues分析：<img src="/images/setBlog/09_bug-tag%E9%97%AE%E9%A2%98.png" alt="tags报错"></p>
 </li>
 </ol>
 </li>
