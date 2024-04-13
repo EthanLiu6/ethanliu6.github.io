@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ethanliu6.github.io/2024/04/11/BlogSet/ethanliu6.github.io/</loc>
+    <loc>http://ethanliu6.github.io/2024/04/13/love/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/</loc>
+    
+    <lastmod>2024-04-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/2024/04/11/BlogSet/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%B8%80)/</loc>
     
     <lastmod>2024-04-13</lastmod>
     
@@ -21,15 +30,6 @@
   
   <url>
     <loc>http://ethanliu6.github.io/Love/index.html</loc>
-    
-    <lastmod>2024-04-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/2024/04/13/love/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/</loc>
     
     <lastmod>2024-04-13</lastmod>
     
@@ -101,13 +101,6 @@
 
   
   <url>
-    <loc>http://ethanliu6.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2024-04-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://ethanliu6.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2024-04-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -116,6 +109,13 @@
   
   <url>
     <loc>http://ethanliu6.github.io/tags/PyTorch/</loc>
+    <lastmod>2024-04-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2024-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -138,14 +138,14 @@
 
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/blogSet/</loc>
+    <loc>http://ethanliu6.github.io/categories/d2l/</loc>
     <lastmod>2024-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/d2l/</loc>
+    <loc>http://ethanliu6.github.io/categories/blogSet/</loc>
     <lastmod>2024-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
