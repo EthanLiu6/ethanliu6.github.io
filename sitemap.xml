@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ethanliu6.github.io/2024/04/12/Home/Ethan-%E3%81%AE-Blog-%E4%B8%BB%E9%A1%B5/</loc>
+    <loc>http://ethanliu6.github.io/2023/10/10/Academic/%E6%AF%94%E8%B5%9B/2023%E5%B9%B4%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B/</loc>
+    
+    <lastmod>2024-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/2024/04/14/Academic/econometrics/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E7%90%86%E5%9C%A8python%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
     
     <lastmod>2024-04-14</lastmod>
     
@@ -20,25 +29,16 @@
   </url>
   
   <url>
+    <loc>http://ethanliu6.github.io/2024/04/12/Home/Ethan-%E3%81%AE-Blog-%E4%B8%BB%E9%A1%B5/</loc>
+    
+    <lastmod>2024-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ethanliu6.github.io/2024/04/13/love/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/</loc>
-    
-    <lastmod>2024-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/2023/10/10/Academic/%E6%AF%94%E8%B5%9B/2023%E5%B9%B4%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B/</loc>
-    
-    <lastmod>2024-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/2024/04/14/Academic/econometrics/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E7%90%86%E5%9C%A8python%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</loc>
     
     <lastmod>2024-04-14</lastmod>
     
