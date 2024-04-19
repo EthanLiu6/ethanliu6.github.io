@@ -24,43 +24,6 @@
   --highlight-gutter-foreground: #d9e8e8;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --body-bg-color: #282828;
-    --content-bg-color: #333;
-    --card-bg-color: #555;
-    --text-color: #ccc;
-    --blockquote-color: #bbb;
-    --link-color: #ccc;
-    --link-hover-color: #eee;
-    --brand-color: #ddd;
-    --brand-hover-color: #ddd;
-    --table-row-odd-bg-color: #282828;
-    --table-row-hover-bg-color: #363636;
-    --menu-item-bg-color: #555;
-    --theme-color: #222;
-    --btn-default-bg: #222;
-    --btn-default-color: #ccc;
-    --btn-default-border-color: #555;
-    --btn-default-hover-bg: #666;
-    --btn-default-hover-color: #ccc;
-    --btn-default-hover-border-color: #666;
-    --highlight-background: #212121;
-    --highlight-foreground: #eff;
-    --highlight-gutter-background: #353737;
-    --highlight-gutter-foreground: #d9e8e8;
-    color-scheme: dark;
-  }
-  img {
-    opacity: 0.75;
-  }
-  img:hover {
-    opacity: 0.9;
-  }
-  iframe {
-    color-scheme: light;
-  }
-}
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -949,11 +912,6 @@ pre code {
   background: #f7f7f7;
   border-left-color: #777;
 }
-@media (prefers-color-scheme: dark) {
-  .post-body .note.default {
-    background: #3c3c3c;
-  }
-}
 .post-body .note.default h2,
 .post-body .note.default h3,
 .post-body .note.default h4,
@@ -964,11 +922,6 @@ pre code {
 .post-body .note.primary {
   background: #f5f0fa;
   border-left-color: #6f42c1;
-}
-@media (prefers-color-scheme: dark) {
-  .post-body .note.primary {
-    background: #3c3b3c;
-  }
 }
 .post-body .note.primary h2,
 .post-body .note.primary h3,
@@ -981,11 +934,6 @@ pre code {
   background: #eef7fa;
   border-left-color: #428bca;
 }
-@media (prefers-color-scheme: dark) {
-  .post-body .note.info {
-    background: #3b3c3c;
-  }
-}
 .post-body .note.info h2,
 .post-body .note.info h3,
 .post-body .note.info h4,
@@ -996,11 +944,6 @@ pre code {
 .post-body .note.success {
   background: #eff8f0;
   border-left-color: #5cb85c;
-}
-@media (prefers-color-scheme: dark) {
-  .post-body .note.success {
-    background: #3b3c3b;
-  }
 }
 .post-body .note.success h2,
 .post-body .note.success h3,
@@ -1013,11 +956,6 @@ pre code {
   background: #fdf8ea;
   border-left-color: #f0ad4e;
 }
-@media (prefers-color-scheme: dark) {
-  .post-body .note.warning {
-    background: #3d3c3b;
-  }
-}
 .post-body .note.warning h2,
 .post-body .note.warning h3,
 .post-body .note.warning h4,
@@ -1028,11 +966,6 @@ pre code {
 .post-body .note.danger {
   background: #fcf1f2;
   border-left-color: #d9534f;
-}
-@media (prefers-color-scheme: dark) {
-  .post-body .note.danger {
-    background: #3d3c3c;
-  }
 }
 .post-body .note.danger h2,
 .post-body .note.danger h3,
@@ -2649,52 +2582,6 @@ ul.breadcrumb li:last-child {
   border-bottom-color: #111;
   color: #111;
 }
-@media (prefers-color-scheme: dark) {
-  .tag-cloud-0 {
-    border-bottom-color: #555;
-    color: #555;
-  }
-  .tag-cloud-1 {
-    border-bottom-color: #646464;
-    color: #646464;
-  }
-  .tag-cloud-2 {
-    border-bottom-color: #737373;
-    color: #737373;
-  }
-  .tag-cloud-3 {
-    border-bottom-color: #828282;
-    color: #828282;
-  }
-  .tag-cloud-4 {
-    border-bottom-color: #929292;
-    color: #929292;
-  }
-  .tag-cloud-5 {
-    border-bottom-color: #a1a1a1;
-    color: #a1a1a1;
-  }
-  .tag-cloud-6 {
-    border-bottom-color: #b0b0b0;
-    color: #b0b0b0;
-  }
-  .tag-cloud-7 {
-    border-bottom-color: #c0c0c0;
-    color: #c0c0c0;
-  }
-  .tag-cloud-8 {
-    border-bottom-color: #cfcfcf;
-    color: #cfcfcf;
-  }
-  .tag-cloud-9 {
-    border-bottom-color: #dedede;
-    color: #dedede;
-  }
-  .tag-cloud-10 {
-    border-bottom-color: #eee;
-    color: #eee;
-  }
-}
 .search-active {
   overflow: hidden;
 }
@@ -2751,11 +2638,6 @@ ul.breadcrumb li:last-child {
   border-top-right-radius: 5px;
   display: flex;
   padding: 5px;
-}
-@media (prefers-color-scheme: dark) {
-  .search-popup .search-header {
-    background: #666;
-  }
 }
 .search-popup input.search-input {
   background: transparent;
@@ -3139,12 +3021,12 @@ header.header {
   }
 }
 code {
-  padding: 2px 4px;
+  padding: 2px 2px;
   overflow-wrap: break-word;
   color: #c7254e;
   background: #f9f2f4;
-  border-radius: 3px;
-  font-size: 18px;
+  border-radius: 2px;
+  font-size: 16px;
 }
 body {
   background-image: url("/images/background.jpeg");
