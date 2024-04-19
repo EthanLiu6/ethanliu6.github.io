@@ -160,20 +160,6 @@
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2024-04-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/tags/PyTorch/</loc>
-    <lastmod>2024-04-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://ethanliu6.github.io/tags/%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -182,6 +168,20 @@
   
   <url>
     <loc>http://ethanliu6.github.io/tags/love/</loc>
+    <lastmod>2024-04-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2024-04-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/tags/PyTorch/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -246,14 +246,14 @@
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/d2l/</loc>
+    <loc>http://ethanliu6.github.io/categories/Love/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/Love/</loc>
+    <loc>http://ethanliu6.github.io/categories/d2l/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
