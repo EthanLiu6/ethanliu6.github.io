@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ethanliu6.github.io/aboutme/index.html</loc>
+    
+    <lastmod>2024-04-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/2024/04/11/BlogSet/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%B8%80)/</loc>
+    
+    <lastmod>2024-04-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ethanliu6.github.io/2024/04/18/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/</loc>
     
     <lastmod>2024-04-19</lastmod>
@@ -68,24 +86,6 @@
     <loc>http://ethanliu6.github.io/2024/04/09/d2l/d2l-chap03%E7%BA%BF%E6%80%A7%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
     
     <lastmod>2024-04-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/aboutme/index.html</loc>
-    
-    <lastmod>2024-04-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/2024/04/11/BlogSet/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%B8%80)/</loc>
-    
-    <lastmod>2024-04-13</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -274,14 +274,14 @@
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/Java%E5%85%A8%E6%A0%88/</loc>
+    <loc>http://ethanliu6.github.io/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E5%AD%A6%E6%9C%AF/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E5%AD%A6%E6%9C%AF/</loc>
+    <loc>http://ethanliu6.github.io/categories/Java%E5%85%A8%E6%A0%88/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
