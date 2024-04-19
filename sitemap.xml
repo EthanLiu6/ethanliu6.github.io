@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ethanliu6.github.io/2024/04/17/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day05/Day05.%E6%B3%9B%E5%9E%8B%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81List%E9%9B%86%E5%90%88%E3%80%81Set%E9%9B%86%E5%90%88/</loc>
+    <loc>http://ethanliu6.github.io/2024/04/18/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/</loc>
     
     <lastmod>2024-04-19</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/2024/04/18/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/</loc>
+    <loc>http://ethanliu6.github.io/2024/04/17/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day05/Day05.%E6%B3%9B%E5%9E%8B%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81List%E9%9B%86%E5%90%88%E3%80%81Set%E9%9B%86%E5%90%88/</loc>
     
     <lastmod>2024-04-19</lastmod>
     
@@ -146,20 +146,6 @@
 
   
   <url>
-    <loc>http://ethanliu6.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2024-04-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/tags/PyTorch/</loc>
-    <lastmod>2024-04-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://ethanliu6.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -168,6 +154,20 @@
   
   <url>
     <loc>http://ethanliu6.github.io/tags/Hexo/</loc>
+    <lastmod>2024-04-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2024-04-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/tags/PyTorch/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -239,14 +239,14 @@
 
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/d2l/</loc>
+    <loc>http://ethanliu6.github.io/categories/blogSet/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/blogSet/</loc>
+    <loc>http://ethanliu6.github.io/categories/d2l/</loc>
     <lastmod>2024-04-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
