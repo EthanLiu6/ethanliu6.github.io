@@ -416,29 +416,6 @@ b的误差: tensor([0.7791], grad_fn=&lt;SubBackward0&gt;)</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Causal Inference In Python</title>
-    <url>/2024/04/14/Academic/econometrics/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E7%90%86%E5%9C%A8python%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p><em>Causal Inference In
-Python</em>原著，由于自己刚开始学习，暂时没有具体学习内容。</p>
-<p>PDF版本可自行下载：<a href="/academic/books/Causal_Inference_in_Python.pdf">Causal Inference
-in Python</a></p>
-
-</blockquote>
-<span id="more"></span>
-<div class="pdf-container" data-target="/academic/books/Causal_Inference_in_Python.pdf" data-height="500px"></div>
-]]></content>
-      <categories>
-        <category>经济学</category>
-        <category>学术</category>
-      </categories>
-      <tags>
-        <tag>因果推理</tag>
-        <tag>计量经济学</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2023年数模国赛</title>
     <url>/2023/10/10/Academic/%E6%AF%94%E8%B5%9B/2023%E5%B9%B4%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
@@ -478,6 +455,29 @@ in Python</a></p>
       </categories>
       <tags>
         <tag>数学建模</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Causal Inference In Python</title>
+    <url>/2024/04/14/Academic/econometrics/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E7%90%86%E5%9C%A8python%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p><em>Causal Inference In
+Python</em>原著，由于自己刚开始学习，暂时没有具体学习内容。</p>
+<p>PDF版本可自行下载：<a href="/academic/books/Causal_Inference_in_Python.pdf">Causal Inference
+in Python</a></p>
+
+</blockquote>
+<span id="more"></span>
+<div class="pdf-container" data-target="/academic/books/Causal_Inference_in_Python.pdf" data-height="500px"></div>
+]]></content>
+      <categories>
+        <category>经济学</category>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>因果推理</tag>
+        <tag>计量经济学</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -536,7 +536,7 @@ in Python</a></p>
   </entry>
   <entry>
     <title>Day05 泛型、数据结构、List集合、Set集合</title>
-    <url>/2024/04/17/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day05/Day05.%E6%B3%9B%E5%9E%8B%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81List%E9%9B%86%E5%90%88%E3%80%81Set%E9%9B%86%E5%90%88/</url>
+    <url>/2024/04/19/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day05/Day05.%E6%B3%9B%E5%9E%8B%E3%80%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81List%E9%9B%86%E5%90%88%E3%80%81Set%E9%9B%86%E5%90%88/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
 <p>该篇主要讲解Java中的泛型、数据结构、List集合和Set集合</p>
 
@@ -574,11 +574,178 @@ in Python</a></p>
 <h4 id="泛型梳理">泛型梳理</h4>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">基础泛型的定义：</span><br><span class="line"><span class="number">1</span>、泛型类</span><br><span class="line"><span class="number">2</span>、泛型接口</span><br><span class="line"><span class="number">3</span>、泛型方法</span><br><span class="line"></span><br><span class="line">问题：开发时选择哪个泛型定义？</span><br><span class="line">第<span class="number">1</span>，先明确要定义的是接口还是类</span><br><span class="line">     当类中的成员变量，在不确定具体使用哪种类型时，可以使用：泛型 表示类型</span><br><span class="line">     当接口中方法，在不确定方法参数类型或方法返回值类型时，可以使用：泛型 表示类型</span><br><span class="line">第<span class="number">2</span>，在编写工具类时，工具类中的方法参数或方法返回值，不确定具体类型， 可以使用： 泛型</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">问题：泛型定义的语法</span><br><span class="line"><span class="comment">//泛型类</span></span><br><span class="line"><span class="keyword">public</span> class 类名&lt;T,E,X,Y&gt;&#123;</span><br><span class="line">    <span class="keyword">private</span> T name;</span><br><span class="line">    <span class="keyword">private</span> E a;</span><br><span class="line">    <span class="keyword">private</span> X n;</span><br><span class="line">    <span class="keyword">private</span> Y m;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> 类名(T name , E a , X n ,Y m)&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">new</span> 类名&lt;String,Integer,Double,Student&gt;();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型接口</span></span><br><span class="line"><span class="keyword">public</span> interface 接口名&lt;T,E&gt;&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型方法</span></span><br><span class="line"><span class="keyword">public</span> &lt;T&gt; T 方法名(T 参数名)&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">问题： 怎么明确泛型指定的具体类型（指定泛型上的类型）</span><br><span class="line"><span class="comment">//泛型类： 在创建对象时，指定泛型类型</span></span><br><span class="line">类名&lt;String&gt; 对象 = <span class="keyword">new</span> 类名&lt;&gt;();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型接口： 1.在子类实现接口时，明确指定了泛型类型      2.子类继承接口上的泛型（子类变为泛型类）</span></span><br><span class="line">interface 接口&lt;T&gt;&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">(T n)</span>;</span><br><span class="line">   <span class="keyword">public</span> T <span class="title function_">get</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line">class 子类 implements 接口&lt;Integer&gt;&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">(Integer n)</span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> Integer <span class="title function_">get</span><span class="params">()</span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class 子类&lt;T&gt; implements 接口&lt;T&gt;&#123;</span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">(T n)</span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> T <span class="title function_">get</span><span class="params">()</span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型方法：</span></span><br><span class="line"><span class="keyword">public</span> class 类&#123;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> &lt;T&gt; T <span class="title function_">getInstance</span><span class="params">(T param)</span>&#123;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">Student</span> <span class="variable">stu</span> <span class="operator">=</span> 类对象.getInstance( <span class="keyword">new</span> <span class="title class_">Student</span>() )</span><br></pre></td></tr></table></figure>
 <h4 id="泛型通配符">泛型通配符</h4>
+<ul>
+<li>泛型通配符：<code>&lt;?&gt;</code>（任意类型）</li>
+<li>通常在开发中，<code>?</code>与泛型的上下限一起使用</li>
+</ul>
 <h4 id="受限泛型">受限泛型</h4>
-<h3 id="泛型使用时需要注意哪些细节">泛型使用时需要注意哪些细节？</h3>
+<p>泛型下限：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//指定的泛型中的最小类型</span></span><br><span class="line">&lt;? <span class="built_in">super</span> 最小类型&gt;</span><br><span class="line">  </span><br><span class="line">?可以是该最小类型</span><br><span class="line">?也可以是该类型的父类型</span><br></pre></td></tr></table></figure>
+<p>泛型上限：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//指定泛型中的最大类型</span></span><br><span class="line">&lt;? extends 最大类型&gt;</span><br><span class="line"></span><br><span class="line">?可以是该最大类型</span><br><span class="line">?也可以是该最大类型的子类型</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240420173727772.png" alt="image-20240420173727772" style="zoom: 67%;"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.genericity.demo03;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/20 17:21</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 泛型限制</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        ArrayList&lt;Person&gt; people = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        people.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="number">126</span>, <span class="string">&quot;202234004026&quot;</span>));</span><br><span class="line">        people.add(<span class="keyword">new</span> <span class="title class_">Worker</span>());</span><br><span class="line">        show1(people);</span><br><span class="line">        show2(people);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;\n+++++++++++++++++\n&quot;</span>);</span><br><span class="line">        ArrayList&lt;Worker&gt; workers = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        workers.add(<span class="keyword">new</span> <span class="title class_">Worker</span>());</span><br><span class="line">        <span class="comment">// workers.add(new Student(123, &quot;23453456&quot;)); 泛型限制</span></span><br><span class="line">        show1(workers);</span><br><span class="line">        <span class="comment">// show2(workers); 编译出错,泛型下限受限</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">show1</span><span class="params">(ArrayList&lt;? extends Person&gt; people)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;show1是泛型上限&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">show2</span><span class="params">(ArrayList&lt;? <span class="built_in">super</span> Student&gt; E)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;show2是泛型下限&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="数据结构"><span id="inline-blue">数据结构 </span></h2>
+<p><strong>这里只是简单的学习数据结构，并非408中的系统性数据结构</strong></p>
+<h3 id="数据结构的认识">数据结构的认识</h3>
+<p>数据结构：数据存储时的一种排列方式</p>
+<p>类型：</p>
+<div class="note success"><ul>
+<li><p>栈（先进后出）</p></li>
+<li><p>队列（先进先出）//数组就是这种方式</p>
+<p>数组结构：</p>
+<ol type="1">
+<li><p>数组在内存中的体现是一块连续存储数据的空间</p></li>
+<li><p>特点是查询快、增删元素慢</p></li>
+<li><p><code>ArrayList</code>集合底层就是使用：数组结构</p></li>
+</ol></li>
+<li><p>链表</p></li>
+<li><p>哈希表</p></li>
+<li><p>树</p>
+<ul>
+<li>二叉树</li>
+<li>平衡二叉树</li>
+<li>红黑树</li>
+<li>……</li>
+</ul></li>
+</ul>
+</div>
+<h3 id="栈">栈</h3>
+<h3 id="队列">队列</h3>
+<h3 id="树">树</h3>
+<h3 id="平衡二叉树">平衡二叉树</h3>
+<h3 id="红黑树">红黑树</h3>
 <h2 id="list集合"><span id="inline-blue">List集合</span></h2>
+<h3 id="java语言中集合体系划分">Java语言中集合体系划分：</h3>
+<ul>
+<li>Collection (接口)</li>
+<li>Map （接口）</li>
+</ul>
+<h3 id="java.util.collection集合-是一个接口无法实例化">java.util.Collection集合：
+是一个接口（无法实例化）</h3>
+<ul>
+<li>java.util.List集合（接口）
+<ul>
+<li>常用子类：ArrayList 、 LinkedList</li>
+</ul></li>
+<li>java.util.Set集合（接口）</li>
+</ul>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240420193210344-20240420193554059.png" alt="image-20240420193210344">
+<figcaption aria-hidden="true">image-20240420193210344</figcaption>
+</figure>
+<h3 id="java.util.list集合">java.util.List集合：</h3>
+<ul>
+<li>带有索引</li>
+<li>存储的元素的顺序和获取元素的顺序一致</li>
+<li>可以存储重复元素</li>
+</ul>
+<p>因为List集合可以使用索引，故围绕着索引，设计很多API方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//添加元素</span></span><br><span class="line">List集合.add( 索引 ， 元素值) <span class="comment">//向List集合中指定索引位置上，添加元素</span></span><br><span class="line">                           <span class="comment">//如指定索引位置上已有索引，会自动后向移动</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//修改元素</span></span><br><span class="line">List集合.set( 索引 ， 元素值) <span class="comment">//修改List集合中指定索引位置上的元素值    </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//删除元素</span></span><br><span class="line">List集合.remove(索引) <span class="comment">//删除List集合中指定索引位置上的元素值    </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取元素</span></span><br><span class="line">List集合.get(索引);</span><br></pre></td></tr></table></figure>
+<h3 id="arraylist集合">ArrayList集合：</h3>
+<ul>
+<li>实现List接口（List接口中的所有功能都有）</li>
+<li>底层使用：数组
+<ul>
+<li>查询快 、 增删慢</li>
+</ul></li>
+</ul>
+<h3 id="链表结构">链表结构：</h3>
+<ul>
+<li>在内存中是使用==节点==来存储数据
+<ul>
+<li>节点 = 数据 + 地址</li>
+</ul></li>
+<li>链表：有头、有尾</li>
+<li>分类：
+<ol type="1">
+<li>单向链表：只能从头到尾</li>
+<li>双向链表：可以从头到尾，也可以从尾到头 （提高查询效率）</li>
+</ol></li>
+<li>代表集合类：LinkedList</li>
+</ul>
+<h3 id="linkedlist集合">LinkedList集合：</h3>
+<ul>
+<li><p>实现List接口</p></li>
+<li><p>底层使用：双向链表（有头有尾）</p>
+<ul>
+<li>增删快 、 查询慢</li>
+</ul></li>
+<li><p>特有方法都围绕着链表头和尾设计</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//添加元素</span></span><br><span class="line">addFirst( 元素 ) <span class="comment">//把元素添加到链表头部</span></span><br><span class="line">addLast( 元素 )  <span class="comment">//把元素添加到链表尾部    </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//删除元素</span></span><br><span class="line">removeFirst()</span><br><span class="line">removeLast()    </span><br><span class="line"></span><br><span class="line"><span class="comment">//获取元素</span></span><br><span class="line">getFirst()</span><br><span class="line">getLast()</span><br></pre></td></tr></table></figure></li>
+</ul>
 <h2 id="set集合"><span id="inline-blue">Set集合 </span></h2>
+<p>Collection集合</p>
+<ul>
+<li><p>List集合</p>
+<ol type="1">
+<li>有索引</li>
+<li>存取元素有序</li>
+<li>可能存储重复元素</li>
+</ol></li>
+<li><p>Set集合</p>
+<ol type="1">
+<li>没有索引</li>
+<li>存取元素不保证顺序</li>
+<li>不允许存储重复元素</li>
+</ol></li>
+</ul>
+<p>Set集合中方法全部来自Collection集合</p>
+<p>Set集合的子类：</p>
+<ul>
+<li><p>HashSet集合</p>
+<ul>
+<li><p>特点：</p>
+<ol type="1">
+<li>没有索引</li>
+<li>存取元素不保证顺序</li>
+<li>不能存储重复元素</li>
+</ol></li>
+<li><p>底层使用：哈希表结构</p></li>
+</ul></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/20 20:26</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> HashSet</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HashSetDemo1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        HashSet&lt;Person&gt; peopleSet = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//向集合中添加Person对象</span></span><br><span class="line">        peopleSet.add(<span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Qiu Zhu&quot;</span>, <span class="number">21</span>)); <span class="comment">//匿名对象</span></span><br><span class="line">        peopleSet.add(<span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Ethan Liu&quot;</span>, <span class="number">21</span>));</span><br><span class="line">        peopleSet.add(<span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;Qiu Zhu&quot;</span>, <span class="number">21</span>)); <span class="comment">//输出发现并没有去重,需要重写hashCode并用equals方法</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用增强for来遍历(迭代器)</span></span><br><span class="line">        <span class="keyword">for</span> (Person person : peopleSet) &#123;</span><br><span class="line">            System.out.println(person);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span> == o) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (o == <span class="literal">null</span> || getClass() != o.getClass()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="type">Person</span> <span class="variable">person</span> <span class="operator">=</span> (Person) o;</span><br><span class="line">        <span class="keyword">return</span> age == person.age &amp;&amp; Objects.equals(name, person.name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Person&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>LinkedHashSet集合</li>
+<li>TreeSet集合</li>
+</ul>
+<p>哈希表数据结构：</p>
+<ul>
+<li><p>底层是使用大小为16的数组+链表组成的存储方式</p></li>
+<li><p>哈希表存储数据的方式 （ 借助：哈希值[存储位置] ）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">拿要存储的元素，结合哈希算法， 计算出哈希值(存储位置) // 调用：  元素.hashCode()</span><br><span class="line"></span><br><span class="line">判断 ： 计算出的存储位置上是否有元素存在    </span><br><span class="line">       情况1 ： 没有元素存在     =&gt;  直接存储</span><br><span class="line">       情况2 ： 已有元素存在</span><br><span class="line">               拿要存储的元素 和 已经存在的元素 进行比较（比较内容是否相同） //元素.equals() </span><br><span class="line">               相同： （重复元素）  =&gt;  不存储</span><br><span class="line">               不相同： （不重复元素）</span><br><span class="line">                      再次拿当前存储空间作为算法因子，再次进行哈希算法，计算新的存储空间</span><br><span class="line">                      </span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>从JDK1.8开始，哈希表底层进行优化，使用：数组+链表/红黑树</p>
+<ul>
+<li>从链表 =&gt; 红黑树时机： 当链表的长度&gt;8，自动
+把链表转换为红黑树</li>
+</ul></li>
+</ul>
+<p>Set集合：</p>
+<ul>
+<li><p>HashSet</p>
+<ul>
+<li>底层：哈希表结构</li>
+<li>特点：
+<ol type="1">
+<li>不能存储重复元素</li>
+<li>没有索引</li>
+<li>存取元素顺序不保证一致</li>
+</ol></li>
+</ul></li>
+<li><p>LinkedHashSet</p>
+<ul>
+<li><p>特点：</p>
+<ol type="1">
+<li>没有索引</li>
+<li>不能存储重复元素</li>
+<li>存取元素顺序一致</li>
+</ol></li>
+<li><p>底层：哈希表+链表（保证存储元素的顺序）</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.LinkedHashSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/20 21:10</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> LinkedHashSet</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LinkedHashSetDemo1</span> &#123;</span><br><span class="line">    <span class="comment">//验证: 获取元素顺序</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建集合对象</span></span><br><span class="line">        LinkedHashSet&lt;String&gt; linkedHashSet = <span class="keyword">new</span> <span class="title class_">LinkedHashSet</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;Qiu&quot;</span>);</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;Ethan&quot;</span>);</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;Qiu&quot;</span>);</span><br><span class="line">        linkedHashSet.add(<span class="string">&quot;Liu&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (String s : linkedHashSet) &#123;</span><br><span class="line">            System.out.println(s); <span class="comment">//有序的</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li><p>TreeSet（下一篇文章）</p></li>
+</ul>
 ]]></content>
       <categories>
         <category>Java全栈</category>
