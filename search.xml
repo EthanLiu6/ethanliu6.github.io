@@ -389,29 +389,6 @@ b的误差: tensor([0.7791], grad_fn=&lt;SubBackward0&gt;)</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>Causal Inference In Python</title>
-    <url>/2024/04/14/Academic/econometrics/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E7%90%86%E5%9C%A8python%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p><em>Causal Inference In
-Python</em>原著，由于自己刚开始学习，暂时没有具体学习内容。</p>
-<p>PDF版本可自行下载：<a href="/academic/books/Causal_Inference_in_Python.pdf">Causal Inference
-in Python</a></p>
-
-</blockquote>
-<span id="more"></span>
-<div class="pdf-container" data-target="/academic/books/Causal_Inference_in_Python.pdf" data-height="500px"></div>
-]]></content>
-      <categories>
-        <category>经济学</category>
-        <category>学术</category>
-      </categories>
-      <tags>
-        <tag>因果推理</tag>
-        <tag>计量经济学</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>每日记录2024-04-13</title>
     <url>/2024/04/13/love/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，请找管理索要密码哦~" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -439,6 +416,28 @@ in Python</a></p>
       </tags>
   </entry>
   <entry>
+    <title>2023年数模国赛</title>
+    <url>/2023/10/10/Academic/%E6%AF%94%E8%B5%9B/2023%E5%B9%B4%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>2023年刚从中语学院转到计科学院，期间陪其他专业的小伙伴们一起完成了<code>2023全国大学生数学建模竞赛</code></p>
+
+</blockquote>
+<span id="more"></span>
+<p>  说实话，当时做的时候挺累的，一个人做了很多，但伙伴们也都挺好，一直在坚持，晓红还了生病。哈哈哈，思羽话好多但心态超级好，很乐观，然后中途还搞了好一会综测审核，当时崩坏的。我呢，感觉自己不是很友好，虽然没有抱怨和说啥不好的话，但整体我觉得对晓红的态度有点不好。最最难忘的是第二天晚上在机房的靠椅上狠狠摔了一跤，当时差点哭出来（她俩在旁边睡觉，没发现），然后整整一周抬不起胳膊，感觉伤到神经了（旧伤），第二周好多了。</p>
+<p>  虽然我们只完成了A题的第一问，而且整个排版有些些潦草，但最终还是拿了个四川省三等奖，哈哈哈，奖状也发了哦~（不上传）</p>
+<hr>
+<p>PDF版本可自行下载：<a href="/academic/myPapers/数模国赛A（省三）.pdf">数模国赛.pdf</a></p>
+<p>在线浏览PDF版本：</p>
+<div class="pdf-container" data-target="/academic/myPapers/数模国赛A（省三）.pdf" data-height="800px"></div>
+]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>数学建模</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2024年数模美赛</title>
     <url>/2024/02/06/Academic/%E6%AF%94%E8%B5%9B/2024%E5%B9%B4%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
@@ -459,25 +458,26 @@ in Python</a></p>
       </tags>
   </entry>
   <entry>
-    <title>2023年数模国赛</title>
-    <url>/2023/10/10/Academic/%E6%AF%94%E8%B5%9B/2023%E5%B9%B4%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B/</url>
+    <title>Causal Inference In Python</title>
+    <url>/2024/04/14/Academic/econometrics/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E7%90%86%E5%9C%A8python%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p>2023年刚从中语学院转到计科学院，期间陪其他专业的小伙伴们一起完成了<code>2023全国大学生数学建模竞赛</code></p>
+<p><em>Causal Inference In
+Python</em>原著，由于自己刚开始学习，暂时没有具体学习内容。</p>
+<p>PDF版本可自行下载：<a href="/academic/books/Causal_Inference_in_Python.pdf">Causal Inference
+in Python</a></p>
 
 </blockquote>
 <span id="more"></span>
-<p>  说实话，当时做的时候挺累的，一个人做了很多，但伙伴们也都挺好，一直在坚持，晓红还了生病。哈哈哈，思羽话好多但心态超级好，很乐观，然后中途还搞了好一会综测审核，当时崩坏的。我呢，感觉自己不是很友好，虽然没有抱怨和说啥不好的话，但整体我觉得对晓红的态度有点不好。最最难忘的是第二天晚上在机房的靠椅上狠狠摔了一跤，当时差点哭出来（她俩在旁边睡觉，没发现），然后整整一周抬不起胳膊，感觉伤到神经了（旧伤），第二周好多了。</p>
-<p>  虽然我们只完成了A题的第一问，而且整个排版有些些潦草，但最终还是拿了个四川省三等奖，哈哈哈，奖状也发了哦~（不上传）</p>
-<hr>
-<p>PDF版本可自行下载：<a href="/academic/myPapers/数模国赛A（省三）.pdf">数模国赛.pdf</a></p>
-<p>在线浏览PDF版本：</p>
-<div class="pdf-container" data-target="/academic/myPapers/数模国赛A（省三）.pdf" data-height="800px"></div>
+<div class="pdf-container" data-target="/academic/books/Causal_Inference_in_Python.pdf" data-height="500px"></div>
 ]]></content>
       <categories>
+        <category>经济学</category>
         <category>学术</category>
       </categories>
       <tags>
-        <tag>数学建模</tag>
+        <tag>因果推理</tag>
+        <tag>计量经济学</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -755,5 +755,263 @@ in Python</a></p>
         <tag>Java</tag>
         <tag>Java进阶</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Day05 「泛型、数据结构、List集合、Set集合」作业</title>
+    <url>/2024/04/19/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day05/day05%E3%80%90%E6%B3%9B%E5%9E%8B%EF%BC%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8CList%E6%8E%A5%E5%8F%A3%EF%BC%8CSet%E6%8E%A5%E5%8F%A3%E3%80%91-%20%E7%AD%94%E6%A1%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>JavaSE进阶——Day05 「泛型、数据结构、List集合、Set集合」作业</p>
+
+</blockquote>
+<span id="more"></span>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">作业规范【必读】</span><br><span class="line"></span><br><span class="line">命名要求：</span><br><span class="line">	<span class="number">1.</span> 类名，接口名，枚举名，注解名使用大驼峰</span><br><span class="line">	<span class="number">2.</span> 变量名，方法名，包名均使用小驼峰</span><br><span class="line">	<span class="number">3.</span> 常量名全大写，多个单词下划线分割</span><br><span class="line">	<span class="number">4.</span> 名字要见名知意，如果不知道对应的英文，可以使用拼音代替。不可使用无意义字符</span><br><span class="line">  </span><br><span class="line">代码规范：</span><br><span class="line">	格式要良好，使用IDEA格式化缩进（快捷键：Ctrl+Alt+L）</span><br><span class="line">  </span><br><span class="line">答题规范：</span><br><span class="line">	<span class="number">1.</span> 每道题完整代码请贴入对应题目中的代码区。</span><br><span class="line"> 	<span class="number">2.</span> 如果有运行结果的，请把代码运行结果放到文档中</span><br></pre></td></tr></table></figure>
+<h1 id="泛型">【泛型】</h1>
+<h2 id="题目1">题目1</h2>
+<p><strong>有以下类结构：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">人员类(Person)：</span><br><span class="line">        |--学生类(Student)</span><br><span class="line">               |--Java学生类(JavaStudent)</span><br><span class="line">               |--UI学生类(UIStudent)</span><br><span class="line">        |--教师类(Teacher)</span><br><span class="line">               |--Java教师类(JavaTeacher)</span><br><span class="line">               |--UI教师类(UITeacher)</span><br></pre></td></tr></table></figure>
+<p><strong>要求：</strong></p>
+<ul>
+<li>请按上述要求定义类，并实现继承关系即可(不需要定义类成员，定义空类表示关系即可)</li>
+<li>请按以下格式和要求定义测试类和方法：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test1</span>&#123;</span><br><span class="line">       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">              ArrayList&lt;String&gt; list1 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">              ArrayList&lt;Person&gt; list2 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">              ArrayList&lt;Student&gt; list3 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">              ArrayList&lt;JavaStudent&gt; list4 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">              ArrayList&lt;UIStudent&gt; list5 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">              ArrayList&lt;Teacher&gt; list6 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">              ArrayList&lt;JavaTeacher&gt; list7 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">              ArrayList&lt;UITeacher&gt; list8 = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();    </span><br><span class="line">           </span><br><span class="line">              <span class="comment">//请测试哪些集合可以调用print1()方法</span></span><br><span class="line">              <span class="comment">//请测试哪些集合可以调用print2()方法</span></span><br><span class="line">              <span class="comment">//请测试哪些集合可以调用print3()方法</span></span><br><span class="line">              <span class="comment">//请测试哪些集合可以调用print4()方法</span></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//要求：参数可以接收任何泛型的ArrayList参数</span></span><br><span class="line">       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">print1</span><span class="params">(ArrayList&lt;______________&gt; list)</span>&#123;</span><br><span class="line">              </span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//要求：参数可以接收任何Person及其子类泛型的ArrayList参数</span></span><br><span class="line">       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">print2</span><span class="params">(ArrayList&lt;_____________&gt; list)</span>&#123;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//要求：参数可以接收任何Student及其子类泛型的ArrayList参数</span></span><br><span class="line">       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">print3</span><span class="params">(ArrayList&lt;______________&gt; list)</span>&#123;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="comment">//要求：参数可以接收任何Java学员，及其父类泛型的ArrayList参数</span></span><br><span class="line">       <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">print4</span><span class="params">(ArrayList&lt;______________&gt; list)</span>&#123;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>参考答案：</p>
+<p>思路：使用泛型的上限和下限</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//要求：参数可以接收任何泛型的ArrayList参数</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">print1</span><span class="params">(ArrayList&lt;?&gt; list)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//要求：参数可以接收任何Person及其子类泛型的ArrayList参数</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">print2</span><span class="params">(ArrayList&lt;? extends Person&gt; list)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//要求：参数可以接收任何Student及其子类泛型的ArrayList参数</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">print3</span><span class="params">(ArrayList&lt;? extends Student&gt; list)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//要求：参数可以接收任何Java学员，及其父类泛型的ArrayList参数</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">print4</span><span class="params">(ArrayList&lt;? <span class="built_in">super</span> Java&gt; list)</span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="数据结构">【数据结构】</h1>
+<h2 id="题目2">题目2</h2>
+<p>请写出你所知道的数据结构，至少5种。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">栈 , 队列 , 数组 , 链表 . 二叉树 , 哈希表</span><br></pre></td></tr></table></figure>
+<p>写出栈结构、队列结构的特点</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">栈 : 先进后出   队列 : 先进先出</span><br></pre></td></tr></table></figure>
+<p>请写出数组结构的特点；</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">数组 : 查询快 , 增删慢</span><br></pre></td></tr></table></figure>
+<p>请写出链表结构的特点</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">链表 : 查询慢 , 增删快</span><br></pre></td></tr></table></figure>
+<h1 id="list集合">【List集合】</h1>
+<h2 id="题目3">题目3</h2>
+<p>需求：创建一个ArrayList集合，添加5个整数，然后使用不同的方式遍历这些数据。</p>
+<ol type="1">
+<li><p>自增for循环遍历 //快捷方式： 集合对象.fori</p></li>
+<li><p>迭代器遍历 //快捷方式： 获取到迭代器对象后， itit</p></li>
+<li><p>增强for循环遍历 //快捷方式： 集合对象for</p></li>
+</ol>
+<p>答案：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">list.add(<span class="number">11</span>);</span><br><span class="line">list.add(<span class="number">22</span>);</span><br><span class="line">list.add(<span class="number">33</span>);</span><br><span class="line">list.add(<span class="number">44</span>);</span><br><span class="line">list.add(<span class="number">55</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历1：普通for循环 （好处：可以使用集合对象，对元素进行增删）</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;list.size(); i++)&#123;</span><br><span class="line">    <span class="comment">//获取每一个元素</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> list.get(i);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//打印</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历2：迭代器</span></span><br><span class="line">Iterator&lt;Integer&gt; it = list.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    <span class="comment">//获取每一个元素</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> it.next();</span><br><span class="line">    <span class="comment">//打印</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(Iterator&lt;Integer&gt; it = list.iterator(); it.hasNext(); )&#123;</span><br><span class="line">    <span class="comment">//获取每一个元素</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> it.next();  <span class="comment">//</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//打印</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历3：增强for</span></span><br><span class="line"><span class="keyword">for</span>(Integer num : list)&#123;  </span><br><span class="line">    <span class="comment">//打印</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="题目4">题目4</h2>
+<p>需求：定义一个方法
+<code>int listTest(ArrayList&lt;Integer&gt; list, Integer num)</code>，要求实现返回num在list里面第一次出现的索引，如果num没出现过返回-1。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">String类       indexOf(&quot;it&quot;)</span><br><span class="line"></span><br><span class="line">int index = &quot;itheima&quot;.indexOf(&quot;it&quot;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>答案：</p>
+<p>思路：</p>
+<ul>
+<li><p>在方法中遍历list集合，判断是否是num，如果是返回索引，遍历完成后没有发现数据直接返回-1</p></li>
+<li><p>对象比较用equals</p></li>
+<li><p>在测试类中进行测试</p></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.homework.test4;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：定义一个方法 int listTest(ArrayList&lt;Integer&gt; list, Integer num)</span></span><br><span class="line"><span class="comment">    要求实现返回num在list里面第一次出现的索引，如果num没出现过返回-1。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test4</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 自行测试</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">listTest</span><span class="params">(ArrayList&lt;Integer&gt; list, Integer num)</span> &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; list.size(); i++) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//Integer类中存在一种设计模式:享元模式</span></span><br><span class="line">            <span class="comment">//提前把-128~127存储在常量池中</span></span><br><span class="line">            </span><br><span class="line">            <span class="type">Integer</span> <span class="variable">integer</span> <span class="operator">=</span> list.get(i);<span class="comment">//获取到Integer对象</span></span><br><span class="line">              </span><br><span class="line">              </span><br><span class="line">            <span class="comment">// if (integer == num) &#123;// ==  比较两个对象</span></span><br><span class="line">            <span class="comment">//针对包装类对象，使用equals比较</span></span><br><span class="line">            <span class="keyword">if</span> (integer.equals(num)) &#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="题目5">题目5</h2>
+<p>需求：</p>
+<ol type="1">
+<li><p>定义一个学生类Student，包含三个属性姓名、年龄、性别，私有成员变量,生成无参，有参构造方法，生成get/set方法。</p></li>
+<li><p>创建三个学生对象存入ArrayList集合中。</p></li>
+<li><p>找出年龄最大的学生，然后将该对象的姓名变为：小猪佩奇。</p></li>
+<li><p>遍历集合输出对象属性信息。（输出格式如：姓名：张三, 年龄：23,
+性别：男）</p></li>
+</ol>
+<p>答案：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.homework.test5;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line">    <span class="keyword">private</span> String sex;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Student</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Student</span><span class="params">(String name, <span class="type">int</span> age, String sex)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">        <span class="built_in">this</span>.sex = sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getSex</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setSex</span><span class="params">(String sex)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.sex = sex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Student&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&quot;, sex=&#x27;&quot;</span> + sex + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.itheima.homework.test5;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sun.nio.cs.StreamDecoder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    1. 定义一个学生类Student，包含三个属性姓名、年龄、性别，私有成员变量</span></span><br><span class="line"><span class="comment">        生成无参，有参构造方法，生成get/set方法。</span></span><br><span class="line"><span class="comment">    2. 创建三个学生对象存入ArrayList集合中。</span></span><br><span class="line"><span class="comment">    3. 找出年龄最大的学生，然后将该对象的姓名变为：小猪佩奇。</span></span><br><span class="line"><span class="comment">    4. 遍历集合输出对象属性信息。（输出格式如：姓名：张三, 年龄：23, 性别：男）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test5</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        ArrayList&lt;Student&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建三个学生对象存入ArrayList集合中。</span></span><br><span class="line">        <span class="type">Student</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;张三&quot;</span>, <span class="number">23</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line">        <span class="type">Student</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;李四&quot;</span>, <span class="number">30</span>, <span class="string">&quot;女&quot;</span>);</span><br><span class="line">        <span class="type">Student</span> <span class="variable">s3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;王五&quot;</span>, <span class="number">20</span>, <span class="string">&quot;男&quot;</span>);</span><br><span class="line"></span><br><span class="line">        list.add(s1);</span><br><span class="line">        list.add(s2);</span><br><span class="line">        list.add(s3);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//记录年龄最大的学生对象，在集合中的索引位置</span></span><br><span class="line">        <span class="comment">//int maxStudentIndex = 0;</span></span><br><span class="line">        <span class="type">Student</span> <span class="variable">maxAgeStudent</span> <span class="operator">=</span> list.get(<span class="number">0</span>);<span class="comment">//假设索引0下的学生年龄最大</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; list.size(); i++) &#123;</span><br><span class="line">            <span class="comment">//获取每个学生</span></span><br><span class="line">            <span class="type">Student</span> <span class="variable">s</span> <span class="operator">=</span> list.get(i);</span><br><span class="line">            <span class="comment">//比较两个学生的年龄</span></span><br><span class="line">            <span class="keyword">if</span> (s.getAge() &gt; maxAgeStudent.getAge()) &#123;</span><br><span class="line">               <span class="comment">// maxStudentIndex = i;//记录下年龄最大的学生对象在集合中的索引</span></span><br><span class="line">                maxAgeStudent = s;<span class="comment">//更新年龄最大的学生对象</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 找出年龄最大的学生，然后将该对象的姓名变为：小猪佩奇。</span></span><br><span class="line">        <span class="comment">//list.get(maxStudentIndex).setName(&quot;小猪佩奇&quot;);</span></span><br><span class="line">        maxAgeStudent.setName(<span class="string">&quot;小猪佩奇&quot;</span>) ;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Student student : list) &#123;</span><br><span class="line">            System.out.println(student);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>打印结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Student&#123;name=&#x27;张三&#x27;, age=23, sex=&#x27;男&#x27;&#125;</span><br><span class="line">Student&#123;name=&#x27;小猪佩奇&#x27;, age=30, sex=&#x27;女&#x27;&#125;</span><br><span class="line">Student&#123;name=&#x27;王五&#x27;, age=20, sex=&#x27;男&#x27;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="set集合">【Set集合】</h1>
+<h2 id="题目6">题目6</h2>
+<p>请编写main()方法，按以下要求顺序：</p>
+<ol type="1">
+<li>定义一个Set集合，并存储以下数据：刘备,关羽,张飞,刘备,张飞</li>
+<li>打印集合大小</li>
+<li>使用迭代器遍历集合，并打印每个元素</li>
+<li>使用增强for遍历集合，并打印每个元素</li>
+</ol>
+<p><strong>答案：</strong></p>
+<p>思路：Set集合具有去重效果</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.homework.test6;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    请编写main()方法，按以下要求顺序：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    1. 定义一个Set集合，并存储以下数据：刘备,关羽,张飞,刘备,张飞</span></span><br><span class="line"><span class="comment">    2. 打印集合大小</span></span><br><span class="line"><span class="comment">    3. 使用迭代器遍历集合，并打印每个元素</span></span><br><span class="line"><span class="comment">    4. 使用增强for遍历集合，并打印每个元素</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test6</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">      </span><br><span class="line">        HashSet&lt;String&gt; hs = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        hs.add(<span class="string">&quot;刘备&quot;</span>);</span><br><span class="line">        hs.add(<span class="string">&quot;关羽&quot;</span>);</span><br><span class="line">        hs.add(<span class="string">&quot;张飞&quot;</span>);</span><br><span class="line">        hs.add(<span class="string">&quot;刘备&quot;</span>);</span><br><span class="line">        hs.add(<span class="string">&quot;张飞&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        2. 打印集合大小</span></span><br><span class="line">        System.out.println(hs.size());</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;============&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        3. 使用迭代器遍历集合，并打印每个元素</span></span><br><span class="line">        Iterator&lt;String&gt; it = hs.iterator();</span><br><span class="line">        <span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> it.next();</span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;============&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        4. 使用增强for遍历集合，并打印每个元素</span></span><br><span class="line">        <span class="keyword">for</span> (String h : hs) &#123;</span><br><span class="line">            System.out.println(h);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>打印结果</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line">============</span><br><span class="line">关羽</span><br><span class="line">张飞</span><br><span class="line">刘备</span><br><span class="line">============</span><br><span class="line">关羽</span><br><span class="line">张飞</span><br><span class="line">刘备</span><br></pre></td></tr></table></figure>
+<h2 id="题目7">题目7</h2>
+<p>请按以下要求顺序编码：</p>
+<ol type="1">
+<li><p>定义学生类Student，属性：姓名、性别、年龄</p></li>
+<li><p>定义测试类，及main()方法</p></li>
+<li><p>创建三个Student对象，分别设置以下数据：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">张三,男,<span class="number">20</span></span><br><span class="line">李四,女,<span class="number">21</span></span><br><span class="line">张三,男,<span class="number">20</span></span><br></pre></td></tr></table></figure></li>
+<li><p>定义一个存储Student类型的HashSet集合，将上述三个对象存储到Set集合中，要求集合中不能存储姓名,性别,年龄相同的元素。</p></li>
+<li><p>使用增强for遍历集合，获取集合中每个Student对象，并打印属性值；</p></li>
+</ol>
+<p><strong>答案：</strong></p>
+<p>思路：自定义对象保存到HashSet集合中，需要重写equals和hashCode方法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//HashSet集合中存储的Student对象唯一（姓名、年龄、性别不能有完全相同的）</span></span><br><span class="line"><span class="comment">//在Student类中，重写：hashCode、equals方法</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>打印结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="题目8">题目8</h2>
+<p>请按以下要求顺序编码：</p>
+<ol type="1">
+<li>定义一个可以存储“整数”的LinkedHashSet对象</li>
+<li>存储以下整数: 20,30,50,10,30,20</li>
+<li>打印集合大小。为什么跟存入的数量不一致？</li>
+<li>使用增强for遍历集合，打印大于25的元素</li>
+</ol>
+<p><strong>答案：</strong></p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.homework.test7;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.LinkedHashSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    请按以下要求顺序编码：</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    1. 定义一个可以存储“整数”的LinkedHashSet对象</span></span><br><span class="line"><span class="comment">    2. 存储以下整数: 20,30,50,10,30,20</span></span><br><span class="line"><span class="comment">    3. 打印集合大小。为什么跟存入的数量不一致？</span></span><br><span class="line"><span class="comment">    4. 使用增强for遍历集合，打印大于25的元素</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test7</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"><span class="comment">//        1. 定义一个可以存储“整数”的LinkedHashSet对象</span></span><br><span class="line">        LinkedHashSet&lt;Integer&gt; lhs = <span class="keyword">new</span> <span class="title class_">LinkedHashSet</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">//        2. 存储以下整数: 20,30,50,10,30,20</span></span><br><span class="line">        lhs.add(<span class="number">20</span>);</span><br><span class="line">        lhs.add(<span class="number">30</span>);</span><br><span class="line">        lhs.add(<span class="number">50</span>);</span><br><span class="line">        lhs.add(<span class="number">10</span>);</span><br><span class="line">        lhs.add(<span class="number">30</span>);</span><br><span class="line">        lhs.add(<span class="number">20</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        3. 打印集合大小。为什么跟存入的数量不一致？</span></span><br><span class="line">        </span><br><span class="line">        System.out.println(lhs.size());</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;=============&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        4. 使用增强for遍历集合，打印大于25的元素</span></span><br><span class="line">        <span class="keyword">for</span> (Integer lh : lhs) &#123;</span><br><span class="line">            <span class="keyword">if</span>(lh &gt; <span class="number">25</span>)&#123;</span><br><span class="line">                System.out.println(lh);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>为什么打印集合数量跟存入的数量不一致？</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 因为底层是哈希表结构+链表结构 , 哈希表保证元素唯一 , 链表保证元素顺序</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Java作业</category>
+      </categories>
+      <tags>
+        <tag>作业</tag>
+        <tag>Java进阶作业</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day05 「泛型、数据结构、List集合、Set集合」作业</title>
+    <url>/2024/04/19/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day06/day06%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+      <categories>
+        <category>Java作业</category>
+      </categories>
+      <tags>
+        <tag>作业</tag>
+        <tag>Java进阶作业</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day05 泛型、数据结构、List集合、Set集合</title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day06/day06%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+      <categories>
+        <category>Java全栈</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java进阶</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day05 「泛型、数据结构、List集合、Set集合」作业</title>
+    <url>/2024/04/19/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day07/day07%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+      <categories>
+        <category>Java作业</category>
+      </categories>
+      <tags>
+        <tag>作业</tag>
+        <tag>Java进阶作业</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day07/day07%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title>Day05 「泛型、数据结构、List集合、Set集合」作业</title>
+    <url>/2024/04/19/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day08/day08%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+      <categories>
+        <category>Java作业</category>
+      </categories>
+      <tags>
+        <tag>作业</tag>
+        <tag>Java进阶作业</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day09/day09%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day08/day08%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day09/day09%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day10/day10%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day10/day10%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day11/day11%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day11/day11%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day12/day12%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day12/day12%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day13/day13%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day13/day13%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day14/day14%E4%BD%9C%E4%B8%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/04/20/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day14/day14%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
   </entry>
 </search>
