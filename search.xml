@@ -416,28 +416,6 @@ b的误差: tensor([0.7791], grad_fn=&lt;SubBackward0&gt;)</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>2023年数模国赛</title>
-    <url>/2023/10/10/Academic/%E6%AF%94%E8%B5%9B/2023%E5%B9%B4%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p>2023年刚从中语学院转到计科学院，期间陪其他专业的小伙伴们一起完成了<code>2023全国大学生数学建模竞赛</code></p>
-
-</blockquote>
-<span id="more"></span>
-<p>  说实话，当时做的时候挺累的，一个人做了很多，但伙伴们也都挺好，一直在坚持，晓红还了生病。哈哈哈，思羽话好多但心态超级好，很乐观，然后中途还搞了好一会综测审核，当时崩坏的。我呢，感觉自己不是很友好，虽然没有抱怨和说啥不好的话，但整体我觉得对晓红的态度有点不好。最最难忘的是第二天晚上在机房的靠椅上狠狠摔了一跤，当时差点哭出来（她俩在旁边睡觉，没发现），然后整整一周抬不起胳膊，感觉伤到神经了（旧伤），第二周好多了。</p>
-<p>  虽然我们只完成了A题的第一问，而且整个排版有些些潦草，但最终还是拿了个四川省三等奖，哈哈哈，奖状也发了哦~（不上传）</p>
-<hr>
-<p>PDF版本可自行下载：<a href="/academic/myPapers/数模国赛A（省三）.pdf">数模国赛.pdf</a></p>
-<p>在线浏览PDF版本：</p>
-<div class="pdf-container" data-target="/academic/myPapers/数模国赛A（省三）.pdf" data-height="800px"></div>
-]]></content>
-      <categories>
-        <category>学术</category>
-      </categories>
-      <tags>
-        <tag>数学建模</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2024年数模美赛</title>
     <url>/2024/02/06/Academic/%E6%AF%94%E8%B5%9B/2024%E5%B9%B4%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
@@ -478,6 +456,28 @@ in Python</a></p>
         <tag>因果推理</tag>
         <tag>计量经济学</tag>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2023年数模国赛</title>
+    <url>/2023/10/10/Academic/%E6%AF%94%E8%B5%9B/2023%E5%B9%B4%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>2023年刚从中语学院转到计科学院，期间陪其他专业的小伙伴们一起完成了<code>2023全国大学生数学建模竞赛</code></p>
+
+</blockquote>
+<span id="more"></span>
+<p>  说实话，当时做的时候挺累的，一个人做了很多，但伙伴们也都挺好，一直在坚持，晓红还了生病。哈哈哈，思羽话好多但心态超级好，很乐观，然后中途还搞了好一会综测审核，当时崩坏的。我呢，感觉自己不是很友好，虽然没有抱怨和说啥不好的话，但整体我觉得对晓红的态度有点不好。最最难忘的是第二天晚上在机房的靠椅上狠狠摔了一跤，当时差点哭出来（她俩在旁边睡觉，没发现），然后整整一周抬不起胳膊，感觉伤到神经了（旧伤），第二周好多了。</p>
+<p>  虽然我们只完成了A题的第一问，而且整个排版有些些潦草，但最终还是拿了个四川省三等奖，哈哈哈，奖状也发了哦~（不上传）</p>
+<hr>
+<p>PDF版本可自行下载：<a href="/academic/myPapers/数模国赛A（省三）.pdf">数模国赛.pdf</a></p>
+<p>在线浏览PDF版本：</p>
+<div class="pdf-container" data-target="/academic/myPapers/数模国赛A（省三）.pdf" data-height="800px"></div>
+]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>数学建模</tag>
       </tags>
   </entry>
   <entry>
@@ -535,6 +535,75 @@ in Python</a></p>
       </tags>
   </entry>
   <entry>
+    <title>JavaSE进阶——Day02 代码块、接口、枚举</title>
+    <url>/2024/04/01/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day02/day02_JavaSE%E8%BF%9B%E9%98%B6-%E4%BB%A3%E7%A0%81%E5%9D%97,%E6%8E%A5%E5%8F%A3,%E6%9E%9A%E4%B8%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>JavaSE进阶——Day02
+该篇主要讲解Java中的<strong>代码块</strong>、<strong>接口</strong>、<strong>枚举</strong></p>
+
+</blockquote>
+<span id="more"></span>
+<p>学习目标</p>
+<ul>
+<li><p>关键字</p>
+<ul>
+<li><p>final</p></li>
+<li><p>static</p></li>
+</ul></li>
+<li><p>代码块</p>
+<ul>
+<li><p>静态代码块</p></li>
+<li><p>构造代码块</p></li>
+<li><p>局部代码快</p></li>
+</ul></li>
+<li><p>接口</p>
+<ul>
+<li><p>接口的作用及格式</p></li>
+<li><p>接口的成员定义</p></li>
+<li><p>接口在JDK不同版本中方法的改进</p></li>
+</ul></li>
+<li><p>枚举</p>
+<ul>
+<li><p>枚举的作用及格式</p></li>
+<li><p>枚举的使用</p></li>
+<li><p>枚举的本质</p></li>
+</ul></li>
+</ul>
+<h3 id="关键字">1. 关键字</h3>
+<h4 id="final能修饰什么">1.1 final能修饰什么 ?</h4>
+<h4 id="section"></h4>
+<h4 id="final修饰的成员的特点是什么">1.2 final修饰的成员的特点是什么
+?</h4>
+<h4 id="section-1"></h4>
+<h4 id="什么时候使用static关键字">1.3 什么时候使用static关键字 ?</h4>
+<h4 id="section-2"></h4>
+<h4 id="static关键字特点及静态方法访问特点">1.4
+static关键字特点及静态方法访问特点 ?</h4>
+<h3 id="接口">2. 接口</h3>
+<h4 id="接口能解决什么问题">2.1 接口能解决什么问题 ?</h4>
+<h4 id="section-3"></h4>
+<h4 id="接口的成员能定义什么有什么特点">2.2
+接口的成员能定义什么,有什么特点 ?</h4>
+<h3 id="枚举">3. 枚举</h3>
+<h4 id="枚举能解决什么问题">3.1 枚举能解决什么问题 ?</h4>
+<h4 id="section-4"></h4>
+<h4 id="枚举常用的方式">3.2 枚举常用的方式 ?</h4>
+<h3 id="当日问题小结">4. 当日问题小结</h3>
+<h4 id="当日遇到的问题">4.1 当日遇到的问题</h4>
+<h4 id="section-5"></h4>
+<h4 id="出现问题原因">4.2 出现问题原因</h4>
+<h4 id="section-6"></h4>
+<h4 id="解决问题方案">4.3 解决问题方案</h4>
+]]></content>
+      <categories>
+        <category>Java全栈</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java进阶</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JavaSE进阶——Day03 多态、内部类</title>
     <url>/2024/04/04/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day03/day03_JavaSE%E8%BF%9B%E9%98%B6-%E5%A4%9A%E6%80%81,%E5%86%85%E9%83%A8%E7%B1%BB/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
@@ -578,6 +647,185 @@ in Python</a></p>
 <h4 id="当日遇到的问题">3.1 当日遇到的问题</h4>
 <h4 id="出现问题原因">3.2 出现问题原因</h4>
 <h4 id="解决问题方案">3.3 解决问题方案</h4>
+]]></content>
+      <categories>
+        <category>Java全栈</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>Java进阶</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaSE进阶——Day01 继承、抽象类</title>
+    <url>/2024/03/25/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day01/day01_JavaSE%E8%BF%9B%E9%98%B6-%E7%BB%A7%E6%89%BF,%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>JavaSE进阶——Day01
+该篇主要讲解Java中的<strong>继承</strong>、<strong>抽象类</strong></p>
+
+</blockquote>
+<span id="more"></span>
+<p>学习目标</p>
+<ul>
+<li><p>面向对象回顾</p></li>
+<li><p>面向对象三大特征之一-继承</p>
+<ul>
+<li><p>继承的格式</p></li>
+<li><p>Java继承的特点</p></li>
+<li><p>Java继承中成员访问特点</p></li>
+</ul></li>
+<li><p>抽象类</p>
+<ul>
+<li><p>抽象类的格式</p></li>
+<li><p>抽象类的作用</p></li>
+<li><p>抽象类的注意事项</p></li>
+</ul></li>
+<li><p>设计模式-模板方式</p></li>
+</ul>
+<h2 id="继承">1继承</h2>
+<h3 id="为什么要学习继承">1.1 为什么要学习继承 ?</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>当多个类有相同的属性和行为（非私有成员），为解决代码冗余, 提高代码复用性</span><br><span class="line"><span class="number">2.</span>继承用关键字<span class="string">&#x27;extends&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="继承能解决什么问题">1.2 继承能解决什么问题 ?</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>多个类的共有的非私有属性和行为提炼到新的类中,提高代码复用性</span><br><span class="line"><span class="number">2.</span>建立类与类之间的关系(子与父)</span><br><span class="line"><span class="number">3.</span>解决代码冗余</span><br></pre></td></tr></table></figure>
+<h3 id="继承中成员访问的特点">1.3 继承中成员访问的特点 ?</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>单一继承（可多层）</span><br><span class="line"><span class="number">2.</span>就近访问（先访问本类成员，找不到再去找父类的）</span><br><span class="line"><span class="number">3.</span>只能访问父类中的非私有成员</span><br><span class="line"><span class="number">4.</span>可使用<span class="string">&#x27;super.成员&#x27;</span>去访问父类成员，<span class="string">&#x27;this.成员&#x27;</span>访问子类成员</span><br></pre></td></tr></table></figure>
+<h3 id="方法重写与方法重载区别在于哪里">1.4
+方法重写与方法重载区别在于哪里 ?</h3>
+<p>方法重载: <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>发生在本类中, 方法名相同, 参数列表不同(类型,数量,顺序)</span><br><span class="line"><span class="number">2.</span>与返回值类型和权限修饰符无关(可相同可不同)</span><br></pre></td></tr></table></figure> 方法重写: <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>发生在继承关系中(父子类中),当子类与父类的方法一模一样的时候(参数列表和返回值),称为方法重写</span><br><span class="line"><span class="number">2.</span>子类重写的方法权限修饰符 &gt;= 父类的</span><br><span class="line"><span class="number">3.</span>方法重写是为后面的多态做铺垫的</span><br></pre></td></tr></table></figure></p>
+<h2 id="抽象类">2. 抽象类</h2>
+<h3 id="抽象类存在的意义">2.1 抽象类存在的意义 ?</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>当某个功能较为抽象, 对不类具体实现方式不一样时, 可以使用抽象方法来定义(无具体实现细节), 从而产生了抽象类作为父类</span><br><span class="line"><span class="number">2.</span>使用关键字<span class="string">&#x27;abstract&#x27;</span></span><br><span class="line">Note:</span><br><span class="line"><span class="number">1.</span>抽象类中的抽象方法需要被子类重写</span><br><span class="line"><span class="number">2.</span>抽象类不能够实例化(仅仅是当创建子类对象时, 用来初始化父类)</span><br></pre></td></tr></table></figure>
+<h3 id="抽象类使用注意事项">2.2 抽象类使用注意事项 ?</h3>
+<h2 id="设计模式难点">3. 设计模式(难点)</h2>
+<h3 id="什么是设计模式-设计模式有什么优势">3.1 什么是设计模式 ,
+设计模式有什么优势 ?</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">设计模式就是用来解决某个问题的方案</span><br><span class="line">当开发中遇到一些常见问题时候,可以用设计模式实现</span><br></pre></td></tr></table></figure>
+<h3 id="模板方法设计模式的作用-使用的方式">3.2 模板方法设计模式的作用 ,
+使用的方式 ?</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">规定好某个问题的整体框架和结构</span><br><span class="line">把确定的内容提前写成具体方法, 把不确定的内容写成抽象方法让子类重写</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="笔记">笔记</h1>
+<p>面向对象三大特征：</p>
+<ol type="1">
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ol>
+<p>学习技巧：</p>
+<h2 id="继承-1">继承</h2>
+<h3 id="问题1什么是继承">问题1：什么是继承</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">继承发生前提：当多个类中有相同的属性和行为时，把这些相同的属性和行为，抽取出来封装一个独立的类中</span><br><span class="line"></span><br><span class="line">在Java中使用继承(extends)，来继承这些封装了公共属性和行为的类（父类）</span><br><span class="line"></span><br><span class="line">继承：有父类、有子类</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">结论：让一个类(子类、派生类)继承另一个类(父类、超类、基类)</span><br></pre></td></tr></table></figure>
+<h3 id="问题2继承解决程序中的什么问题">问题2：继承解决程序中的什么问题？</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、程序中代码的复用性（重复的代码抽取出来，封装到父类中，子类继承后就可以直接使用）</span><br><span class="line">2、建立类和类之间的关系</span><br></pre></td></tr></table></figure>
+<h3 id="问题3继承怎么使用-写代码">问题3：继承怎么使用？ //写代码</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 父类&#123;</span><br><span class="line">    <span class="comment">//共性成员</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class 子类 extends 父类&#123;</span><br><span class="line">    <span class="comment">//子类可以使用父类中定义的内容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="问题4继承在使用中有使用注意细节">问题4：继承在使用中有使用注意细节</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、Java只能单一继承(不能多继承)，允许多层次继承</span><br><span class="line">2、在子类继承父类后，就直接可以父类中非私有的成员（成员变量、成员方法）</span><br><span class="line">3、在继承中，访问成员变量或成员方法的原则：就近原则（先在子类中查找，子类没有再去父类中查找）</span><br><span class="line">    super.父类中的成员变量</span><br><span class="line">    super.父类中的成员方法</span><br><span class="line">4、当父子类中存在一模一样的成员方法时，这种情况称为：方法重写</span><br><span class="line">5、在继承中，要先初始化父类对象（ 通过子类构造方法中的super()来调用父类的无参构造 ）</span><br><span class="line">   //调用父类有参构造方法： super(参数,....);</span><br></pre></td></tr></table></figure>
+<h2 id="方法的体现">方法的体现：</h2>
+<ol type="1">
+<li><h3 id="重载">重载</h3>
+<ul>
+<li>在本类中发生</li>
+<li>方法名相同</li>
+<li>方法的参数列表不同（类型不同、数量不同、顺序不同）</li>
+<li>和返回值没有任何关系</li>
+</ul></li>
+<li><h3 id="重写">重写</h3>
+<ul>
+<li>发生在父子类(继承)中</li>
+<li>子类中的方法和父类的方法一模一样</li>
+</ul></li>
+</ol>
+<h2 id="方法重写">方法重写：</h2>
+<ol type="1">
+<li>什么是方法重写</li>
+<li>方法重写解决什么问题</li>
+<li>方法重写怎么实现</li>
+<li>方法重写有什么注意细节</li>
+</ol>
+<h2 id="this关键字的使用">this关键字的使用：</h2>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//访问本类中的成员变量</span></span><br><span class="line"><span class="built_in">this</span>.成员变量名=数据值;</span><br><span class="line"></span><br><span class="line"><span class="comment">//访问本类中的成员方法</span></span><br><span class="line"><span class="built_in">this</span>.成员方法();</span><br><span class="line"></span><br><span class="line"><span class="comment">//访问本类中的构造方法（要求：只能使用某个构造方法，去调用本类中另一个构造方法）</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">ClassName</span><span class="params">()</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">ClassName</span><span class="params">(String name)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>(); <span class="comment">//调用无参构造方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>学习套路：</p>
+<ol type="1">
+<li>这个技术是什么？</li>
+<li>这个技术可以解决什么问题？ （重点）</li>
+<li>这个技术怎么使用？ （重点）</li>
+<li>这个技术在使用中的注意细节</li>
+</ol>
+<p>回顾上午内容：</p>
+<ul>
+<li><p>继承</p>
+<ul>
+<li><p>继承是什么</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">让一个类继承另一个类</span><br><span class="line">关键字：extends</span><br></pre></td></tr></table></figure></li>
+<li><p>继承可以解决什么问题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、建立类与类之间的关系：父子关系</span><br><span class="line">2、可以解决程序中代码的复用性（子类可以直接使用父类中的非私有成员）</span><br></pre></td></tr></table></figure></li>
+<li><p>继承怎么使用</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 父类&#123;</span><br><span class="line">    <span class="comment">//成员</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> class 子类 extends 父类&#123;</span><br><span class="line">    <span class="comment">//子类可以直接使用父类中的非私有成员</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>继承在使用中的注意细节</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>、Java语言只支持单一继承(不能多继承) ， 允许多层次继承</span><br><span class="line"><span class="number">2</span>、子类不能继承父类中的私有成员</span><br><span class="line"><span class="number">3</span>、当子类和父类中存在相同的成员时，访问原则：就近原则</span><br><span class="line">   <span class="built_in">super</span>.成员变量 </span><br><span class="line">   <span class="built_in">super</span>.成员方法()</span><br><span class="line">   <span class="built_in">super</span>()</span><br><span class="line">   <span class="built_in">super</span>(参数, ...) </span><br><span class="line"><span class="number">4</span>、子类对象在实例化完成之前，必须先初始化父类对象（只有父类初始化完成后子类才可以访问父类成员）</span><br><span class="line">   <span class="comment">//子类构造方法在执行时，有隐藏代码：super()  //默认调用父类中的无参构造方法    </span></span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li><p>方法重写</p>
+<ul>
+<li><p>什么是方法重写</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">当父子类中存在一模一样的非私有成员方法时，就可以称为：子类重写父类的方法（方法重写）</span><br></pre></td></tr></table></figure></li>
+<li><p>方法重写可以解决什么问题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">当父类中的方法，子类在调用时无法满足子类的要求，就可以在子类中重写父类的方法</span><br><span class="line"></span><br><span class="line">目的：</span><br><span class="line">1. 为后面学习多态准备</span><br><span class="line">2. 不愿意在起一个方法名</span><br></pre></td></tr></table></figure></li>
+<li><p>方法重写怎么使用</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 父类&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class 子类 extends 父类&#123;</span><br><span class="line">    <span class="comment">//重写方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="comment">//重新编写方法体业务代码</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>方法重写的注意细节</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、针对父类中私有方法不能重写</span><br><span class="line">2、必须和父类中的方法一模一样</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+</ul>
+<h2 id="jvm内存划分">JVM内存划分：</h2>
+<ol type="1">
+<li>栈 //方法运行在栈内存中</li>
+<li>堆 //对象存储于堆内存中</li>
+<li>方法区 //存放加载的.class文件
+//方法区有由N多个不同功能的小区域组成</li>
+<li>寄存器<br>
+</li>
+<li>本地方法区</li>
+</ol>
+<h3 id="this当前类对象引用">this：当前类对象引用</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="built_in">this</span>.成员方法()</span><br><span class="line"><span class="built_in">this</span>.成员变量 = 数据值</span><br><span class="line"><span class="built_in">this</span>() <span class="comment">//本类无参构造方法</span></span><br><span class="line"><span class="built_in">this</span>(<span class="string">&quot;字符串&quot;</span>)<span class="comment">//本类带有String类型参数的构造方法    </span></span><br></pre></td></tr></table></figure>
+<h3 id="super父类对象引用">super：父类对象引用</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="built_in">super</span>.成员方法()</span><br><span class="line"><span class="built_in">super</span>.成员变量 = 数据值</span><br><span class="line"><span class="built_in">super</span>() <span class="comment">//父类无参构造方法</span></span><br><span class="line"><span class="built_in">super</span>(<span class="string">&quot;字符串&quot;</span>)<span class="comment">//父类带有String类型参数的构造方法   </span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//父类：动物类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Animal</span>&#123;</span><br><span class="line">    <span class="comment">//抽象方法：必须使用关键字abstract修饰</span></span><br><span class="line">    <span class="comment">//抽象方法：必须书写在抽象类中</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>;<span class="comment">//在java语言中没有方法体的方法，称为：抽象方法 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="普通类">普通类:</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 类名&#123;</span><br><span class="line">    <span class="comment">//成员变量</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">public</span> 类名&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="抽象类-1">抽象类：</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 类名&#123;</span><br><span class="line">    <span class="comment">//成员变量</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">public</span> 类名&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> 抽象方法();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>抽象类，不能实例化（不能创建对象）
+<ul>
+<li>疑问：既然不能创建对象了，为什么还要有构造方法？
+<ul>
+<li>抽象类通常是用于父类，创建子类对象时，需要先初始化父类（抽象方法中构造方法的作用就是用于父类初始化使用）</li>
+</ul></li>
+</ul></li>
+<li>抽象类中的抽象方法，必须由子类重写</li>
+</ul>
+<h2 id="什么是设计模式">什么是设计模式？</h2>
+<ul>
+<li>设计模式，就是一种解决方案（解决开发中某个问题的方案）</li>
+</ul>
+<p>设计模式解决什么问题？</p>
+<ul>
+<li>在开发中一些常见问题，可以使用设计模式解决</li>
+</ul>
+<h3 id="模板设计模式">模板设计模式：</h3>
+<ul>
+<li>模板：就一个固定的格式</li>
+<li>模板设计：把确定的内容，提前准备好，把不确定的内容，定义为抽象方法（由子类重写）</li>
+</ul>
+<p>创建对象：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Student</span> <span class="variable">stu</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>(); <span class="comment">//有名字的对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对象名： stu</span></span><br></pre></td></tr></table></figure>
+<p>匿名对象：</p>
+<ul>
+<li>没有名字的对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Student</span>(); <span class="comment">//创建的对象没有名字</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;张三&quot;</span>,<span class="number">23</span>);</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Java全栈</category>
@@ -990,336 +1238,171 @@ in Python</a></p>
 
 </blockquote>
 <span id="more"></span>
-<p><strong>整体框架</strong></p>
-<p>Collection（接口）</p>
-<ul>
-<li><p>List（接口）</p>
-<ul>
-<li><p>特点：</p>
-<ol type="1">
-<li>有索引</li>
-<li>存取元素有序</li>
-<li>允许存储重复元素</li>
-</ol></li>
-<li><p>常用子类：</p>
-<ul>
-<li><p>ArrayList</p>
-<ul>
-<li>特性：
-<ol type="1">
-<li>底层使用数组结构</li>
-<li>查询快、增删慢</li>
-<li>具有List集合中的特点</li>
-</ol></li>
-</ul></li>
-<li><p>LinkedList</p>
-<ul>
-<li><p>特性:</p>
-<ol type="1">
-<li><p>底层使用双向链表结构（有头有尾）</p></li>
-<li><p>增删快 、查询慢</p></li>
-<li><p>具有自己的特有方法（围绕着链表的头和尾设计）</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Object <span class="title function_">getFirst</span><span class="params">()</span>;</span><br><span class="line">Object <span class="title function_">getLast</span><span class="params">()</span>;    </span><br></pre></td></tr></table></figure></li>
-</ol></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><p>Set（接口）</p>
-<ul>
-<li>特点：
-<ol type="1">
-<li>没有索引</li>
-<li>存取元素不保证顺序</li>
-<li>不允许存储重复元素</li>
-</ol></li>
-<li>常用子类：
-<ul>
-<li>HashSet
-<ul>
-<li>特性：
-<ol type="1">
-<li>底层使用哈希表结构（哈希表去重原理：存储的元素必须重写hashCode、equals方法）</li>
-<li>JDK1.8底层优化了哈希表（当链表长度超出8，就自动转为红黑树）</li>
-</ol></li>
-</ul></li>
-<li>LinkedHashSet
-<ul>
-<li>特性：
-<ol type="1">
-<li>底层使用哈希表+链表的结构</li>
-<li>哈希表用来去重、链表用来保证存取元素的顺序</li>
-</ol></li>
-</ul></li>
-<li>TreeSet（今日续）
-<ul>
-<li>特性：
-<ol type="1">
-<li>底层使用树(红黑树)结构</li>
-<li>不能存储重复元素</li>
-<li>不具备索引</li>
-<li>存储的元素会按照规则进行排序</li>
-</ol></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul>
-<p>泛型：</p>
+<h2 id="整体框架"><strong>整体框架</strong></h2>
+<h3 id="collection接口">Collection（接口）</h3>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/Collection(%E6%8E%A5%E5%8F%A3).png" alt="Collection(接口)">
+<figcaption aria-hidden="true">Collection(接口)</figcaption>
+</figure>
+<h3 id="泛型">泛型：</h3>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在开发中使用泛型最多的就是：创建集合时使用泛型约束所存储元素的类型</span></span><br><span class="line">List&lt;Student&gt; studentList = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br></pre></td></tr></table></figure>
 <hr>
 <h2 id="set集合续">Set集合（续）</h2>
 <h3 id="treeset">TreeSet</h3>
+<h4 id="知识点">知识点：</h4>
+<div class="note primary"><ul>
+<li>具有对所存储元素进行排序的功能</li>
+<li>TreeSet集合存储：String、Interger、Double、Character时，JDK已经默认实现了<code>java.lang.Comparable</code>接口（即自带自然排序）</li>
+<li>TreeSet集合存储：自定义类型（自己写的）
+<ul>
+<li>必须保证自定义类型有实现<code>java.lang.Comparable</code>接口，并重写<code>CompareTo</code>方法</li>
+<li>如果自定义类型未实现该接口，在存储到TreeSet集合中时，会引发异常</li>
+</ul></li>
+</ul>
+</div>
+<h4 id="compareto方法"><code>compareTo</code>方法：</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//比较大小：  0表示相同  、 负数表示小    正数表示大</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(E e)</span>&#123; </span><br><span class="line">    自然排序规则</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//返回值有三种： 正数 、 负数 、 0  （底层红黑树需要）</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="案例">案例：</h4>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 00:07</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> TreeSet集合</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeSetDemo2</span> &#123;</span><br><span class="line">    <span class="comment">//使用TreeSet集合存储自定义对象</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建集合对象</span></span><br><span class="line">        TreeSet&lt;Student&gt; set = <span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        set.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Ethan&quot;</span>, <span class="number">21</span>));</span><br><span class="line">        set.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Qiu&quot;</span>, <span class="number">21</span>));</span><br><span class="line">        set.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Liu&quot;</span>, <span class="number">21</span>));</span><br><span class="line">        set.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Qiu&quot;</span>, <span class="number">20</span>));</span><br><span class="line">        set.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Qiu&quot;</span>, <span class="number">20</span>)); <span class="comment">//这种匿名对象在这也会去重</span></span><br><span class="line">        set.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Qiu&quot;</span>, <span class="number">18</span>));</span><br><span class="line">        set.add(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;qiu&quot;</span>, <span class="number">22</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Student student : set) &#123;</span><br><span class="line">            System.out.println(student);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> <span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;Student&gt;&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Student &#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Student</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Student</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(Student stu)</span> &#123;</span><br><span class="line">        <span class="comment">//先按照姓名排序,姓名相同再按照年龄排序</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//this: 当前对象</span></span><br><span class="line">        <span class="comment">//stu: 传递过来的对象</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//String类本身实现Comparable接口, 并重写了compareTo方法</span></span><br><span class="line">        <span class="comment">//即: String类自带自然排序</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="built_in">this</span>.name.compareTo(stu.name);</span><br><span class="line">        <span class="keyword">if</span> (result==<span class="number">0</span>)&#123;</span><br><span class="line">            result = <span class="built_in">this</span>.age - stu.age;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(Student2 student)</span> &#123;</span><br><span class="line">    <span class="comment">//先按照age排序,age相同再按照name排序</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//this: 当前对象</span></span><br><span class="line">    <span class="comment">//stu: 传递过来的对象</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//String类本身实现Comparable接口, 并重写了compareTo方法</span></span><br><span class="line">    <span class="comment">//即: String类自带自然排序</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="built_in">this</span>.age - student.age;</span><br><span class="line">    <span class="keyword">if</span> (res == <span class="number">0</span>) &#123;</span><br><span class="line">        res = <span class="built_in">this</span>.name.compareTo(student.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>更换排序方案：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compareTo</span><span class="params">(Student2 student)</span> &#123;</span><br><span class="line">    <span class="comment">//先按照age排序,age相同再按照name排序</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//this: 当前对象</span></span><br><span class="line">    <span class="comment">//stu: 传递过来的对象</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//String类本身实现Comparable接口, 并重写了compareTo方法</span></span><br><span class="line">    <span class="comment">//即: String类自带自然排序</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="built_in">this</span>.age - student.age;</span><br><span class="line">    <span class="keyword">if</span> (res == <span class="number">0</span>) &#123;</span><br><span class="line">        res = <span class="built_in">this</span>.name.compareTo(student.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Java全栈</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Java进阶</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaSE进阶——Day02 代码块、接口、枚举</title>
-    <url>/2024/04/01/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day02/day02_JavaSE%E8%BF%9B%E9%98%B6-%E4%BB%A3%E7%A0%81%E5%9D%97,%E6%8E%A5%E5%8F%A3,%E6%9E%9A%E4%B8%BE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p>JavaSE进阶——Day02
-该篇主要讲解Java中的<strong>代码块</strong>、<strong>接口</strong>、<strong>枚举</strong></p>
-
+<h2 id="二叉树">二叉树</h2>
+<h3 id="知识点-1">知识点</h3>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/OIP.jpeg" alt="javascript 二叉树(Trees)算法与说明_二叉树算法详解 js-CSDN博客">
+<figcaption aria-hidden="true">javascript
+二叉树(Trees)算法与说明_二叉树算法详解 js-CSDN博客</figcaption>
+</figure>
+<div class="note primary"><ul>
+<li>以根节点为坐标，小于根节点的数据存储在左边，大于根节点的数据存储在右边</li>
+</ul>
+</div>
+<h3 id="二叉查找树">二叉查找树</h3>
+<ul>
+<li>小左大右</li>
+</ul>
+<h3 id="平衡二叉树">平衡二叉树</h3>
+<ul>
+<li><p>树子节点之间的深度差不大于1</p></li>
+<li><p>使用旋转算法</p></li>
+</ul>
+<h3 id="红黑树">红黑树</h3>
+<p>（补充）</p>
+<h4 id="比较器">比较器</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 15:24</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> Comparator接口实现比较器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeSetDemo4</span> &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    按照字符串长度从大到小排序, 长度相同按照字母顺序排序</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//在创建TreeSet集合时, 制定了排序规则</span></span><br><span class="line">        TreeSet&lt;String&gt; set = <span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;(<span class="keyword">new</span> <span class="title class_">MyComparator</span>());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//String类本身具有自然排序规则</span></span><br><span class="line">        set.add(<span class="string">&quot;asdfvd&quot;</span>);</span><br><span class="line">        set.add(<span class="string">&quot;word&quot;</span>);</span><br><span class="line">        set.add(<span class="string">&quot;implenemts&quot;</span>);</span><br><span class="line">        set.add(<span class="string">&quot;myblog&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(set);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建子类, 实现Comparator接口</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MyComparator</span> <span class="keyword">implements</span> <span class="title class_">Comparator</span>&lt;String&gt;&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//重写compare方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String str1, String str2)</span> &#123;</span><br><span class="line">        <span class="comment">//str1: 要存储的字符串数据</span></span><br><span class="line">        <span class="comment">//str2: 已存在的字符串数据</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> str2.length() - str1.length();</span><br><span class="line">        <span class="keyword">if</span> (res == <span class="number">0</span>)&#123;</span><br><span class="line">            res = str1.compareTo(str2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>使用匿名内部类实现比较器</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeSet;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 15:44</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> Comparator接口: 匿名内部类自定义排序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeSetDemo5</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//按照年龄从小到大排序, 年龄相同,按照名字顺序从小到大排序</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建TreeSet集合，并指定比较器排序规则</span></span><br><span class="line">        <span class="comment">//无需再构建子类继承和重写,直接使用匿名内部类重写</span></span><br><span class="line">        TreeSet&lt;Teacher&gt; teacherTreeSet = <span class="keyword">new</span> <span class="title class_">TreeSet</span>&lt;&gt;(<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;Teacher&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Teacher teacher1, Teacher teacher2)</span> &#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> teacher1.getAge() - teacher2.getAge();</span><br><span class="line">                <span class="keyword">if</span> (res == <span class="number">0</span>) &#123;</span><br><span class="line">                    res = teacher1.getName().compareTo(teacher2.getName());</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> res;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        teacherTreeSet.add(<span class="keyword">new</span> <span class="title class_">Teacher</span>(<span class="string">&quot;ethan&quot;</span>, <span class="number">21</span>));</span><br><span class="line">        teacherTreeSet.add(<span class="keyword">new</span> <span class="title class_">Teacher</span>(<span class="string">&quot;ethan&quot;</span>, <span class="number">25</span>));</span><br><span class="line">        teacherTreeSet.add(<span class="keyword">new</span> <span class="title class_">Teacher</span>(<span class="string">&quot;qiu&quot;</span>, <span class="number">21</span>));</span><br><span class="line">        teacherTreeSet.add(<span class="keyword">new</span> <span class="title class_">Teacher</span>(<span class="string">&quot;qiu&quot;</span>, <span class="number">22</span>));</span><br><span class="line">        teacherTreeSet.add(<span class="keyword">new</span> <span class="title class_">Teacher</span>(<span class="string">&quot;ethan&quot;</span>, <span class="number">25</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (Teacher teacher : teacherTreeSet) &#123;</span><br><span class="line">            System.out.println(teacher);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Teacher</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Teacher&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Teacher</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Teacher</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="可变参数">可变参数</h2>
+<ul>
+<li>可变参数只能放在参数列表最后面</li>
+<li>可变参数本质就是数组, 所以方法重载上不能够用数组格式写相同的,
+如下面的int... 就不能再出现int[]</li>
+</ul>
+<h3 id="基本使用">基本使用</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.genericity.changeable_param;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 16:21</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 可变参数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ChangeParamDemo1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> numSum(<span class="string">&quot;nums&quot;</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>);</span><br><span class="line">        System.out.println(res);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//可变参数只能放在参数列表最后面</span></span><br><span class="line">    <span class="comment">//可变参数本质就是数组, 所以方法重载上不能够用数组格式写相同的, 如下面的int... 就不能再出现int[]</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">numSum</span><span class="params">(String sNum, <span class="type">int</span>... nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//把可变参数当作数组使用</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="带有泛型的可变参数">带有泛型的可变参数</h3>
+<p>例如<code>Collections类</code>的<code>addAll方法</code></p>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240421164429521.png" alt="image-20240421164429521">
+<figcaption aria-hidden="true">image-20240421164429521</figcaption>
+</figure>
+<p>案例代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.genericity.changeable_param;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 16:35</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 带有泛型的可变参数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//生成List集合对象</span></span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//带有泛型&lt;String&gt;的可变参数</span></span><br><span class="line">        Collections.addAll(list, <span class="string">&quot;Java&quot;</span>, <span class="string">&quot;MySql&quot;</span>, <span class="string">&quot;Ethan&quot;</span>, <span class="string">&quot;Qiu&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(list); <span class="comment">//[Java, MySql, Ethan, Qiu]</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="排序查找算法">排序查找算法</h2>
+<h3 id="冒泡排序">冒泡排序</h3>
+<div class="note primary"><ul>
+<li><p>原理：相邻的数据两两比较，小的放前，大的放后</p></li>
+<li><p>轮次：长度-1</p></li>
+<li><p>每轮：每轮减少一个（已排序/已冒泡的）</p></li>
+</ul>
+</div>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.genericity.sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 16:57</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 冒泡排序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BubbSort1</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用泛型可变参数添加集合数据</span></span><br><span class="line"><span class="comment">//        Collections.addAll(list, 4, 6, 2, 8, 1, 5, 9, 4, 3);</span></span><br><span class="line">        Collections.addAll(list, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">3</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;排序前:&quot;</span> + list);</span><br><span class="line">        bullSort(list);</span><br><span class="line">        System.out.println(<span class="string">&quot;排序后:&quot;</span> + list);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//冒泡排序算法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> List&lt;Integer&gt; <span class="title function_">bullSort</span><span class="params">(List&lt;Integer&gt; list)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (list.size() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> list;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; list.size() - <span class="number">1</span>; i++) &#123; <span class="comment">//轮次</span></span><br><span class="line">            <span class="comment">//优化</span></span><br><span class="line">            <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">false</span>; <span class="comment">//记录排序后状态</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; list.size() - i - <span class="number">1</span>; j++) &#123; <span class="comment">//每轮比较对象</span></span><br><span class="line">                <span class="keyword">if</span> (list.get(j) &gt; list.get(j + <span class="number">1</span>)) &#123; <span class="comment">//相邻数据进行比较</span></span><br><span class="line">                    <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> list.get(j + <span class="number">1</span>);</span><br><span class="line">                    list.set(j + <span class="number">1</span>, list.get(j));</span><br><span class="line">                    list.set(j, temp);</span><br><span class="line">                    flag = <span class="literal">true</span>; <span class="comment">//说明发生过变化</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 如果一轮比较中没有发生交换，说明已经排序完成</span></span><br><span class="line">            <span class="keyword">if</span> (!flag) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="选择排序">选择排序</h3>
+<div class="note primary"><ul>
+<li><p>原理：拿当前元素与其后面的所有元素进行比较，如果有比当前元素小的，就跟当前元素交换位置，直到所有元素比较完</p></li>
+<li><p>轮次：长度-1</p></li>
+<li><p>每轮：从当前元素之后一个开始，每轮减少一个即前一轮已排好的</p></li>
+</ul>
+</div>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.genericity.sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 17:34</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 选择排序</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SelectSort</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] nums = &#123;<span class="number">2</span>, <span class="number">6</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">7</span>&#125;;</span><br><span class="line">        System.out.println(<span class="string">&quot;排序前:&quot;</span> + Arrays.toString(nums));</span><br><span class="line">        selectSort(nums);</span><br><span class="line">        System.out.println(<span class="string">&quot;排序后:&quot;</span> + Arrays.toString(nums));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span>[] selectSort(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++) &#123; <span class="comment">//轮次</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>; j &lt; nums.length; j++) &#123; <span class="comment">//与后面所有元素比</span></span><br><span class="line">                    <span class="keyword">if</span> (nums[i] &gt; nums[j]) &#123;</span><br><span class="line">                        <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> nums[j];</span><br><span class="line">                        nums[j] = nums[i];</span><br><span class="line">                        nums[i] = temp;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="二分查找">二分查找</h3>
+<div class="note primary"><ul>
+<li><p>原理：定义头和尾（小--&gt;大），每次选择中值并与头尾比较，中值小换头、大换尾，直到头尾相交</p></li>
+<li><p>前提：数组元素有序</p></li>
+<li><p>每轮：元素减半</p></li>
+</ul>
+</div>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.genericity.sort;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 17:51</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 二分查找</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">BinarySearch</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//前提是数组有序</span></span><br><span class="line">        <span class="type">int</span>[] nums = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>&#125;;</span><br><span class="line">        System.out.println(binarySearch(nums, <span class="number">6</span>));</span><br><span class="line">        System.out.println(binarySearch(nums, <span class="number">4</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">binarySearch</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> num)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> arr.length - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (left + right) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (left &lt;= right) &#123; <span class="comment">//查找非终止条件</span></span><br><span class="line">            <span class="keyword">if</span> (arr[mid] &gt; num) &#123;</span><br><span class="line">                right = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (arr[mid] &lt; num) &#123;</span><br><span class="line">                left = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">            mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">//找不到返回-1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="map结合">Map结合</h2>
+<h3 id="map集合的特点">map集合的特点：</h3>
+<ol type="1">
+<li>可以存储两个元素（键值对元素）</li>
+<li>key元素不能重复， value元素允许重复</li>
+<li>一个key元素只能对应一个value元素（一一对应）//通过key可以找到value</li>
+<li>存取元素不保证顺序</li>
+<li>没有索引</li>
+</ol>
+<h3 id="java.util.map接口">java.util.Map（接口）</h3>
+<ul>
+<li>HashMap：底层使用哈希表</li>
+<li>LinkedHashMap：底层使用哈希表+链表</li>
+<li>TreeMap：底层使用红黑树</li>
+</ul>
+<h3 id="map集合遍历方式">Map集合遍历方式：</h3>
+<p>Map集合不能直接遍历（只能间接性实现遍历操作）</p>
+<ol type="1">
+<li><p>键找值</p>
+<ul>
+<li>获取Map集合中所有的key元素，遍历所有的key元素，通过key元素找到对应的value元素</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Set  存储所有key的Set集合对象 =  map集合.keySet();</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.HashSet;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 19:11</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 遍历键去找值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MapDemo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建Map集合对象</span></span><br><span class="line">        Map&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加集合中的元素</span></span><br><span class="line">        map.put(<span class="string">&quot;爱辉&quot;</span>, <span class="string">&quot;珠珠&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;小刚&quot;</span>, <span class="string">&quot;小卢&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;小谭&quot;</span>, <span class="string">&quot;不认识&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;阿子&quot;</span>, <span class="string">&quot;没有&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历键去找值</span></span><br><span class="line">        Set&lt;String&gt; keys = map.keySet();  <span class="comment">// 获取集合所有key</span></span><br><span class="line">        <span class="keyword">for</span> (String key : keys) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Key=&quot;</span> + key + <span class="string">&quot;\t Values=&quot;</span> + map.get(key) <span class="comment">/* 键找值 */</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>键值对</p>
+<ul>
+<li>获取Map集合中所有的Map.Entry，
+遍历所有的Map.Entry，通过Entry中的API方法获取到key、value</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Set&lt;Map.Entry&gt;  存储所有键值对对象的Set集合对象 =  map集合.entrySet();</span><br><span class="line"></span><br><span class="line">Map.Entry：</span><br><span class="line">    Object  <span class="title function_">getKey</span><span class="params">()</span></span><br><span class="line">    Object  <span class="title function_">getValue</span><span class="params">()</span></span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 19:11</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 键值对找键值</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MapDemo3</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建Map集合对象</span></span><br><span class="line">        Map&lt;String, String&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加集合中的元素</span></span><br><span class="line">        map.put(<span class="string">&quot;爱辉&quot;</span>, <span class="string">&quot;珠珠&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;小刚&quot;</span>, <span class="string">&quot;小卢&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;小谭&quot;</span>, <span class="string">&quot;不认识&quot;</span>);</span><br><span class="line">        map.put(<span class="string">&quot;阿子&quot;</span>, <span class="string">&quot;没有&quot;</span>);</span><br><span class="line">				</span><br><span class="line">       <span class="comment">//获取所有的键值对对象</span></span><br><span class="line">        Set&lt;Map.Entry&lt;String, String&gt;&gt; set = map.entrySet();</span><br><span class="line">       <span class="comment">//遍历每个键值对对象并获取键和值</span></span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;String, String&gt; stringStringEntry : set) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;keys=&quot;</span> + stringStringEntry.getKey() +<span class="string">&quot;\t&quot;</span> +</span><br><span class="line">                               <span class="string">&quot;values=&quot;</span> + stringStringEntry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="hashmap存储自定义对象key">HashMap存储自定义对象（key）</h3>
+<div class="note primary"><p>在Map集合中当key存储的是自定义对象时，要保证对象存储<strong>数据的唯一性</strong>，需要：<span id="inline-purple">自定义对象中重写hashCode、equals方法 </span></p>
+</div>
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 19:41</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> HashMap存储自定义对象（key）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MapDemo4</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建Map集合对象(存储自定义对象)</span></span><br><span class="line">        Map&lt;Student, String&gt; studentMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        studentMap.put(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Ethan&quot;</span>, <span class="number">21</span>), <span class="string">&quot;甘肃&quot;</span>);</span><br><span class="line">        studentMap.put(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;QiuZhu&quot;</span>, <span class="number">21</span>), <span class="string">&quot;广西&quot;</span>);</span><br><span class="line">        studentMap.put(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Ethan&quot;</span>, <span class="number">21</span>), <span class="string">&quot;广西&quot;</span>); <span class="comment">//去重后这里相当于修改</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用Map.Entry获取键值对对象</span></span><br><span class="line">        Set&lt;Map.Entry&lt;Student, String&gt;&gt; entries = studentMap.entrySet();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历键值对对象</span></span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Student, String&gt; entry : entries) &#123;</span><br><span class="line">            System.out.println(entry.getKey() + <span class="string">&quot;\tPlace--&quot;</span> + entry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//为了去重,我们还需要重写HashCode和equals方法</span></span><br><span class="line">        <span class="comment">// Student&#123;name=&#x27;Ethan&#x27;, age=21&#125;	Place--广西</span></span><br><span class="line">        <span class="comment">// Student&#123;name=&#x27;QiuZhu&#x27;, age=21&#125;	Place--广西</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Student</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span> == o) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (o == <span class="literal">null</span> || getClass() != o.getClass()) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="type">Student</span> <span class="variable">student</span> <span class="operator">=</span> (Student) o;</span><br><span class="line">        <span class="keyword">return</span> age == student.age &amp;&amp; Objects.equals(name, student.name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> Objects.hash(name, age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Student&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">getName</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getAge</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setAge</span><span class="params">(<span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Student</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">        <span class="built_in">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Student</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="linkedhashmap集合">LinkedHashMap集合</h3>
+<ul>
+<li>有序：链表</li>
+<li>去重：Hash</li>
+</ul>
+<p>代码略</p>
+<h3 id="treemap集合">TreeMap集合</h3>
+<div class="note primary"><ul>
+<li>特点：存储的key元素，会按照指定规则排序
+<ul>
+<li>排序方式：
+<ol type="1">
+<li>自然排序： 元素自身实现Comparable接口</li>
+<li>比较器排序：<span id="inline-purple">在创建集合对象时</span>，指定比较器（<font color="red">需要重写Comparator接口的compare方法</font>）</li>
+</ol></li>
+</ul></li>
+</ul>
+</div>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">TreeMap&lt;String,String&gt; map = <span class="keyword">new</span> <span class="title class_">TreeMap</span>&lt;&gt;(); <span class="comment">//String类要具备自然排序</span></span><br><span class="line">TreeMap&lt;Student,String&gt; map = <span class="keyword">new</span> <span class="title class_">TreeMap</span>&lt;&gt;();<span class="comment">//Student类要具备自然排序</span></span><br><span class="line"></span><br><span class="line">TreeMap&lt;Student,String&gt; map = <span class="keyword">new</span> <span class="title class_">TreeMap</span>&lt;&gt;( Comparator对象 );<span class="comment">//指定比较器对象 </span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240421204029945.png" alt="image-20240421204029945">
+<figcaption aria-hidden="true">image-20240421204029945</figcaption>
+</figure>
 </blockquote>
-<span id="more"></span>
-<p>学习目标</p>
-<ul>
-<li><p>关键字</p>
-<ul>
-<li><p>final</p></li>
-<li><p>static</p></li>
-</ul></li>
-<li><p>代码块</p>
-<ul>
-<li><p>静态代码块</p></li>
-<li><p>构造代码块</p></li>
-<li><p>局部代码快</p></li>
-</ul></li>
-<li><p>接口</p>
-<ul>
-<li><p>接口的作用及格式</p></li>
-<li><p>接口的成员定义</p></li>
-<li><p>接口在JDK不同版本中方法的改进</p></li>
-</ul></li>
-<li><p>枚举</p>
-<ul>
-<li><p>枚举的作用及格式</p></li>
-<li><p>枚举的使用</p></li>
-<li><p>枚举的本质</p></li>
-</ul></li>
-</ul>
-<h3 id="关键字">1. 关键字</h3>
-<h4 id="final能修饰什么">1.1 final能修饰什么 ?</h4>
-<h4 id="section"></h4>
-<h4 id="final修饰的成员的特点是什么">1.2 final修饰的成员的特点是什么
-?</h4>
-<h4 id="section-1"></h4>
-<h4 id="什么时候使用static关键字">1.3 什么时候使用static关键字 ?</h4>
-<h4 id="section-2"></h4>
-<h4 id="static关键字特点及静态方法访问特点">1.4
-static关键字特点及静态方法访问特点 ?</h4>
-<h3 id="接口">2. 接口</h3>
-<h4 id="接口能解决什么问题">2.1 接口能解决什么问题 ?</h4>
-<h4 id="section-3"></h4>
-<h4 id="接口的成员能定义什么有什么特点">2.2
-接口的成员能定义什么,有什么特点 ?</h4>
-<h3 id="枚举">3. 枚举</h3>
-<h4 id="枚举能解决什么问题">3.1 枚举能解决什么问题 ?</h4>
-<h4 id="section-4"></h4>
-<h4 id="枚举常用的方式">3.2 枚举常用的方式 ?</h4>
-<h3 id="当日问题小结">4. 当日问题小结</h3>
-<h4 id="当日遇到的问题">4.1 当日遇到的问题</h4>
-<h4 id="section-5"></h4>
-<h4 id="出现问题原因">4.2 出现问题原因</h4>
-<h4 id="section-6"></h4>
-<h4 id="解决问题方案">4.3 解决问题方案</h4>
-]]></content>
-      <categories>
-        <category>Java全栈</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>Java进阶</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JavaSE进阶——Day01 继承、抽象类</title>
-    <url>/2024/03/25/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day01/day01_JavaSE%E8%BF%9B%E9%98%B6-%E7%BB%A7%E6%89%BF,%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p>JavaSE进阶——Day01
-该篇主要讲解Java中的<strong>继承</strong>、<strong>抽象类</strong></p>
-
-</blockquote>
-<span id="more"></span>
-<p>学习目标</p>
-<ul>
-<li><p>面向对象回顾</p></li>
-<li><p>面向对象三大特征之一-继承</p>
-<ul>
-<li><p>继承的格式</p></li>
-<li><p>Java继承的特点</p></li>
-<li><p>Java继承中成员访问特点</p></li>
-</ul></li>
-<li><p>抽象类</p>
-<ul>
-<li><p>抽象类的格式</p></li>
-<li><p>抽象类的作用</p></li>
-<li><p>抽象类的注意事项</p></li>
-</ul></li>
-<li><p>设计模式-模板方式</p></li>
-</ul>
-<h2 id="继承">1继承</h2>
-<h3 id="为什么要学习继承">1.1 为什么要学习继承 ?</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>当多个类有相同的属性和行为（非私有成员），为解决代码冗余, 提高代码复用性</span><br><span class="line"><span class="number">2.</span>继承用关键字<span class="string">&#x27;extends&#x27;</span></span><br></pre></td></tr></table></figure>
-<h3 id="继承能解决什么问题">1.2 继承能解决什么问题 ?</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>多个类的共有的非私有属性和行为提炼到新的类中,提高代码复用性</span><br><span class="line"><span class="number">2.</span>建立类与类之间的关系(子与父)</span><br><span class="line"><span class="number">3.</span>解决代码冗余</span><br></pre></td></tr></table></figure>
-<h3 id="继承中成员访问的特点">1.3 继承中成员访问的特点 ?</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>单一继承（可多层）</span><br><span class="line"><span class="number">2.</span>就近访问（先访问本类成员，找不到再去找父类的）</span><br><span class="line"><span class="number">3.</span>只能访问父类中的非私有成员</span><br><span class="line"><span class="number">4.</span>可使用<span class="string">&#x27;super.成员&#x27;</span>去访问父类成员，<span class="string">&#x27;this.成员&#x27;</span>访问子类成员</span><br></pre></td></tr></table></figure>
-<h3 id="方法重写与方法重载区别在于哪里">1.4
-方法重写与方法重载区别在于哪里 ?</h3>
-<p>方法重载: <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>发生在本类中, 方法名相同, 参数列表不同(类型,数量,顺序)</span><br><span class="line"><span class="number">2.</span>与返回值类型和权限修饰符无关(可相同可不同)</span><br></pre></td></tr></table></figure> 方法重写: <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>发生在继承关系中(父子类中),当子类与父类的方法一模一样的时候(参数列表和返回值),称为方法重写</span><br><span class="line"><span class="number">2.</span>子类重写的方法权限修饰符 &gt;= 父类的</span><br><span class="line"><span class="number">3.</span>方法重写是为后面的多态做铺垫的</span><br></pre></td></tr></table></figure></p>
-<h2 id="抽象类">2. 抽象类</h2>
-<h3 id="抽象类存在的意义">2.1 抽象类存在的意义 ?</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1.</span>当某个功能较为抽象, 对不类具体实现方式不一样时, 可以使用抽象方法来定义(无具体实现细节), 从而产生了抽象类作为父类</span><br><span class="line"><span class="number">2.</span>使用关键字<span class="string">&#x27;abstract&#x27;</span></span><br><span class="line">Note:</span><br><span class="line"><span class="number">1.</span>抽象类中的抽象方法需要被子类重写</span><br><span class="line"><span class="number">2.</span>抽象类不能够实例化(仅仅是当创建子类对象时, 用来初始化父类)</span><br></pre></td></tr></table></figure>
-<h3 id="抽象类使用注意事项">2.2 抽象类使用注意事项 ?</h3>
-<h2 id="设计模式难点">3. 设计模式(难点)</h2>
-<h3 id="什么是设计模式-设计模式有什么优势">3.1 什么是设计模式 ,
-设计模式有什么优势 ?</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">设计模式就是用来解决某个问题的方案</span><br><span class="line">当开发中遇到一些常见问题时候,可以用设计模式实现</span><br></pre></td></tr></table></figure>
-<h3 id="模板方法设计模式的作用-使用的方式">3.2 模板方法设计模式的作用 ,
-使用的方式 ?</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">规定好某个问题的整体框架和结构</span><br><span class="line">把确定的内容提前写成具体方法, 把不确定的内容写成抽象方法让子类重写</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="笔记">笔记</h1>
-<p>面向对象三大特征：</p>
-<ol type="1">
-<li>封装</li>
-<li>继承</li>
-<li>多态</li>
-</ol>
-<p>学习技巧：</p>
-<h2 id="继承-1">继承</h2>
-<h3 id="问题1什么是继承">问题1：什么是继承</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">继承发生前提：当多个类中有相同的属性和行为时，把这些相同的属性和行为，抽取出来封装一个独立的类中</span><br><span class="line"></span><br><span class="line">在Java中使用继承(extends)，来继承这些封装了公共属性和行为的类（父类）</span><br><span class="line"></span><br><span class="line">继承：有父类、有子类</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">结论：让一个类(子类、派生类)继承另一个类(父类、超类、基类)</span><br></pre></td></tr></table></figure>
-<h3 id="问题2继承解决程序中的什么问题">问题2：继承解决程序中的什么问题？</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、程序中代码的复用性（重复的代码抽取出来，封装到父类中，子类继承后就可以直接使用）</span><br><span class="line">2、建立类和类之间的关系</span><br></pre></td></tr></table></figure>
-<h3 id="问题3继承怎么使用-写代码">问题3：继承怎么使用？ //写代码</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 父类&#123;</span><br><span class="line">    <span class="comment">//共性成员</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class 子类 extends 父类&#123;</span><br><span class="line">    <span class="comment">//子类可以使用父类中定义的内容</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="问题4继承在使用中有使用注意细节">问题4：继承在使用中有使用注意细节</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、Java只能单一继承(不能多继承)，允许多层次继承</span><br><span class="line">2、在子类继承父类后，就直接可以父类中非私有的成员（成员变量、成员方法）</span><br><span class="line">3、在继承中，访问成员变量或成员方法的原则：就近原则（先在子类中查找，子类没有再去父类中查找）</span><br><span class="line">    super.父类中的成员变量</span><br><span class="line">    super.父类中的成员方法</span><br><span class="line">4、当父子类中存在一模一样的成员方法时，这种情况称为：方法重写</span><br><span class="line">5、在继承中，要先初始化父类对象（ 通过子类构造方法中的super()来调用父类的无参构造 ）</span><br><span class="line">   //调用父类有参构造方法： super(参数,....);</span><br></pre></td></tr></table></figure>
-<h2 id="方法的体现">方法的体现：</h2>
-<ol type="1">
-<li><h3 id="重载">重载</h3>
-<ul>
-<li>在本类中发生</li>
-<li>方法名相同</li>
-<li>方法的参数列表不同（类型不同、数量不同、顺序不同）</li>
-<li>和返回值没有任何关系</li>
-</ul></li>
-<li><h3 id="重写">重写</h3>
-<ul>
-<li>发生在父子类(继承)中</li>
-<li>子类中的方法和父类的方法一模一样</li>
-</ul></li>
-</ol>
-<h2 id="方法重写">方法重写：</h2>
-<ol type="1">
-<li>什么是方法重写</li>
-<li>方法重写解决什么问题</li>
-<li>方法重写怎么实现</li>
-<li>方法重写有什么注意细节</li>
-</ol>
-<h2 id="this关键字的使用">this关键字的使用：</h2>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//访问本类中的成员变量</span></span><br><span class="line"><span class="built_in">this</span>.成员变量名=数据值;</span><br><span class="line"></span><br><span class="line"><span class="comment">//访问本类中的成员方法</span></span><br><span class="line"><span class="built_in">this</span>.成员方法();</span><br><span class="line"></span><br><span class="line"><span class="comment">//访问本类中的构造方法（要求：只能使用某个构造方法，去调用本类中另一个构造方法）</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">ClassName</span><span class="params">()</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">ClassName</span><span class="params">(String name)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>(); <span class="comment">//调用无参构造方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>学习套路：</p>
-<ol type="1">
-<li>这个技术是什么？</li>
-<li>这个技术可以解决什么问题？ （重点）</li>
-<li>这个技术怎么使用？ （重点）</li>
-<li>这个技术在使用中的注意细节</li>
-</ol>
-<p>回顾上午内容：</p>
-<ul>
-<li><p>继承</p>
-<ul>
-<li><p>继承是什么</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">让一个类继承另一个类</span><br><span class="line">关键字：extends</span><br></pre></td></tr></table></figure></li>
-<li><p>继承可以解决什么问题</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、建立类与类之间的关系：父子关系</span><br><span class="line">2、可以解决程序中代码的复用性（子类可以直接使用父类中的非私有成员）</span><br></pre></td></tr></table></figure></li>
-<li><p>继承怎么使用</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 父类&#123;</span><br><span class="line">    <span class="comment">//成员</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> class 子类 extends 父类&#123;</span><br><span class="line">    <span class="comment">//子类可以直接使用父类中的非私有成员</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>继承在使用中的注意细节</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span>、Java语言只支持单一继承(不能多继承) ， 允许多层次继承</span><br><span class="line"><span class="number">2</span>、子类不能继承父类中的私有成员</span><br><span class="line"><span class="number">3</span>、当子类和父类中存在相同的成员时，访问原则：就近原则</span><br><span class="line">   <span class="built_in">super</span>.成员变量 </span><br><span class="line">   <span class="built_in">super</span>.成员方法()</span><br><span class="line">   <span class="built_in">super</span>()</span><br><span class="line">   <span class="built_in">super</span>(参数, ...) </span><br><span class="line"><span class="number">4</span>、子类对象在实例化完成之前，必须先初始化父类对象（只有父类初始化完成后子类才可以访问父类成员）</span><br><span class="line">   <span class="comment">//子类构造方法在执行时，有隐藏代码：super()  //默认调用父类中的无参构造方法    </span></span><br></pre></td></tr></table></figure></li>
-</ul></li>
-<li><p>方法重写</p>
-<ul>
-<li><p>什么是方法重写</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">当父子类中存在一模一样的非私有成员方法时，就可以称为：子类重写父类的方法（方法重写）</span><br></pre></td></tr></table></figure></li>
-<li><p>方法重写可以解决什么问题</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">当父类中的方法，子类在调用时无法满足子类的要求，就可以在子类中重写父类的方法</span><br><span class="line"></span><br><span class="line">目的：</span><br><span class="line">1. 为后面学习多态准备</span><br><span class="line">2. 不愿意在起一个方法名</span><br></pre></td></tr></table></figure></li>
-<li><p>方法重写怎么使用</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 父类&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> class 子类 extends 父类&#123;</span><br><span class="line">    <span class="comment">//重写方法</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="comment">//重新编写方法体业务代码</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>方法重写的注意细节</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1、针对父类中私有方法不能重写</span><br><span class="line">2、必须和父类中的方法一模一样</span><br></pre></td></tr></table></figure></li>
-</ul></li>
-</ul>
-<h2 id="jvm内存划分">JVM内存划分：</h2>
-<ol type="1">
-<li>栈 //方法运行在栈内存中</li>
-<li>堆 //对象存储于堆内存中</li>
-<li>方法区 //存放加载的.class文件
-//方法区有由N多个不同功能的小区域组成</li>
-<li>寄存器<br>
-</li>
-<li>本地方法区</li>
-</ol>
-<h3 id="this当前类对象引用">this：当前类对象引用</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="built_in">this</span>.成员方法()</span><br><span class="line"><span class="built_in">this</span>.成员变量 = 数据值</span><br><span class="line"><span class="built_in">this</span>() <span class="comment">//本类无参构造方法</span></span><br><span class="line"><span class="built_in">this</span>(<span class="string">&quot;字符串&quot;</span>)<span class="comment">//本类带有String类型参数的构造方法    </span></span><br></pre></td></tr></table></figure>
-<h3 id="super父类对象引用">super：父类对象引用</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="built_in">super</span>.成员方法()</span><br><span class="line"><span class="built_in">super</span>.成员变量 = 数据值</span><br><span class="line"><span class="built_in">super</span>() <span class="comment">//父类无参构造方法</span></span><br><span class="line"><span class="built_in">super</span>(<span class="string">&quot;字符串&quot;</span>)<span class="comment">//父类带有String类型参数的构造方法   </span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//父类：动物类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">Animal</span>&#123;</span><br><span class="line">    <span class="comment">//抽象方法：必须使用关键字abstract修饰</span></span><br><span class="line">    <span class="comment">//抽象方法：必须书写在抽象类中</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">eat</span><span class="params">()</span>;<span class="comment">//在java语言中没有方法体的方法，称为：抽象方法 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="普通类">普通类:</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 类名&#123;</span><br><span class="line">    <span class="comment">//成员变量</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">public</span> 类名&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="抽象类-1">抽象类：</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> class 类名&#123;</span><br><span class="line">    <span class="comment">//成员变量</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setName</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">public</span> 类名&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> 抽象方法();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>抽象类，不能实例化（不能创建对象）
-<ul>
-<li>疑问：既然不能创建对象了，为什么还要有构造方法？
-<ul>
-<li>抽象类通常是用于父类，创建子类对象时，需要先初始化父类（抽象方法中构造方法的作用就是用于父类初始化使用）</li>
-</ul></li>
-</ul></li>
-<li>抽象类中的抽象方法，必须由子类重写</li>
-</ul>
-<h2 id="什么是设计模式">什么是设计模式？</h2>
-<ul>
-<li>设计模式，就是一种解决方案（解决开发中某个问题的方案）</li>
-</ul>
-<p>设计模式解决什么问题？</p>
-<ul>
-<li>在开发中一些常见问题，可以使用设计模式解决</li>
-</ul>
-<h3 id="模板设计模式">模板设计模式：</h3>
-<ul>
-<li>模板：就一个固定的格式</li>
-<li>模板设计：把确定的内容，提前准备好，把不确定的内容，定义为抽象方法（由子类重写）</li>
-</ul>
-<p>创建对象：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Student</span> <span class="variable">stu</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>(); <span class="comment">//有名字的对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对象名： stu</span></span><br></pre></td></tr></table></figure>
-<p>匿名对象：</p>
-<ul>
-<li>没有名字的对象</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Student</span>(); <span class="comment">//创建的对象没有名字</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;张三&quot;</span>,<span class="number">23</span>);</span><br></pre></td></tr></table></figure>
+<p>例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.ethanliu6.map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/21 20:19</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> TreeMap集合</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TreeMapDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//创建TreeMap集合对象</span></span><br><span class="line">        <span class="comment">//TreeMap&lt;Student, String&gt; treeMap = new TreeMap&lt;&gt;();</span></span><br><span class="line">        <span class="comment">//重写Comparator接口</span></span><br><span class="line">        TreeMap&lt;Student, String&gt; treeMap = <span class="keyword">new</span> <span class="title class_">TreeMap</span>&lt;&gt;(<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;Student&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(Student stu1, Student stu2)</span> &#123;</span><br><span class="line">                <span class="comment">//先按年龄小到大排, 再按字母从小到大排</span></span><br><span class="line">                <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> stu1.getAge() - stu2.getAge();</span><br><span class="line">                <span class="comment">//if(res == 0)&#123;</span></span><br><span class="line">                <span class="comment">//    res = stu1.getName().compareTo(stu2.getName());</span></span><br><span class="line">                <span class="comment">//&#125;</span></span><br><span class="line">                <span class="keyword">return</span> res == <span class="number">0</span> ? stu1.getName().compareTo(stu2.getName()) : res;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加自定义类型元素</span></span><br><span class="line">        treeMap.put(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Ethan&quot;</span>, <span class="number">21</span>), <span class="string">&quot;甘肃&quot;</span>);</span><br><span class="line">        treeMap.put(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;QiuZhu&quot;</span>, <span class="number">21</span>), <span class="string">&quot;广西&quot;</span>);</span><br><span class="line">        treeMap.put(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;aihui&quot;</span>, <span class="number">18</span>), <span class="string">&quot;湖南&quot;</span>);</span><br><span class="line">        treeMap.put(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;qiu&quot;</span>, <span class="number">17</span>), <span class="string">&quot;广西&quot;</span>);</span><br><span class="line">        treeMap.put(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;aaa&quot;</span>, <span class="number">28</span>), <span class="string">&quot;四川&quot;</span>);</span><br><span class="line">        treeMap.put(<span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;Ethan&quot;</span>, <span class="number">21</span>), <span class="string">&quot;广西&quot;</span>); <span class="comment">//去重后这里相当于修改</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//会有ClassCastException异常,需要重写Comparator接口</span></span><br><span class="line">        <span class="comment">//System.out.println(treeMap);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用Map.Entry获取键值对对象</span></span><br><span class="line">        Set&lt;Map.Entry&lt;Student, String&gt;&gt; entries = treeMap.entrySet();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历键值对对象</span></span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Student, String&gt; entry : entries) &#123;</span><br><span class="line">            System.out.println(entry.getKey() + <span class="string">&quot;\tPlace--&quot;</span> + entry.getValue());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Java全栈</category>
