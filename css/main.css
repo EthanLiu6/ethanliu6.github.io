@@ -185,7 +185,7 @@ body {
   box-sizing: border-box;
   color: var(--text-color);
   font-family: Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 0.8125em;
+  font-size: 0.85em;
   line-height: 2;
   min-height: 100%;
   position: relative;
@@ -1657,7 +1657,7 @@ pre code {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  width: 75%;
+  width: 90%;
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -1666,12 +1666,12 @@ pre code {
 }
 @media (min-width: 1200px) {
   .footer-inner {
-    width: 77%;
+    width: 90%;
   }
 }
 @media (min-width: 1600px) {
   .footer-inner {
-    width: 80%;
+    width: 90%;
   }
 }
 .use-motion .footer {
@@ -2674,7 +2674,7 @@ header.header {
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  width: 75%;
+  width: 90%;
 }
 @media (max-width: 767px) {
   .main {
@@ -2683,12 +2683,12 @@ header.header {
 }
 @media (min-width: 1200px) {
   .main {
-    width: 77%;
+    width: 90%;
   }
 }
 @media (min-width: 1600px) {
   .main {
-    width: 80%;
+    width: 90%;
   }
 }
 @media (max-width: 991px) {
