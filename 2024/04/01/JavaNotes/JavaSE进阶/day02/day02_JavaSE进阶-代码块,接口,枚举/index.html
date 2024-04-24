@@ -21,12 +21,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="JavaSE进阶——Day02  该篇主要讲解Java中的代码块、接口、枚举">
+    <meta name="description" content="JavaSE进阶——Day02 该篇主要讲解Java中的代码块、接口、枚举">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE进阶——Day02 代码块、接口、枚举">
 <meta property="og:url" content="http://ethanliu6.github.io/2024/04/01/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day02/day02_JavaSE%E8%BF%9B%E9%98%B6-%E4%BB%A3%E7%A0%81%E5%9D%97,%E6%8E%A5%E5%8F%A3,%E6%9E%9A%E4%B8%BE/index.html">
 <meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
-<meta property="og:description" content="JavaSE进阶——Day02  该篇主要讲解Java中的代码块、接口、枚举">
+<meta property="og:description" content="JavaSE进阶——Day02 该篇主要讲解Java中的代码块、接口、枚举">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-31T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-04-20T14:34:25.666Z">
@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">16</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -143,7 +143,10 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">1. 关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-final%E8%83%BD%E4%BF%AE%E9%A5%B0%E4%BB%80%E4%B9%88"><span class="nav-text">1.1 final能修饰什么 ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-final%E4%BF%AE%E9%A5%B0%E7%9A%84%E6%88%90%E5%91%98%E7%9A%84%E7%89%B9%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">1.2 final修饰的成员的特点是什么 ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-1"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8static%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">1.3 什么时候使用static关键字 ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-2"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-static%E5%85%B3%E9%94%AE%E5%AD%97%E7%89%B9%E7%82%B9%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E8%AE%BF%E9%97%AE%E7%89%B9%E7%82%B9"><span class="nav-text">1.4 static关键字特点及静态方法访问特点 ?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%8E%A5%E5%8F%A3"><span class="nav-text">2. 接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E6%8E%A5%E5%8F%A3%E8%83%BD%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="nav-text">2.1 接口能解决什么问题 ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-3"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%88%90%E5%91%98%E8%83%BD%E5%AE%9A%E4%B9%89%E4%BB%80%E4%B9%88-%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9"><span class="nav-text">2.2 接口的成员能定义什么,有什么特点 ?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%9E%9A%E4%B8%BE"><span class="nav-text">3. 枚举</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E6%9E%9A%E4%B8%BE%E8%83%BD%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="nav-text">3.1 枚举能解决什么问题 ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-4"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-%E6%9E%9A%E4%B8%BE%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-text">3.2 枚举常用的方式 ?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%BD%93%E6%97%A5%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93"><span class="nav-text">4. 当日问题小结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-%E5%BD%93%E6%97%A5%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">4.1 当日遇到的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-5"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98%E5%8E%9F%E5%9B%A0"><span class="nav-text">4.2 出现问题原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-6"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E6%96%B9%E6%A1%88"><span class="nav-text">4.3 解决问题方案</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">1. 关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#final%E8%83%BD%E4%BF%AE%E9%A5%B0%E4%BB%80%E4%B9%88"><span class="nav-text">1.1 final能修饰什么 ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#section"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#final%E4%BF%AE%E9%A5%B0%E7%9A%84%E6%88%90%E5%91%98%E7%9A%84%E7%89%B9%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">1.2 final修饰的成员的特点是什么
+?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#section-1"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BD%BF%E7%94%A8static%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-text">1.3 什么时候使用static关键字 ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#section-2"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#static%E5%85%B3%E9%94%AE%E5%AD%97%E7%89%B9%E7%82%B9%E5%8F%8A%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95%E8%AE%BF%E9%97%AE%E7%89%B9%E7%82%B9"><span class="nav-text">1.4
+static关键字特点及静态方法访问特点 ?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-text">2. 接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E8%83%BD%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="nav-text">2.1 接口能解决什么问题 ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#section-3"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3%E7%9A%84%E6%88%90%E5%91%98%E8%83%BD%E5%AE%9A%E4%B9%89%E4%BB%80%E4%B9%88%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9"><span class="nav-text">2.2
+接口的成员能定义什么,有什么特点 ?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-text">3. 枚举</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE%E8%83%BD%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="nav-text">3.1 枚举能解决什么问题 ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#section-4"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="nav-text">3.2 枚举常用的方式 ?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E6%97%A5%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93"><span class="nav-text">4. 当日问题小结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%93%E6%97%A5%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">4.1 当日遇到的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#section-5"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98%E5%8E%9F%E5%9B%A0"><span class="nav-text">4.2 出现问题原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#section-6"><span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E6%96%B9%E6%A1%88"><span class="nav-text">4.3 解决问题方案</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -158,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -304,54 +307,63 @@
     
     
     <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
-<p>JavaSE进阶——Day02  该篇主要讲解Java中的<strong>代码块</strong>、<strong>接口</strong>、<strong>枚举</strong></p>
+<p>JavaSE进阶——Day02
+该篇主要讲解Java中的<strong>代码块</strong>、<strong>接口</strong>、<strong>枚举</strong></p>
 
 </blockquote>
-
 <span id="more"></span>
-
 <p>学习目标</p>
 <ul>
 <li><p>关键字</p>
 <ul>
-<li><p>final</p>
-</li>
-<li><p>static</p>
-</li>
-</ul>
-</li>
+<li><p>final</p></li>
+<li><p>static</p></li>
+</ul></li>
 <li><p>代码块</p>
 <ul>
-<li><p>静态代码块</p>
-</li>
-<li><p>构造代码块</p>
-</li>
-<li><p>局部代码快</p>
-</li>
-</ul>
-</li>
+<li><p>静态代码块</p></li>
+<li><p>构造代码块</p></li>
+<li><p>局部代码快</p></li>
+</ul></li>
 <li><p>接口</p>
 <ul>
-<li><p>接口的作用及格式</p>
-</li>
-<li><p>接口的成员定义</p>
-</li>
-<li><p>接口在JDK不同版本中方法的改进</p>
-</li>
-</ul>
-</li>
+<li><p>接口的作用及格式</p></li>
+<li><p>接口的成员定义</p></li>
+<li><p>接口在JDK不同版本中方法的改进</p></li>
+</ul></li>
 <li><p>枚举</p>
 <ul>
-<li><p>枚举的作用及格式</p>
-</li>
-<li><p>枚举的使用</p>
-</li>
-<li><p>枚举的本质</p>
-</li>
+<li><p>枚举的作用及格式</p></li>
+<li><p>枚举的使用</p></li>
+<li><p>枚举的本质</p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="1-关键字"><a href="#1-关键字" class="headerlink" title="1. 关键字"></a>1. 关键字</h3><h4 id="1-1-final能修饰什么"><a href="#1-1-final能修饰什么" class="headerlink" title="1.1 final能修饰什么 ?"></a>1.1 final能修饰什么 ?</h4><h4 id><a href="#" class="headerlink" title></a></h4><h4 id="1-2-final修饰的成员的特点是什么"><a href="#1-2-final修饰的成员的特点是什么" class="headerlink" title="1.2 final修饰的成员的特点是什么 ?"></a>1.2 final修饰的成员的特点是什么 ?</h4><h4 id="-1"><a href="#-1" class="headerlink" title></a></h4><h4 id="1-3-什么时候使用static关键字"><a href="#1-3-什么时候使用static关键字" class="headerlink" title="1.3 什么时候使用static关键字 ?"></a>1.3 什么时候使用static关键字 ?</h4><h4 id="-2"><a href="#-2" class="headerlink" title></a></h4><h4 id="1-4-static关键字特点及静态方法访问特点"><a href="#1-4-static关键字特点及静态方法访问特点" class="headerlink" title="1.4 static关键字特点及静态方法访问特点 ?"></a>1.4 static关键字特点及静态方法访问特点 ?</h4><h3 id="2-接口"><a href="#2-接口" class="headerlink" title="2. 接口"></a>2. 接口</h3><h4 id="2-1-接口能解决什么问题"><a href="#2-1-接口能解决什么问题" class="headerlink" title="2.1 接口能解决什么问题 ?"></a>2.1 接口能解决什么问题 ?</h4><h4 id="-3"><a href="#-3" class="headerlink" title></a></h4><h4 id="2-2-接口的成员能定义什么-有什么特点"><a href="#2-2-接口的成员能定义什么-有什么特点" class="headerlink" title="2.2 接口的成员能定义什么,有什么特点 ?"></a>2.2 接口的成员能定义什么,有什么特点 ?</h4><h3 id="3-枚举"><a href="#3-枚举" class="headerlink" title="3. 枚举"></a>3. 枚举</h3><h4 id="3-1-枚举能解决什么问题"><a href="#3-1-枚举能解决什么问题" class="headerlink" title="3.1 枚举能解决什么问题 ?"></a>3.1 枚举能解决什么问题 ?</h4><h4 id="-4"><a href="#-4" class="headerlink" title></a></h4><h4 id="3-2-枚举常用的方式"><a href="#3-2-枚举常用的方式" class="headerlink" title="3.2 枚举常用的方式 ?"></a>3.2 枚举常用的方式 ?</h4><h3 id="4-当日问题小结"><a href="#4-当日问题小结" class="headerlink" title="4. 当日问题小结"></a>4. 当日问题小结</h3><h4 id="4-1-当日遇到的问题"><a href="#4-1-当日遇到的问题" class="headerlink" title="4.1 当日遇到的问题"></a>4.1 当日遇到的问题</h4><h4 id="-5"><a href="#-5" class="headerlink" title></a></h4><h4 id="4-2-出现问题原因"><a href="#4-2-出现问题原因" class="headerlink" title="4.2 出现问题原因"></a>4.2 出现问题原因</h4><h4 id="-6"><a href="#-6" class="headerlink" title></a></h4><h4 id="4-3-解决问题方案"><a href="#4-3-解决问题方案" class="headerlink" title="4.3 解决问题方案"></a>4.3 解决问题方案</h4>
+<h3 id="关键字">1. 关键字</h3>
+<h4 id="final能修饰什么">1.1 final能修饰什么 ?</h4>
+<h4 id="section"></h4>
+<h4 id="final修饰的成员的特点是什么">1.2 final修饰的成员的特点是什么
+?</h4>
+<h4 id="section-1"></h4>
+<h4 id="什么时候使用static关键字">1.3 什么时候使用static关键字 ?</h4>
+<h4 id="section-2"></h4>
+<h4 id="static关键字特点及静态方法访问特点">1.4
+static关键字特点及静态方法访问特点 ?</h4>
+<h3 id="接口">2. 接口</h3>
+<h4 id="接口能解决什么问题">2.1 接口能解决什么问题 ?</h4>
+<h4 id="section-3"></h4>
+<h4 id="接口的成员能定义什么有什么特点">2.2
+接口的成员能定义什么,有什么特点 ?</h4>
+<h3 id="枚举">3. 枚举</h3>
+<h4 id="枚举能解决什么问题">3.1 枚举能解决什么问题 ?</h4>
+<h4 id="section-4"></h4>
+<h4 id="枚举常用的方式">3.2 枚举常用的方式 ?</h4>
+<h3 id="当日问题小结">4. 当日问题小结</h3>
+<h4 id="当日遇到的问题">4.1 当日遇到的问题</h4>
+<h4 id="section-5"></h4>
+<h4 id="出现问题原因">4.2 出现问题原因</h4>
+<h4 id="section-6"></h4>
+<h4 id="解决问题方案">4.3 解决问题方案</h4>
+
     </div>
 
     
@@ -439,13 +451,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">9k</span>
+    <span title="站点总字数">10k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">32 分钟</span>
+    <span title="站点阅读时长">35 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
