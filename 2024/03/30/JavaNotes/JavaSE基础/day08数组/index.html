@@ -23,50 +23,50 @@
 
     <meta name="description" content="JavaSE基础——Day08 该篇主要讲解Java中的数组   今日目标：  能够知道数组的作用 能够根据需求完成数组的定义和初始化 能够使用数组完成授课案例 能够理解数组内存图  1：一维数组 1.1 数组概述和课程安排 来，继续啊，下面我们来学习数组。 那什么是数组呢？为了帮助大家理解，这里我们来看这样的一个场景：   1640178676906  看这里，有一个学员的考试成绩，为了存储这">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE基础——Day07 JavaSE基础——数组">
-<meta property="og:url" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/index.html">
+<meta property="og:title" content="JavaSE基础——Day08 JavaSE基础——数组">
+<meta property="og:url" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/index.html">
 <meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
 <meta property="og:description" content="JavaSE基础——Day08 该篇主要讲解Java中的数组   今日目标：  能够知道数组的作用 能够根据需求完成数组的定义和初始化 能够使用数组完成授课案例 能够理解数组内存图  1：一维数组 1.1 数组概述和课程安排 来，继续啊，下面我们来学习数组。 那什么是数组呢？为了帮助大家理解，这里我们来看这样的一个场景：   1640178676906  看这里，有一个学员的考试成绩，为了存储这">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640178676906.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640178695398.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640179442957.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640179577860.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640179610351.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640179641419.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640179738721.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180154556.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180271885.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180296416.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180317142.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180362775.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180957760.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640181579146.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640181720120.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640181750266.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640181788943.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640181816425.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640182140083.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640182579200.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640182850919.png">
-<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640183100572.png">
-<meta property="article:published_time" content="2023-03-15T15:28:46.000Z">
-<meta property="article:modified_time" content="2024-04-25T17:44:59.491Z">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640178676906.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640178695398.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640179442957.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640179577860.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640179610351.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640179641419.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640179738721.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180154556.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180271885.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180296416.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180317142.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180362775.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640180957760.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640181579146.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640181720120.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640181750266.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640181788943.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640181816425.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640182140083.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640182579200.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640182850919.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640183100572.png">
+<meta property="article:published_time" content="2024-03-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-04-25T17:49:13.471Z">
 <meta property="article:author" content="Ethan Liu">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640178676906.png">
+<meta name="twitter:image" content="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/imgs/1640178676906.png">
 
 
-<link rel="canonical" href="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/">
+<link rel="canonical" href="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/","path":"2023/03/15/JavaNotes/JavaSE基础/day08数组/","title":"JavaSE基础——Day07 JavaSE基础——数组"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/","path":"2024/03/30/JavaNotes/JavaSE基础/day08数组/","title":"JavaSE基础——Day08 JavaSE基础——数组"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>JavaSE基础——Day07 JavaSE基础——数组 | <font color='white' >Ethan の Blog</font></title>
+<title>JavaSE基础——Day08 JavaSE基础——数组 | <font color='white' >Ethan の Blog</font></title>
   
 
 
@@ -237,7 +237,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/">
+    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -250,12 +250,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="JavaSE基础——Day07 JavaSE基础——数组 | <font color='white' >Ethan の Blog</font>">
+      <meta itemprop="name" content="JavaSE基础——Day08 JavaSE基础——数组 | <font color='white' >Ethan の Blog</font>">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaSE基础——Day07 JavaSE基础——数组<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9KYXZhTm90ZXMvSmF2YVNF5Z+656GAL2RheTA45pWw57uELm1k" title="编辑"><i class="fa fa-pen-nib"></i></span>
+          JavaSE基础——Day08 JavaSE基础——数组<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9KYXZhTm90ZXMvSmF2YVNF5Z+656GAL2RheTA45pWw57uELm1k" title="编辑"><i class="fa fa-pen-nib"></i></span>
         </h1>
 
         <div class="post-meta-container">
@@ -266,14 +266,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2023-03-15 23:28:46" itemprop="dateCreated datePublished" datetime="2023-03-15T23:28:46+08:00">2023-03-15</time>
+      <time title="创建时间：2024-03-30 00:00:00" itemprop="dateCreated datePublished" datetime="2024-03-30T00:00:00+08:00">2024-03-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-26 01:44:59" itemprop="dateModified" datetime="2024-04-26T01:44:59+08:00">2024-04-26</time>
+      <time title="修改时间：2024-04-26 01:49:13" itemprop="dateModified" datetime="2024-04-26T01:49:13+08:00">2024-04-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -301,8 +301,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="JavaSE基础——Day07 JavaSE基础——数组" href="/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::770de264ea20d8ad5646ba09045ab985" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="JavaSE基础——Day08 JavaSE基础——数组" href="/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::644e7278050653cf19688ba5c99c44f6" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -776,7 +776,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/" title="JavaSE基础——Day07 JavaSE基础——数组">http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE基础/day08数组/</a>
+      <a href="http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/" title="JavaSE基础——Day08 JavaSE基础——数组">http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE基础/day08数组/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -794,13 +794,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day09%E5%8A%A8%E6%BC%AB%E7%BE%8E%E5%A5%B3%E6%8B%BC%E5%9B%BE/" rel="prev" title="JavaSE基础——Day02 JavaSE基础——综合案例动漫美女拼图">
-                  <i class="fa fa-angle-left"></i> JavaSE基础——Day02 JavaSE基础——综合案例动漫美女拼图
+                <a href="/2024/03/27/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day07%E5%B8%B8%E7%94%A8API(2)/" rel="prev" title="JavaSE基础——Day07 JavaSE基础——常用API:String、Integer、Date、SDF">
+                  <i class="fa fa-angle-left"></i> JavaSE基础——Day07 JavaSE基础——常用API:String、Integer、Date、SDF
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day07%E5%B8%B8%E7%94%A8API(2)/" rel="next" title="JavaSE基础——Day07 JavaSE基础——常用API:String、Integer、Date、SDF">
-                  JavaSE基础——Day07 JavaSE基础——常用API:String、Integer、Date、SDF <i class="fa fa-angle-right"></i>
+                <a href="/2024/03/31/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day09%E5%8A%A8%E6%BC%AB%E7%BE%8E%E5%A5%B3%E6%8B%BC%E5%9B%BE/" rel="next" title="JavaSE基础——Day09 JavaSE基础——综合案例动漫美女拼图">
+                  JavaSE基础——Day09 JavaSE基础——综合案例动漫美女拼图 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -813,7 +813,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="770de264ea20d8ad5646ba09045ab985"></div>
+    <div class="comments" id="SOHUCS" sid="644e7278050653cf19688ba5c99c44f6"></div>
 </div>
   </main>
 
@@ -912,7 +912,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2024/03/30/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day08%E6%95%B0%E7%BB%84/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyxf6tytI","appkey":"90987f30c4b5248baad5a04c7a6abfe1","count":true}</script>
 <script src="/js/third-party/comments/changyan.js"></script>
