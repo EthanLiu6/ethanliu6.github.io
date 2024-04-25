@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+  <link rel="mask-icon" href="/images/avatar.jpg" color="#222">
+  <meta name="msvalidate.01" content="4AF2328B2035748153A041B7EEF3D15C">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CLobster:300,300italic,400,400italic,700,700italic%7CPingFang+SC:300,300italic,400,400italic,700,700italic%7CRoboto+Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="JavaSE基础——Day02 该篇主要讲解Java中的运算符&amp;选择语句   今日目标：  能够知道每种运算符的作用及使用特点 能够理解+操作的三种情况 能够知道顺序结构语句的执行流程 能够使用Debug查看程序的执行流程 能够根据需求选择合适的if语句实现 能够知道switch语句执行流程和注意事项  1：运算符 前面我们学过了通过字面量和变量来表示一个数据，这里呢，我们来学习对数据进">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaSE基础——Day02 JavaSE基础——运算符&amp;选择语句">
+<meta property="og:url" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/index.html">
+<meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
+<meta property="og:description" content="JavaSE基础——Day02 该篇主要讲解Java中的运算符&amp;选择语句   今日目标：  能够知道每种运算符的作用及使用特点 能够理解+操作的三种情况 能够知道顺序结构语句的执行流程 能够使用Debug查看程序的执行流程 能够根据需求选择合适的if语句实现 能够知道switch语句执行流程和注意事项  1：运算符 前面我们学过了通过字面量和变量来表示一个数据，这里呢，我们来学习对数据进">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639985220144.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639985319821.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639985366716.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639986136058.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639986559242.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639987238107.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639987319209.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639987439012.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639987467442.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639987527903.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639988819218.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639988895251.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639989649113.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639989693712.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639989770511.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639989859440.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639990298744.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639990362425.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639990369424.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639990391758.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639990751332.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639990758157.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639990783253.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639991087641.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639991133430.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639991232920.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639991414400.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639991486878.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639991744335.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639991900000.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639992246395.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639992255842.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639992426024.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639992449128.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639992471016.png">
+<meta property="article:published_time" content="2023-03-15T15:32:20.000Z">
+<meta property="article:modified_time" content="2024-04-25T17:22:23.482Z">
+<meta property="article:author" content="Ethan Liu">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/imgs/1639985220144.png">
+
+
+<link rel="canonical" href="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/","path":"2023/03/15/JavaNotes/JavaSE基础/day02运算符&选择语句/","title":"JavaSE基础——Day02 JavaSE基础——运算符&选择语句"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JavaSE基础——Day02 JavaSE基础——运算符&选择语句 | <font color='white' >Ethan の Blog</font></title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title"><font color='white' >Ethan の Blog</font></p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"><font color='#FDABC1' size=3>清醒的停留，胜过——盲目的前行</font></p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">24</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1：运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.1 算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E6%95%B0%E5%80%BC%E6%8B%86%E5%88%86"><span class="nav-text">1.2 案例数值拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%9A%84%E4%B8%89%E7%A7%8D%E6%83%85%E5%86%B5"><span class="nav-text">1.3 +操作的三种情况</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E7%9B%B8%E5%8A%A0%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-text">1.3.1 数字相加(类型转换)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%9B%B8%E5%8A%A0"><span class="nav-text">1.3.2 字符相加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%8A%A0"><span class="nav-text">1.3.3 字符串相加</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">1.4 赋值运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5"><span class="nav-text">2：选择语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-text">2.1 顺序结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-text">2.2 Debug的基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5%E4%B9%8Bif"><span class="nav-text">2.3 选择语句之if</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if%E8%AF%AD%E5%8F%A5%E6%A0%BC%E5%BC%8F1"><span class="nav-text">2.3.1 if语句格式1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if%E8%AF%AD%E5%8F%A5%E6%A0%BC%E5%BC%8F2%E5%92%8C%E6%A0%BC%E5%BC%8F3"><span class="nav-text">2.3.2 if语句格式2和格式3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B1%E4%BA%A4%E9%80%9A%E4%BF%A1%E5%8F%B7%E7%81%AF"><span class="nav-text">2.3.3 案例1(交通信号灯)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">2.3.4 关系运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B2%E5%A5%87%E5%81%B6%E6%95%B0"><span class="nav-text">2.3.5 案例2(奇偶数)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B3%E6%89%8B%E6%9C%BA%E4%BB%A5%E6%97%A7%E6%8D%A2%E6%96%B0"><span class="nav-text">2.3.6 案例3(手机以旧换新)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B4%E4%BD%A0%E6%98%AF%E9%9D%92%E5%B9%B4%E4%BA%BA%E5%90%97"><span class="nav-text">2.3.7 案例4(你是青年人吗)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">2.3.8 逻辑运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">2.3.9 三元运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8Cif%E8%AF%AD%E5%8F%A5%E6%A0%BC%E5%BC%8F2%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">2.3.10
+三元运算符和if语句格式2的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5%E4%B9%8Bswitch"><span class="nav-text">2.4 选择语句之switch</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ethan Liu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Ethan Liu</p>
+  <div class="site-description" itemprop="description"><font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2V0aGFubGl1Ng==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ethanliu6"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxpdWUyMzM2QGdtYWlsLmNvbQ==" title="E-Mail → mailto:liue2336@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMTMyNzA5OTk3Nw==" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1327099977"><i class="fa-brands fa-bilibili fa-fw"></i>BiliBili</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/categories/Love/" title="Love → &#x2F;categories&#x2F;Love&#x2F;" rel="noopener me"><i class="fa fa-heart fa-fw"></i>Love</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Ethan Liu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JavaSE基础——Day02 JavaSE基础——运算符&选择语句 | <font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaSE基础——Day02 JavaSE基础——运算符&选择语句<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9KYXZhTm90ZXMvSmF2YVNF5Z+656GAL2RheTAy6L+Q566X56ymJumAieaLqeivreWPpS5tZA==" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-03-15 23:32:20" itemprop="dateCreated datePublished" datetime="2023-03-15T23:32:20+08:00">2023-03-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-26 01:22:23" itemprop="dateModified" datetime="2024-04-26T01:22:23+08:00">2024-04-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java%E5%85%A8%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">Java全栈</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="JavaSE基础——Day02 JavaSE基础——运算符&选择语句" href="/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::19e02707e86cc9cad53dff78bfea875e" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>17 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
+<p>JavaSE基础——Day02
+该篇主要讲解Java中的<strong>运算符&amp;选择语句</strong></p>
+
+</blockquote>
+<p><strong>今日目标：</strong></p>
+<ul>
+<li>能够知道每种运算符的作用及使用特点</li>
+<li>能够理解+操作的三种情况</li>
+<li>能够知道顺序结构语句的执行流程</li>
+<li>能够使用Debug查看程序的执行流程</li>
+<li>能够根据需求选择合适的if语句实现</li>
+<li>能够知道switch语句执行流程和注意事项</li>
+</ul>
+<h2 id="运算符">1：运算符</h2>
+<p>前面我们学过了通过字面量和变量来表示一个数据，这里呢，我们来学习对数据进行运算。而对数据运算就要用到我们这里要讲解的运算符，而在讲解具体的运算符之前，我们对运算符和表达式做一个简单的描述：</p>
+<p><strong>运算符：</strong>对字面量或者变量进行操作的<font color="red"><strong>符号</strong></font></p>
+<p><strong>表达式：</strong>用<font color="red"><strong>运算符</strong></font>把字面量或者变量连接起来<font color="red"><strong>符合java语法的式子</strong></font>就可以称为表达式。不同运算符连接的表达式体现的是不同类型的表达式。</p>
+<p>举例说明：**</p>
+<p>int a = 10;</p>
+<p>int b = 20;</p>
+<p>int c = a + b;</p>
+<p><font color="red"><strong>+</strong></font>
+：是<font color="red"><strong>运算符</strong></font>，是算术运算符</p>
+<p><font color="red"><strong>a +
+b</strong></font>：是<font color="red"><strong>表达式</strong></font>，由于+是算术运算符，所以这个表达式叫算术表达式</p>
+<p>知道了什么是运算符和表达式以后，我们来说一下这一块的课程安排：</p>
+<figure>
+<img data-src="imgs/1639985220144.png" alt="1639985220144">
+<figcaption aria-hidden="true">1639985220144</figcaption>
+</figure>
+<p>总共要学习5种类型的运算符，后三种标记为灰色了，我们是在哪里用就在哪里学习。这里我们先学习前两种，首先我们来学习算术运算符</p>
+<h3 id="算术运算符">1.1 算术运算符</h3>
+<p>Java中的算术运算符有如下几种：</p>
+<figure>
+<img data-src="imgs/1639985319821.png" alt="1639985319821">
+<figcaption aria-hidden="true">1639985319821</figcaption>
+</figure>
+<p>了解了Java中的算术运算符之后，下面我们到IDEA中去使用一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    算术运算符</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OperatorDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义两个int类型的变量</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">6</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(a + b);<span class="comment">//10</span></span><br><span class="line">        System.out.println(a - b);<span class="comment">//2</span></span><br><span class="line">        System.out.println(a * b);<span class="comment">//24</span></span><br><span class="line">        System.out.println(a / b);<span class="comment">//1.5? 1</span></span><br><span class="line">        System.out.println(a % b);<span class="comment">//2</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//整数相除只能得到整数，要想得到小数，必须有浮点数的参与</span></span><br><span class="line">        System.out.println(<span class="number">6.0</span> / <span class="number">4</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>最后，我们来总结一下，刚才在演示代码的时候有两个注意事项：</p>
+<figure>
+<img data-src="imgs/1639985366716.png" alt="1639985366716">
+<figcaption aria-hidden="true">1639985366716</figcaption>
+</figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="案例数值拆分">1.2 案例数值拆分</h3>
+<p>需求：定义一个三位数，将其拆分为个位、十位、百位后，输出在控制台</p>
+<p>什么意思呢？下面我们举例来说明一下：</p>
+<p>举例：int number = 123；</p>
+<p>在控制台输出结果：</p>
+<p>​ 个位是：3</p>
+<p>​ 十位是：2</p>
+<p>​ 百位是：1</p>
+<p>知道了要做什么后，下面我们来分析一下如何获取个位，十位，百位：</p>
+<p>分析：</p>
+<p>① 个位的计算：数值 % 10</p>
+<p>​ 123 除以 10（商12，余数为3）</p>
+<p>② 十位的计算：数值 / 10 % 10</p>
+<p>​ 123 除以 10 （商12，余数为3，整数相除只能得到整数）</p>
+<p>​ 12 除以 10 （商1，余数为2）</p>
+<p>③ 百位的计算：数值 / 10 / 10 % 10</p>
+<p>​ 123 / 10 / 10 % 10（123 / 10 得到12，12 / 10 得到1，1 % 10 得到
+1）</p>
+<p>分析完毕之后，下面我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：定义一个三位数，将其拆分为个位、十位、百位后，输出在控制台</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OperatorTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义一个三位数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> <span class="number">123</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取个，十，百位数据</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">ge</span> <span class="operator">=</span> number % <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">shi</span> <span class="operator">=</span> number / <span class="number">10</span> % <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">bai</span> <span class="operator">=</span> number / <span class="number">100</span> % <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出结果</span></span><br><span class="line">        System.out.println(<span class="string">&quot;个位是：&quot;</span> + ge);</span><br><span class="line">        System.out.println(<span class="string">&quot;十位是：&quot;</span> + shi);</span><br><span class="line">        System.out.println(<span class="string">&quot;百位是：&quot;</span> + bai);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="操作的三种情况">1.3 +操作的三种情况</h3>
+<h4 id="数字相加类型转换">1.3.1 数字相加(类型转换)</h4>
+<p>在Java程序中，数据参与运算，要求类型一致。这里就涉及到了数据的类型转换。而类型转换又分为两种：</p>
+<ol type="1">
+<li>隐式转换</li>
+<li>强制转换</li>
+</ol>
+<p><strong>隐式转换：</strong>把一个表示数据范围小的数值或者变量赋值给另一个表示数据范围大的变量</p>
+<figure>
+<img data-src="imgs/1639986136058.png" alt="1639986136058">
+<figcaption aria-hidden="true">1639986136058</figcaption>
+</figure>
+<p><strong>强制转换：</strong>把一个表示数据范围大的数值或者变量赋值给另一个表示数据范围小的变量</p>
+<p>格式：数据类型 变量名 = (目标数据类型)(数值或者变量)</p>
+<p>IDEA中代码演示如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    数字相加</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OperatorDemo01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">double</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">13.14</span>;</span><br><span class="line">        System.out.println(a + b);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> (<span class="type">int</span>)(a + b);</span><br><span class="line">        System.out.println(c);</span><br><span class="line"><span class="comment">//        double d = a + b;</span></span><br><span class="line"></span><br><span class="line">        <span class="type">short</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> s + i;</span><br><span class="line"><span class="comment">//        short ss = s + i;</span></span><br><span class="line"></span><br><span class="line">        <span class="type">short</span> <span class="variable">ss</span> <span class="operator">=</span> (<span class="type">short</span>) (s + i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h4 id="字符相加">1.3.2 字符相加</h4>
+<p>来，继续啊，这里我们再来说一下字符参与+操作。</p>
+<p>先到IDEA中去讲解，然后再回来总结。</p>
+<p>IDEA中代码演示如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    字符相加</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OperatorDemo02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义两个变量</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">char</span> <span class="variable">ch</span> <span class="operator">=</span> <span class="string">&#x27;A&#x27;</span>;<span class="comment">//&#x27;A&#x27;的值是65</span></span><br><span class="line">        ch = <span class="string">&#x27;a&#x27;</span>;<span class="comment">//&#x27;a&#x27;的值是97</span></span><br><span class="line">        ch = <span class="string">&#x27;0&#x27;</span>;<span class="comment">//&#x27;0&#x27;的值是48</span></span><br><span class="line">        System.out.println(i + ch);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码演示完毕后，回到资料总结：</p>
+<p>字符参与+操作，其实就是拿字符在计算机底层对应的数值来进行计算的，这里我们了解一下英文大小写字符和数字字符对应的数据值：</p>
+<ul>
+<li>‘A’ 65 A-Z是连续的</li>
+<li>‘a’ 97 a-z是连续的</li>
+<li>‘0’ 48 0-9是连续的</li>
+</ul>
+<p>这里也给大家准备了一张ASCII码表，里面有常用的字符及其对应的数值关系：</p>
+<figure>
+<img data-src="imgs/1639986559242.png" alt="1639986559242">
+<figcaption aria-hidden="true">1639986559242</figcaption>
+</figure>
+<h4 id="字符串相加">1.3.3 字符串相加</h4>
+<p>接下来，我们继续讲解字符串相加，先到IDEA中去讲解，然后再回来总结。</p>
+<p>IDEA中代码演示如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    字符串相加</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OperatorDemo03</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;it&quot;</span> + <span class="string">&quot;heima&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;itheima&quot;</span> + <span class="number">666</span>);</span><br><span class="line">        System.out.println(<span class="number">666</span> + <span class="string">&quot;itheima&quot;</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;itheima&quot;</span> + <span class="number">6</span> + <span class="number">66</span>);</span><br><span class="line">        System.out.println(<span class="number">1</span> + <span class="number">99</span> + <span class="string">&quot;年itheima&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>代码演示完毕后，回到资料总结：</p>
+<ul>
+<li>当“+”操作中出现字符串时，这个“+”是字符串连接符，而不是算术运算
+<ul>
+<li>“zhongguo”+ 666</li>
+</ul></li>
+<li>当连续进行“+”操作时，从左到右逐个执行
+<ul>
+<li>1 + 9999 + “岁zhongguo”</li>
+</ul></li>
+</ul>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="赋值运算符">1.4 赋值运算符</h3>
+<p>下面呢，我们来学习赋值运算符。</p>
+<p>Java中的赋值运算符有如下几种：</p>
+<figure>
+<img data-src="imgs/1639987238107.png" alt="1639987238107">
+<figcaption aria-hidden="true">1639987238107</figcaption>
+</figure>
+<p>了解了Java中的赋值运算符之后，下面我们到IDEA中去使用一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    赋值运算符</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OperatorDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;a:&quot;</span> + a);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// += : 把左边和右边的数据相加，最后把结果赋值给左边</span></span><br><span class="line"><span class="comment">//        a += 20;</span></span><br><span class="line">        a = a + <span class="number">20</span>;</span><br><span class="line">        System.out.println(<span class="string">&quot;a:&quot;</span> + a);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//注意：扩展的赋值运算符底层隐含了强制类型转换</span></span><br><span class="line">        <span class="type">short</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="comment">//        s += 2;</span></span><br><span class="line">        s = (<span class="type">short</span>) (s + <span class="number">2</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;s:&quot;</span> + s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后，我们来总结一下，刚才在演示代码的时候有个注意事项：</p>
+<figure>
+<img data-src="imgs/1639987319209.png" alt="1639987319209">
+<figcaption aria-hidden="true">1639987319209</figcaption>
+</figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h2 id="选择语句">2：选择语句</h2>
+<p>来，继续啊，为了控制程序的执行流程，Java
+就提供了一些流程控制语句，我们先来举例说明一下：</p>
+<p><strong>顺序结构：</strong>从上往下，依次执行</p>
+<figure>
+<img data-src="imgs/1639987439012.png" alt="1639987439012">
+<figcaption aria-hidden="true">1639987439012</figcaption>
+</figure>
+<p><strong>选择结构：</strong></p>
+<p>QQ界面的登录，填写账号和密码正确，展示好友列表界面。填写账号或者密码有误，提示：你输入的账号或密码不正确。</p>
+<p>这就是通过选择结构来实现的，实际开发中，类似这种逻辑判断的情况非常常见。</p>
+<figure>
+<img data-src="imgs/1639987467442.png" alt="1639987467442">
+<figcaption aria-hidden="true">1639987467442</figcaption>
+</figure>
+<p><strong>循环结构：</strong></p>
+<p>比如说，京东商城中，查询手机数据，京东就会返回给你一堆符合你查询要求的数据。</p>
+<p>假如，每一部手机数据的展示需要5行代码，如果最终返回了1000部手机，你就需要编写5000行代码来实现数据展示。</p>
+<p>这样就太麻烦了，那么，有没有一种流程语句，能够简化这种操作呢？答案肯定是有的，就是我们的循环结构，它就可以通过一个比较简单的结构来控制我们的手机展示1000次。</p>
+<p>比如说，带着这样写就可以了，这就是循环结构。</p>
+<figure>
+<img data-src="imgs/1639987527903.png" alt="1639987527903">
+<figcaption aria-hidden="true">1639987527903</figcaption>
+</figure>
+<p>了解完毕之后，我们来说一下这一块的课程安排：</p>
+<figure>
+<img data-src="imgs/1639988819218.png" alt="1639988819218">
+<figcaption aria-hidden="true">1639988819218</figcaption>
+</figure>
+<p>首先，我们来学习顺序结构</p>
+<h3 id="顺序结构">2.1 顺序结构</h3>
+<p><strong>顺序结构：</strong>是程序中最简单最基本的流程控制，没有特定的语法结构，按照代码的先后顺序，依次执行</p>
+<p><strong>执行流程图：</strong></p>
+<figure>
+<img data-src="imgs/1639988895251.png" alt="1639988895251">
+<figcaption aria-hidden="true">1639988895251</figcaption>
+</figure>
+<p>了解完顺序结构后，下面我们到IDEA中去演示一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    顺序结构语句</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OrderDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;开始&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;语句A&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;语句B&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;语句C&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个比较简单，也没什么好练习的。就不练了，我们继续往下学习。</p>
+<h3 id="debug的基本使用">2.2 Debug的基本使用</h3>
+<p>为了帮助大家更好的理解程序的执行流程，我们来学习Debug，那什么是Debug呢？</p>
+<p><strong>Debug：</strong>是供程序员使用的程序调试工具，它可以用于查看程序的执行流程，也可以用于追踪程序执行过程来调试程序</p>
+<p>它的两大作用，查看程序执行流程，调试程序。由于目前我们每个程序的代码内容还比较少，</p>
+<p>所以，今天重点掌握查看程序执行流程，当代码复杂的时候，我们需要通过debug来调试程序。那么，debug操作的流程是什么样子的呢？</p>
+<p>在讲解操作流程前，我们来说一下：</p>
+<p>Debug，又被称为<font color="red"><strong>断点调试</strong></font>，断点其实是一个标记，告诉我们从哪里开始查看</p>
+<p>知道了Debug被称为断点调试后，我们来讲一下Debug的操作流程：</p>
+<p>① 如何加断点</p>
+<p>选择要设置断点的代码行，在行号的区域后面单击鼠标左键即可。如图</p>
+<figure>
+<img data-src="imgs/1639989649113.png" alt="1639989649113">
+<figcaption aria-hidden="true">1639989649113</figcaption>
+</figure>
+<p>② 如何运行加了断点的程序</p>
+<p>在代码区域右键Debug执行</p>
+<figure>
+<img data-src="imgs/1639989693712.png" alt="1639989693712">
+<figcaption aria-hidden="true">1639989693712</figcaption>
+</figure>
+<p>③ 看哪里</p>
+<p>看Debugger窗口，看Console窗口</p>
+<figure>
+<img data-src="imgs/1639989770511.png" alt="1639989770511">
+<figcaption aria-hidden="true">1639989770511</figcaption>
+</figure>
+<p>④ 点哪里</p>
+<p>点(Step Over F8) 开始，点(Stop)结束</p>
+<figure>
+<img data-src="imgs/1639989859440.png" alt="1639989859440">
+<figcaption aria-hidden="true">1639989859440</figcaption>
+</figure>
+<p>⑤ 如何删除断点</p>
+<p>选择要删除的断点，单击鼠标左键即可。也就是把第一步的动作，再做一次即可。</p>
+<p>总结一下，Debug的使用流程：</p>
+<p>①如何加断点：选择要设置断点的代码行，在行号的区域后面单击鼠标左键即可</p>
+<p>②如何运行加了断点的程序：在代码区域右键Debug执行</p>
+<p>③看哪里：看Debugger窗口，看Console窗口</p>
+<p>④点哪里：点(Step Over F8) 开始，点(Stop)结束</p>
+<p>⑤如何删除断点：选择要删除的断点，单击鼠标左键即可</p>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<p>通过Debug的方式看一下，如下代码的执行流程：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    Debug查看程序执行流程</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">DebugDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义一个int类型的变量，用来表示价格</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">price</span> <span class="operator">=</span> <span class="number">998</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出变量</span></span><br><span class="line">        System.out.println(price);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//修改变量的值</span></span><br><span class="line">        price = <span class="number">888</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//再次输出变量的值</span></span><br><span class="line">        System.out.println(price);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="选择语句之if">2.3 选择语句之if</h3>
+<p>选择语句有两种结构：</p>
+<ol type="1">
+<li>if语句</li>
+<li>switch语句</li>
+</ol>
+<p>这里我们先来学习if语句，它会根据判定的结果（真或假）决定执行某个分支的代码</p>
+<p>举例说明一下：</p>
+<figure>
+<img data-src="imgs/1639990298744.png" alt="1639990298744">
+<figcaption aria-hidden="true">1639990298744</figcaption>
+</figure>
+<p>无人驾驶的核心就是需要编写大量的判断逻辑，让车辆的行驶变得更加安全。</p>
+<p>了解了交通信号灯的基本逻辑后，下面呢，我们通过if语句来实现过马路的信号灯判断，而if语句呢，有三种格式，这里我们首先来学习第一种格式</p>
+<h4 id="if语句格式1">2.3.1 if语句格式1</h4>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1639990362425.png" alt="1639990362425">
+<figcaption aria-hidden="true">1639990362425</figcaption>
+</figure>
+<p><strong>范例：</strong></p>
+<figure>
+<img data-src="imgs/1639990369424.png" alt="1639990369424">
+<figcaption aria-hidden="true">1639990369424</figcaption>
+</figure>
+<p><strong>执行流程：</strong></p>
+<figure>
+<img data-src="imgs/1639990391758.png" alt="1639990391758">
+<figcaption aria-hidden="true">1639990391758</figcaption>
+</figure>
+<p>了解完if语句格式1之后，下面我们到IDEA中去使用一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    if语句格式1</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IfDemo01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义一个变量，用来表示绿灯的状态</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">isGreen</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        isGreen = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(isGreen) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;绿灯行&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h4 id="if语句格式2和格式3">2.3.2 if语句格式2和格式3</h4>
+<p>刚才我们通过if语句格式1进行了判断，是绿灯的时候，可以通行，但是不是绿灯的时候，没有告诉我不可以通行啊。所以，这里就产生了if语句的第二种格式，先在代码中演示，再回去总结：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    if语句格式2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IfDemo02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义一个变量，用来表示绿灯的状态</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">isGreen</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        isGreen = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isGreen) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;绿灯行&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;不是绿灯，不允许行使&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>演示完毕后，我们来说一下，if语句格式2：</p>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1639990751332.png" alt="1639990751332">
+<figcaption aria-hidden="true">1639990751332</figcaption>
+</figure>
+<p><strong>范例：</strong></p>
+<figure>
+<img data-src="imgs/1639990758157.png" alt="1639990758157">
+<figcaption aria-hidden="true">1639990758157</figcaption>
+</figure>
+<p><strong>执行流程：</strong></p>
+<figure>
+<img data-src="imgs/1639990783253.png" alt="1639990783253">
+<figcaption aria-hidden="true">1639990783253</figcaption>
+</figure>
+<p>讲解完if语句格式2之后，我们到IDEA中再去看一段代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IfDemo03</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义三个变量，表示交通信号灯的三种状态</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">isRed</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">isGreen</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">isYellow</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (isRed) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;红灯停&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isGreen) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;绿灯行&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (isYellow) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;黄灯亮了等一等&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>很明显，这是不合理的，因为我们把三种状态都设置为true了，而实际生活中，只会有一种状态为true，怎么解决呢多种情况的判断呢？这个时候就产生了if语句的第三种格式，先在代码中演示，再回去总结：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    if语句格式3</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IfDemo03</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义三个变量，表示交通信号灯的三种状态</span></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">isRed</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">isGreen</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">isYellow</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//红灯</span></span><br><span class="line"><span class="comment">//        isGreen = false;</span></span><br><span class="line"><span class="comment">//        isYellow = false;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//绿灯</span></span><br><span class="line"><span class="comment">//        isRed = false;</span></span><br><span class="line"><span class="comment">//        isYellow = false;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//黄灯</span></span><br><span class="line"><span class="comment">//        isRed = false;</span></span><br><span class="line"><span class="comment">//        isGreen = false;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//出现了故障，信号灯都不亮了</span></span><br><span class="line">        isRed = <span class="literal">false</span>;</span><br><span class="line">        isGreen = <span class="literal">false</span>;</span><br><span class="line">        isYellow = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(isRed) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;红灯停&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(isGreen) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;绿灯行&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(isYellow) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;黄灯亮了等一等&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span>  &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;交通信号灯故障，请在保证安全的情况下通行&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>演示完毕后，我们来说一下，if语句格式3：</p>
+<p>if语句格式3：</p>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1639991087641.png" alt="1639991087641">
+<figcaption aria-hidden="true">1639991087641</figcaption>
+</figure>
+<p><strong>执行流程：</strong></p>
+<figure>
+<img data-src="imgs/1639991133430.png" alt="1639991133430">
+<figcaption aria-hidden="true">1639991133430</figcaption>
+</figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h4 id="案例1交通信号灯">2.3.3 案例1(交通信号灯)</h4>
+<p>需求：交通信号灯由红灯、绿灯、黄灯组成，请通过程序实现不同的信号灯给出不同的提示。</p>
+<p>提示信息：红灯停、绿灯行、黄灯亮了等一等</p>
+<figure>
+<img data-src="imgs/1639991232920.png" alt="1639991232920">
+<figcaption aria-hidden="true">1639991232920</figcaption>
+</figure>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 用哪种类型来表示信号灯的三种状态呢？</p>
+<p>用int类型来表示信号灯的三种状态(1表示红灯，2表示绿灯，3表示黄灯)</p>
+<p>② 用if语句的哪种格式来实现该需求呢？</p>
+<p>一般来说：1种情况的判断用if格式1,2种情况的判断用if格式2，多种情况的判断用if格式3</p>
+<p>③ if语句判断的表达式该怎么写呢？</p>
+<p>int light = 1;</p>
+<p>if(light == 1) {…}</p>
+<p>==：是关系运算符，用来判断两个数据是否相等，如果相等，结果为true，否则为false</p>
+<p>分析完毕后，我们来说一下实现步骤：</p>
+<p><strong>实现步骤：</strong></p>
+<p>①
+定义一个int类型的变量用来表示信号灯的状态(1表示红灯，2表示绿灯，3表示黄灯)</p>
+<p>② 用if语句格式3进行多种情况的判断</p>
+<p>③ 根据不同的情况给出不同的提示信息</p>
+<p>知道了实现步骤，下面我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：交通信号灯由红灯、绿灯、黄灯组成，请通过程序实现不同的信号灯给出不同的提示。</span></span><br><span class="line"><span class="comment">    提示信息：红灯停、绿灯行、黄灯亮了等一等</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IfTest01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1:定义一个int类型的变量用来表示信号灯的状态(1表示红灯，2表示绿灯，3表示黄灯)</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">light</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        light = <span class="number">2</span>;</span><br><span class="line">        light = <span class="number">3</span>;</span><br><span class="line">        light = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2:用if语句格式3进行多种情况的判断</span></span><br><span class="line">        <span class="comment">//3:根据不同的情况给出不同的提示信息</span></span><br><span class="line">        <span class="keyword">if</span> (light == <span class="number">1</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;红灯停&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (light == <span class="number">2</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;绿灯行&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (light == <span class="number">3</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;黄灯亮了等一等&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;交通信号灯故障，请在保证安全的情况下通行&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h4 id="关系运算符">2.3.4 关系运算符</h4>
+<p>Java中的关系运算符有如下几种：</p>
+<figure>
+<img data-src="imgs/1639991414400.png" alt="1639991414400">
+<figcaption aria-hidden="true">1639991414400</figcaption>
+</figure>
+<p>了解了Java中的关系运算符之后，下面我们到IDEA中去使用一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    关系运算符</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OperatorDemo01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义三个int类型的变量</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//等于：==</span></span><br><span class="line">        System.out.println(i == j);<span class="comment">//false</span></span><br><span class="line">        System.out.println(i == k);<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//不等于：!=</span></span><br><span class="line">        System.out.println(i != j);<span class="comment">//true</span></span><br><span class="line">        System.out.println(i != k);<span class="comment">//false</span></span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//大于：&gt;</span></span><br><span class="line">        System.out.println(i &gt; j);<span class="comment">//false</span></span><br><span class="line">        System.out.println(i &gt; k);<span class="comment">//false</span></span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//大于等于：&gt;=</span></span><br><span class="line">        System.out.println(i &gt;= j);<span class="comment">//false</span></span><br><span class="line">        System.out.println(i &gt;= k);<span class="comment">//true</span></span><br><span class="line">        System.out.println(<span class="string">&quot;--------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//千万不要把==写成了=</span></span><br><span class="line">        System.out.println(i = j); <span class="comment">//20</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后，我们来总结一下，刚才在演示代码的时候有两个注意事项：</p>
+<figure>
+<img data-src="imgs/1639991486878.png" alt="1639991486878">
+<figcaption aria-hidden="true">1639991486878</figcaption>
+</figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h4 id="案例2奇偶数">2.3.5 案例2(奇偶数)</h4>
+<p>需求：给定一个整数，请用程序实现判断该整数是奇数还是偶数，并在控制台输出该整数是奇数还是偶数</p>
+<p>提示：偶数是能够被2整除的整数</p>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 如何判断一个整数是奇数还是偶数？</p>
+<p>整数对2进行取余，余数为0是偶数，否则为奇数</p>
+<p>② 用if语句的哪种格式来实现该需求呢？</p>
+<p>该整数要么是偶数，要么是奇数，2种情况，所以用if语句格式2</p>
+<p>分析完毕后，我们来说一下实现步骤：</p>
+<p><strong>实现步骤：</strong></p>
+<p>① 定义一个int类型的整数</p>
+<p>② 用if语句格式2进行判断</p>
+<p>③ 根据是否是偶数给出不同的提示信息</p>
+<p>知道了实现步骤，下面我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：给定一个整数，请用程序实现判断该整数是奇数还是偶数，并在控制台输出该整数是奇数还是偶数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IfTest02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1:定义一个int类型的整数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        number = <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2:用if语句格式2进行判断</span></span><br><span class="line">        <span class="comment">//3:根据是否是偶数给出不同的提示信息</span></span><br><span class="line">        <span class="keyword">if</span> (number % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            System.out.println(number + <span class="string">&quot;是偶数&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(number + <span class="string">&quot;是奇数&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h4 id="案例3手机以旧换新">2.3.6 案例3(手机以旧换新)</h4>
+<p>需求：张三想买一台7988元的新手机，他的旧手机在二手市场能卖1500元，而手机专卖店推出以旧换新优惠，把他旧手机交给店家，新手机就能够打8折优惠。</p>
+<p>为了更省钱，要不要以旧换新？请通过程序告诉张三</p>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 计算不使用以旧换新的花费</p>
+<p>7988 - 1500</p>
+<p>② 计算使用以旧换新的花费</p>
+<p>7988 * 0.8</p>
+<p>③ 用if语句的哪种格式来实现该需求呢？</p>
+<p>if语句格式2</p>
+<p>分析完毕后，我们来说一下实现步骤：</p>
+<p><strong>实现步骤：</strong></p>
+<p>① 定义变量(money1)纪录不使用以旧换新的花费</p>
+<p>② 定义变量(money2)纪录使用以旧换新的花费</p>
+<p>③ 用if语句格式2进行判断 money1是否大于money2</p>
+<p>④ 根据判断结果，给出相应的提示</p>
+<p>知道了实现步骤，下面我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：张三想买一台7988元的新手机，他的旧手机在二手市场能卖1500元，而手机专卖店推出以旧换新优惠，</span></span><br><span class="line"><span class="comment">        把他的旧手机交给店家，新手机就能够打8折优惠。为了更省钱，要不要以旧换新？请通过程序告诉张三</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IfTest03</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1:定义变量(money1)纪录不使用以旧换新的花费</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">money1</span> <span class="operator">=</span> <span class="number">7988</span> - <span class="number">1500</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2:定义变量(money2)纪录使用以旧换新的花费</span></span><br><span class="line">        <span class="type">double</span> <span class="variable">money2</span> <span class="operator">=</span> <span class="number">7988</span> * <span class="number">0.8</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3:用if语句格式2进行判断 money1是否大于money2</span></span><br><span class="line">        <span class="comment">//4:根据判断结果，给出相应的提示</span></span><br><span class="line">        <span class="keyword">if</span> (money1 &gt; money2) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;使用以旧换新更省钱&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;不使用以旧换新更省钱&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h4 id="案例4你是青年人吗">2.3.7 案例4(你是青年人吗)</h4>
+<p>需求：给出你的年龄，通过程序判断你是否属于青年人？</p>
+<p>提示：世界卫生组织，经过对全球人体素质和平均寿命进行测定，对年龄划分标准作出了新的规定</p>
+<figure>
+<img data-src="imgs/1639991744335.png" alt="1639991744335">
+<figcaption aria-hidden="true">1639991744335</figcaption>
+</figure>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 如何判断一个年龄是否属于青年人？</p>
+<p>年龄要大于等于18，并且小于等于65</p>
+<p>② 在Java中如何表示并且的关系呢？</p>
+<p>age &gt;=18 &amp;&amp; age&lt;=65</p>
+<p><strong><font color="red">&amp;&amp;</font>：是逻辑运算符，用来连接两个结果为boolean类型的表达式，都为true，结果为true，否则为false</strong></p>
+<p>分析完毕后，我们来说一下实现步骤：</p>
+<p><strong>实现步骤：</strong></p>
+<p>① 定义一个int类型的变量来表示你的年龄</p>
+<p>② 用if语句格式2进行判断看你是否属于青年人</p>
+<p>③ 根据是否是青年人给出不同的提示信息</p>
+<p>知道了实现步骤，下面我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：给出你的年龄，通过程序判断你是否属于青年人？</span></span><br><span class="line"><span class="comment">    提示：青年人的年龄范围 18~65</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">IfTest04</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//1:定义一个int类型的变量来表示你的年龄</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">age</span> <span class="operator">=</span> <span class="number">22</span>;</span><br><span class="line">        age = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2:用if语句格式2进行判断看你是否属于青年人</span></span><br><span class="line">        <span class="comment">//3:根据是否是青年人给出不同的提示信息</span></span><br><span class="line">        <span class="keyword">if</span>(age&gt;=<span class="number">18</span> &amp;&amp; age&lt;=<span class="number">65</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;你是青年人&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;你不是青年人&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h4 id="逻辑运算符">2.3.8 逻辑运算符</h4>
+<p>Java中常用的逻辑运算符有如下几种：</p>
+<figure>
+<img data-src="imgs/1639991900000.png" alt="1639991900000">
+<figcaption aria-hidden="true">1639991900000</figcaption>
+</figure>
+<p>了解了Java中的逻辑运算符之后，下面我们到IDEA中去使用一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    逻辑运算符</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OperatorDemo02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义变量</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//逻辑与：&amp;&amp;</span></span><br><span class="line">        System.out.println((i&gt;j) &amp;&amp; (i&gt;k));<span class="comment">//false &amp;&amp; false</span></span><br><span class="line">        System.out.println((i&lt;j) &amp;&amp; (i&gt;k));<span class="comment">//true &amp;&amp; false</span></span><br><span class="line">        System.out.println((i&gt;j) &amp;&amp; (i&lt;k));<span class="comment">//false &amp;&amp; true</span></span><br><span class="line">        System.out.println((i&lt;j) &amp;&amp; (i&lt;k));<span class="comment">//true &amp;&amp; true</span></span><br><span class="line">        System.out.println(<span class="string">&quot;-----------------------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//逻辑或：||</span></span><br><span class="line">        System.out.println((i&gt;j) || (i&gt;k));<span class="comment">//false || false</span></span><br><span class="line">        System.out.println((i&lt;j) || (i&gt;k));<span class="comment">//true || false</span></span><br><span class="line">        System.out.println((i&gt;j) || (i&lt;k));<span class="comment">//false || true</span></span><br><span class="line">        System.out.println((i&lt;j) || (i&lt;k));<span class="comment">//true || true</span></span><br><span class="line">        System.out.println(<span class="string">&quot;-----------------------&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//逻辑非：!</span></span><br><span class="line">        System.out.println(!(i&gt;j));<span class="comment">//!false</span></span><br><span class="line">        System.out.println(!!(i&gt;j));<span class="comment">//!!false</span></span><br><span class="line">        System.out.println(!!!(i&gt;j));<span class="comment">//!!!false</span></span><br><span class="line">        System.out.println(!!!!(i&gt;j));<span class="comment">//!!!!false</span></span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h4 id="三元运算符">2.3.9 三元运算符</h4>
+<p>来，继续啊，下面我们来学习三元运算符：</p>
+<p><strong>格式：</strong>关系表达式 ？表达式1 ：表达式2；</p>
+<p><strong>范例：</strong>a &gt; b ? a : b;</p>
+<p><strong>执行流程：</strong></p>
+<ul>
+<li><p>首先计算关系表达式的值</p></li>
+<li><p>如果值为true，表达式1的值就是运算结果</p>
+<p>如果值为false，表达式2的值就是运算结果</p></li>
+</ul>
+<p>了解了三元运算符的执行流程后，下面我们到IDEA中去使用一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    三元运算符</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OperatorDemo03</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> a &gt; b ? a : b;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;较大的值是：&quot;</span> + max);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h4 id="三元运算符和if语句格式2的区别">2.3.10
+三元运算符和if语句格式2的区别</h4>
+<p>这里呢，我们来讲解一下三元运算符和if语句格式2的区别，它们有什么区别呢？我们先到IDEA中进行讲解，然后再回来总结：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    三元运算符和if语句格式2的区别</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">OperatorTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义两个int类型的变量</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//需求：获取两个数中的较大值</span></span><br><span class="line">        <span class="comment">//if语句实现</span></span><br><span class="line"><span class="comment">//        int max;</span></span><br><span class="line"><span class="comment">//        if (a &gt; b) &#123;</span></span><br><span class="line"><span class="comment">//            max = a;</span></span><br><span class="line"><span class="comment">//        &#125; else &#123;</span></span><br><span class="line"><span class="comment">//            max = b;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//        System.out.println(&quot;较大的值是：&quot; + max);</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(a &gt; b) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;较大的值是：&quot;</span> + a);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;较大的值是：&quot;</span> + b);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//三元运算符实现</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> a &gt; b? a: b;</span><br><span class="line">        System.out.println(<span class="string">&quot;较大的值是：&quot;</span> + max);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕之后，回来总结一下：</p>
+<ul>
+<li>如果if语句控制的内容：是用变量纪录数据值，可以通过三元运算符改进</li>
+</ul>
+<figure>
+<img data-src="imgs/1639992246395.png" alt="1639992246395">
+<figcaption aria-hidden="true">1639992246395</figcaption>
+</figure>
+<ul>
+<li>如果if语句控制的内容是：是通过输出语句直接输出数据值，无法通过三元运算符改进</li>
+</ul>
+<figure>
+<img data-src="imgs/1639992255842.png" alt="1639992255842">
+<figcaption aria-hidden="true">1639992255842</figcaption>
+</figure>
+<p>好了，关于三元运算符和if语句格式2的区别我们就讲到这里。这个知识大家先了解一下，方便我们后面在适合的场景选择合适的实现方案。</p>
+<h3 id="选择语句之switch">2.4 选择语句之switch</h3>
+<p>来，继续啊，下面我们来学习选择语句中的switch语句。</p>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1639992426024.png" alt="1639992426024">
+<figcaption aria-hidden="true">1639992426024</figcaption>
+</figure>
+<p><strong>格式说明：</strong></p>
+<figure>
+<img data-src="imgs/1639992449128.png" alt="1639992449128">
+<figcaption aria-hidden="true">1639992449128</figcaption>
+</figure>
+<p><strong>执行流程：</strong></p>
+<figure>
+<img data-src="imgs/1639992471016.png" alt="1639992471016">
+<figcaption aria-hidden="true">1639992471016</figcaption>
+</figure>
+<p>了解完switch语句后，下面我们到IDEA中去使用一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    switch语句</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SwitchDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//定义一个int类型的变量用来表示信号灯的状态(1表示红灯，2表示绿灯，3表示黄灯)</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">light</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line"><span class="comment">//        light = 2;</span></span><br><span class="line"><span class="comment">//        light = 3;</span></span><br><span class="line"><span class="comment">//        light = 4;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//用switch语句实现交通信号灯案例</span></span><br><span class="line">        <span class="keyword">switch</span> (light) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;红灯停&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;绿灯行&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;黄灯亮了等一等&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;交通信号灯故障，请在保证安全的情况下通行&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最后，我们来总结一下，刚才在演示代码的时候有个注意事项：</p>
+<p><strong>注意：</strong>在switch语句中，如果case控制的语句体后面不写break，将出现穿透现象，在不判断下一个case值的情况下，向下运行，直到遇到break，或者整个switch语句结束</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wChat.png" alt="Ethan Liu 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ethan Liu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/" title="JavaSE基础——Day02 JavaSE基础——运算符&amp;选择语句">http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE基础/day02运算符&选择语句/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+              <a href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> Java基础</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day03%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" rel="prev" title="">
+                  <i class="fa fa-angle-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day01Java%E5%85%A5%E9%97%A8&IDEA&%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" rel="next" title="JavaSE基础——Day01 JavaSE基础——Java入门&IDEA&基础语法">
+                  JavaSE基础——Day01 JavaSE基础——Java入门&IDEA&基础语法 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="19e02707e86cc9cad53dff78bfea875e"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023-2024 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Is Ethan's</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">40k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:27</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni8=" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2023/03/15/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day02%E8%BF%90%E7%AE%97%E7%AC%A6&%E9%80%89%E6%8B%A9%E8%AF%AD%E5%8F%A5/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyxf6tytI","appkey":"90987f30c4b5248baad5a04c7a6abfe1","count":true}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>
