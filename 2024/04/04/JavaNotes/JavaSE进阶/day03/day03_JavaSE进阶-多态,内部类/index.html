@@ -21,15 +21,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="JavaSE进阶——Day03 该篇主要讲解Java中的多态、内部类">
+    <meta name="description" content="JavaSE进阶——Day03 该篇主要讲解Java中的多态、内部类、时间日期格式类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaSE进阶——Day03 多态、内部类">
+<meta property="og:title" content="JavaSE进阶——Day03 多态、内部类、时间日期格式类">
 <meta property="og:url" content="http://ethanliu6.github.io/2024/04/04/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day03/day03_JavaSE%E8%BF%9B%E9%98%B6-%E5%A4%9A%E6%80%81,%E5%86%85%E9%83%A8%E7%B1%BB/index.html">
 <meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
-<meta property="og:description" content="JavaSE进阶——Day03 该篇主要讲解Java中的多态、内部类">
+<meta property="og:description" content="JavaSE进阶——Day03 该篇主要讲解Java中的多态、内部类、时间日期格式类">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-03T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-04-20T14:29:33.526Z">
+<meta property="article:modified_time" content="2024-04-26T08:20:19.496Z">
 <meta property="article:author" content="Ethan Liu">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Java进阶">
@@ -40,10 +40,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/04/04/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day03/day03_JavaSE%E8%BF%9B%E9%98%B6-%E5%A4%9A%E6%80%81,%E5%86%85%E9%83%A8%E7%B1%BB/","path":"2024/04/04/JavaNotes/JavaSE进阶/day03/day03_JavaSE进阶-多态,内部类/","title":"JavaSE进阶——Day03 多态、内部类"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/04/04/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day03/day03_JavaSE%E8%BF%9B%E9%98%B6-%E5%A4%9A%E6%80%81,%E5%86%85%E9%83%A8%E7%B1%BB/","path":"2024/04/04/JavaNotes/JavaSE进阶/day03/day03_JavaSE进阶-多态,内部类/","title":"JavaSE进阶——Day03 多态、内部类、时间日期格式类"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>JavaSE进阶——Day03 多态、内部类 | <font color='white' >Ethan の Blog</font></title>
+<title>JavaSE进阶——Day03 多态、内部类、时间日期格式类 | <font color='white' >Ethan の Blog</font></title>
   
 
 
@@ -143,8 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81"><span class="nav-text">1. 多态</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E8%83%BD%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="nav-text">1.1 多态能解决什么问题 ?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E4%B8%AD%E6%88%90%E5%91%98%E8%AE%BF%E9%97%AE%E7%89%B9%E7%82%B9"><span class="nav-text">1.2 多态中成员访问特点 ?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#api"><span class="nav-text">2. API</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E4%B9%A0api%E6%80%8E%E4%B9%88%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0%E4%B8%80%E4%B8%AAjava%E6%8F%90%E4%BE%9B%E5%A5%BD%E7%9A%84%E7%B1%BB"><span class="nav-text">2.1
-为什么要学习API,怎么快速学习一个Java提供好的类 ?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%93%E6%97%A5%E9%97%AE%E9%A2%98%E5%B0%8F%E7%BB%93"><span class="nav-text">3. 当日问题小结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BD%93%E6%97%A5%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">3.1 当日遇到的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98%E5%8E%9F%E5%9B%A0"><span class="nav-text">3.2 出现问题原因</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98%E6%96%B9%E6%A1%88"><span class="nav-text">3.3 解决问题方案</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-number">1.</span> <span class="nav-text">回顾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E7%B1%BB%E7%9A%84%E4%B9%A6%E5%86%99%E8%A7%84%E5%88%99"><span class="nav-number">1.1.</span> <span class="nav-text">工具类的书写规则：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.2.</span> <span class="nav-text">static关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.3.</span> <span class="nav-text">final关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">1.4.</span> <span class="nav-text">代码块：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.5.</span> <span class="nav-text">接口：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-number">1.6.</span> <span class="nav-text">枚举：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%80%81"><span class="nav-number">2.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%9A%E6%80%81"><span class="nav-number">2.1.</span> <span class="nav-text">什么是多态？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E8%A7%A3%E5%86%B3%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">多态解决程序中的什么问题？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">2.3.</span> <span class="nav-text">多态的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E5%9C%A8%E4%BD%BF%E7%94%A8%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E7%BB%86%E8%8A%82"><span class="nav-number">2.4.</span> <span class="nav-text">多态在使用时的注意细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E8%BD%AC%E5%9E%8B"><span class="nav-number">2.5.</span> <span class="nav-text">多态转型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E4%B8%8A%E8%BD%AC%E5%9E%8B%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E6%8F%90%E5%8D%87"><span class="nav-number">2.5.1.</span> <span class="nav-text">向上转型（自动类型提升）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%91%E4%B8%8B%E8%BD%AC%E5%9E%8B%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.5.2.</span> <span class="nav-text">向下转型（强制类型转换）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E7%BB%86%E8%8A%82"><span class="nav-number">2.5.3.</span> <span class="nav-text">注意细节：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B9%A6%E5%86%99"><span class="nav-number">2.6.</span> <span class="nav-text">多态代码的书写：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">内部类：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">匿名内部类：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">5.</span> <span class="nav-text">日期类型的数据：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#date%E7%B1%BB"><span class="nav-number">5.1.</span> <span class="nav-text">Date类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dateformat%E7%B1%BB"><span class="nav-number">5.2.</span> <span class="nav-text">DateFormat类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#calendar%E7%B1%BB%E6%97%A5%E5%8E%86%E7%B1%BB%E5%AD%98%E5%82%A8%E7%9A%84%E6%9C%89%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E6%97%A5%E5%8E%86%E4%BF%A1%E6%81%AF"><span class="nav-number">5.3.</span> <span class="nav-text">Calendar类：日历类（存储的有日期、时间、日历信息）</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,12 +223,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="JavaSE进阶——Day03 多态、内部类 | <font color='white' >Ethan の Blog</font>">
+      <meta itemprop="name" content="JavaSE进阶——Day03 多态、内部类、时间日期格式类 | <font color='white' >Ethan の Blog</font>">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaSE进阶——Day03 多态、内部类<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9KYXZhTm90ZXMvSmF2YVNF6L+b6Zi2L2RheTAzL2RheTAzX0phdmFTRei/m+mYti3lpJrmgIEs5YaF6YOo57G7Lm1k" title="编辑"><i class="fa fa-pen-nib"></i></span>
+          JavaSE进阶——Day03 多态、内部类、时间日期格式类<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9KYXZhTm90ZXMvSmF2YVNF6L+b6Zi2L2RheTAzL2RheTAzX0phdmFTRei/m+mYti3lpJrmgIEs5YaF6YOo57G7Lm1k" title="编辑"><i class="fa fa-pen-nib"></i></span>
         </h1>
 
         <div class="post-meta-container">
@@ -247,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-20 22:29:33" itemprop="dateModified" datetime="2024-04-20T22:29:33+08:00">2024-04-20</time>
+      <time title="修改时间：2024-04-26 16:20:19" itemprop="dateModified" datetime="2024-04-26T16:20:19+08:00">2024-04-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -275,7 +274,7 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="JavaSE进阶——Day03 多态、内部类" href="/2024/04/04/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day03/day03_JavaSE%E8%BF%9B%E9%98%B6-%E5%A4%9A%E6%80%81,%E5%86%85%E9%83%A8%E7%B1%BB/#SOHUCS" itemprop="discussionUrl">
+    <a title="JavaSE进阶——Day03 多态、内部类、时间日期格式类" href="/2024/04/04/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day03/day03_JavaSE%E8%BF%9B%E9%98%B6-%E5%A4%9A%E6%80%81,%E5%86%85%E9%83%A8%E7%B1%BB/#SOHUCS" itemprop="discussionUrl">
       <span id="sourceId::952c4429ec8f5f8e6c34b453391f519b" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
@@ -287,14 +286,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>160</span>
+      <span>1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>4 分钟</span>
     </span>
 </div>
 
@@ -306,7 +305,7 @@
     
     <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
 <p>JavaSE进阶——Day03
-该篇主要讲解Java中的<strong>多态</strong>、<strong>内部类</strong></p>
+该篇主要讲解Java中的<strong>多态</strong>、<strong>内部类、时间日期格式类</strong></p>
 
 </blockquote>
 <span id="more"></span>
@@ -335,16 +334,174 @@
 <li><p>Math类 &amp; System类</p></li>
 </ul></li>
 </ul>
-<h3 id="多态">1. 多态</h3>
-<h4 id="多态能解决什么问题">1.1 多态能解决什么问题 ?</h4>
-<h4 id="多态中成员访问特点">1.2 多态中成员访问特点 ?</h4>
-<h3 id="api">2. API</h3>
-<h4 id="为什么要学习api怎么快速学习一个java提供好的类">2.1
-为什么要学习API,怎么快速学习一个Java提供好的类 ?</h4>
-<h3 id="当日问题小结">3. 当日问题小结</h3>
-<h4 id="当日遇到的问题">3.1 当日遇到的问题</h4>
-<h4 id="出现问题原因">3.2 出现问题原因</h4>
-<h4 id="解决问题方案">3.3 解决问题方案</h4>
+<h2 id="回顾">回顾</h2>
+<h3 id="工具类的书写规则">工具类的书写规则：</h3>
+<ol type="1">
+<li>工具类，修饰为final（不让继承）</li>
+<li>工具类的构造方法，设置为private（不让其他类创建对象）</li>
+<li>工具类中提供：静态方法（通过类名访问）</li>
+</ol>
+<h3 id="static关键字">static关键字</h3>
+<ul>
+<li><p>解决程序中什么问题？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">静态变量：共享数据</span><br><span class="line">静态方法：工具类中方法的编写</span><br></pre></td></tr></table></figure></li>
+<li><p>怎么使用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> class 类&#123;</span><br><span class="line">    <span class="keyword">static</span> 类型 变量名;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> 返回值类型 方法名(参数, ..)&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">类名.静态变量名=<span class="number">100</span>;</span><br><span class="line">类名.静态方法名();</span><br></pre></td></tr></table></figure></li>
+<li><p>细节：</p>
+<ol type="1">
+<li>静态内容是随着类的加载，存放在方法区的静态区域下（仅有一份）【早于对象创建】</li>
+<li>静态方法中不能使用this关键字</li>
+<li>静态方法只能访问静态内容（静态变量、静态方法）</li>
+</ol></li>
+</ul>
+<h3 id="final关键字">final关键字</h3>
+<ul>
+<li>final修饰的类， 不能继承</li>
+<li>final修饰的方法， 不能被重写</li>
+<li>final修饰的变量， 初始化值后不能修改其值（变为常量）</li>
+</ul>
+<h3 id="代码块">代码块：</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    <span class="comment">//在对象创建之前，初始化数据</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="接口">接口：</h3>
+<ul>
+<li><p>接口的作用：制定规则</p></li>
+<li><p>接口的使用</p>
+<ul>
+<li><p>接口定义（制定规则）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> interfce 接口名&#123;</span><br><span class="line">    <span class="comment">//常量</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String 常量名 = 值;</span><br><span class="line">    <span class="comment">//抽象方法(制定规则)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> 返回值类型 方法名(参数, ...);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>接口实现（按照规则实现代码）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> 接口实现类 implements 接口名&#123;</span><br><span class="line">    <span class="comment">//重写接口中的抽象方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+</ul>
+<p>问题：在继承时，子类可能把父类的构造方法继承了吗？</p>
+<p>答案：不可以。</p>
+<h3 id="枚举">枚举：</h3>
+<ul>
+<li><p>解决什么问题？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当程序中的某个数据有固定在一定范围的取值时，为保障程序中数据的有效性，可以使用：枚举</span><br></pre></td></tr></table></figure></li>
+<li><p>使用方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> 枚举名&#123;</span><br><span class="line">    固定选项值<span class="number">1</span>,固定选项值<span class="number">2</span>,...;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">枚举名.选项值;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> <span class="title class_">Sex</span>&#123;</span><br><span class="line">    BOY,GIRL;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Student</span>&#123;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> Sex sex;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="type">Student</span> <span class="variable">stu</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Student</span>( Sex.BOY )</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="多态">多态</h2>
+<h3 id="什么是多态">什么是多态？</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">多态：多种形态</span><br><span class="line"></span><br><span class="line">多种形态：</span><br><span class="line">   同一个对象，在不同时刻表现出来的不同形态</span><br><span class="line">   Cat extends Animal</span><br><span class="line">   第一种形态： Cat  c1 = new Cat();  //c1是只猫</span><br><span class="line">   第二种形态： Animal c2 = new Cat(); //c2是个动物</span><br><span class="line">   </span><br><span class="line">举例：</span><br><span class="line">   数字2     </span><br><span class="line">       10进制：2</span><br><span class="line">       2进制： 00000010</span><br></pre></td></tr></table></figure>
+<h3 id="多态解决程序中的什么问题">多态解决程序中的什么问题？</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、提高代码的复用性</span><br><span class="line"><span class="number">2</span>、提高代码的扩展性</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">Player</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">play</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">stop</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> MP3 <span class="keyword">implements</span> <span class="title class_">Player</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">play</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;mp3播放&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">stop</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;mp3停止&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> MP4 <span class="keyword">implements</span> <span class="title class_">Player</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">play</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;mp4播放&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">stop</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;mp4停止&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    <span class="type">MP3</span> <span class="variable">mp3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MP3</span>();</span><br><span class="line">    method(  mp3  )</span><br><span class="line">    </span><br><span class="line">    <span class="type">MP4</span> <span class="variable">mp4</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MP4</span>();</span><br><span class="line">    method( mp4 )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//多态的体现：  Player p = new MP3 / MP4  ();</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">(  Player   p     )</span><span class="comment">// Player p = new MP4()  </span></span><br><span class="line">&#123;</span><br><span class="line">    p.play();</span><br><span class="line">    p.stop();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//集合： ArrayList类 implements List接口   、   LinkedList类 implements List接口</span></span><br><span class="line"><span class="type">List</span> <span class="variable">list</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">LinkedList</span>();</span><br></pre></td></tr></table></figure>
+<h3 id="多态的使用">多态的使用</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//多态的代码体现格式：  </span></span><br><span class="line">父类型  对象 =  <span class="keyword">new</span> 子类();  <span class="comment">//大类型包含小类型   int a=10;   long b = a;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="多态在使用时的注意细节">多态在使用时的注意细节</h3>
+<ol type="1">
+<li>多态中：父类和子类拥有一模一样的成员变量时：
+<ul>
+<li>编译时：以父类型中的成员变量为主</li>
+<li>运行时：使用父类中的成员变量</li>
+</ul></li>
+<li>多态中：父类和子类拥有一模一样的成员方法时：
+<ul>
+<li>编译时：以父类中的成员方法为主（检查父类中有没有这个成员方法，没有：报错）</li>
+<li>运行时：以子类中的成员方法为主（调用子类对象中重写后的成员方法）</li>
+</ul></li>
+</ol>
+<h3 id="多态转型">多态转型</h3>
+<ul>
+<li><h4 id="向上转型自动类型提升">向上转型（自动类型提升）</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基础班： int a =10;   long  num = a;  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//多态：</span></span><br><span class="line">父类型  父引用 = <span class="keyword">new</span> 子类(); <span class="comment">//子类型变为：父类型 （弊端：父引用不能使用子类特有成员）</span></span><br></pre></td></tr></table></figure></li>
+<li><h4 id="向下转型强制类型转换">向下转型（强制类型转换）</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//解决的问题： 父引用不能使用子类中特有成员</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//基础班： long a =100L;    int b = (int) a;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//多态的向下转型：</span></span><br><span class="line">子类 对象 = (子类) 父引用;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h4 id="注意细节">注意细节：</h4>
+<ul>
+<li><p>向下转型时容易发生：java.lang.ClassCastException（类型转换异常）</p>
+<p>解决方案：instanceof</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>( 父引用对象  <span class="keyword">instanceof</span> 子类型 )&#123;</span><br><span class="line">    子类型 对象 = (子类型)父引用对象;</span><br><span class="line">    对象.特有成员</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="多态代码的书写">多态代码的书写：</h3>
+<ol type="1">
+<li><p>创建对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父类型  父引用 = new 子类()</span></span><br><span class="line"><span class="type">Father</span> <span class="variable">f</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Son</span>();</span><br></pre></td></tr></table></figure></li>
+<li><p>作为参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">( Father f )</span></span><br><span class="line">&#123;</span><br><span class="line">    f.方法()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>作为返回值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Animal <span class="title function_">getInstance</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//返回：子类对象</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Cat</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="内部类">内部类：</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span>&#123;</span><br><span class="line">    <span class="comment">//成员变量</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//成员方法</span></span><br><span class="line">     </span><br><span class="line">    <span class="comment">//在一个类中，定义了另外一个类（内部类[成员内部类]）   </span></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Hello</span>&#123;       </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>问题：如何访问某个类中的成员变量or成员方法？</p>
+<p>答案：创建类的对象，通过"对象名.成员"的方式访问</p>
+<h3 id="匿名内部类">匿名内部类：</h3>
+<ul>
+<li><p>解决程序中什么问题？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">简化程序中代码的书写</span><br></pre></td></tr></table></figure></li>
+<li><p>怎么使用？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//语法格式：</span></span><br><span class="line"><span class="keyword">new</span> 类名/接口()&#123;</span><br><span class="line">    <span class="comment">//重写方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Father</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sayHello</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;早上好, &quot;</span>+ name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//此时：程序的需求发生改变，要求sayHello方法的返回值为&quot;你好,名字&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Son</span> <span class="keyword">extends</span> <span class="title class_">Father</span>&#123;</span><br><span class="line">    <span class="comment">//重写sayHello方法</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sayHello</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;你好, &quot;</span>+name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//以下代码使用匿名内部的方式（其实本质就是一个子类对象）</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Father</span>()&#123;</span><br><span class="line">    <span class="comment">//把父类中的方法重写</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">sayHello</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;晚上好,&quot;</span>+name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>工具类：为解决某些特定问题，特意编写的公共类（程序员都可以使用）</p>
+<ul>
+<li>JDK(java开发工具包) = JRE + 核心类库
+<ul>
+<li>核心类库： jdk提供一些现成的功能，这些功能封装在不同的类中</li>
+</ul></li>
+<li>JDK就提供了一些工具类：Math、Arrays
+<ul>
+<li>Arrays工具类：针对数组，提供了一系列现成的功能（例：排序）</li>
+</ul></li>
+</ul>
+<h2 id="总结">总结</h2>
+<ul>
+<li><p>多态</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//多态可以解决程序中什么问题？</span></span><br><span class="line"><span class="number">1</span>、提高程序中代码的复用性</span><br><span class="line"><span class="number">2</span>、提高程序中代码的扩展性    </span><br><span class="line"></span><br><span class="line"><span class="comment">//多态怎么使用？</span></span><br><span class="line"><span class="comment">//1、创建一个对象</span></span><br><span class="line">父类型 父引入 = <span class="keyword">new</span> 子类(); </span><br><span class="line"><span class="comment">//2、作为参数</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">method</span><span class="params">(父类型 父引用)</span>&#123;</span><br><span class="line">    父引用.成员方法()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//3、作为返回值</span></span><br><span class="line"><span class="keyword">public</span> 父类型 getInstance()&#123;</span><br><span class="line">    <span class="keyword">return</span> 子类对象;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//多态在使用中的细节</span></span><br><span class="line">父子类中有相同的成员变量时：编译和运行都以父类型中的成员变量为主</span><br><span class="line">父子类中有相同的成员方法时：编译时检查父类型中的成员方法是否存在  </span><br><span class="line">                       运行时以子类对象中的重写的方法为主   </span><br><span class="line"></span><br><span class="line"><span class="comment">//多态的转型</span></span><br><span class="line">向上转型： 父类型 父引入 = <span class="keyword">new</span> 子类(); <span class="comment">//弊端：父引用不能访问子类对象中特有成员</span></span><br><span class="line">向下转型： 子类  对象 = (子类) 父引用; <span class="comment">//向下转换后，可以访问子类对象中特有成员</span></span><br><span class="line">          在向下转型时容易发生：ClassCastException 异常</span><br><span class="line">          使用：<span class="keyword">instanceof</span> 避免   ClassCastException异常发生</span><br><span class="line">              <span class="keyword">if</span>(父引用 <span class="keyword">instanceof</span> 子类类型)&#123;</span><br><span class="line">                  子类 对象 =(子类) 父引用;</span><br><span class="line">              &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>匿名内部类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//匿名内部类解决什么问题？</span></span><br><span class="line">简化程序中的代码</span><br><span class="line">    </span><br><span class="line"><span class="comment">//匿名内部类的使用</span></span><br><span class="line">父类型 父引用 = <span class="keyword">new</span> 父类/接口()&#123;</span><br><span class="line">    <span class="comment">//重写父类型中的方法</span></span><br><span class="line">&#125;;  </span><br><span class="line"></span><br><span class="line"><span class="comment">//作为参数</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">show</span><span class="params">( Flyable  fly )</span>;</span><br><span class="line"></span><br><span class="line">show( <span class="keyword">new</span> <span class="title class_">Flyalbe</span>()&#123;</span><br><span class="line">    <span class="comment">//重写方法</span></span><br><span class="line">&#125; );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//作为返回值</span></span><br><span class="line"><span class="keyword">public</span> Flyable <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Flyable</span>()&#123;</span><br><span class="line">       <span class="comment">//重写方法  </span></span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>在Java继承体系中，有一个顶层父类：Object（鼻祖类）</p>
+<ul>
+<li>在java语言中，程序员自定义的类或者jdk中存在的类，直接或间接都要继承Object</li>
+<li>继承了Object类后，就可以使用Object提供的相关方法：
+<ul>
+<li>boolean equals(Object obj)
+<ul>
+<li>boolean： 方法的返回值类型</li>
+<li>Object： 方法传递参数的类型</li>
+<li>作用：比较两个对象是否相同（比较两个对象的地址值是否相同）</li>
+</ul></li>
+<li>String toString()
+<ul>
+<li>作用： 把对象转换为字符串</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>比较两个字符串是否相同 ：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方案1： String类中的equals方法</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">result</span> <span class="operator">=</span> 字符串<span class="number">1.</span>equals(字符串<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方案2：Objects工具类中的equals方法</span></span><br><span class="line"><span class="type">boolean</span> <span class="variable">result</span> <span class="operator">=</span> Objects.equals(字符串<span class="number">1</span> , 字符串<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">区别：Objects工具类中的equals方法 可以避免NullPointerException异常的发生</span><br></pre></td></tr></table></figure>
+<h2 id="日期类型的数据">日期类型的数据：</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Emp</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//姓名</span></span><br><span class="line">    <span class="keyword">private</span> String name;<span class="comment">//String表示字符串</span></span><br><span class="line">    <span class="comment">//年龄</span></span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> age;<span class="comment">//int表示整数</span></span><br><span class="line">    <span class="comment">//生日</span></span><br><span class="line">    <span class="keyword">private</span> Date birthday;<span class="comment">//Date表示日期</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="date类">Date类：</h3>
+<ul>
+<li><p>归属包：java.util</p></li>
+<li><p>作用：表示日期时间（精确到毫秒）</p></li>
+<li><p>使用：</p>
+<ul>
+<li><p>构造方法（创建对象）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Date</span><span class="params">()</span></span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Date</span><span class="params">(<span class="type">long</span> time)</span></span><br></pre></td></tr></table></figure></li>
+<li><p>常用方法</p></li>
+</ul></li>
+</ul>
+<h3 id="dateformat类">DateFormat类</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//DateFormat类是什么</span></span><br><span class="line">DateFormat类是java语言提供的日期格式化类</span><br><span class="line">    </span><br><span class="line"><span class="comment">//DateFormat类解决什么问题</span></span><br><span class="line">对日期进行格式化操作：Date类型 -&gt; String类型     =&gt;  String <span class="title function_">format</span><span class="params">(Date)</span></span><br><span class="line">对日期进行解析操作：String类型 -&gt; Date类型      =&gt;  Date <span class="title function_">parse</span><span class="params">(String )</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//DateFormat类怎么使用</span></span><br><span class="line">    java.text.DateFormat</span><br><span class="line">    DataeFormat是一个抽象类，无法实例化。使用子类：SimpleDateFormat</span><br><span class="line"><span class="type">DateFormat</span> <span class="variable">df</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;日期模板&quot;</span>);</span><br><span class="line">    <span class="comment">//日期模板：就是使用一些特定的字符，来表示某个日期。例：yyyy表示全年 MM表示月 dd表示日</span></span><br><span class="line"></span><br><span class="line"><span class="type">DateFormat</span> <span class="variable">df</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy/MM/dd&quot;</span>);</span><br><span class="line"><span class="type">DateFormat</span> <span class="variable">df</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy年MM月dd日 HH:mm:ss&quot;</span>);</span><br><span class="line"></span><br><span class="line">String <span class="title function_">format</span><span class="params">(Date date)</span> <span class="comment">//将Date类型的数据，按照日期模板，转换为字符串</span></span><br><span class="line">Date <span class="title function_">parse</span><span class="params">(String s)</span> <span class="comment">//将日期格式的字符串数据，按照日期模板，转换为Date对象    </span></span><br></pre></td></tr></table></figure>
+<h3 id="calendar类日历类存储的有日期时间日历信息">Calendar类：日历类（存储的有日期、时间、日历信息）</h3>
+<ul>
+<li>代替java.util.Date类中的过期方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Calendar类的使用： 构造方法、 常用方法</span></span><br><span class="line"><span class="comment">//Calendar类是一个抽象类，无法创建对象。    子类：GregorianCalendar</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//在Calendar类中，提供了一个静态方法，该静态方法可以实现：Calendar对象的实例化（底层还是使用GregorianCalendar子类）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取Calendar类对象</span></span><br><span class="line"><span class="type">Calendar</span> <span class="variable">c</span> <span class="operator">=</span> Calendar.getInstance();</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Calendar对象中存储的内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">java.util.GregorianCalendar[</span><br><span class="line">time=1667208388632,</span><br><span class="line">areFieldsSet=true,</span><br><span class="line">areAllFieldsSet=true,</span><br><span class="line">lenient=true,</span><br><span class="line"></span><br><span class="line">zone=sun.util.calendar.ZoneInfo[id=&quot;Asia/Shanghai&quot;,</span><br><span class="line"></span><br><span class="line">offset=28800000,dstSavings=0,useDaylight=false,transitions=31,lastRule=null],</span><br><span class="line"></span><br><span class="line">firstDayOfWeek=1,</span><br><span class="line"></span><br><span class="line">minimalDaysInFirstWeek=1,ERA=1,</span><br><span class="line"></span><br><span class="line">YEAR=2022,</span><br><span class="line">MONTH=9, //月份：0~11</span><br><span class="line">WEEK_OF_YEAR=45,</span><br><span class="line"></span><br><span class="line">WEEK_OF_MONTH=6,</span><br><span class="line"></span><br><span class="line">DAY_OF_MONTH=31,</span><br><span class="line"></span><br><span class="line">DAY_OF_YEAR=304,</span><br><span class="line">DAY_OF_WEEK=2,DAY_OF_WEEK_IN_MONTH=5,AM_PM=1,</span><br><span class="line"></span><br><span class="line">HOUR=5,</span><br><span class="line">HOUR_OF_DAY=17,</span><br><span class="line"></span><br><span class="line">MINUTE=26,</span><br><span class="line"></span><br><span class="line">SECOND=28,</span><br><span class="line"></span><br><span class="line">MILLISECOND=632,</span><br><span class="line"></span><br><span class="line">ZONE_OFFSET=28800000,DST_OFFSET=0]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>获取Calendar对象中存储的数据：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//API方法：  public  int  get(int 字段名)  //字段名：YEAR     MONTH    DAY_OF_MONTH</span></span><br><span class="line">在Calendar类中有一些静态常量： YEAR     MONTH    DAY_OF_MONTH</span><br><span class="line">Calenar.YEAR       Calendar.MONTH</span><br><span class="line">    </span><br><span class="line"><span class="comment">//获取日历对象中的年</span></span><br><span class="line"><span class="type">Calendar</span> <span class="variable">c</span> <span class="operator">=</span> Calendar.getInstance();</span><br><span class="line"><span class="type">int</span> <span class="variable">year</span> <span class="operator">=</span> c.get( Calenar.YEAR )</span><br></pre></td></tr></table></figure>
+<p>给日历对象设置具体的：年月日时分秒......</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取日历对象中的年</span></span><br><span class="line"><span class="type">Calendar</span> <span class="variable">c</span> <span class="operator">=</span> Calendar.getInstance(); <span class="comment">//日历对象是基于当前系统日期时间获取的</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//修改日历对象中的信息     public void set(int 字段 , int 数值)</span></span><br><span class="line">c.set( Calendar.YEAR , <span class="number">2000</span> );</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改日历对象中的年月日</span></span><br><span class="line">c.set( <span class="number">2000</span>, <span class="number">9</span>, <span class="number">31</span> );</span><br></pre></td></tr></table></figure>
+<p>给日历对象中的信息，增加或减少</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> 字段  ， <span class="type">int</span> 数值)</span> <span class="comment">//数值是负数是减少 ， 数据是正数表示增加</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -376,7 +533,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://ethanliu6.github.io/2024/04/04/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day03/day03_JavaSE%E8%BF%9B%E9%98%B6-%E5%A4%9A%E6%80%81,%E5%86%85%E9%83%A8%E7%B1%BB/" title="JavaSE进阶——Day03 多态、内部类">http://ethanliu6.github.io/2024/04/04/JavaNotes/JavaSE进阶/day03/day03_JavaSE进阶-多态,内部类/</a>
+      <a href="http://ethanliu6.github.io/2024/04/04/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day03/day03_JavaSE%E8%BF%9B%E9%98%B6-%E5%A4%9A%E6%80%81,%E5%86%85%E9%83%A8%E7%B1%BB/" title="JavaSE进阶——Day03 多态、内部类、时间日期格式类">http://ethanliu6.github.io/2024/04/04/JavaNotes/JavaSE进阶/day03/day03_JavaSE进阶-多态,内部类/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -433,13 +590,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">45k</span>
+    <span title="站点总字数">48k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:45</span>
+    <span title="站点阅读时长">2:53</span>
   </span>
 </div>
 <div class="busuanzi-count">
