@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+  <link rel="mask-icon" href="/images/avatar.jpg" color="#222">
+  <meta name="msvalidate.01" content="4AF2328B2035748153A041B7EEF3D15C">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CLobster:300,300italic,400,400italic,700,700italic%7CPingFang+SC:300,300italic,400,400italic,700,700italic%7CRoboto+Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="JavaSE基础——Day04 该篇主要讲解Java中的方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaSE基础——Day04 JavaSE基础——方法">
+<meta property="og:url" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/index.html">
+<meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
+<meta property="og:description" content="JavaSE基础——Day04 该篇主要讲解Java中的方法">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640092749698.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640092832213.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640092909733.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640092937064.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640092960151.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640092965984.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640093007517.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640093021295.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640093100948.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640093310893.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640093333995.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640093478449.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640093491948.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640093895684.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640093914623.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640093937633.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094120831.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094138760.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094159255.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094293668.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094498444.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094510376.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094527616.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094667819.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094691149.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094861339.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640094884063.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640095031496.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640095738734.png">
+<meta property="og:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640095803263.png">
+<meta property="article:published_time" content="2024-03-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-04-26T05:14:06.512Z">
+<meta property="article:author" content="Ethan Liu">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/imgs/1640092749698.png">
+
+
+<link rel="canonical" href="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/","path":"2024/03/17/JavaNotes/JavaSE基础/day04方法/","title":"JavaSE基础——Day04 JavaSE基础——方法"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JavaSE基础——Day04 JavaSE基础——方法 | <font color='white' >Ethan の Blog</font></title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title"><font color='white' >Ethan の Blog</font></p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"><font color='#FDABC1' size=3>清醒的停留，胜过——盲目的前行</font></p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E4%BD%BF%E7%94%A8"><span class="nav-text">1：方法的定义和使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E6%A6%82%E8%BF%B0%E5%92%8C%E8%AF%BE%E7%A8%8B%E5%AE%89%E6%8E%92"><span class="nav-text">1.1 方法概述和课程安排</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8"><span class="nav-text">1.2 方法的定义和调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#debug%E6%9F%A5%E7%9C%8B%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8"><span class="nav-text">1.3 Debug查看方法调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A01%E8%BE%93%E5%87%BA%E8%BE%83%E5%A4%A7%E5%80%BC"><span class="nav-text">1.4 练习1(输出较大值)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8"><span class="nav-text">1.5 带参数方法的定义和调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82"><span class="nav-text">1.6 形参和实参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A02%E8%BE%93%E5%87%BA%E8%BE%83%E5%A4%A7%E5%80%BC"><span class="nav-text">1.7 练习2(输出较大值)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E8%BF%94%E5%9B%9E%E5%80%BC%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89%E5%92%8C%E8%B0%83%E7%94%A8"><span class="nav-text">1.8 带返回值方法的定义和调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A03%E8%BE%93%E5%87%BA%E8%BE%83%E5%A4%A7%E5%80%BC"><span class="nav-text">1.9 练习3(输出较大值)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text">1.10 方法的注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%80%9A%E7%94%A8%E6%A0%BC%E5%BC%8F"><span class="nav-text">2：方法的通用格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%80%9A%E7%94%A8%E6%A0%BC%E5%BC%8F"><span class="nav-text">2.1 方法通用格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A01%E6%B1%82%E5%92%8C"><span class="nav-text">2.2 练习1(求和)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A02%E6%AF%94%E8%BE%83%E7%9B%B8%E7%AD%89"><span class="nav-text">2.3 练习2(比较相等)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A03%E8%BE%83%E5%A4%A7%E5%80%BC"><span class="nav-text">2.4 练习3(较大值)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A04%E6%B0%B4%E4%BB%99%E8%8A%B1"><span class="nav-text">2.5 练习4(水仙花)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD"><span class="nav-text">3：方法重载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD-1"><span class="nav-text">3.1 方法重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0%E6%AF%94%E8%BE%83%E7%9B%B8%E7%AD%89"><span class="nav-text">3.2 练习(比较相等)</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ethan Liu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Ethan Liu</p>
+  <div class="site-description" itemprop="description"><font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2V0aGFubGl1Ng==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ethanliu6"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxpdWUyMzM2QGdtYWlsLmNvbQ==" title="E-Mail → mailto:liue2336@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMTMyNzA5OTk3Nw==" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1327099977"><i class="fa-brands fa-bilibili fa-fw"></i>BiliBili</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/categories/Love/" title="Love → &#x2F;categories&#x2F;Love&#x2F;" rel="noopener me"><i class="fa fa-heart fa-fw"></i>Love</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Ethan Liu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JavaSE基础——Day04 JavaSE基础——方法 | <font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaSE基础——Day04 JavaSE基础——方法<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9KYXZhTm90ZXMvSmF2YVNF5Z+656GAL2RheTA05pa55rOVLm1k" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-03-17 00:00:00" itemprop="dateCreated datePublished" datetime="2024-03-17T00:00:00+08:00">2024-03-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-26 13:14:06" itemprop="dateModified" datetime="2024-04-26T13:14:06+08:00">2024-04-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java%E5%85%A8%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">Java全栈</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="JavaSE基础——Day04 JavaSE基础——方法" href="/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::93ff037273c998782df06c4add49d779" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>15 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
+<p>JavaSE基础——Day04 该篇主要讲解Java中的<strong>方法</strong></p>
+
+</blockquote>
+<span id="more"></span>
+<p><strong>今日目标：</strong></p>
+<ul>
+<li>能够知道方法的好处</li>
+<li>能够根据两个明确分析方法的参数和返回值</li>
+<li>能够编写方法完成授课案例，并在主方法中完成方法的调用</li>
+<li>能够知道方法重载及其特点</li>
+</ul>
+<h2 id="方法的定义和使用">1：方法的定义和使用</h2>
+<h3 id="方法概述和课程安排">1.1 方法概述和课程安排</h3>
+<p>来，继续啊，下面我们来学习Java中很重要的一个知识，就是方法，那什么是方法呢？我们一起来说一下：</p>
+<p><strong>方法(method)：</strong>就是完成特定功能的代码块</p>
+<p>如何理解这句话呢?来，我们看一段代码，相信这个大家应该已经很熟悉了</p>
+<p>这就是我们的main方法，也就是我们说的主方法。它里面的代码的功能：是在控制台输出一个字符串数据：HelloWorld</p>
+<figure>
+<img data-src="imgs/1640092749698.png" alt="1640092749698">
+<figcaption aria-hidden="true">1640092749698</figcaption>
+</figure>
+<p>我们再来看另一段代码：</p>
+<p>这里出现了三个方法，主方法的作用，还是在控制台输出一个字符串数据：HelloWorld。而后面这两个方法的作用：分别是在控制台输出字符串数据：method1和method2</p>
+<figure>
+<img data-src="imgs/1640092832213.png" alt="1640092832213">
+<figcaption aria-hidden="true">1640092832213</figcaption>
+</figure>
+<p>这些代码都是用一对大括号括起来的，所以我们说，方法就是完成特定功能的代码块。</p>
+<p>知道了什么是方法后，我们来说一下为什么要学习方法，也就是方法的好处</p>
+<p>看这里，植物大战僵尸这个游戏，估计有小伙伴玩过。</p>
+<figure>
+<img data-src="imgs/1640092909733.png" alt="1640092909733">
+<figcaption aria-hidden="true">1640092909733</figcaption>
+</figure>
+<p>没玩过的，回去下载下来玩一下，我一直觉得玩游戏，对学编程是有帮助的，它能够打开我们的思维，
+当然前提是适度的玩游戏，你天天玩，不好好学习，那肯定是不行的。</p>
+<p>回到这里，我们继续，在这个游戏中，有这样的一些射手，它们通过发射炮弹去消灭僵尸</p>
+<p>假如，现在我们来编写代码，实现发射炮弹的动作。</p>
+<p>首先，我们来看豌豆射手要发射炮弹，而发射炮弹呢？需要20行代码实现。</p>
+<figure>
+<img data-src="imgs/1640092937064.png" alt="1640092937064">
+<figcaption aria-hidden="true">1640092937064</figcaption>
+</figure>
+<p>这里代码我们就省略了啊，知道这个意思就行。</p>
+<p>接着，寒冰射手要发射炮弹，我们还是要编写20行代码实现。</p>
+<figure>
+<img data-src="imgs/1640092960151.png" alt="1640092960151">
+<figcaption aria-hidden="true">1640092960151</figcaption>
+</figure>
+<p>再接着，大头菜射手也要发射炮弹，我们还得再编写20行代码实现。</p>
+<figure>
+<img data-src="imgs/1640092965984.png" alt="1640092965984">
+<figcaption aria-hidden="true">1640092965984</figcaption>
+</figure>
+<p>写到这里，我们发现太麻烦了，每个射手发射炮弹，我们都要写发射炮弹的代码。</p>
+<p>而发射炮弹的代码是相同的，所以，目前我们的代码就出现问题了。</p>
+<p>问题是：代码的重复度很高，复用性太差了。</p>
+<p>那怎么解决呢？</p>
+<p>看这里，关于这三个射手要发射炮弹的代码，我们不用针对每个射手都写，</p>
+<p>而是把发射炮弹的代码打包，定义一个方法：叫做发射。</p>
+<p>将来这三个射手要发射炮弹的时候，直接调用发射的方法就可以了。</p>
+<figure>
+<img data-src="imgs/1640093007517.png" alt="1640093007517">
+<figcaption aria-hidden="true">1640093007517</figcaption>
+</figure>
+<p>而且，再加入一个新的射手，这个射手也要发射炮弹，我们也是直接调用发射的方法就可以了。</p>
+<figure>
+<img data-src="imgs/1640093021295.png" alt="1640093021295">
+<figcaption aria-hidden="true">1640093021295</figcaption>
+</figure>
+<p>这样新的射手也可以发射炮弹了。</p>
+<p>这样我们就减少了代码的编写，所以说，方法一个非常大的好处就是提高了代码的复用性。</p>
+<p>了解了什么是方法，以及方法的好处后。我们来说一下方法这一块的课程安排：</p>
+<figure>
+<img data-src="imgs/1640093100948.png" alt="1640093100948">
+<figcaption aria-hidden="true">1640093100948</figcaption>
+</figure>
+<p>首先，我们会讲解基本的方法的定义和调用</p>
+<p>接着讲解带参方法和带返回值方法的定义和调用</p>
+<p>方法的定义和调用完毕之后，讲解方法的注意事项，避免大家在定义方法时出现一些小问题。</p>
+<p>注意事项讲解完毕之后，讲解方法的通用格式，给大家总结，其实方法就一种格式，</p>
+<p>并非有上面那么多种方法格式，上面之所以这样讲解，是想通过循序渐进的方式，让大家更好的掌握方法的定义和使用</p>
+<p>在方法通用格式这一块，还会重点讲解如何设计方法，并通过多个练习来强化方法的定义和使用，</p>
+<p>只要大家能够跟着完成这些练习，方法我们基本上就算掌握了。</p>
+<p>最后，我们会讲解方法中一个重要的特性：方法重载。</p>
+<p>好了，到此关于方法的概述和课程安排我们就先讲到这里</p>
+<h3 id="方法的定义和调用">1.2 方法的定义和调用</h3>
+<p>下面呢我们来学习方法的定义和调用。</p>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1640093310893.png" alt="1640093310893">
+<figcaption aria-hidden="true">1640093310893</figcaption>
+</figure>
+<p><strong>范例：</strong></p>
+<figure>
+<img data-src="imgs/1640093333995.png" alt="1640093333995">
+<figcaption aria-hidden="true">1640093333995</figcaption>
+</figure>
+<p>知道了方法的定义格式后，我们到IDEA中去演示一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    定义格式：</span></span><br><span class="line"><span class="comment">        public static void 方法名() &#123;</span></span><br><span class="line"><span class="comment">           //方法体</span></span><br><span class="line"><span class="comment">       &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//调用方法</span></span><br><span class="line">        isEvenNumber();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//需求：定义一个方法，在方法中定义一个变量，判断该数据是否是偶数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">isEvenNumber</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//在方法中定义一个变量</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        number = <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断该数据是否是偶数</span></span><br><span class="line">        <span class="keyword">if</span> (number % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            System.out.println(number + <span class="string">&quot;是偶数&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(number + <span class="string">&quot;不是偶数&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>演示完毕之后，回到资料我们总结一下方法的调用和注意事项：</p>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1640093478449.png" alt="1640093478449">
+<figcaption aria-hidden="true">1640093478449</figcaption>
+</figure>
+<p><strong>范例：</strong></p>
+<figure>
+<img data-src="imgs/1640093491948.png" alt="1640093491948">
+<figcaption aria-hidden="true">1640093491948</figcaption>
+</figure>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li>方法定义完毕后，<font color="red"><strong>需要调用才能执行</strong></font></li>
+<li>方法必须<font color="red"><strong>先定义后调用</strong></font>，否则程序将报错</li>
+</ul>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="debug查看方法调用">1.3 Debug查看方法调用</h3>
+<p>按照 Debug 的正常使用即可，但是要注意如下事项：</p>
+<ul>
+<li>进入一个方法的时候，需要用 Step Into F7</li>
+<li>在方法内部，看每一行代码的执行流程，使用 Step Over F8</li>
+<li>注意观察方法的出现和消失，以及变量的变化</li>
+</ul>
+<h3 id="练习1输出较大值">1.4 练习1(输出较大值)</h3>
+<p>需求：设计一个方法用于打印两个数中的较大数</p>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 定义一个方法，用于打印两个数字中的较大数，例如：getMax()</p>
+<p>② 方法中定义两个变量，用于保存两个数字</p>
+<p>③ 使用if语句对两个数字的大小关系进行处理</p>
+<p>④ 在main()方法中调用定义好的方法</p>
+<p>分析完毕之后，我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：设计一个方法用于打印两个数中的较大数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    分析：</span></span><br><span class="line"><span class="comment">        1:定义一个方法，用于打印两个数字中的较大数，例如：getMax()</span></span><br><span class="line"><span class="comment">        2:方法中定义两个变量，用于保存两个数字</span></span><br><span class="line"><span class="comment">        3:使用if语句对两个数字的大小关系进行处理</span></span><br><span class="line"><span class="comment">        4:在main()方法中调用定义好的方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//在main()方法中调用定义好的方法</span></span><br><span class="line">        getMax();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义一个方法，用于打印两个数字中的较大数，例如：getMax()</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getMax</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">//方法中定义两个变量，用于保存两个数字</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用if语句对两个数字的大小关系进行处理</span></span><br><span class="line">        <span class="keyword">if</span>(a &gt;= b) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;较大的数是：&quot;</span> + a);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;较大的数是：&quot;</span> + b);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="带参数方法的定义和调用">1.5 带参数方法的定义和调用</h3>
+<p>下面呢我们来学习带参数方法的定义和调用。</p>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1640093895684.png" alt="1640093895684">
+<figcaption aria-hidden="true">1640093895684</figcaption>
+</figure>
+<p><strong>范例：</strong></p>
+<figure>
+<img data-src="imgs/1640093914623.png" alt="1640093914623">
+<figcaption aria-hidden="true">1640093914623</figcaption>
+</figure>
+<figure>
+<img data-src="imgs/1640093937633.png" alt="1640093937633">
+<figcaption aria-hidden="true">1640093937633</figcaption>
+</figure>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li>带参方法定义时，参数中的<font color="red"><strong>数据类型</strong></font>与<font color="red"><strong>变量名</strong></font>都不能缺少，缺少任意一个程序将报错</li>
+<li>带参方法定义时，多个参数之间使用<font color="red"><strong>逗号</strong></font>(,)分隔</li>
+</ul>
+<p>知道了带参数方法的定义格式后，我们到IDEA中去演示一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    带参数方法的定义和调用</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    定义格式：</span></span><br><span class="line"><span class="comment">        public static void 方法名(参数) &#123; … … &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//字面量值调用</span></span><br><span class="line">        isEvenNumber(<span class="number">10</span>);</span><br><span class="line">        isEvenNumber(<span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//变量的调用</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">number</span> <span class="operator">=</span> <span class="number">11</span>;</span><br><span class="line">        isEvenNumber(number);</span><br><span class="line">        number = <span class="number">12</span>;</span><br><span class="line">        isEvenNumber(number);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//需求：定义一个方法，该方法接收一个参数，判断该数据是否是偶数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">isEvenNumber</span><span class="params">(<span class="type">int</span> number)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (number % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            System.out.println(<span class="literal">true</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="literal">false</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>演示完毕之后，回到资料我们总结一下带参数方法的调用和注意事项：</p>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1640094120831.png" alt="1640094120831">
+<figcaption aria-hidden="true">1640094120831</figcaption>
+</figure>
+<p><strong>范例：</strong></p>
+<figure>
+<img data-src="imgs/1640094138760.png" alt="1640094138760">
+<figcaption aria-hidden="true">1640094138760</figcaption>
+</figure>
+<figure>
+<img data-src="imgs/1640094159255.png" alt="1640094159255">
+<figcaption aria-hidden="true">1640094159255</figcaption>
+</figure>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li>带参方法调用时，参数的<font color="red"><strong>数量与类型</strong></font>必须与方法定义中的设置相匹配，否则程序将报错</li>
+</ul>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="形参和实参">1.6 形参和实参</h3>
+<p>来，继续啊，这里我们讲解一个小知识点，形参和实参，那什么是形参和实参呢？</p>
+<p>形参：方法定义中的参数</p>
+<p>​ 等同于变量定义格式，例如：int number</p>
+<p>实参：方法调用中的参数</p>
+<p>​ 等同于使用变量或字面量，例如： 10 number</p>
+<figure>
+<img data-src="imgs/1640094293668.png" alt="1640094293668">
+<figcaption aria-hidden="true">1640094293668</figcaption>
+</figure>
+<p>大家能够知道形参和实参分别表示哪里的参数就可以了。</p>
+<h3 id="练习2输出较大值">1.7 练习2(输出较大值)</h3>
+<p>需求：设计一个方法用于打印两个数中的较大数，数据来自于方法参数</p>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 定义一个方法，用于打印两个数字中的较大数，例如：getMax()</p>
+<p>② 为方法定义两个参数，用于接收两个数字</p>
+<p>③ 使用if语句对两个数字的大小关系进行处理</p>
+<p>④ 在main()方法中调用定义好的方法（使用字面量）</p>
+<p>⑤ 在main()方法中调用定义好的方法（使用变量）</p>
+<p>分析完毕之后，我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：设计一个方法用于打印两个数中的较大数，数据来自于方法参数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    分析：</span></span><br><span class="line"><span class="comment">        1:定义一个方法，用于打印两个数字中的较大数，例如：getMax()</span></span><br><span class="line"><span class="comment">        2:为方法定义两个参数，用于接收两个数字</span></span><br><span class="line"><span class="comment">        3:使用if语句对两个数字的大小关系进行处理</span></span><br><span class="line"><span class="comment">        4:在main()方法中调用定义好的方法（使用字面量）</span></span><br><span class="line"><span class="comment">        5:在main()方法中调用定义好的方法（使用变量）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//在main()方法中调用定义好的方法（使用字面量）</span></span><br><span class="line">        getMax(<span class="number">10</span>,<span class="number">20</span>);</span><br><span class="line"><span class="comment">//        getMax(a:10,b:20); //idea的智能提示，不要手动的去写a,b</span></span><br><span class="line"><span class="comment">//        getMax(30);</span></span><br><span class="line"><span class="comment">//        getMax(10.0,20,0);</span></span><br><span class="line">        <span class="comment">//调用方法的时候，人家要几个，你就给几个，人家要什么类型，你就给什么类型</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//在main()方法中调用定义好的方法（使用变量）</span></span><br><span class="line"><span class="comment">//        int a = 10;</span></span><br><span class="line"><span class="comment">//        int b = 20;</span></span><br><span class="line"><span class="comment">//        getMax(a,b);</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">y</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line">        getMax(x,y);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义一个方法，用于打印两个数字中的较大数，例如：getMax()</span></span><br><span class="line">    <span class="comment">//为方法定义两个参数，用于接收两个数字</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getMax</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="comment">//使用if语句对两个数字的大小关系进行处理</span></span><br><span class="line">        <span class="keyword">if</span>(a &gt;= b) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;较大的数是：&quot;</span> + a);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;较大的数是：&quot;</span> + b);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="带返回值方法的定义和调用">1.8 带返回值方法的定义和调用</h3>
+<p>下面呢我们来学习带返回值方法的定义和调用。</p>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1640094498444.png" alt="1640094498444">
+<figcaption aria-hidden="true">1640094498444</figcaption>
+</figure>
+<p><strong>范例：</strong></p>
+<figure>
+<img data-src="imgs/1640094510376.png" alt="1640094510376">
+<figcaption aria-hidden="true">1640094510376</figcaption>
+</figure>
+<figure>
+<img data-src="imgs/1640094527616.png" alt="1640094527616">
+<figcaption aria-hidden="true">1640094527616</figcaption>
+</figure>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li>方法定义时return后面的返回值与方法定义上的<font color="red"><strong>数据类型要匹配</strong></font>，否则程序将报错</li>
+</ul>
+<p>知道了带返回值方法的定义格式后，我们到IDEA中去演示一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    带返回值方法的定义和调用</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    定义格式：</span></span><br><span class="line"><span class="comment">        public static 数据类型 方法名(参数) &#123;</span></span><br><span class="line"><span class="comment">           return 数据;</span></span><br><span class="line"><span class="comment">       &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"><span class="comment">//        isEvenNumber(10);</span></span><br><span class="line"><span class="comment">//        //true;</span></span><br><span class="line"></span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> isEvenNumber(<span class="number">10</span>);</span><br><span class="line">        <span class="comment">//boolean flag = true;</span></span><br><span class="line">        System.out.println(flag);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        if(flag) &#123;</span></span><br><span class="line"><span class="comment">//            System.out.println(&quot;是偶数就输出这句话&quot;);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//需求：定义一个方法，该方法接收一个参数，判断该数据是否是偶数，并返回真假值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isEvenNumber</span><span class="params">(<span class="type">int</span> number)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (number % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>演示完毕之后，回到资料我们总结一下带返回值方法的调用和注意事项：</p>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1640094667819.png" alt="1640094667819">
+<figcaption aria-hidden="true">1640094667819</figcaption>
+</figure>
+<figure>
+<img data-src="imgs/1640094691149.png" alt="1640094691149">
+<figcaption aria-hidden="true">1640094691149</figcaption>
+</figure>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li>方法的返回值<font color="red"><strong>通常会使用变量接收</strong></font>，否则该返回值将无意义</li>
+</ul>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="练习3输出较大值">1.9 练习3(输出较大值)</h3>
+<p>需求：设计一个方法可以获取两个数的较大值，数据来自于参数</p>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 定义一个方法，用于获取两个数字中的较大数，例如：getMax()</p>
+<p>② 使用if语句对两个数字的大小关系进行处理</p>
+<p>③ 根据题设分别设置两种情况下对应的返回结果</p>
+<p>④ 在main()方法中调用定义好的方法并使用变量保存</p>
+<p>分析完毕之后，我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：设计一个方法可以获取两个数的较大值，数据来自于参数</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    分析：</span></span><br><span class="line"><span class="comment">        1:定义一个方法，用于获取两个数字中的较大数，例如：getMax()</span></span><br><span class="line"><span class="comment">        2:使用if语句对两个数字的大小关系进行处理</span></span><br><span class="line"><span class="comment">        3:根据题设分别设置两种情况下对应的返回结果</span></span><br><span class="line"><span class="comment">        4:在main()方法中调用定义好的方法并使用变量保存</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//在main()方法中调用定义好的方法并使用变量保存</span></span><br><span class="line"><span class="comment">//        int max = getMax(10,20);</span></span><br><span class="line"><span class="comment">//        System.out.println(max);</span></span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> getMax(<span class="number">10</span>, <span class="number">20</span>); <span class="comment">//.var的使用，它能够帮我们自动补齐左边的内容</span></span><br><span class="line">        System.out.println(max); <span class="comment">//max.sout，能够把max变量放到输出语句中</span></span><br><span class="line"></span><br><span class="line">        System.out.println(getMax(<span class="number">10</span>,<span class="number">20</span>));</span><br><span class="line">        System.out.println(getMax(<span class="number">10</span>, <span class="number">20</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//定义一个方法，用于获取两个数字中的较大数，例如：getMax()</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getMax</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="comment">//使用if语句对两个数字的大小关系进行处理</span></span><br><span class="line">        <span class="comment">//根据题设分别设置两种情况下对应的返回结果</span></span><br><span class="line">        <span class="keyword">if</span>(a &gt;= b) &#123;</span><br><span class="line">            <span class="keyword">return</span> a;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="方法的注意事项">1.10 方法的注意事项</h3>
+<p>来，继续啊，下面我们来说一下方法的注意事项，讲解注意事项，是为了让我们以后能够避免类似的问题，这里呢我们讲解两个注意事项：</p>
+<ol type="1">
+<li><p>方法不能嵌套定义</p>
+<figure>
+<img data-src="imgs/1640094861339.png" alt="1640094861339">
+<figcaption aria-hidden="true">1640094861339</figcaption>
+</figure></li>
+<li><p>void表示无返回值，可以省略return，也可以单独的书写return，后面不加数据</p>
+<figure>
+<img data-src="imgs/1640094884063.png" alt="1640094884063">
+<figcaption aria-hidden="true">1640094884063</figcaption>
+</figure></li>
+</ol>
+<p>讲解完毕后，到IDEA中去演示一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    方法注意事项：</span></span><br><span class="line"><span class="comment">        方法不能嵌套定义</span></span><br><span class="line"><span class="comment">        void表示无返回值，可以省略return，也可以单独的书写return，后面不加数据</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">methodOne</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">methodTwo</span><span class="params">()</span> &#123;</span><br><span class="line"><span class="comment">//        return 100;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//        System.out.println(&quot;HelloWorld&quot;);</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>到此，方法的注意事项，我们就讲解完毕了。大家了解即可，自己定义方法的时候，注意就好。</p>
+<h2 id="方法的通用格式">2：方法的通用格式</h2>
+<h3 id="方法通用格式">2.1 方法通用格式</h3>
+<p>来，继续啊，前面呢，我们讲解了方法定义的多种格式，其实呢，方法定义只有一种格式，这里我们来看一下方法定义的通用格式：</p>
+<p><strong>格式：</strong></p>
+<figure>
+<img data-src="imgs/1640095031496.png" alt="1640095031496">
+<figcaption aria-hidden="true">1640095031496</figcaption>
+</figure>
+<p><strong>格式说明：</strong></p>
+<ul>
+<li>public static 修饰符，目前先记住这个格式</li>
+<li>返回值类型
+方法操作完毕之后返回的数据的数据类型，如果方法操作完毕，没有数据返回，这里写void，而且方法体中一般不写return</li>
+<li>方法名 调用方法时候使用的标识</li>
+<li>参数 由数据类型和变量名组成，多个参数之间用逗号隔开</li>
+<li>方法体 完成功能的代码块</li>
+<li>return 如果方法操作完毕，有数据返回，用于把数据返回给调用者</li>
+</ul>
+<p>现在我们就知道了一个完整的方法格式了，那后续我们在自己编写方法的时候，如何正确的编写一个方法呢？这里给大家说一个小技巧：</p>
+<p>定义方法时，要做到<font color="red"><strong>两个明确</strong></font></p>
+<ul>
+<li>明确返回值类型：
+主要是明确方法操作完毕之后是否有数据返回，如果没有，写void；如果有，写对应的数据类型<br>
+</li>
+<li>明确参数： 主要是明确参数的类型和数量</li>
+</ul>
+<p>而在调用方法时，我们要知道下面两种不同返回值类型的方法调用：</p>
+<ul>
+<li>void类型的方法，直接调用即可</li>
+<li>非void类型的方法，推荐用变量接收调用</li>
+</ul>
+<p>这里我们总结了一下方法的通用格式和对应的说明。以及告诉了大家以后自己如何定义方法，并进行方法调用。下面我们就需要通过练习来强化方法的定义和调用。</p>
+<h3 id="练习1求和">2.2 练习1(求和)</h3>
+<p>需求：设计一个方法用于求1-n之间的数据和(n&gt;1)，返回求和结果。调用方法，把结果在控制台输出。</p>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 方法定义</p>
+<pre><code>使用两个明确分析该方法的参数和返回值
+
+参数：int n
+
+返回值类型：int</code></pre>
+<p>② 方法调用</p>
+<pre><code>变量接收调用</code></pre>
+<p>分析完毕之后，我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：设计一个方法用于求1-n之间的数据和(n&gt;1)，返回求和结果。调用方法，把结果在控制台输出。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodTest01</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> sum(<span class="number">5</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;1-5的和是：&quot;</span> + result);</span><br><span class="line"></span><br><span class="line">        result = sum(<span class="number">100</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;1-100的和是：&quot;</span> + result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">       使用两个明确分析该方法的参数和返回值</span></span><br><span class="line"><span class="comment">        参数：int n</span></span><br><span class="line"><span class="comment">        返回值类型：int</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">1</span>; i&lt;=n; i++) &#123;</span><br><span class="line">            sum += i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="练习2比较相等">2.3 练习2(比较相等)</h3>
+<p>需求：设计一个方法用于比较两个整数是否相等，调用方法，把结果在控制台输出。</p>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 方法定义</p>
+<pre><code>使用两个明确分析该方法的参数和返回值
+
+参数：int a,int b
+
+返回值类型：boolean</code></pre>
+<p>② 方法调用</p>
+<pre><code>变量接收调用</code></pre>
+<p>分析完毕之后，我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：设计一个方法用于比较两个整数是否相等，调用方法，把结果在控制台输出。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodTest02</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> compare(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;10和20相等吗：&quot;</span> + flag);</span><br><span class="line"></span><br><span class="line">        flag = compare(<span class="number">10</span>,<span class="number">10</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;10和10相等吗：&quot;</span> + flag);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        使用两个明确分析该方法的参数和返回值</span></span><br><span class="line"><span class="comment">        参数：int a,int b</span></span><br><span class="line"><span class="comment">        返回值类型：boolean</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">compare</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="comment">//比较两个整数是否相等</span></span><br><span class="line"><span class="comment">//        if(a == b) &#123;</span></span><br><span class="line"><span class="comment">//            return true;</span></span><br><span class="line"><span class="comment">//        &#125; else &#123;</span></span><br><span class="line"><span class="comment">//            return false;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        boolean flag = (a == b) ? true : false;</span></span><br><span class="line"><span class="comment">//        return flag;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        boolean flag = (a == b);</span></span><br><span class="line"><span class="comment">//        return flag;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> a == b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="练习3较大值">2.4 练习3(较大值)</h3>
+<p>需求：设计一个方法用于获取三个整数较大值，调用方法，把结果在控制台输出。</p>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 方法定义</p>
+<pre><code>使用两个明确分析该方法的参数和返回值
+
+参数：int a,int b,int c
+
+返回值类型：int</code></pre>
+<p>② 方法调用</p>
+<pre><code>变量接收调用</code></pre>
+<p>分析完毕之后，我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：设计一个方法用于获取三个整数较大值，调用方法，把结果在控制台输出。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodTest03</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> getMax(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;10,20,30中的较大值是：&quot;</span> + max);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        使用两个明确分析该方法的参数和返回值</span></span><br><span class="line"><span class="comment">        参数：int a,int b,int c</span></span><br><span class="line"><span class="comment">        返回值类型：int</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">getMax</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b, <span class="type">int</span> c)</span> &#123;</span><br><span class="line">        <span class="comment">//获取三个整数较大值</span></span><br><span class="line"><span class="comment">//        if (a &gt;= b) &#123;</span></span><br><span class="line"><span class="comment">//            if (a &gt;= c) &#123;</span></span><br><span class="line"><span class="comment">//                return a;</span></span><br><span class="line"><span class="comment">//            &#125; else &#123;</span></span><br><span class="line"><span class="comment">//                return c;</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//        &#125; else &#123;</span></span><br><span class="line"><span class="comment">//            if (b &gt;= c) &#123;</span></span><br><span class="line"><span class="comment">//                return b;</span></span><br><span class="line"><span class="comment">//            &#125; else &#123;</span></span><br><span class="line"><span class="comment">//                return c;</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">tempMax</span> <span class="operator">=</span> a &gt; b ? a : b;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> tempMax &gt; c ? tempMax : c;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="练习4水仙花">2.5 练习4(水仙花)</h3>
+<p>需求：设计一个方法用于判断一个整数是否是水仙花数，调用方法，把结果在控制台输出。</p>
+<p>首先，我们来简单的分析一下：</p>
+<p><strong>分析：</strong></p>
+<p>① 方法定义</p>
+<pre><code>使用两个明确分析该方法的参数和返回值
+
+参数：int number
+
+返回值类型：boolean</code></pre>
+<p>② 方法调用</p>
+<pre><code>变量接收调用</code></pre>
+<p>分析完毕之后，我们到IDEA中去实现一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：设计一个方法用于判断一个整数是否是水仙花数，调用方法，把结果在控制台输出。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodTest04</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"><span class="comment">//        boolean flag = isFlower(111);</span></span><br><span class="line"><span class="comment">//        System.out.println(flag);</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        flag = isFlower(153);</span></span><br><span class="line"><span class="comment">//        System.out.println(flag);</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">100</span>; i&lt;<span class="number">1000</span>; i++) &#123;</span><br><span class="line">            <span class="comment">//i</span></span><br><span class="line"><span class="comment">//            boolean flag = isFlower(i);</span></span><br><span class="line"><span class="comment">//            if(flag) &#123;</span></span><br><span class="line"><span class="comment">//                System.out.println(i);</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">            <span class="keyword">if</span>(isFlower(i)) &#123;</span><br><span class="line">                System.out.println(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">       使用两个明确分析该方法的参数和返回值</span></span><br><span class="line"><span class="comment">        参数：int number</span></span><br><span class="line"><span class="comment">        返回值类型：boolean</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isFlower</span><span class="params">(<span class="type">int</span> number)</span> &#123;</span><br><span class="line">        <span class="comment">//判断一个整数是否是水仙花数</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">ge</span> <span class="operator">=</span> number % <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">shi</span> <span class="operator">=</span> number / <span class="number">10</span> % <span class="number">10</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">bai</span> <span class="operator">=</span> number / <span class="number">100</span> % <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ((ge * ge * ge + shi * shi * shi + bai * bai * bai) == number) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h2 id="方法重载">3：方法重载</h2>
+<h3 id="方法重载-1">3.1 方法重载</h3>
+<p>来，继续啊，我们学习方法中一个非常重要的特性：方法重载。</p>
+<p>首先，我们来说一下，什么是方法重载。</p>
+<p><strong>方法重载：</strong>指同一个类中定义的多个方法之间的关系，满足下列条件的多个方法相互构成重载</p>
+<ul>
+<li>多个方法在同一个类中</li>
+<li>多个方法具有相同的方法名</li>
+<li>多个方法的参数不相同，类型不同或者数量不同</li>
+</ul>
+<p>如下图：</p>
+<figure>
+<img data-src="imgs/1640095738734.png" alt="1640095738734">
+<figcaption aria-hidden="true">1640095738734</figcaption>
+</figure>
+<p>知道了什么是方法重载后，我们来说一下<strong>方法重载的特点：</strong></p>
+<ul>
+<li>类型不同或者数量不同重载仅对应方法的定义，与方法的调用无关，调用方式参照标准格式</li>
+<li>重载仅针对同一个类中方法的名称与参数进行识别，与返回值无关，换句话说不能通过返回值来判定两个方法是否相互构成重载</li>
+</ul>
+<p>如下图：</p>
+<figure>
+<img data-src="imgs/1640095803263.png" alt="1640095803263">
+<figcaption aria-hidden="true">1640095803263</figcaption>
+</figure>
+<p>知道了方法重载及其特点后，我们到IDEA中去体验一下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    方法重载：</span></span><br><span class="line"><span class="comment">        多个方法在同一个类中</span></span><br><span class="line"><span class="comment">        多个方法具有相同的方法名</span></span><br><span class="line"><span class="comment">        多个方法的参数不相同，类型不同或者数量不同</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        调用方法的时候，Java虚拟机会通过参数的不同来区分同名的方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodDemo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">//调用方法</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> sum(<span class="number">10</span>, <span class="number">20</span>);</span><br><span class="line">        System.out.println(result);</span><br><span class="line"></span><br><span class="line">        <span class="type">double</span> <span class="variable">result2</span> <span class="operator">=</span> sum(<span class="number">10.0</span>, <span class="number">20.0</span>);</span><br><span class="line">        System.out.println(result2);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">result3</span> <span class="operator">=</span> sum(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>);</span><br><span class="line">        System.out.println(result3);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//需求1：求两个int类型数据和的方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//需求2：求两个double类型数据和的方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">double</span> <span class="title function_">sum</span><span class="params">(<span class="type">double</span> a,<span class="type">double</span> b)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//需求3：求三个int类型数据和的方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">sum</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b,<span class="type">int</span> c)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a + b + c;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+<h3 id="练习比较相等">3.2 练习(比较相等)</h3>
+<p>需求：使用方法重载的思想，设计比较两个整数是否相等的方法，兼容全整数类型（byte,short,int,long）</p>
+<p>比较整数是否想等，前面我们已经做过了，这里只不过是写几个重载的方法而已，基本思路讲解过了，这里就不在讲解了，我们直接到idea中去实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    需求：使用方法重载的思想，设计比较两个整数是否相等的方法，兼容全整数类型（byte,short,int,long）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">MethodTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(compare(<span class="number">10</span>,<span class="number">20</span>));</span><br><span class="line">        System.out.println(compare((<span class="type">byte</span>) <span class="number">10</span>,(<span class="type">byte</span>) <span class="number">20</span>));</span><br><span class="line">        System.out.println(compare((<span class="type">short</span>) <span class="number">10</span>,(<span class="type">short</span>) <span class="number">20</span>));</span><br><span class="line">        System.out.println(compare(<span class="number">10L</span>,<span class="number">20L</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//int</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">compare</span><span class="params">(<span class="type">int</span> a,<span class="type">int</span> b)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;int&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> a == b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//byte</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">compare</span><span class="params">(<span class="type">byte</span> a,<span class="type">byte</span> b)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;byte&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> a == b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//short</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">compare</span><span class="params">(<span class="type">short</span> a,<span class="type">short</span> b)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;short&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> a == b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//long</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">compare</span><span class="params">(<span class="type">long</span> a,<span class="type">long</span> b)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;long&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> a == b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>讲解完毕后，大家赶快动手练习一下吧。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wChat.png" alt="Ethan Liu 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ethan Liu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/" title="JavaSE基础——Day04 JavaSE基础——方法">http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE基础/day04方法/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+              <a href="/tags/Java%E5%9F%BA%E7%A1%80/" rel="tag"><i class="fa fa-tag"></i> Java基础</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/03/16/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day03%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" rel="prev" title="JavaSE基础——Day03 JavaSE基础——循环语句">
+                  <i class="fa fa-angle-left"></i> JavaSE基础——Day03 JavaSE基础——循环语句
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/03/19/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day06%E5%B8%B8%E7%94%A8API(1)/" rel="next" title="JavaSE基础——Day06 JavaSE基础——常用API:Scanner、Random、GUI">
+                  JavaSE基础——Day06 JavaSE基础——常用API:Scanner、Random、GUI <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="93ff037273c998782df06c4add49d779"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023-2024 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Is Ethan's</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">45k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:45</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni8=" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2024/03/17/JavaNotes/JavaSE%E5%9F%BA%E7%A1%80/day04%E6%96%B9%E6%B3%95/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyxf6tytI","appkey":"90987f30c4b5248baad5a04c7a6abfe1","count":true}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>
