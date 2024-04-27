@@ -21,31 +21,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="该篇主要讲解线程 、程序和进程">
+    <meta name="description" content="JavaSE进阶——Day09 该篇主要讲解Java中的多线程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多线程">
-<meta property="og:url" content="http://ethanliu6.github.io/2024/04/18/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/index.html">
+<meta property="og:title" content="JavaSE进阶——Day09">
+<meta property="og:url" content="http://ethanliu6.github.io/2024/04/27/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day09/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day09/index.html">
 <meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
-<meta property="og:description" content="该篇主要讲解线程 、程序和进程">
+<meta property="og:description" content="JavaSE进阶——Day09 该篇主要讲解Java中的多线程">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240420013153293.png">
-<meta property="article:published_time" content="2024-04-17T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-04-19T18:29:24.958Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240427105829387.png">
+<meta property="article:published_time" content="2024-04-27T02:57:10.431Z">
+<meta property="article:modified_time" content="2024-04-27T02:59:29.286Z">
 <meta property="article:author" content="Ethan Liu">
 <meta property="article:tag" content="Java">
-<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="Java进阶">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240420013153293.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240427105829387.png">
 
 
-<link rel="canonical" href="http://ethanliu6.github.io/2024/04/18/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/">
+<link rel="canonical" href="http://ethanliu6.github.io/2024/04/27/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day09/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day09/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/04/18/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/","path":"2024/04/18/JavaNotes/多线程/多线程01/","title":"多线程"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/04/27/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day09/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day09/","path":"2024/04/27/JavaNotes/JavaSE进阶/day09/JavaSE进阶——Day09/","title":"JavaSE进阶——Day09"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>多线程 | <font color='white' >Ethan の Blog</font></title>
+<title>JavaSE进阶——Day09 | <font color='white' >Ethan の Blog</font></title>
   
 
 
@@ -94,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">16</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">9</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">26</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -132,7 +132,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -145,7 +145,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">线程简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E4%BB%BB%E5%8A%A1"><span class="nav-number">1.1.</span> <span class="nav-text">多任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E8%BF%9B%E7%A8%8B%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">程序、进程、线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5"><span class="nav-number">1.4.</span> <span class="nav-text">核心概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%9E%E7%8E%B0%E9%87%8D%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">线程实现（重点）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E5%88%9B%E5%BB%BA%E6%96%B9%E5%BC%8F"><span class="nav-number">2.1.</span> <span class="nav-text">三种创建方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#thread%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">Thread类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="nav-number">3.</span> <span class="nav-text">线程状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E9%87%8D%E7%82%B9"><span class="nav-number">4.</span> <span class="nav-text">线程同步（重点）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">线程通信问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E4%B8%BB%E9%A2%98"><span class="nav-number">6.</span> <span class="nav-text">高级主题</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -160,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -212,7 +211,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/04/18/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/">
+    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/04/27/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day09/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day09/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -225,12 +224,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="多线程 | <font color='white' >Ethan の Blog</font>">
+      <meta itemprop="name" content="JavaSE进阶——Day09 | <font color='white' >Ethan の Blog</font>">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          多线程<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9KYXZhTm90ZXMv5aSa57q/56iLL+Wkmue6v+eoizAxLm1k" title="编辑"><i class="fa fa-pen-nib"></i></span>
+          JavaSE进阶——Day09<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9KYXZhTm90ZXMvSmF2YVNF6L+b6Zi2L2RheTA5L0phdmFTRei/m+mYtuKAlOKAlERheTA5Lm1k" title="编辑"><i class="fa fa-pen-nib"></i></span>
         </h1>
 
         <div class="post-meta-container">
@@ -240,15 +239,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2024-04-18 00:00:00" itemprop="dateCreated datePublished" datetime="2024-04-18T00:00:00+08:00">2024-04-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-04-20 02:29:24" itemprop="dateModified" datetime="2024-04-20T02:29:24+08:00">2024-04-20</time>
+      <time title="创建时间：2024-04-27 10:57:10 / 修改时间：10:59:29" itemprop="dateCreated datePublished" datetime="2024-04-27T10:57:10+08:00">2024-04-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -276,8 +269,8 @@
       </span>
       <span class="post-meta-item-text">Changyan：</span>
     
-    <a title="多线程" href="/2024/04/18/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::05ee7e390ef8df6d3c593aae44c0b507" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="JavaSE进阶——Day09" href="/2024/04/27/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day09/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day09/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::7e6969f36191a7b288221dca7506b1df" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -288,14 +281,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>472</span>
+      <span>36</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -306,47 +299,11 @@
     
     
     <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
-<p>该篇主要讲解<strong>线程</strong>
-、<strong>程序</strong>和<strong>进程</strong></p>
+<p>JavaSE进阶——Day09 该篇主要讲解Java中的<strong>多线程</strong></p>
 
 </blockquote>
 <span id="more"></span>
-<h2 id="线程简介">线程简介</h2>
-<h3 id="多任务">多任务</h3>
-<h3 id="多线程">多线程</h3>
-<p>多条路同时进行</p>
-<h3 id="程序进程线程">程序、进程、线程</h3>
-<p>操作系统运行的程序（静态概念）就是进程（动态概念）、一个进程拥有多个线程（互不影响）</p>
-<blockquote>
-<p>很多多线程是模拟出来的，真正的多线程是指有多个cpu，即多核，如服务器。如果是模拟出来的多线程，即在一个cpu的情况下，在同一个时间点，cpu只能执行一个代码，因为切换的很快，所以就有同时执行的错局。</p>
-</blockquote>
-<h3 id="核心概念">核心概念</h3>
-<ul>
-<li><p>线程就是独立的执行路径</p></li>
-<li><p>在程序运行时,即使没有自己创建线程,后台也会有多个线程,比如主线程,GC线程</p></li>
-<li><p>main()称之为主线程,为系统的入口,用于执行整个程序</p></li>
-<li><p>在一个进程中,如果开辟了多个线程,线程的运行是由调度器（cpu）安排调度的,调度器是与操作系统紧密相关的,先后顺序是不能人为干预的</p></li>
-<li><p>对同一份资源操作时mm会存在资源抢夺的问题,需要加入并发控制</p></li>
-<li><p>线程会带来额外的开销,如CPU调度时间,并发控制开销</p></li>
-<li><p>每个线程在自己的工作内存交互,内存控制不当会造成数据不一致</p></li>
-</ul>
-<h2 id="线程实现重点"><font color="red">线程实现（重点）</font></h2>
-<h3 id="三种创建方式">三种创建方式</h3>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240420013153293.png" alt="三种创建方式">
-<figcaption aria-hidden="true">三种创建方式</figcaption>
-</figure>
-<h3 id="thread类">Thread类</h3>
-<p>继承<code>Thread</code>类，重写<code>run()</code>方法，调用<code>start()</code>开启线程。（其实对于单核CPU的线程之间是交替进行的）</p>
-<p>测试案例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestThread1</span> <span class="keyword">extends</span> <span class="title class_">Thread</span> &#123; <span class="comment">/* 需要继承Thread */</span></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123; <span class="comment">/* 需要重写多线程的run()方法 */</span></span><br><span class="line">    <span class="comment">//run()方法线程体</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">300</span>; i++) &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;这是重写run()方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">    <span class="comment">//main线程，主线程</span></span><br><span class="line">    <span class="comment">//创建一个线程对象</span></span><br><span class="line">    <span class="type">TestThread1</span> <span class="variable">testThread1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TestThread1</span>();</span><br><span class="line">    <span class="comment">//调用start()方法开启线程（不能调用run()方法哦）</span></span><br><span class="line">    testThread1.start();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">800</span>; i++) &#123;</span><br><span class="line">      System.out.println(<span class="string">&quot;这是main()方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><font color="red">注意，线程开启不一定立即执行，是由CPU调度执行</font></p>
-</blockquote>
-<h2 id="线程状态">线程状态</h2>
-<h2 id="线程同步重点"><font color="red">线程同步（重点）</font></h2>
-<h2 id="线程通信问题">线程通信问题</h2>
-<h2 id="高级主题">高级主题</h2>
+<p><img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240427105829387.png" alt="image-20240427105829387" style="zoom:200%;"></p>
 
     </div>
 
@@ -378,7 +335,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://ethanliu6.github.io/2024/04/18/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/" title="多线程">http://ethanliu6.github.io/2024/04/18/JavaNotes/多线程/多线程01/</a>
+      <a href="http://ethanliu6.github.io/2024/04/27/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day09/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day09/" title="JavaSE进阶——Day09">http://ethanliu6.github.io/2024/04/27/JavaNotes/JavaSE进阶/day09/JavaSE进阶——Day09/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
@@ -389,21 +346,18 @@
 
           <div class="post-tags">
               <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
-              <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="tag"><i class="fa fa-tag"></i> 操作系统</a>
+              <a href="/tags/Java%E8%BF%9B%E9%98%B6/" rel="tag"><i class="fa fa-tag"></i> Java进阶</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/04/14/Academic/econometrics/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E7%90%86%E5%9C%A8python%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/" rel="prev" title="Causal Inference In Python">
-                  <i class="fa fa-angle-left"></i> Causal Inference In Python
+                <a href="/2024/04/27/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/" rel="prev" title="多线程（一）">
+                  <i class="fa fa-angle-left"></i> 多线程（一）
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/04/19/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day05/day05%E3%80%90%E6%B3%9B%E5%9E%8B%EF%BC%8C%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8CList%E6%8E%A5%E5%8F%A3%EF%BC%8CSet%E6%8E%A5%E5%8F%A3%E3%80%91-%20%E7%AD%94%E6%A1%88/" rel="next" title="Day05 「泛型、数据结构、List集合、Set集合」作业">
-                  Day05 「泛型、数据结构、List集合、Set集合」作业 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -415,7 +369,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="05ee7e390ef8df6d3c593aae44c0b507"></div>
+    <div class="comments" id="SOHUCS" sid="7e6969f36191a7b288221dca7506b1df"></div>
 </div>
   </main>
 
@@ -435,13 +389,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">48k</span>
+    <span title="站点总字数">49k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:53</span>
+    <span title="站点阅读时长">2:59</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -514,7 +468,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2024/04/18/JavaNotes/%E5%A4%9A%E7%BA%BF%E7%A8%8B/%E5%A4%9A%E7%BA%BF%E7%A8%8B01/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2024/04/27/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day09/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day09/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyxf6tytI","appkey":"90987f30c4b5248baad5a04c7a6abfe1","count":true}</script>
 <script src="/js/third-party/comments/changyan.js"></script>
