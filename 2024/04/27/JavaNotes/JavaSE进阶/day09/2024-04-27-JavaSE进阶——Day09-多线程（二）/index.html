@@ -143,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E9%80%9A%E8%AE%AF"><span class="nav-number">1.</span> <span class="nav-text">线程通讯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">API方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">等待方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%94%A4%E9%86%92%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">唤醒方法</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E9%80%9A%E8%AE%AF"><span class="nav-number">1.</span> <span class="nav-text">线程通讯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#api%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">API方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E6%96%B9%E6%B3%95"><span class="nav-number">2.1.</span> <span class="nav-text">等待方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%94%A4%E9%86%92%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">唤醒方法</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -301,18 +301,17 @@
 <p>该篇主要讲解Java中<strong>线程通讯、线程池</strong></p>
 
 </blockquote>
-
 <span id="more"></span>
-
-<h2 id="线程通讯"><a href="#线程通讯" class="headerlink" title="线程通讯"></a>线程通讯</h2><div class="note primary"><ul>
+<h2 id="线程通讯">线程通讯</h2>
+<div class="note primary"><ul>
 <li>在多线程程序中，某个线程进入到“<strong>等待状态</strong>”时，必须由其他线程来唤醒“等待状态”的线程</li>
 </ul>
 </div>
-
-<h2 id="API方法"><a href="#API方法" class="headerlink" title="API方法"></a>API方法</h2><h3 id="等待方法"><a href="#等待方法" class="headerlink" title="等待方法"></a>等待方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wait() <span class="comment">//无限等待（只能由其他线程唤醒）</span></span><br><span class="line">wait(<span class="type">long</span> 毫秒) <span class="comment">//计时等待（时间到了自动唤醒）</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="唤醒方法"><a href="#唤醒方法" class="headerlink" title="唤醒方法"></a>唤醒方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">notify() <span class="comment">//唤醒处于“等待状态”的任意一个线程</span></span><br><span class="line">notifyAll() <span class="comment">//唤醒处于“等待状态”的所有线程</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="api方法">API方法</h2>
+<h3 id="等待方法">等待方法</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wait() <span class="comment">//无限等待（只能由其他线程唤醒）</span></span><br><span class="line">wait(<span class="type">long</span> 毫秒) <span class="comment">//计时等待（时间到了自动唤醒）</span></span><br></pre></td></tr></table></figure>
+<h3 id="唤醒方法">唤醒方法</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">notify() <span class="comment">//唤醒处于“等待状态”的任意一个线程</span></span><br><span class="line">notifyAll() <span class="comment">//唤醒处于“等待状态”的所有线程</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
