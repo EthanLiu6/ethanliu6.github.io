@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ethanliu6.github.io/2024/04/28/BlogSet/Hexo+NexT%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%BA%8C)/</loc>
+    
+    <lastmod>2024-04-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ethanliu6.github.io/2024/04/28/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day10/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day10-File%E7%B1%BB%E3%80%81IO%E6%B5%81/</loc>
     
     <lastmod>2024-04-28</lastmod>
@@ -272,7 +281,7 @@
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/blogSet/index.html</loc>
+    <loc>http://ethanliu6.github.io/README.html</loc>
     
     <lastmod>2024-04-12</lastmod>
     
@@ -350,6 +359,13 @@
   </url>
   
   <url>
+    <loc>http://ethanliu6.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
+    <lastmod>2024-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://ethanliu6.github.io/tags/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E7%90%86/</loc>
     <lastmod>2024-04-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -365,13 +381,6 @@
   
   <url>
     <loc>http://ethanliu6.github.io/tags/Python/</loc>
-    <lastmod>2024-04-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
     <lastmod>2024-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -429,14 +438,14 @@
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/</loc>
+    <loc>http://ethanliu6.github.io/categories/%E5%AD%A6%E6%9C%AF/</loc>
     <lastmod>2024-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/categories/%E5%AD%A6%E6%9C%AF/</loc>
+    <loc>http://ethanliu6.github.io/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/</loc>
     <lastmod>2024-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
