@@ -1,9 +1,3 @@
----
-layout: false
----
-
-
-
 # Ethan's Blog
 
 - everyday learned
