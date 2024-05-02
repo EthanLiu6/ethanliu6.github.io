@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+  <link rel="mask-icon" href="/images/avatar.jpg" color="#222">
+  <meta name="msvalidate.01" content="4AF2328B2035748153A041B7EEF3D15C">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CLobster:300,300italic,400,400italic,700,700italic%7CPingFang+SC:300,300italic,400,400italic,700,700italic%7CRoboto+Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="该篇主要讲解Java中字节流、打印流">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaSE进阶——Day11 字节流、打印流">
+<meta property="og:url" content="http://ethanliu6.github.io/2024/04/30/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day11/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day11-Properties%E9%9B%86%E5%90%88%E7%B1%BB%E3%80%81%E9%80%92%E5%BD%92%E3%80%81%E5%AD%97%E8%8A%82%E6%B5%81%E3%80%81%E6%89%93%E5%8D%B0%E6%B5%81/index.html">
+<meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
+<meta property="og:description" content="该篇主要讲解Java中字节流、打印流">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20201115175516372.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20201115175523936.png">
+<meta property="article:published_time" content="2024-04-30T14:13:51.913Z">
+<meta property="article:modified_time" content="2024-05-01T15:15:52.826Z">
+<meta property="article:author" content="Ethan Liu">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Java进阶">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20201115175516372.png">
+
+
+<link rel="canonical" href="http://ethanliu6.github.io/2024/04/30/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day11/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day11-Properties%E9%9B%86%E5%90%88%E7%B1%BB%E3%80%81%E9%80%92%E5%BD%92%E3%80%81%E5%AD%97%E8%8A%82%E6%B5%81%E3%80%81%E6%89%93%E5%8D%B0%E6%B5%81/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/04/30/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day11/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day11-Properties%E9%9B%86%E5%90%88%E7%B1%BB%E3%80%81%E9%80%92%E5%BD%92%E3%80%81%E5%AD%97%E8%8A%82%E6%B5%81%E3%80%81%E6%89%93%E5%8D%B0%E6%B5%81/","path":"2024/04/30/JavaNotes/JavaSE进阶/day11/JavaSE进阶——Day11-Properties集合类、递归、字节流、打印流/","title":"JavaSE进阶——Day11 字节流、打印流"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JavaSE进阶——Day11 字节流、打印流 | <font color='white' >Ethan の Blog</font></title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title"><font color='white' >Ethan の Blog</font></p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"><font color='#FDABC1' size=3>清醒的停留，胜过——盲目的前行</font></p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">13</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">8</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">33</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%A6%E8%BE%93%E5%87%BA%E6%B5%81"><span class="nav-number">1.</span> <span class="nav-text">符输出流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E8%8A%82%E6%B5%81%E8%AF%BB%E4%B8%AD%E6%96%87%E5%87%BA%E7%8E%B0%E7%A0%81%E7%9A%84%E5%8E%9F%E7%A0%81"><span class="nav-number">1.1.</span> <span class="nav-text">字节流读中文出现码的原码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81%E8%BE%93%E5%87%BA%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.2.</span> <span class="nav-text">字符流输出介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#writer%E7%B1%BB"><span class="nav-number">1.2.1.</span> <span class="nav-text">Writer类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filewriter%E7%B1%BB-%E7%94%A8%E6%9D%A5%E5%86%99%E5%85%A5%E5%AD%97%E7%AC%A6%E6%96%87%E4%BB%B6%E7%9A%84%E4%BE%BF%E6%8D%B7%E7%B1%BB"><span class="nav-number">1.2.2.</span> <span class="nav-text">FileWriter类 :
+用来写入字符文件的便捷类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filewriter%E7%9A%84%E6%88%90%E5%91%98"><span class="nav-number">1.3.</span> <span class="nav-text">FileWriter的成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filewriter%E5%86%99%E6%95%B0%E6%8D%AE%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.4.</span> <span class="nav-text">FileWriter写数据的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AD%97%E7%AC%A6%E8%BE%93%E5%87%BA%E6%B5%81%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.4.1.</span> <span class="nav-text">创建字符输出流对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E6%95%B0%E6%8D%AE"><span class="nav-number">1.4.2.</span> <span class="nav-text">写数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8A%E6%94%BE%E8%B5%84%E6%BA%90"><span class="nav-number">1.4.3.</span> <span class="nav-text">释放资源</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E8%BE%93%E5%85%A5%E6%B5%81"><span class="nav-number">2.</span> <span class="nav-text">字符输入流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E8%8A%82%E8%BE%93%E5%85%A5%E6%B5%81%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.1.</span> <span class="nav-text">字节输入流介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filereader%E7%9A%84%E6%88%90%E5%91%98"><span class="nav-number">2.2.</span> <span class="nav-text">FileReader的成员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%93%E5%86%B2%E6%B5%81"><span class="nav-number">3.</span> <span class="nav-text">字符缓冲流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%93%E5%86%B2%E6%B5%81-1"><span class="nav-number">3.1.</span> <span class="nav-text">字符缓冲流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%93%E5%86%B2%E6%B5%81%E7%89%B9%E6%9C%89%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">3.2.</span> <span class="nav-text">字符缓冲流特有的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bufferedwriter%E7%B1%BB"><span class="nav-number">3.2.1.</span> <span class="nav-text">BufferedWriter类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bufferedreader%E7%B1%BB"><span class="nav-number">3.2.2.</span> <span class="nav-text">BufferedReader类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%93%8D%E4%BD%9C%E6%B5%81%E7%9A%84%E7%BB%83%E4%B9%A0"><span class="nav-number">3.3.</span> <span class="nav-text">对象操作流的练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%8D%B0%E6%B5%81"><span class="nav-number">4.</span> <span class="nav-text">打印流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E7%9B%AE%E6%A0%87"><span class="nav-number">4.1.</span> <span class="nav-text">学习目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E8%AE%B2%E8%A7%A3"><span class="nav-number">4.2.</span> <span class="nav-text">内容讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#api"><span class="nav-number">4.3.</span> <span class="nav-text">【1】API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5"><span class="nav-number">4.4.</span> <span class="nav-text">【2】代码实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E5%B0%8F%E7%BB%93"><span class="nav-number">4.5.</span> <span class="nav-text">内容小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A3%85%E9%A5%B0%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E8%87%AA%E5%B7%B1%E7%BB%98%E5%88%B6%E5%85%B3%E7%B3%BB%E5%9B%BE"><span class="nav-number">5.</span> <span class="nav-text">装饰设计模式（自己绘制关系图）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">5.1.</span> <span class="nav-text">【1】概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E5%88%99"><span class="nav-number">5.1.1.</span> <span class="nav-text">使用原则：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E8%B7%B5-1"><span class="nav-number">5.2.</span> <span class="nav-text">【2】代码实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E5%B0%8F%E7%BB%93-1"><span class="nav-number">5.3.</span> <span class="nav-text">内容小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#commons-io%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AF%B9%E6%96%87%E4%BB%B6%E7%9A%84%E6%8B%B7%E8%B4%9D%E5%81%9A%E4%BC%98%E5%8C%96"><span class="nav-number">6.</span> <span class="nav-text">commons-io工具包(对文件的拷贝做优化)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E6%96%B9%E5%BA%93%E7%9A%84%E5%AF%BC%E5%85%A5"><span class="nav-number">6.1.</span> <span class="nav-text">【1】三方库的导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#api-1"><span class="nav-number">6.2.</span> <span class="nav-text">【2】API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AE%B9%E5%B0%8F%E7%BB%93-2"><span class="nav-number">6.3.</span> <span class="nav-text">内容小结</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ethan Liu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Ethan Liu</p>
+  <div class="site-description" itemprop="description"><font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2V0aGFubGl1Ng==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ethanliu6"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxpdWUyMzM2QGdtYWlsLmNvbQ==" title="E-Mail → mailto:liue2336@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMTMyNzA5OTk3Nw==" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1327099977"><i class="fa-brands fa-bilibili fa-fw"></i>BiliBili</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/categories/Love/" title="Love → &#x2F;categories&#x2F;Love&#x2F;" rel="noopener me"><i class="fa fa-heart fa-fw"></i>Love</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/04/30/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day11/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day11-Properties%E9%9B%86%E5%90%88%E7%B1%BB%E3%80%81%E9%80%92%E5%BD%92%E3%80%81%E5%AD%97%E8%8A%82%E6%B5%81%E3%80%81%E6%89%93%E5%8D%B0%E6%B5%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Ethan Liu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JavaSE进阶——Day11 字节流、打印流 | <font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaSE进阶——Day11 字节流、打印流<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9KYXZhTm90ZXMvSmF2YVNF6L+b6Zi2L2RheTExL0phdmFTRei/m+mYtuKAlOKAlERheTExLVByb3BlcnRpZXPpm4blkIjnsbvjgIHpgJLlvZLjgIHlrZfoioLmtYHjgIHmiZPljbDmtYEubWQ=" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-04-30 22:13:51" itemprop="dateCreated datePublished" datetime="2024-04-30T22:13:51+08:00">2024-04-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-05-01 23:15:52" itemprop="dateModified" datetime="2024-05-01T23:15:52+08:00">2024-05-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java%E5%85%A8%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">Java全栈</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="JavaSE进阶——Day11 字节流、打印流" href="/2024/04/30/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day11/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day11-Properties%E9%9B%86%E5%90%88%E7%B1%BB%E3%80%81%E9%80%92%E5%BD%92%E3%80%81%E5%AD%97%E8%8A%82%E6%B5%81%E3%80%81%E6%89%93%E5%8D%B0%E6%B5%81/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::9c9b5120c0fec307788b45e60081e740" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
+<p>该篇主要讲解Java中<strong>字节流、打印流</strong></p>
+
+</blockquote>
+<span id="more"></span>
+<h2 id="符输出流">符输出流</h2>
+<h3 id="字节流读中文出现码的原码">字节流读中文出现码的原码</h3>
+<ul>
+<li>因为字节流一次读一个字节，而不管GBK还是UTF-8一个中文都是多个字节，用字节流每次只能读其中的一部分，所以就会出现乱码问题</li>
+</ul>
+<h3 id="字符流输出介绍">字符流输出介绍</h3>
+<h4 id="writer类">Writer类</h4>
+<ul>
+<li><p>写入字符流的最顶层的类 , 是一个抽象类 ,不能实例化 ,
+需要使用其子类FileWriter类</p></li>
+<li><h4 id="filewriter类-用来写入字符文件的便捷类">FileWriter类 :
+用来写入字符文件的便捷类</h4></li>
+</ul>
+<h3 id="filewriter的成员">FileWriter的成员</h3>
+<ul>
+<li><p>构造方法 :</p>
+<ul>
+<li>public FileWriter(File file) : 往指定的File路径中写入数据</li>
+<li>public FileWriter(String fileName) :
+往指定的String路径中写入数据</li>
+</ul></li>
+<li><p>成员方法 :</p>
+<ul>
+<li><table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">void write(int c)</th>
+<th style="text-align: center;">写一个字符</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">void write(char[] cbuf)</td>
+<td style="text-align: center;">写入一个字符数组</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">void write(char[] cbuf, int off, int
+len)</td>
+<td style="text-align: center;">写入字符数组的一部分</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">void write(String str)</td>
+<td style="text-align: center;">写一个字符串</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">void write(String str, int off, int
+len)</td>
+<td style="text-align: center;">写一个字符串的一部分</td>
+</tr>
+</tbody>
+</table></li>
+<li><table>
+<colgroup>
+<col style="width: 10%">
+<col style="width: 89%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">flush()</th>
+<th style="text-align: center;">刷新流，还可以继续写数据</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">close()</td>
+<td style="text-align: center;">关闭流，释放资源，但是在关闭之前会先刷新流。一旦关闭，就不能再写数据</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul>
+<h3 id="filewriter写数据的步骤">FileWriter写数据的步骤</h3>
+<ul>
+<li><h4 id="创建字符输出流对象">创建字符输出流对象</h4>
+<ul>
+<li>注意事项： 如果文件不存在，就创建。但是要保证父级路径存在。
+如果文件存在就清空</li>
+</ul></li>
+<li><h4 id="写数据">写数据</h4>
+<ul>
+<li>注意事项： 写出int类型的整数，实际写出的是整数在码表上对应的字母。
+写出字符串数据，是把字符串本身原样写出。</li>
+</ul></li>
+<li><h4 id="释放资源">释放资源</h4>
+<ul>
+<li>注意事项： 每次使用完流必须要释放资源。</li>
+</ul></li>
+<li><p>``` package com.itheima.writer_demo;</p>
+<p>import java.io.FileWriter; import java.io.IOException;</p>
+<p>/* Writer类 : 写入字符流的最顶层的类 , 是一个抽象类 ,不能实例化
+需要使用其子类FileWriter类</p>
+<pre><code>FileWriter类 : 用来写入字符文件的便捷类
+构造方法 :
+    public FileWriter(File file) : 往指定的File路径中写入数据
+    public FileWriter(String fileName) : 往指定的String路径中写入数据
+成员方法
+    void write•(int c)  写一个字符
+    void write•(char[] cbuf)  写入一个字符数组
+    void write•(char[] cbuf, int off, int len)  写入字符数组的一部分
+    void write•(String str) 写一个字符串
+    void write•(String str, int off, int len) 写一个字符串的一部分
+    flush() 刷新流，还可以继续写数据
+    close() 关闭流，释放资源，但是在关闭之前会先刷新流。一旦关闭，就不能再写数据</code></pre>
+<p>*/ public class WriterDemo1 { public static void main(String[] args)
+throws IOException { // 创建字符输出流对象 //
+如果文件不存在会创建一个空的文件 // 如果文件存在 , 会把文件中的内容清空
+FileWriter fw = new FileWriter("day12_demo\charstream2.txt");</p>
+<pre><code>    // 写数据
+    fw.write(&#39;a&#39;);
+    fw.write(&#39;b&#39;);
+    // 刷新流 , 把流中的数据刷到硬盘中 , 刷新之后可以继续写数据
+    // fw.flush();
+
+    // 释放资源
+    // 关闭流 , 但是会先刷新流
+    fw.close();
+    // 一旦关闭流无法写数据
+    // fw.write(&#39;c&#39;);
+&#125;</code></pre>
+<p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>package com.itheima.writer_demo;</p>
+<p>import java.io.FileWriter; import java.io.IOException;</p>
+<p>/* Writer类 : 写入字符流的最顶层的类 , 是一个抽象类 ,不能实例化
+需要使用其子类FileWriter类</p>
+<pre><code>FileWriter类 : 用来写入字符文件的便捷类
+构造方法 :
+    public FileWriter(File file) : 往指定的File路径中写入数据
+    public FileWriter(String fileName) : 往指定的String路径中写入数据
+成员方法
+    void write•(int c)  写一个字符
+    void write•(char[] cbuf)  写入一个字符数组
+    void write•(char[] cbuf, int off, int len)  写入字符数组的一部分
+    void write•(String str) 写一个字符串
+    void write•(String str, int off, int len) 写一个字符串的一部分
+    flush() 刷新流，还可以继续写数据
+    close() 关闭流，释放资源，但是在关闭之前会先刷新流。一旦关闭，就不能再写数据</code></pre>
+<p>*/ public class WriterDemo2 { public static void main(String[] args)
+throws IOException { // 创建字符输出流对象 FileWriter fw = new
+FileWriter("day12_demo\charstream2.txt");</p>
+<pre><code>    // 写数据</code></pre>
+<p>// void write•(int c) 写一个字符 // fw.write('a'); // fw.write('b');
+// fw.write('c');</p>
+<p>// void write•(char[] cbuf) 写入一个字符数组 char[] chs = {'a', 'b',
+'c', 'd', 'e'}; // fw.write(chs);</p>
+<p>// void write•(char[] cbuf, int off, int len) 写入字符数组的一部分 //
+fw.write(chs , 2 , 3);</p>
+<p>// void write•(String str) 写一个字符串 //
+fw.write("abcadaasda");</p>
+<p>// void write•(String str, int off, int len) 写一个字符串的一部分 //
+fw.write("abnacna", 3, 2);</p>
+<pre><code>    // 释放资源
+    fw.close();
+&#125;</code></pre>
+<p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">###  字符输出流练习</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  package com.itheima.writer_demo;</span><br><span class="line">  </span><br><span class="line">  import java.io.FileWriter;</span><br><span class="line">  import java.io.IOException;</span><br><span class="line">  import java.util.Scanner;</span><br><span class="line">  </span><br><span class="line">  /*</span><br><span class="line">      需求 : 将用户键盘录入的用户名和密码保存到本地实现永久化存储。</span><br><span class="line">      要求 : 用户名和密码在文件中各占一行</span><br><span class="line">  </span><br><span class="line">      步骤：</span><br><span class="line">          1 用户键盘录入用户名</span><br><span class="line">          2 创建字符输出流对象</span><br><span class="line">          3 将用户名和密码写到本地文件中</span><br><span class="line">   */</span><br><span class="line">  public class WriterTest &#123;</span><br><span class="line">      public static void main(String[] args) throws IOException &#123;</span><br><span class="line">          Scanner sc = new Scanner(System.in);</span><br><span class="line">          System.out.println(&quot;请输入用户名:&quot;);</span><br><span class="line">          String username = sc.nextLine();</span><br><span class="line">  </span><br><span class="line">          System.out.println(&quot;请输入密码:&quot;);</span><br><span class="line">          String password = sc.nextLine();</span><br><span class="line">  </span><br><span class="line">          // 创建字符输出流对象</span><br><span class="line">          FileWriter fw = new FileWriter(&quot;day12_demo\\user.txt&quot;);</span><br><span class="line">          // 往文件中写入用户名和密码</span><br><span class="line">          fw.write(username);</span><br><span class="line">          // 换行</span><br><span class="line">          fw.write(&quot;\r\n&quot;);</span><br><span class="line">          fw.write(password);</span><br><span class="line">          // 刷新</span><br><span class="line">          fw.flush();</span><br><span class="line">          // 释放资源</span><br><span class="line">          fw.close();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="字符输入流">字符输入流</h2>
+<h3 id="字节输入流介绍">字节输入流介绍</h3>
+<ul>
+<li>Reader类 :
+<ul>
+<li>读取字符流的最顶层的类 , 是一个抽象类 ,不能实例化</li>
+<li>需要使用其子类FileReader类</li>
+</ul></li>
+<li>FileReader类 :
+<ul>
+<li>用来读取字符文件的便捷类</li>
+</ul></li>
+</ul>
+<h3 id="filereader的成员">FileReader的成员</h3>
+<ul>
+<li><p>构造方法 :</p>
+<ul>
+<li>public FileReader(File file) : 从指定的File路径中读取数据</li>
+<li>public FileReader(String fileName) :
+从指定的String路径中读取数据</li>
+</ul></li>
+<li><p>成员方法 :</p>
+<ul>
+<li><table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">int read()</th>
+<th style="text-align: center;">一次读一个字符数据</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">int read(char[] cbuf)</td>
+<td style="text-align: center;">一次读一个字符数组数据</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+<li><p>``` package com.itheima.reader_demo;</p>
+<p>import java.io.FileNotFoundException; import java.io.FileReader;
+import java.io.IOException;</p>
+<p>/* Reader类 : 读取字符流的最顶层的类 , 是一个抽象类 ,不能实例化
+需要使用其子类FileReader类</p>
+<pre><code>FileReader类 : 用来读取字符文件的便捷类
+
+构造方法 :
+    public FileReader(File file) : 从指定的File路径中读取数据
+    public FileReader(String fileName) : 从指定的String路径中读取数据
+
+成员方法 :
+    int read•() : 一次读一个字符数据
+    int read•(char[] cbuf)   : 一次读一个字符数组数据</code></pre>
+<p>*/ public class ReaderDemo1 { public static void main(String[] args)
+throws IOException { // 创建字符输入流对象 FileReader fr = new
+FileReader("day12_demo\charstream.txt");</p>
+<pre><code>    // 一次读一个字符数据
+    int ch;
+    while ((ch = fr.read()) != -1) &#123;
+        System.out.print((char) ch);
+    &#125;
+
+    // 释放资源
+    fr.close();
+&#125;</code></pre>
+<p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  package com.itheima.reader_demo;</span><br><span class="line">  </span><br><span class="line">  import java.io.FileNotFoundException;</span><br><span class="line">  import java.io.FileReader;</span><br><span class="line">  import java.io.IOException;</span><br><span class="line">  </span><br><span class="line">  /*</span><br><span class="line">      Reader类 : 读取字符流的最顶层的类 , 是一个抽象类 ,不能实例化</span><br><span class="line">      需要使用其子类FileReader类</span><br><span class="line">  </span><br><span class="line">      FileReader类 : 用来读取字符文件的便捷类</span><br><span class="line">  </span><br><span class="line">      构造方法 :</span><br><span class="line">          public FileReader(File file) : 从指定的File路径中读取数据</span><br><span class="line">          public FileReader(String fileName) : 从指定的String路径中读取数据</span><br><span class="line">  </span><br><span class="line">      成员方法 :</span><br><span class="line">          int read•() 一次读一个字符数据</span><br><span class="line">          int read•(char[] cbuf)  一次读一个字符数组数据</span><br><span class="line">   */</span><br><span class="line">  public class ReaderDemo2 &#123;</span><br><span class="line">      public static void main(String[] args) throws IOException &#123;</span><br><span class="line">          // 创建字符输入流对象</span><br><span class="line">          FileReader fr = new FileReader(&quot;day12_demo\\charstream.txt&quot;);</span><br><span class="line">  </span><br><span class="line">          // 一次读一个字符数组数据</span><br><span class="line">          char[] chs = new char[1024];</span><br><span class="line">          int len;</span><br><span class="line">          while ((len = fr.read(chs)) != -1) &#123;</span><br><span class="line">              System.out.println(new String(chs, 0, len));</span><br><span class="line">          &#125;</span><br><span class="line">          // 释放资源</span><br><span class="line">          fr.close();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="字符缓冲流">字符缓冲流</h2>
+<h3 id="字符缓冲流-1">字符缓冲流</h3>
+<ul>
+<li>BufferedWriter：可以将数据高效的写出</li>
+<li>BufferedReader：可以将数据高效的读入到内存</li>
+<li>注意 : 字符缓冲流不具备读写功能 , 只提供缓冲区 ,
+真正读写还是需要依赖于构造接收的基本的字符流</li>
+<li>构造方法：
+<ul>
+<li>public BufferedWriter(Writer out) :
+构造方法中需要接收一个基本的字符输出流</li>
+<li>public BufferedReader(Reader in) :
+构造方法中需要接收一个基本的字符输入流</li>
+</ul></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">package com.itheima.bufferedstream_demo;</span><br><span class="line"></span><br><span class="line">import java.io.*;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    需求 : 使用字符缓冲流复制纯文本文件</span><br><span class="line">    将当日课程资料中的 ‘斗罗大陆.txt’ 复制到当前模块下 &#x27;copy.txt&#x27;</span><br><span class="line"> */</span><br><span class="line">public class BufferedStreamDemo1 &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        // 创建高效的字符输入流对象</span><br><span class="line">        BufferedReader br = new BufferedReader(new FileReader(&quot;D:\\传智播客\\上海-JavaSE进阶面授\\day12【缓冲流、转换流、序列化流、装饰者模式、commons-io工具包】\\资料\\斗罗大陆.txt&quot;));</span><br><span class="line">        // 创建高效的字符输出流对象</span><br><span class="line">        BufferedWriter bw = new BufferedWriter(new FileWriter(&quot;day12_demo\\copy.txt&quot;));</span><br><span class="line"></span><br><span class="line">        // 一次读写一个字符</span><br><span class="line">//        int ch;</span><br><span class="line">//        while ((ch = br.read()) != -1) &#123;</span><br><span class="line">//            bw.write(ch);</span><br><span class="line">//        &#125;</span><br><span class="line"></span><br><span class="line">        // 一次读写一个字符数组</span><br><span class="line">        char[] chs = new char[1024];</span><br><span class="line">        int len;</span><br><span class="line">        while ((len = br.read(chs)) != -1) &#123;</span><br><span class="line">            bw.write(chs, 0, len);</span><br><span class="line">        &#125;</span><br><span class="line">        // 释放资源</span><br><span class="line">        br.close();</span><br><span class="line">        bw.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="字符缓冲流特有的功能">字符缓冲流特有的功能</h3>
+<ul>
+<li><h4 id="bufferedwriter类">BufferedWriter类</h4>
+<ul>
+<li>void
+newLine()：写一个行分隔符，会根据操作系统的不同,写入不同的行分隔符</li>
+</ul></li>
+<li><h4 id="bufferedreader类">BufferedReader类</h4>
+<ul>
+<li>public String readLine() ：读取文件一行数据, 不包含换行符号 ,
+读到文件的末尾返回null</li>
+</ul></li>
+<li><p>``` package com.itheima.bufferedstream_demo;</p>
+<p>import java.io.*;</p>
+<p>/* 1 字符缓冲流： BufferedWriter：可以将数据高效的写出
+BufferedReader：可以将数据高效的读入到内存</p>
+<pre><code>2 字符缓冲流特有功能
+    BufferedWriter类
+        void newLine•()：写一个行分隔符，会根据操作系统的不同,写入不同的行分隔符
+    BufferedReader类
+        public String readLine•() ：读取文件一行数据, 不包含换行符号 ,  读到文件的末尾返回null
+
+    远桥之下泛莲舟
+    岱岩石上松溪流
+    万仞翠山梨亭在
+    莫闻空谷声悠悠</code></pre>
+<p>*/ public class BufferedStreamDemo2 { public static void
+main(String[] args) throws IOException {</p>
+<pre><code>    // 创建高效的字符输出流对象
+    BufferedWriter bw = new BufferedWriter(new FileWriter(&quot;day12_demo\\abc.txt&quot;));
+    // void newLine•()：写一个行分隔符，会根据操作系统的不同,写入不同的行分隔符
+    bw.write(&quot;远桥之下泛莲舟&quot;);
+    bw.newLine();
+    bw.write(&quot;岱岩石上松溪流&quot;);
+    bw.newLine();
+    bw.write(&quot;万仞翠山梨亭在&quot;);
+    bw.newLine();
+    bw.write(&quot;莫闻空谷声悠悠&quot;);
+    bw.flush();
+
+    // 创建高效的字符输入流对象
+    BufferedReader br = new BufferedReader(new FileReader(&quot;day12_demo\\abc.txt&quot;));
+    // public String readLine•() ：读取文件一行数据, 不包含换行符号 ,  读到文件的末尾返回null</code></pre>
+<p>// String s = br.readLine(); // System.out.println(s); // s =
+br.readLine(); // System.out.println(s); // s = br.readLine(); //
+System.out.println(s); // s = br.readLine(); // System.out.println(s);
+// System.out.println("============"); // s = br.readLine(); //
+System.out.println(s); // s = br.readLine(); //
+System.out.println(s);</p>
+<pre><code>    // 循环改进
+    String line;
+    while((line = br.readLine()) != null)&#123;
+        System.out.println(line);
+    &#125;
+
+    // 释放资源
+    br.close();
+    bw.close();
+&#125;</code></pre>
+<p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 字符缓冲流练习</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>package com.itheima.bufferedstream_demo;</p></li>
+</ul>
+<p>import java.io.*; import java.util.Arrays;</p>
+<p>/* 需求：读取文件中的数据 : 33 22 11 55 44 排序后 : 11 22 33 44 55
+再次写到本地文件</p>
+<pre><code>步骤 :
+    1 创建高效的字符输入流对象
+    2 读取文件中的一行数据
+    3 将数据按照空格切割
+    4 把字符串数组转成int类型数组
+    5 对int类型的数组进行排序
+    6 创建高效的字符输出流对象
+    7 遍历数组,把数组中的数据写入到文件中
+    8 释放资源</code></pre>
+<p>*/ public class BufferedStreamDemo3 { public static void
+main(String[] args) throws IOException { // 1 创建高效的字符输入流对象
+BufferedReader br = new BufferedReader(new
+FileReader("day12_demo\sort.txt")); // 2 读取文件中的一行数据 String
+line = br.readLine(); // 3 将数据按照空格切割 String[] strs =
+line.split(" "); // 4 把字符串数组转成int类型数组 int[] arr = new
+int[strs.length]; for (int i = 0; i &lt; strs.length; i++) { arr[i] =
+Integer.parseInt(strs[i]); } // 5 对int类型的数组进行排序
+Arrays.sort(arr); // 6 创建高效的字符输出流对象 BufferedWriter bw = new
+BufferedWriter(new FileWriter("day12_demo\sort.txt")); // 7
+遍历数组,把数组写入到文件中 for (int i = 0; i &lt; arr.length; i++) {
+bw.write(arr[i] + " "); bw.flush(); } // 8 释放资源 br.close();
+bw.close(); } }</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 转换流</span><br><span class="line"></span><br><span class="line">###  转换流介绍</span><br><span class="line"></span><br><span class="line">- 转换流就是来进行字节流和字符流之间转换的桥梁</span><br><span class="line"></span><br><span class="line">### 转换流分类</span><br><span class="line"></span><br><span class="line">- InputStreamReader是从字节流到字符流的桥梁</span><br><span class="line"></span><br><span class="line">  - public InputStreamReader(InputStream in) : 创建一个使用默认编码的 InputStreamReader。</span><br><span class="line">  - public InputStreamReader(InputStream in ,  String charsetName) : 创建使用指定编码的 InputStreamReader。</span><br><span class="line"></span><br><span class="line">- OutputStreamWriter是从字符流到字节流的桥梁</span><br><span class="line"></span><br><span class="line">  - public OutputStreamWriter(OutputStream out) : 创建使用默认字符编码的 OutputStreamWriter</span><br><span class="line">  - public OutputStreamWriter(OutputStream out,  String charsetName) : 创建使用指定编码的 OutputStreamWriter。</span><br><span class="line"></span><br><span class="line">- #### 练习</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>package com.itheima.conversion_demo;</p>
+<p>import java.io.*;</p>
+<p>/* 转换流就是来进行字节流和字符流之间转换的桥梁</p>
+<pre><code>  InputStreamReader是从字节流到字符流的桥梁
+      public InputStreamReader(InputStream in) : 创建一个使用默认编码的 InputStreamReader。
+      public InputStreamReader(InputStream in ,  String charsetName) : 创建使用指定编码的 InputStreamReader。
+
+  OutputStreamWriter是从字符流到字节流的桥梁
+      public OutputStreamWriter(OutputStream out) : 创建使用默认字符编码的 OutputStreamWriter
+      public OutputStreamWriter(OutputStream out,  String charsetName) : 创建使用指定编码的 OutputStreamWriter。
+
+
+  需求1 : 使用转换流 , 把以下数据按照GBK的编码写入文件 , 在使用GBK的编码读取数据
+  数据如下 :
+      远桥之下泛莲舟
+      岱岩石上松溪流
+      万仞翠山梨亭在
+      莫闻空谷声悠悠</code></pre>
+<p>*/ public class ConversionDemo2 { public static void main(String[]
+args) throws IOException { // 创建转换输出流 OutputStreamWriter osw =
+new OutputStreamWriter(new
+FileOutputStream("day12_demo\conversion.txt"), "GBK");
+osw.write("远桥之下泛莲舟"); osw.write(""); osw.write("岱岩石上松溪流");
+osw.write(""); osw.write("万仞翠山梨亭在"); osw.write("");
+osw.write("莫闻空谷声悠悠"); osw.write(""); osw.close();</p>
+<pre><code>      // 创建转换输入流
+      InputStreamReader isr = new InputStreamReader(new FileInputStream(&quot;day12_demo\\conversion.txt&quot;), &quot;GBK&quot;);
+      int ch;
+      while ((ch = isr.read()) != -1) &#123;
+          System.out.print((char) ch);
+      &#125;
+      isr.close();
+  &#125;</code></pre>
+<p>}</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure> package com.itheima.conversion_demo;</p>
+<p>import java.io.*;</p>
+<p>/* 转换流就是来进行字节流和字符流之间转换的桥梁</p>
+<pre><code>  InputStreamReader是从字节流到字符流的桥梁
+      public InputStreamReader(InputStream in) : 创建一个使用默认编码的 InputStreamReader。
+      public InputStreamReader(InputStream in ,  String charsetName) : 创建使用指定编码的 InputStreamReader。
+
+  OutputStreamWriter是从字符流到字节流的桥梁
+      public OutputStreamWriter(OutputStream out) : 创建使用默认字符编码的 OutputStreamWriter
+      public OutputStreamWriter(OutputStream out,  String charsetName) : 创建使用指定编码的 OutputStreamWriter。
+
+  需求2 :  将模块根目录中GBK编码的文本文件 , 转换为UTF-8编码的文本文件</code></pre>
+<p>*/ public class ConversionDemo2 { public static void main(String[]
+args) throws IOException {</p>
+<pre><code>      // 创建转换输入流
+      InputStreamReader isr = new InputStreamReader(new FileInputStream(&quot;day12_demo\\GBK编码的文件.txt&quot;), &quot;GBK&quot;);
+
+      // 创建转换输出流
+      OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(&quot;day12_demo\\UTF编码的文件.txt&quot;), &quot;UTF-8&quot;);
+
+      int ch;
+      while ((ch = isr.read()) != -1) &#123;// 以GBK编码进去读取
+          osw.write(ch);// 以UTF-8编码进行写入
+      &#125;
+
+      // 释放资源
+      isr.close();
+      osw.close();
+  &#125;</code></pre>
+<p>}</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 对象操作流</span><br><span class="line"></span><br><span class="line">###  对象操作流介绍</span><br><span class="line"></span><br><span class="line">- 可以把对象以字节的形式写到本地文件，直接打开文件，是读不懂的，需要再次用对象操作流读到内存中</span><br><span class="line"></span><br><span class="line">###  对象操作流的分类</span><br><span class="line"></span><br><span class="line">- ObjectOutputStream :</span><br><span class="line">  - ​    对象操作输出流（对象序列化流）：就是将对象写到本地文件中，或者在网络中传输对象</span><br><span class="line">- ObjectInputStream :</span><br><span class="line">  - ​    对象操作输入流（对象反序列化流）：把写到本地文件中的对象读到内存中，或者接收网络中传输的对象</span><br><span class="line"></span><br><span class="line">### 对象操作流的注意事项</span><br><span class="line"></span><br><span class="line">- 注意 : 如果一个类对象想要被序列化 , 那么此类需要实现Serializable接口</span><br><span class="line"></span><br><span class="line">  - Serializable接口的含义 :</span><br><span class="line">    - ​    1 是一个标记性接口 , 里面没有任何抽象方法</span><br><span class="line">    - ​    2 只要一个类实现了此接口 , 表示此类的对象可以被序列化</span><br><span class="line"></span><br><span class="line">- 用对象序列化流序列化了一个对象后，假如我们修改了对象所属的Javabean类，读取数据会不会出问题呢？</span><br><span class="line"></span><br><span class="line">  - 会出问题，会抛出InvalidClassException异常</span><br><span class="line"></span><br><span class="line">- 如果出问题了，如何解决呢？</span><br><span class="line"></span><br><span class="line">  - 给对象所属的类加一个serialVersionUID </span><br><span class="line">  - private static final long serialVersionUID = 42L;</span><br><span class="line"></span><br><span class="line">- 如果一个对象中的某个成员变量的值不想被序列化，又该如何实现呢？</span><br><span class="line"></span><br><span class="line">- 给该成员变量加transient关键字修饰，该关键字标记的成员变量不参与序列化过程</span><br><span class="line"></span><br><span class="line">- ```</span><br><span class="line">  package com.itheima.objectstream_demo;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  import java.io.Serializable;</span><br><span class="line">  </span><br><span class="line">  /*</span><br><span class="line">      如果此类对象想要被序列化 , 那么此类需要实现Serializable接口</span><br><span class="line">      Serializable接口的含义 :</span><br><span class="line">          是一个标记性接口 , 里面没有任何抽象方法</span><br><span class="line">          只要一个类实现了此接口 , 表示此类的对象可以被序列化</span><br><span class="line">   */</span><br><span class="line">  public class User implements Serializable &#123;</span><br><span class="line">      /*</span><br><span class="line">          问题分析 :</span><br><span class="line">              serialVersionUID : 序列号</span><br><span class="line">              序列号是根据类的信息进行生成的</span><br><span class="line">              如果没有自己给出序列号 , JVM会根据类的信息自动计算一个序列号</span><br><span class="line">              如果改动了类的信息 , 那么JVM会重新计算一个序列号</span><br><span class="line">  </span><br><span class="line">              第一步 : 把对象序列化到本地中 , 序列号为 -4446663370728791812 也会存储到本地中</span><br><span class="line">              第二步 : 我们自己修改了类 , 会重新计算一个新的序列号 2908680347500030933</span><br><span class="line">              第三步 : 当把对象读到内存中时 , 本地中的序列号和类中的序列号不一致就会发生 InvalidClassException异常</span><br><span class="line">  </span><br><span class="line">          解决方案 :</span><br><span class="line">              我们自己手动给出序列号, 不让虚拟机自动生成 , 并且这个值恒久不变</span><br><span class="line">              private static final long serialVersionUID = 值L;</span><br><span class="line">       */</span><br><span class="line">  </span><br><span class="line">      private static final long serialVersionUID = 111L;</span><br><span class="line">  </span><br><span class="line">      private String username;</span><br><span class="line">      private transient String password;</span><br><span class="line">  </span><br><span class="line">      public User() &#123;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      public User(String username, String password) &#123;</span><br><span class="line">          this.username = username;</span><br><span class="line">          this.password = password;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      public String getUsername() &#123;</span><br><span class="line">          return username;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      public void setUsername(String username) &#123;</span><br><span class="line">          this.username = username;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      public String getPassword() &#123;</span><br><span class="line">          return password;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      public void setPassword(String password) &#123;</span><br><span class="line">          this.password = password;</span><br><span class="line">      &#125;</span><br><span class="line">  </span><br><span class="line">      @Override</span><br><span class="line">      public String toString() &#123;</span><br><span class="line">          return &quot;User&#123;&quot; +</span><br><span class="line">                  &quot;username=&#x27;&quot; + username + &#x27;\&#x27;&#x27; +</span><br><span class="line">                  &quot;, password=&#x27;&quot; + password + &#x27;\&#x27;&#x27; +</span><br><span class="line">                  &#x27;&#125;&#x27;;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="对象操作流的练习">对象操作流的练习</h3>
+<h2 id="打印流">打印流</h2>
+<h3 id="学习目标">学习目标</h3>
+<ul>
+<li>了解打印流的使用</li>
+</ul>
+<h3 id="内容讲解">内容讲解</h3>
+<h3 id="api">【1】API</h3>
+<p><strong>PrintStream类</strong> : 打印流</p>
+<p><strong>作用</strong> : 就是为了方便记录数据（日志）</p>
+<p><strong>1）构造方法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public PrintStream(String filePath) : 构建一个打印流对象，传入接收数据的文件路径</span><br></pre></td></tr></table></figure>
+<p><strong>2）方法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">public void println(数据)   打印后换行</span><br><span class="line">public void print(数据)     打印不换行</span><br></pre></td></tr></table></figure>
+<h3 id="代码实践">【2】代码实践</h3>
+<p>创建打印流对象，记录一些数据到指定文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">package com.itheima.printstream_demo;</span><br><span class="line"></span><br><span class="line">import java.io.FileNotFoundException;</span><br><span class="line">import java.io.PrintStream;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    PrintStream类 : 打印流</span><br><span class="line"></span><br><span class="line">    作用 : 就是为了方便记录数据（日志）</span><br><span class="line"></span><br><span class="line">    构造方法 :</span><br><span class="line">        public PrintStream(String filePath) : 构建一个打印流对象，传入接收数据的文件路径</span><br><span class="line">    成员方法 :</span><br><span class="line">        public void println(数据)   打印后换行</span><br><span class="line">        public void print(数据)     打印不换行</span><br><span class="line"></span><br><span class="line">    需求 : 创建打印流对象，记录一些数据到指定文件</span><br><span class="line"> */</span><br><span class="line">public class PrintStreamDemo &#123;</span><br><span class="line">    public static void main(String[] args) throws FileNotFoundException &#123;</span><br><span class="line">        // System.out.println(&quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">        //  public PrintStream(String filePath) : 构建一个打印流对象，传入接收数据的文件路径</span><br><span class="line">        PrintStream ps = new PrintStream(&quot;day11_demo\\print.txt&quot;);</span><br><span class="line"></span><br><span class="line">        ps.println(123);</span><br><span class="line">        ps.println(true);</span><br><span class="line">        ps.println(&quot;abc&quot;);</span><br><span class="line"></span><br><span class="line">        ps.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>System.out 对象类型，其实就是PrintStream类型。</p>
+<p>可以改变系统输出的流向：<code>System.setOut(打印流)</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package com.itheima.printstream_demo;</span><br><span class="line"></span><br><span class="line">import java.io.FileNotFoundException;</span><br><span class="line">import java.io.PrintStream;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    PrintStream类 : 打印流</span><br><span class="line"></span><br><span class="line">    构造方法 :</span><br><span class="line">        public PrintStream(String filePath) : 构建一个打印流对象，传入接收数据的文件路径</span><br><span class="line">    成员方法 :</span><br><span class="line">        public void println(数据)   打印后换行</span><br><span class="line">        public void print(数据)     打印不换行</span><br><span class="line">    需求 :</span><br><span class="line">        System.out 对象类型，其实就是PrintStream类型。</span><br><span class="line">        可以改变系统输出的流向 : System.setOut(打印流)</span><br><span class="line"> */</span><br><span class="line">public class PrintStreamDemo2 &#123;</span><br><span class="line">    public static void main(String[] args) throws FileNotFoundException &#123;</span><br><span class="line">        System.out.println(&quot;数据打印在控制台&quot;);</span><br><span class="line"></span><br><span class="line">        // 可以改变系统输出的流向</span><br><span class="line">        System.setOut(new PrintStream(&quot;day11_demo\\print.txt&quot;));</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;数据打印在文件中&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="内容小结">内容小结</h3>
+<ul>
+<li>打印流使用很简单，print/println方法</li>
+<li>作用：就是为了方便记录数据（日志）</li>
+</ul>
+<h2 id="装饰设计模式自己绘制关系图">装饰设计模式（自己绘制关系图）</h2>
+<ul>
+<li>设计模式 : 一套良好的编码风格 ,
+经过众多的开发人员不断的测试总结而来</li>
+</ul>
+<h3 id="概述">【1】概述</h3>
+<ul>
+<li><p>装饰模式指的是在不改变原类,
+不使用继承的基础上，动态地扩展一个对象的功能。</p></li>
+<li><p>不使用继承技术扩展功能, 可以降低耦合</p></li>
+<li><h4 id="使用原则">使用原则：</h4>
+<ul>
+<li>装饰类和被装饰类需要有共同的父类型。
+<ul>
+<li>在之前学习过的 BufferedWriter 和 FileWriter 就是装饰设计模式</li>
+<li>BufferedWriter的父类为Writer</li>
+<li>FileWriter的父类也是Writer</li>
+<li>我们把FileWriter的对象传递到BufferedWriter的构造中 ,
+那么可以理解为BufferedWriter是装饰类 , FileWriter是被装饰类</li>
+<li>BufferedWriter对FileWriter的功能做了增强</li>
+</ul></li>
+<li>装饰类的构造要接收被装饰类的对象
+<ul>
+<li>FileWriter fw = new FileWriter("路径");</li>
+<li>BufferedWriter bw = new BufferedWriter(fw);</li>
+</ul></li>
+<li>在装饰类中把要增强扩展的功能进行扩展
+<ul>
+<li>BufferedWriter和FileWriter的功能一样,
+都具备Writer中写数据的功能</li>
+<li>但是BufferedWriter提供了缓冲区 , 相当于对FileWriter功能做了扩展</li>
+</ul></li>
+<li>对于不要增强的功能直接调用
+<ul>
+<li>不需要增强的功能直接继承父类的即可</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="代码实践-1">【2】代码实践</h3>
+<p>已知有接口Star和其子类型LiuDeHua。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface Star &#123;</span><br><span class="line">    public abstract void sing();</span><br><span class="line">    public abstract void dance();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需求
+：在不改变LiuDeHua类，及不使用继承的技术前提下，动态的扩展LiuDeHua的sing功能。</p>
+<p>LiuDeHua就是一个被装饰类 , 需要对唱歌的功能进行扩展</p>
+<p>思路 ：</p>
+<p>定义一个装饰类，去装饰增强 LiuDehua类。</p>
+<p>步骤：</p>
+<ul>
+<li>创建LiuDeHua类并实现接口Star【被装饰类】</li>
+<li>定义一个装饰类LiuDeHuaWrapper实现Star 【装饰类】</li>
+<li>在装饰类里面定义一个成员变量类型是LiuDeHua，可以使用构造方法进行传入被装饰类对象。</li>
+<li>在装饰类中对sing方法进行功能扩展</li>
+<li>对dance不做改动</li>
+<li>测试类分别创建装饰类的对象和被装饰类的对象。将被装饰类对象刘德华对象设置给装饰类对象</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line">package com.itheima.design_demo;</span><br><span class="line"></span><br><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.FileWriter;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    装饰模式指的是在不改变原类, 不使用继承的基础上，动态地扩展一个对象的功能</span><br><span class="line"></span><br><span class="line">    使用原则 :</span><br><span class="line">        1. 装饰类和被装饰类需要有共同的父类型。</span><br><span class="line">        2. 装饰类要传入被装饰类的对象</span><br><span class="line">        3. 在装饰类中把要增强扩展的功能进行扩展</span><br><span class="line">        4. 对于不要增强的功能直接调用</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    需求 ： 在不改变LiuDeHua类，及不使用继承的技术前提下，动态的扩展LiuDeHua的sing功能。</span><br><span class="line">            LiuDeHua就是一个被装饰类 , 需要对唱歌的功能进行扩展</span><br><span class="line">    步骤：</span><br><span class="line">        1. 创建LiuDeHua类并实现接口Star【被装饰类】</span><br><span class="line">        2. 定义一个装饰类LiuDeHuaWrapper实现Star 【装饰类】</span><br><span class="line">        3. 在装饰类里面定义一个成员变量类型是LiuDeHua，可以使用构造方法进行传入被装饰类对象。</span><br><span class="line">        4. 在装饰类中对sing方法进行功能扩展</span><br><span class="line">        5. 对dance不做改动</span><br><span class="line">        6. 测试类分别创建装饰类的对象和被装饰类的对象。将被装饰类对象刘德华对象设置给装饰类对象</span><br><span class="line"> */</span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        // 被装饰类对象</span><br><span class="line">        LiuDeHua huaZai = new LiuDeHua();// 0x001</span><br><span class="line"></span><br><span class="line">        // 装饰类对象</span><br><span class="line">        LiuDeHuaWrapper liuDeHuaWrapper = new LiuDeHuaWrapper(huaZai);</span><br><span class="line">        liuDeHuaWrapper.sing();</span><br><span class="line">        liuDeHuaWrapper.dance();</span><br><span class="line"></span><br><span class="line">//        // 被装饰类对象</span><br><span class="line">//        FileWriter fw = new FileWriter(&quot;路径&quot;);</span><br><span class="line">//        // 装饰类对象</span><br><span class="line">//        BufferedWriter bw = new BufferedWriter(fw);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 1. 创建LiuDeHua类并实现接口Star【被装饰类】</span><br><span class="line">class LiuDeHua implements Star &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void sing() &#123;</span><br><span class="line">        System.out.println(&quot;唱忘情水...&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void dance() &#123;</span><br><span class="line">        System.out.println(&quot;华仔在跳老年迪斯高..&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 2. 定义一个装饰类LiuDeHuaWrapper实现Star 【装饰类】</span><br><span class="line">class LiuDeHuaWrapper implements Star &#123;</span><br><span class="line">    // 3. 在装饰类里面定义一个成员变量类型是LiuDeHua，可以使用构造方法进行传入被装饰类对象。</span><br><span class="line">    private LiuDeHua huaZai;// 0x001</span><br><span class="line"></span><br><span class="line">    public LiuDeHuaWrapper(LiuDeHua huaZai) &#123;// 0x001</span><br><span class="line">        this.huaZai = huaZai;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void sing() &#123;</span><br><span class="line">        // 4. 在装饰类中对sing方法进行功能扩展</span><br><span class="line">        System.out.print(&quot;华仔深情&quot;);</span><br><span class="line">        huaZai.sing();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void dance() &#123;</span><br><span class="line">        // 5. 对dance不做改动</span><br><span class="line">        huaZai.dance();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 明星接口 , 装饰类和被装饰类的父类型</span><br><span class="line">interface Star &#123;</span><br><span class="line">    public abstract void sing(); // 唱歌</span><br><span class="line"></span><br><span class="line">    public abstract void dance();// 跳舞</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="内容小结-1">内容小结</h3>
+<ol type="1">
+<li>装饰类和被装饰类需要有共同的父类型。</li>
+<li>装饰类要传入被装饰类的对象</li>
+<li>在装饰类中把要增强扩展的功能进行扩展</li>
+<li>对于不要增强的功能直接调用</li>
+</ol>
+<h2 id="commons-io工具包对文件的拷贝做优化">commons-io工具包(对文件的拷贝做优化)</h2>
+<h3 id="三方库的导入">【1】三方库的导入</h3>
+<ol type="1">
+<li><p>下载commons-io相关jar包；http://commons.apache.org/proper/commons-io/</p></li>
+<li><p>把commons-io-2.6.jar包复制到指定的Module的lib目录中</p></li>
+<li><p>将commons-io-2.6.jar加入到项目中</p>
+<p>右键jar包：</p>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20201115175516372.png" alt="image-20201115175516372">
+<figcaption aria-hidden="true">image-20201115175516372</figcaption>
+</figure>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20201115175523936.png" alt="image-20201115175523936">
+<figcaption aria-hidden="true">image-20201115175523936</figcaption>
+</figure></li>
+</ol>
+<h3 id="api-1">【2】API</h3>
+<p><strong>1）org.apache.commons.io.IOUtils类</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public static int copy(InputStream in, OutputStream out):</span><br><span class="line">  把input输入流中的内容拷贝到output输出流中，返回拷贝的字节个数(适合文件大小为2GB以下)</span><br><span class="line">    </span><br><span class="line">public static long copyLarge(InputStream in, OutputStream out):</span><br><span class="line">  把input输入流中的内容拷贝到output输出流中，返回拷贝的字节个数(适合文件大小为2GB以上)</span><br><span class="line"></span><br><span class="line">package com.itheima.commons_io;</span><br><span class="line"></span><br><span class="line">import org.apache.commons.io.IOUtils;</span><br><span class="line"></span><br><span class="line">import java.io.FileInputStream;</span><br><span class="line">import java.io.FileNotFoundException;</span><br><span class="line">import java.io.FileOutputStream;</span><br><span class="line">import java.io.IOException;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    org.apache.commons.io.IOUtils类</span><br><span class="line"></span><br><span class="line">    public static int copy(InputStream in, OutputStream out):</span><br><span class="line">  把input输入流中的内容拷贝到output输出流中，返回拷贝的字节个数(适合文件大小为2GB以下)</span><br><span class="line"></span><br><span class="line">    public static long copyLarge(InputStream in, OutputStream out):</span><br><span class="line">  把input输入流中的内容拷贝到output输出流中，返回拷贝的字节个数(适合文件大小为2GB以上)</span><br><span class="line"> */</span><br><span class="line">public class Test1 &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">        IOUtils.copy(new FileInputStream(&quot;D:\\传智播客\\安装包\\好看的图片\\liqin.jpg&quot;) , new FileOutputStream(&quot;day12_demo\\copy.jpg&quot;));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>2）org.apache.commons.io.FileUtils</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public static void copyFileToDirectory(final File srcFile, final File destFile): </span><br><span class="line">  复制文件到另外一个目录下。</span><br><span class="line">public static void copyDirectoryToDirectory(File src , File dest ):</span><br><span class="line">  复制src目录到dest位置。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>代码实践：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package com.itheima.commons_io;</span><br><span class="line"></span><br><span class="line">import org.apache.commons.io.FileUtils;</span><br><span class="line"></span><br><span class="line">import java.io.File;</span><br><span class="line">import java.io.IOException;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    org.apache.commons.io.FileUtils</span><br><span class="line"></span><br><span class="line">    public static void copyFileToDirectory(final File srcFile, final File destFile):</span><br><span class="line">  复制文件到另外一个目录下。</span><br><span class="line"></span><br><span class="line">    public static void copyDirectoryToDirectory(File src , File dest ):</span><br><span class="line">  复制src目录到dest目录中。</span><br><span class="line"> */</span><br><span class="line">public class Test2 &#123;</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="内容小结-2">内容小结</h3>
+<p>commons-io可以简化IO复制文件的操作。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wChat.png" alt="Ethan Liu 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ethan Liu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ethanliu6.github.io/2024/04/30/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day11/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day11-Properties%E9%9B%86%E5%90%88%E7%B1%BB%E3%80%81%E9%80%92%E5%BD%92%E3%80%81%E5%AD%97%E8%8A%82%E6%B5%81%E3%80%81%E6%89%93%E5%8D%B0%E6%B5%81/" title="JavaSE进阶——Day11 字节流、打印流">http://ethanliu6.github.io/2024/04/30/JavaNotes/JavaSE进阶/day11/JavaSE进阶——Day11-Properties集合类、递归、字节流、打印流/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+          <div class="post-tags">
+              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+              <a href="/tags/Java%E8%BF%9B%E9%98%B6/" rel="tag"><i class="fa fa-tag"></i> Java进阶</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/04/30/love/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-29/" rel="prev" title="个人日记24-04-29">
+                  <i class="fa fa-angle-left"></i> 个人日记24-04-29
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/04/30/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day11/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day10-11-%E9%9A%8F%E5%A0%82%E5%B0%8F%E8%AE%B0/" rel="next" title="JavaSE进阶——Day10-11 随堂小记">
+                  JavaSE进阶——Day10-11 随堂小记 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="9c9b5120c0fec307788b45e60081e740"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023-2024 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Is Ethan's</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">57k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:27</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni8=" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2024/04/30/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day11/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day11-Properties%E9%9B%86%E5%90%88%E7%B1%BB%E3%80%81%E9%80%92%E5%BD%92%E3%80%81%E5%AD%97%E8%8A%82%E6%B5%81%E3%80%81%E6%89%93%E5%8D%B0%E6%B5%81/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyxf6tytI","appkey":"90987f30c4b5248baad5a04c7a6abfe1","count":true}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>
