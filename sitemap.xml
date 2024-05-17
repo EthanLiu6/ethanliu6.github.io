@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ethanliu6.github.io/aboutme/index.html</loc>
+    
+    <lastmod>2024-05-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ethanliu6.github.io/2024/04/28/BlogSet/Hexo+NexT%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%BA%8C)/</loc>
     
     <lastmod>2024-05-17</lastmod>
@@ -93,15 +102,6 @@
   
   <url>
     <loc>http://ethanliu6.github.io/2024/05/11/LeetCode/arithmetic/leetcode%E5%88%B7%E9%A2%98/</loc>
-    
-    <lastmod>2024-05-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/aboutme/index.html</loc>
     
     <lastmod>2024-05-17</lastmod>
     
