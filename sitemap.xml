@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://ethanliu6.github.io/2024/05/18/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb%E5%AE%8C%E6%95%B4%E7%89%88/</loc>
+    
+    <lastmod>2024-05-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://ethanliu6.github.io/2024/05/05/JavaNotes/MySQL/%E8%84%9A%E6%9C%ACSQL%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2024-05-17</lastmod>

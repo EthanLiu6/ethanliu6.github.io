@@ -21,26 +21,90 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="语言学 | NLP | Py | Java">
-<meta property="og:type" content="website">
+    <meta name="description" content="1.基本概念 1.1 前言 静态Web：  提供给所有人看数据不会发生变化！ HTML，CSS  动态Web：  有数据交互，登录账号密码，网站访问人数等 技术栈：Servlet&#x2F;JSP，ASP，PHP  在Java中，动态web资源开发的技术统称为JavaWeb； 1.2 Web 应用程序 Web 应用程序：可以提供浏览器访问的程序； 这个统一的web资源会被放在同一个文件夹下，Web 应用程序">
+<meta property="og:type" content="article">
 <meta property="og:title" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
-<meta property="og:url" content="http://ethanliu6.github.io/index.html">
+<meta property="og:url" content="http://ethanliu6.github.io/2024/05/18/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb%E5%AE%8C%E6%95%B4%E7%89%88/index.html">
 <meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
-<meta property="og:description" content="语言学 | NLP | Py | Java">
+<meta property="og:description" content="1.基本概念 1.1 前言 静态Web：  提供给所有人看数据不会发生变化！ HTML，CSS  动态Web：  有数据交互，登录账号密码，网站访问人数等 技术栈：Servlet&#x2F;JSP，ASP，PHP  在Java中，动态web资源开发的技术统称为JavaWeb； 1.2 Web 应用程序 Web 应用程序：可以提供浏览器访问的程序； 这个统一的web资源会被放在同一个文件夹下，Web 应用程序">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181026128.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181026461.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181027094.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181030670.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181031202.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020102921543768.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181031289.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181031455.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181031489.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181032062.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181032399.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181032936.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181033485.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181033584.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181033309.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181033705.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181033817.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181033482.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181034948.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181034923.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181034441.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181034999.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181034275.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181034363.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181034737.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181034457.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181035742.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181035986.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201030201543514.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181035696.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181035665.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181035501.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181037796.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181038088.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181038865.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181038294.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181038380.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181038644.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181038417.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181039818.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201030203415617.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201030213329557.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201030213749187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102191923294.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102193947328.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102194532388.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102195801974.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102195846293.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102200108754.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102201302397.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102202256154.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102202640957.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020110220352212.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102205139736.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102205258993.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102205856631.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020110221251720.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102213932114.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102214221869.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102214811292.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201102214949591.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2MTg4MTI3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2024-05-18T02:36:59.613Z">
+<meta property="article:modified_time" content="2024-05-18T05:12:26.960Z">
 <meta property="article:author" content="Ethan Liu">
 <meta property="article:tag" content="ZERO OR ONE">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405181026128.png">
 
 
-<link rel="canonical" href="http://ethanliu6.github.io/">
+<link rel="canonical" href="http://ethanliu6.github.io/2024/05/18/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb%E5%AE%8C%E6%95%B4%E7%89%88/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/05/18/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb%E5%AE%8C%E6%95%B4%E7%89%88/","path":"2024/05/18/JavaNotes/JavaWeb/狂神/狂神JavaWeb完整版/","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title><font color='white' >Ethan の Blog</font> - <font color='#FDABC1' size=3>清醒的停留，胜过——盲目的前行</font></title>
+<title> | <font color='white' >Ethan の Blog</font></title>
   
 
 
@@ -73,7 +137,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title"><font color='white' >Ethan の Blog</font></h1>
+      <p class="site-title"><font color='white' >Ethan の Blog</font></p>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description"><font color='#FDABC1' size=3>清醒的停留，胜过——盲目的前行</font></p>
@@ -127,7 +191,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -140,6 +204,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">1.基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web-%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 Web 应用程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%80%81-web-%E7%9A%84%E8%AE%BF%E9%97%AE%E8%BF%87%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">1.3动态 Web 的访问过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">2. Web 服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E8%AE%B2%E8%A7%A3"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 技术讲解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tomcat"><span class="nav-number">3.</span> <span class="nav-text">3.Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-tomcat"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 安装 Tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomcat-%E5%90%AF%E5%8A%A8%E5%92%8C%E9%85%8D%E7%BD%AE"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 Tomcat 启动和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E4%B8%80%E4%B8%AA-web-%E7%BD%91%E7%AB%99"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 发布一个 Web 网站</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http"><span class="nav-number">4.</span> <span class="nav-text">4.HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-http"><span class="nav-number">4.1.</span> <span class="nav-text">4.2 什么是 HTTP?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E4%B8%AA%E6%97%B6%E4%BB%A3"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 两个时代</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http-%E8%AF%B7%E6%B1%82"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 HTTP 请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#http-%E5%93%8D%E5%BA%94"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 HTTP 响应</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maven"><span class="nav-number">5.</span> <span class="nav-text">5. Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#maven-%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 Maven 项目架构管理工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-maven"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 下载安装 Maven</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-idea-%E4%B8%AD%E4%BD%BF%E7%94%A8-maven"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 在 IDEA 中使用 Maven</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%99%AE%E9%80%9A%E7%9A%84-maven-%E9%A1%B9%E7%9B%AE"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 创建一个普通的 Maven 项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E8%AE%B0%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8A%9F%E8%83%BD"><span class="nav-number">5.5.</span> <span class="nav-text">5.5 标记文件夹功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8-idea-%E4%B8%AD%E9%85%8D%E7%BD%AE-tomcat"><span class="nav-number">5.6.</span> <span class="nav-text">5.6 在 IDEA 中配置 Tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pom-%E6%96%87%E4%BB%B6"><span class="nav-number">5.7.</span> <span class="nav-text">5.7 pom 文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#idea-%E6%9F%A5%E7%9C%8B%E4%BE%9D%E8%B5%96%E6%A0%91"><span class="nav-number">5.8.</span> <span class="nav-text">5.8 IDEA 查看依赖树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.9.</span> <span class="nav-text">5.9 解决遇到的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#servlet-%E7%AE%80%E4%BB%8B"><span class="nav-number">6.</span> <span class="nav-text">6. Servlet 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#helloservlet"><span class="nav-number">6.1.</span> <span class="nav-text">6.2 HelloServlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet-%E5%8E%9F%E7%90%86"><span class="nav-number">6.2.</span> <span class="nav-text">6.3 Servlet 原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapping-%E9%97%AE%E9%A2%98"><span class="nav-number">6.3.</span> <span class="nav-text">6.4 Mapping 问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servletcontext"><span class="nav-number">6.4.</span> <span class="nav-text">6.5 ServletContext</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B1%E4%BA%AB%E6%95%B0%E6%8D%AE"><span class="nav-number">6.4.1.</span> <span class="nav-text">6.5.1 共享数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%82%E6%95%B0"><span class="nav-number">6.4.2.</span> <span class="nav-text">6.5.2 获取初始化参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91"><span class="nav-number">6.4.3.</span> <span class="nav-text">6.5.3 请求转发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%BB%E5%8F%96%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6"><span class="nav-number">6.4.4.</span> <span class="nav-text">6.5.4 读取资源文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#httpservletresponse"><span class="nav-number">6.5.</span> <span class="nav-text">6.6 HttpServletResponse</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%88%86%E7%B1%BB"><span class="nav-number">6.5.1.</span> <span class="nav-text">6.6.1 简单分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%96%87%E4%BB%B6"><span class="nav-number">6.5.2.</span> <span class="nav-text">6.6.2 下载文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">6.5.3.</span> <span class="nav-text">6.6.3 实现重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%AE%9E%E7%8E%B0%E7%99%BB%E5%BD%95%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">6.5.4.</span> <span class="nav-text">6.6.4 简单实现登录重定向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#httpservletrequest-%E8%8E%B7%E5%8F%96%E5%8F%82%E6%95%B0%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91"><span class="nav-number">6.6.</span> <span class="nav-text">6.7 HttpServletRequest
+获取参数，请求转发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookiesession"><span class="nav-number">7.</span> <span class="nav-text">7 Cookie、Session</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D"><span class="nav-number">7.1.</span> <span class="nav-text">7.1 会话</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98%E4%BC%9A%E8%AF%9D%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%8A%80%E6%9C%AF"><span class="nav-number">7.2.</span> <span class="nav-text">7.2 保存会话的两种技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie"><span class="nav-number">7.3.</span> <span class="nav-text">7.3 Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#session%E9%87%8D%E7%82%B9"><span class="nav-number">7.4.</span> <span class="nav-text">7.4 Session（重点）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp"><span class="nav-number">8.</span> <span class="nav-text">8 JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88-jsp"><span class="nav-number">8.1.</span> <span class="nav-text">8.1 什么 JSP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp-%E5%8E%9F%E7%90%86"><span class="nav-number">8.2.</span> <span class="nav-text">8.2 JSP 原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">8.3.</span> <span class="nav-text">8.3 JSP 基础语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp-%E6%8C%87%E4%BB%A4"><span class="nav-number">8.4.</span> <span class="nav-text">8.4 JSP 指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9D%E5%A4%A7%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="nav-number">8.5.</span> <span class="nav-text">8.5 九大内置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jsp%E6%A0%87%E7%AD%BEjstl%E6%A0%87%E7%AD%BEel%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">8.6.</span> <span class="nav-text">8.6 JSP标签、JSTL标签、EL表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javabean"><span class="nav-number">9.</span> <span class="nav-text">9 JavaBean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mvc-%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84"><span class="nav-number">10.</span> <span class="nav-text">10 MVC 三层架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A5%E5%89%8D"><span class="nav-number">10.1.</span> <span class="nav-text">10.1 以前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mvc-%E4%B8%89%E5%B1%82%E6%9E%B6%E6%9E%84-1"><span class="nav-number">10.2.</span> <span class="nav-text">10.2 MVC 三层架构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter%E9%87%8D%E7%82%B9"><span class="nav-number">11.</span> <span class="nav-text">11 Filter（重点）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E5%90%AC%E5%99%A8"><span class="nav-number">12.</span> <span class="nav-text">12 监听器</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -195,16 +261,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/05/18/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb%E5%AE%8C%E6%95%B4%E7%89%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -218,13 +285,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | <font color='white' >Ethan の Blog</font>">
+      <meta itemprop="name" content=" | <font color='white' >Ethan の Blog</font>">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/18/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb%E5%AE%8C%E6%95%B4%E7%89%88/" class="post-title-link" itemprop="url">未命名</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          <span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy9KYXZhTm90ZXMvSmF2YVdlYi/ni4LnpZ4v54uC56WeSmF2YVdlYuWujOaVtOeJiC5tZA==" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -239,6 +306,13 @@
     </span>
 
   
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
   
   <span class="post-meta-item">
     
@@ -276,8 +350,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="基本概念">1.基本概念</h2>
+    <div class="post-body" itemprop="articleBody"><h2 id="基本概念">1.基本概念</h2>
 <h3 id="前言">1.1 前言</h3>
 <p>静态Web：</p>
 <ul>
@@ -1025,7 +1098,6 @@ _jspService 方法中！</p>
 <li>看情况是否使用！</li>
 </ol>
 
-      
     </div>
 
     
@@ -1033,382 +1105,50 @@ _jspService 方法中！</p>
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wChat.png" alt="Ethan Liu 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ethan Liu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ethanliu6.github.io/2024/05/18/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb%E5%AE%8C%E6%95%B4%E7%89%88/" title="">http://ethanliu6.github.io/2024/05/18/JavaNotes/JavaWeb/狂神/狂神JavaWeb完整版/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
 
 
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/05/17/LeetCode/arithmetic/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95+%E5%89%91%E6%8C%87offer+LeetCode%E4%B8%93%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Ethan Liu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | <font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/17/LeetCode/arithmetic/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95+%E5%89%91%E6%8C%87offer+LeetCode%E4%B8%93%E9%A2%98/" class="post-title-link" itemprop="url">代码随想录+剑指offer+LeetCode专题.md</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-05-17 19:01:01" itemprop="dateCreated datePublished" datetime="2024-05-17T19:01:01+08:00">2024-05-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-18 02:32:43" itemprop="dateModified" datetime="2024-05-18T02:32:43+08:00">2024-05-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/LeetCod%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">LeetCod刷题</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="代码随想录+剑指offer+LeetCode专题.md" href="/2024/05/17/LeetCode/arithmetic/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95+%E5%89%91%E6%8C%87offer+LeetCode%E4%B8%93%E9%A2%98/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::b20c331ebb736443d895b68a14507f23" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>234</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote class="blockquote-center">
-<p>该篇是关于算法的<strong>专题刷题</strong></p>
-
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/17/LeetCode/arithmetic/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95+%E5%89%91%E6%8C%87offer+LeetCode%E4%B8%93%E9%A2%98/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/05/15/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/MacOS%E5%9C%A8IEDA%E9%85%8D%E7%BD%AEMaven%E5%B7%A5%E5%85%B7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Ethan Liu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | <font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/15/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/MacOS%E5%9C%A8IEDA%E9%85%8D%E7%BD%AEMaven%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">MacOS在IEDA配置Maven工具</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-05-15 17:26:55" itemprop="dateCreated datePublished" datetime="2024-05-15T17:26:55+08:00">2024-05-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-18 01:44:06" itemprop="dateModified" datetime="2024-05-18T01:44:06+08:00">2024-05-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url" rel="index"><span itemprop="name">环境配置</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="MacOS在IEDA配置Maven工具" href="/2024/05/15/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/MacOS%E5%9C%A8IEDA%E9%85%8D%E7%BD%AEMaven%E5%B7%A5%E5%85%B7/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::e7a4ff4435b17f0430dc18add0141946" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>244</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <hr>
-<blockquote class="blockquote-center">
-<p>该篇是关于MacOS在IEDA配置Maven工具</p>
-
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/15/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/MacOS%E5%9C%A8IEDA%E9%85%8D%E7%BD%AEMaven%E5%B7%A5%E5%85%B7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/05/17/LeetCode/arithmetic/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95+%E5%89%91%E6%8C%87offer+LeetCode%E4%B8%93%E9%A2%98/" rel="prev" title="代码随想录+剑指offer+LeetCode专题.md">
+                  <i class="fa fa-angle-left"></i> 代码随想录+剑指offer+LeetCode专题.md
+                </a>
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/05/15/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Ethan Liu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | <font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/15/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb/" class="post-title-link" itemprop="url">狂神JavaWeb</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-05-15 15:45:44" itemprop="dateCreated datePublished" datetime="2024-05-15T15:45:44+08:00">2024-05-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-18 01:43:47" itemprop="dateModified" datetime="2024-05-18T01:43:47+08:00">2024-05-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaWeb/" itemprop="url" rel="index"><span itemprop="name">JavaWeb</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="狂神JavaWeb" href="/2024/05/15/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::3760c42b24ab36621b9e83085b4a0613" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>139</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <hr>
-<blockquote class="blockquote-center">
-<p>该篇是关于MacOS在IEDA配置Maven工具的文章</p>
-
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/15/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
+            <div class="post-nav-item">
             </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          </div>
     </footer>
   </article>
 </div>
@@ -1416,748 +1156,9 @@ _jspService 方法中！</p>
 
 
 
-    
 
 
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/05/15/JavaNotes/MySQL/35%E9%81%93DQL%E7%BB%83%E4%B9%A0%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Ethan Liu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | <font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/15/JavaNotes/MySQL/35%E9%81%93DQL%E7%BB%83%E4%B9%A0%E9%A2%98/" class="post-title-link" itemprop="url">35道DQL练习题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-05-15 14:49:41" itemprop="dateCreated datePublished" datetime="2024-05-15T14:49:41+08:00">2024-05-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-17 11:37:21" itemprop="dateModified" datetime="2024-05-17T11:37:21+08:00">2024-05-17</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/MySQL%E5%88%B7%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">MySQL刷题</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="35道DQL练习题" href="/2024/05/15/JavaNotes/MySQL/35%E9%81%93DQL%E7%BB%83%E4%B9%A0%E9%A2%98/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::805a8e0a5a59913f975a3866dca01434" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>102</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote class="blockquote-center">
-<p>该篇主要讲：MySQL刷题——35道DQL练习题</p>
-
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/15/JavaNotes/MySQL/35%E9%81%93DQL%E7%BB%83%E4%B9%A0%E9%A2%98/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/05/12/JavaNotes/MySQL/MySQL%E4%B8%AD%E7%9A%84%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Ethan Liu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | <font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/12/JavaNotes/MySQL/MySQL%E4%B8%AD%E7%9A%84%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">MySQL中的一些命令</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-05-12 23:09:27" itemprop="dateCreated datePublished" datetime="2024-05-12T23:09:27+08:00">2024-05-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-18 02:51:45" itemprop="dateModified" datetime="2024-05-18T02:51:45+08:00">2024-05-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/MySQL/" itemprop="url" rel="index"><span itemprop="name">MySQL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="MySQL中的一些命令" href="/2024/05/12/JavaNotes/MySQL/MySQL%E4%B8%AD%E7%9A%84%E5%91%BD%E4%BB%A4/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::bf8c3f08e8d4a2f6a9ca3becd4bcb84e" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>40</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote class="blockquote-center">
-<p>该篇主要讲：MySQL中的一些命令</p>
-
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/12/JavaNotes/MySQL/MySQL%E4%B8%AD%E7%9A%84%E5%91%BD%E4%BB%A4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/05/12/JavaNotes/JavaErrors/MacOS%E9%85%8D%E7%BD%AETomcat%E4%BD%86%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Ethan Liu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | <font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/12/JavaNotes/JavaErrors/MacOS%E9%85%8D%E7%BD%AETomcat%E4%BD%86%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">Tomcat在MacOS上无法启动</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-05-12 21:13:33" itemprop="dateCreated datePublished" datetime="2024-05-12T21:13:33+08:00">2024-05-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-18 01:18:15" itemprop="dateModified" datetime="2024-05-18T01:18:15+08:00">2024-05-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaErrors/" itemprop="url" rel="index"><span itemprop="name">JavaErrors</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="Tomcat在MacOS上无法启动" href="/2024/05/12/JavaNotes/JavaErrors/MacOS%E9%85%8D%E7%BD%AETomcat%E4%BD%86%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::c0897c134768748c478db2270783256d" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>91</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote class="blockquote-center">
-<p>这是一篇关于Tomcat在MacOS上启动命令出错的文章</p>
-
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/12/JavaNotes/JavaErrors/MacOS%E9%85%8D%E7%BD%AETomcat%E4%BD%86%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/05/12/JavaNotes/JavaErrors/properties%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Ethan Liu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | <font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/12/JavaNotes/JavaErrors/properties%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">properties配置文件读取失败问题</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-      
-
-      <time title="创建时间：2024-05-12 18:39:24 / 修改时间：19:14:52" itemprop="dateCreated datePublished" datetime="2024-05-12T18:39:24+08:00">2024-05-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaErrors/" itemprop="url" rel="index"><span itemprop="name">JavaErrors</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="properties配置文件读取失败问题" href="/2024/05/12/JavaNotes/JavaErrors/properties%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::525aefc4c0c14e9f018fdaa2a99de6af" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>189</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote class="blockquote-center">
-<p>这是一篇关于java中使用FileReader读取properties配置文件读取失败问题的解决方法</p>
-
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/12/JavaNotes/JavaErrors/properties%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/05/11/JavaNotes/JavaErrors/Tomcat%E5%9C%A8mac%E5%B7%B2%E7%BB%8F%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%90%AF%E5%8A%A8%E4%BD%86%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Ethan Liu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | <font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/11/JavaNotes/JavaErrors/Tomcat%E5%9C%A8mac%E5%B7%B2%E7%BB%8F%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%90%AF%E5%8A%A8%E4%BD%86%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/" class="post-title-link" itemprop="url">Tomcat在MacOS上启动完成但无法访</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-05-11 17:28:59" itemprop="dateCreated datePublished" datetime="2024-05-11T17:28:59+08:00">2024-05-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-12 21:01:37" itemprop="dateModified" datetime="2024-05-12T21:01:37+08:00">2024-05-12</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaErrors/" itemprop="url" rel="index"><span itemprop="name">JavaErrors</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="Tomcat在MacOS上启动完成但无法访" href="/2024/05/11/JavaNotes/JavaErrors/Tomcat%E5%9C%A8mac%E5%B7%B2%E7%BB%8F%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%90%AF%E5%8A%A8%E4%BD%86%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::179ed2e5c5277895c5eed6030e1a03b5" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>67</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote class="blockquote-center">
-<p>这是一篇关于Tomcat在MacOS上启动完成但无法访问问题解决的文章</p>
-
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/11/JavaNotes/JavaErrors/Tomcat%E5%9C%A8mac%E5%B7%B2%E7%BB%8F%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%90%AF%E5%8A%A8%E4%BD%86%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/05/11/JavaNotes/JavaWeb/%E8%80%81%E6%9D%9C/Servlet-JSP-%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Ethan Liu">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | NLP | Py | Java</font>">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | <font color='white' >Ethan の Blog</font>">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2024/05/11/JavaNotes/JavaWeb/%E8%80%81%E6%9D%9C/Servlet-JSP-%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">老杜JavaWeb</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2024-05-11 17:12:52" itemprop="dateCreated datePublished" datetime="2024-05-11T17:12:52+08:00">2024-05-11</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-05-18 01:17:42" itemprop="dateModified" datetime="2024-05-18T01:17:42+08:00">2024-05-18</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/JavaWeb/" itemprop="url" rel="index"><span itemprop="name">JavaWeb</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Changyan：</span>
-    
-    <a title="老杜JavaWeb" href="/2024/05/11/JavaNotes/JavaWeb/%E8%80%81%E6%9D%9C/Servlet-JSP-%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::293f53cd77eb10b1f288da8b1afa1d3e" class="cy_cmt_count" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>21k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1:17</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <blockquote class="blockquote-center">
-<p>该篇是关于老杜JavaWeb的文章</p>
-
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2024/05/11/JavaNotes/JavaWeb/%E8%80%81%E6%9D%9C/Servlet-JSP-%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="comments" id="SOHUCS" sid="68a1f4c75e4ed00e94dcbeff6a72b26e"></div>
 </div>
   </main>
 
@@ -2256,7 +1257,7 @@ _jspService 方法中！</p>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2024/05/18/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb%E5%AE%8C%E6%95%B4%E7%89%88/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyxf6tytI","appkey":"90987f30c4b5248baad5a04c7a6abfe1","count":true}</script>
 <script src="/js/third-party/comments/changyan.js"></script>
