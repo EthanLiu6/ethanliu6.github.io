@@ -3794,13 +3794,13 @@ GUI案例4(手机日期和时间显示实现)</h3>
 <p>查看所有数据库：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">show database;</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="https://gitee.com/ethanliu6/ImgsForMe/raw/master/blog_images/202405180100910.png" alt="image-20240512231216675">
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240512231216675.png" alt="image-20240512231216675">
 <figcaption aria-hidden="true">image-20240512231216675</figcaption>
 </figure>
 <p>查看某个数据库的所有表：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use JX; -- 先切换数据库</span><br><span class="line">show tables; -- 查看JX数据库中的所有表</span><br></pre></td></tr></table></figure>
 <figure>
-<img data-src="https://gitee.com/ethanliu6/ImgsForMe/raw/master/blog_images/202405180101436.png" alt="image-20240512231416770">
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240512231416770.png" alt="image-20240512231416770">
 <figcaption aria-hidden="true">image-20240512231416770</figcaption>
 </figure>
 ]]></content>
@@ -3830,7 +3830,7 @@ GUI案例4(手机日期和时间显示实现)</h3>
 <h3 id="添加数据脚本出错">添加数据脚本出错</h3>
 <p>改了好久，一直提示说第一个参数未给定，尝试了很多种办法，<code>最后发现是先免得代码重新初始化了一个PrepareStatement</code>对象</p>
 <figure>
-<img data-src="https://gitee.com/ethanliu6/ImgsForMe/raw/master/blog_images/202405180100214.png" alt="image-20240505180529100">
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240505180529100.png" alt="image-20240505180529100">
 <figcaption aria-hidden="true">image-20240505180529100</figcaption>
 </figure>
 ]]></content>
