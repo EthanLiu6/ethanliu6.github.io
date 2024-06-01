@@ -1,4 +1,4 @@
-http://ethanliu6.github.io/2024/06/01/diary/xx/
+http://ethanliu6.github.io/2024/06/01/diary/%E7%84%A6%E8%99%91%E3%80%81%E5%8E%8B%E5%8A%9B/
 http://ethanliu6.github.io/2024/06/01/JavaNotes/MyBatis/Mybatis/
 http://ethanliu6.github.io/2024/05/22/JavaNotes/MyBatis/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BMyBatis/
 http://ethanliu6.github.io/2024/05/31/JavaNotes/Redis/Redis/
