@@ -350,77 +350,6 @@ b的误差: tensor([0.7791], grad_fn=&lt;SubBackward0&gt;)
       </tags>
   </entry>
   <entry>
-    <title>个人日记24-04-29</title>
-    <url>/2024/04/30/love/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-29/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p>第一次算法面试回顾</p>
-
-</blockquote>
-<span id="more"></span>
-<p>  前几天学习的时候就被触发记忆了，想起了上学期期末自己投简面试的接到的第一家面试，现在想起来那会自己确实算法思维很差，就连应试的都没咋准备，今天了，还是准备的很少很少。</p>
-<p>  上次学习中学到一个文件夹下查询不同类型文件的算法，用的是IO和HashMap，这里增加了难度，从一个父目录下去查找，里面有很多子文件夹，子文件的层级不一，最后查询指定文件类型的路径（或者说依旧是不同类型文件的个数），这里采用在原来的基础上增加递归思想即可完成，但要注意递归的隐患。下面用java具体实现一下该算法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> digui;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/29 23:52</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 综合案例: 打印给定文件夹下的所有java或者Python文件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义文件输入流</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">strFile</span> <span class="operator">=</span> <span class="string">&quot;/users/ethan.liu/desktop/&quot;</span>;</span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(strFile);</span><br><span class="line"></span><br><span class="line">        String[] types = &#123;<span class="string">&quot;ppt&quot;</span>, <span class="string">&quot;java&quot;</span>, <span class="string">&quot;py&quot;</span>, <span class="string">&quot;docx&quot;</span>, <span class="string">&quot;zip&quot;</span>&#125;;</span><br><span class="line">        getSearchFile(file, types);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file 给定指定文件夹</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> types 指定查询文件类型</span></span><br><span class="line"><span class="comment">     *              (以.结尾的文件扩展名</span></span><br><span class="line"><span class="comment">     *              eg:&quot;py&quot;)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getSearchFile</span><span class="params">(File file, String[] types)</span> &#123;</span><br><span class="line">        <span class="comment">//给定文件夹不存在, 抛出异常</span></span><br><span class="line">        <span class="keyword">if</span> (!file.exists()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;输入文件路径不存在&quot;</span>);</span><br><span class="line">        &#125;<span class="comment">//存在,查找</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//获取文件元素列表</span></span><br><span class="line">            File[] files = file.listFiles();</span><br><span class="line">            <span class="comment">//判断是文件还是文件夹</span></span><br><span class="line">            <span class="keyword">for</span> (File f : files) &#123;</span><br><span class="line">                <span class="keyword">if</span> (f.isFile()) &#123; <span class="comment">//是文件, 查询</span></span><br><span class="line">                    <span class="keyword">for</span> (String type : types) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (f.getName().endsWith(<span class="string">&quot;.&quot;</span> + type)) &#123; <span class="comment">//判断文件类型是否为指定文件类型</span></span><br><span class="line">                            System.out.println(f.getAbsoluteFile()); <span class="comment">//获取指定文件类型的绝对路径</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (f.isDirectory()) &#123; <span class="comment">//是文件夹, 递归调用方法</span></span><br><span class="line">                    getSearchFile(f, types);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>个人日记</category>
-      </categories>
-      <tags>
-        <tag>个人日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>个人日记24-04-28</title>
-    <url>/2024/04/28/love/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-28%20/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p>学会厚脸皮，学会控制情绪，学会虚心请教</p>
-
-</blockquote>
-<span id="more"></span>
-<p>  学会厚脸皮，更有钝感力。学会内心强大，向着目标前行。</p>
-<p>“这个世界从来不会在意你的自尊，在你取得成绩之前，不要过分强调自尊。”认清现实，用实例说话。</p>
-]]></content>
-      <categories>
-        <category>个人日记</category>
-      </categories>
-      <tags>
-        <tag>个人日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>个人日记24-04-28</title>
-    <url>/2024/04/28/love/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-28/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p><strong>我的状态，关你屁事</strong></p>
-
-</blockquote>
-<span id="more"></span>
-<p>  我有我自己要达到目标，我是我自己的主宰，没必要成为你的NPC，不过也谢谢你，让我知道自己赶得快却没有深度思考某些东西，但这又怎样呢？我也没有不尊重你的课堂，只是我与你不同。</p>
-]]></content>
-      <categories>
-        <category>个人日记</category>
-      </categories>
-      <tags>
-        <tag>个人日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>个人日记24-04-22</title>
-    <url>/2024/04/22/love/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-22/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p><strong>先完成，再完善</strong></p>
-
-</blockquote>
-<span id="more"></span>
-<p>  先去做，做出一堆狗屎，再慢慢改。一个粗糙的开始就是最好的开始，想干一件事，可以非常懒惰地去干、非常粗糙地去干、丢掉一切认知地去干，不要等自己准备完美了再去干，混上一段时间你就会发现，你这个技能已经突飞猛进了，突然就变得厉害了，只要开始了，后面就会越来越往上升，越来越有正面反馈，然后就有起色了。无从下手的时候，随便糊弄一下就行了，假装自己游刃有余就好了。其实这个就跟由低到高、由慢到快、量变引起质变的一个过程，干的烂总比不干要好。<strong>先完成，再完善。</strong></p>
-]]></content>
-      <categories>
-        <category>个人日记</category>
-      </categories>
-      <tags>
-        <tag>个人日记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>每日记录2024-04-13</title>
     <url>/2024/04/13/love/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，请找管理索要密码哦~" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
@@ -558,6 +487,21 @@ in Python</a></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入: s = &quot;abab&quot;, p = &quot;ab&quot;</span><br><span class="line">输出: [0,1,2]</span><br><span class="line">解释:</span><br><span class="line">起始索引等于 0 的子串是 &quot;ab&quot;, 它是 &quot;ab&quot; 的异位词。</span><br><span class="line">起始索引等于 1 的子串是 &quot;ba&quot;, 它是 &quot;ab&quot; 的异位词。</span><br><span class="line">起始索引等于 2 的子串是 &quot;ab&quot;, 它是 &quot;ab&quot; 的异位词。</span><br></pre></td></tr></table></figure>
 <h3 id="解题-2">解题</h3>
 <div class="tabs" id="leetcode438"><ul class="nav-tabs"><li class="tab active"><a href="#leetcode438-1">Python3</a></li><li class="tab"><a href="#leetcode438-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="leetcode438-1"><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">lengthOfLongestSubstring</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        record = <span class="built_in">set</span>()</span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">            <span class="keyword">while</span> s[r] <span class="keyword">in</span> record:</span><br><span class="line">                record.remove(s[l])</span><br><span class="line">                l += <span class="number">1</span></span><br><span class="line">            record.add(s[r])</span><br><span class="line">            res = res <span class="keyword">if</span> r - l + <span class="number">1</span> &lt; res <span class="keyword">else</span> r - l + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="leetcode438-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">lengthOfLongestSubstring</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        Map&lt;Character, Integer&gt; record = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(); <span class="comment">//记录已遍历的最长不重复连续子串</span></span><br><span class="line">        <span class="comment">// 定义滑动窗口</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> r;</span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (r = <span class="number">0</span>; r &lt; s.length(); r++)&#123; <span class="comment">//遍历字符</span></span><br><span class="line">            <span class="comment">// 判断是否已记录，如果没有则添加，如果有，则在记录中删除并滑动left</span></span><br><span class="line">            <span class="keyword">while</span>(record.containsKey(s.charAt(r)))&#123; <span class="comment">// 有，删除并滑动窗口</span></span><br><span class="line">                record.remove(s.charAt(l));</span><br><span class="line">                l += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            record.put(s.charAt(r), r);</span><br><span class="line">             <span class="comment">// 已记录的和当前的滑动窗口长度选择较大的</span></span><br><span class="line">             res = r - l + <span class="number">1</span> &lt; res ? res : r - l + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
+<h2 id="最大子数组和"><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9tYXhpbXVtLXN1YmFycmF5Lw==">最大子数组和<i class="fa fa-external-link-alt"></i></span></h2>
+<h3 id="题中等-1">题——中等</h3>
+<p>给你一个整数数组 <code>nums</code>
+，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<p><strong>子数组</strong>是数组中的一个连续部分。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">输出：6</span><br><span class="line">解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：nums = [5,4,-1,7,8]</span><br><span class="line">输出：23</span><br></pre></td></tr></table></figure>
+<h3 id="解题-3">解题</h3>
+<p>方法1：直接暴力遍历枚举</p>
+<p>时间复杂度为<span class="math inline">\(O(n^2)\)</span>，空间复杂度为<span class="math inline">\(O(1)\)</span></p>
+<p>方法2：新建数组用于记录遍历的当前元素对于的最大连续序列和</p>
+<p>方法3：对方法2优化</p>
+<div class="tabs" id="leetcode53"><ul class="nav-tabs"><li class="tab active"><a href="#leetcode53-1">Python3</a></li><li class="tab"><a href="#leetcode53-2">Java</a></li></ul><div class="tab-content"><div class="tab-pane active" id="leetcode53-1"><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxSubArray</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 新建数组用于记录遍历的当前元素对于的最大连续序列和</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        temp = [<span class="number">0</span>] * n  <span class="comment"># 数组用于记录遍历的当前元素对于的最大连续序列和</span></span><br><span class="line">        max_res = nums[<span class="number">0</span>] <span class="comment"># 最大和</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            <span class="keyword">if</span> i &gt; <span class="number">0</span> <span class="keyword">and</span> temp[i -<span class="number">1</span>] &gt;= <span class="number">0</span>:</span><br><span class="line">                temp[i] = temp[i - <span class="number">1</span>] + nums[i]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                temp[i] = nums[i]</span><br><span class="line">            max_res = max_res <span class="keyword">if</span> max_res &gt; temp[i] <span class="keyword">else</span> temp[i]</span><br><span class="line">        <span class="keyword">return</span> max_res</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="leetcode53-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxSubArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max_res</span> <span class="operator">=</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="type">int</span>[] temp = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; temp[i - <span class="number">1</span>] &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">                temp[i] = temp[i - <span class="number">1</span>] + nums[i];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                temp[i] = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">            max_res = max_res &gt; temp[i] ? max_res : temp[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max_res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div>
 ]]></content>
       <categories>
         <category>LeetCod刷题</category>
@@ -13923,8 +13867,14 @@ _jspService 方法中！</p>
   <entry>
     <title>MyBatis</title>
     <url>/2024/05/22/JavaNotes/MyBatis/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BMyBatis/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h1><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RvbmdsaTAvYXJ0aWNsZS9kZXRhaWxzLzk4MDQxNTcz">mybatis框架的架构（图解）<i class="fa fa-external-link-alt"></i></span></p>
-<span id="more"></span>]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="mybatis">mybatis</h1>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RvbmdsaTAvYXJ0aWNsZS9kZXRhaWxzLzk4MDQxNTcz">mybatis框架的架构（图解）<i class="fa fa-external-link-alt"></i></span></p>
+<span id="more"></span>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202406011749719.png" alt="image-20240601174927700">
+<figcaption aria-hidden="true">image-20240601174927700</figcaption>
+</figure>
+]]></content>
       <categories>
         <category>MyBatis</category>
       </categories>
@@ -13949,104 +13899,104 @@ _jspService 方法中！</p>
   <entry>
     <title>刷MySQL</title>
     <url>/2024/05/06/JavaNotes/MySQL/%E5%88%B7MySQL/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="刷MySQL"><a href="#刷MySQL" class="headerlink" title="刷MySQL"></a>刷MySQL</h1><blockquote class="blockquote-center">
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
 <p>该篇是关于LeetCode的<strong>MySQL系列</strong></p>
 
 </blockquote>
-
 <span id="more"></span>
-
-<h2 id="175-组合两个表"><a href="#175-组合两个表" class="headerlink" title="175. 组合两个表"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9jb21iaW5lLXR3by10YWJsZXMv">175. 组合两个表<i class="fa fa-external-link-alt"></i></span></h2><h3 id="题——简单"><a href="#题——简单" class="headerlink" title="题——简单"></a>题——简单</h3><hr>
+<h2 id="组合两个表"><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9jb21iaW5lLXR3by10YWJsZXMv">175.
+组合两个表<i class="fa fa-external-link-alt"></i></span></h2>
+<h3 id="题简单">题——简单</h3>
+<hr>
 <p>表: <code>Person</code></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| 列名         | 类型     |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| PersonId    | int     |</span><br><span class="line">| FirstName   | varchar |</span><br><span class="line">| LastName    | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">personId 是该表的主键（具有唯一值的列）。</span><br><span class="line">该表包含一些人的 ID 和他们的姓和名的信息。</span><br></pre></td></tr></table></figure>
-
 <p>表: <code>Address</code></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| 列名         | 类型    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| AddressId   | int     |</span><br><span class="line">| PersonId    | int     |</span><br><span class="line">| City        | varchar |</span><br><span class="line">| State       | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">addressId 是该表的主键（具有唯一值的列）。</span><br><span class="line">该表的每一行都包含一个 ID = PersonId 的人的城市和州的信息。</span><br></pre></td></tr></table></figure>
-
-<p>编写解决方案，报告 <code>Person</code> 表中每个人的姓、名、城市和州。如果 <code>personId</code> 的地址不在 <code>Address</code> 表中，则报告为 <code>null</code> 。</p>
+<p>编写解决方案，报告 <code>Person</code>
+表中每个人的姓、名、城市和州。如果 <code>personId</code> 的地址不在
+<code>Address</code> 表中，则报告为 <code>null</code> 。</p>
 <p>以 <strong>任意顺序</strong> 返回结果表。</p>
 <p>结果格式如下所示。</p>
 <p><strong>示例 1:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入: </span><br><span class="line">Person表:</span><br><span class="line">+----------+----------+-----------+</span><br><span class="line">| personId | lastName | firstName |</span><br><span class="line">+----------+----------+-----------+</span><br><span class="line">| 1        | Wang     | Allen     |</span><br><span class="line">| 2        | Alice    | Bob       |</span><br><span class="line">+----------+----------+-----------+</span><br><span class="line">Address表:</span><br><span class="line">+-----------+----------+---------------+------------+</span><br><span class="line">| addressId | personId | city          | state      |</span><br><span class="line">+-----------+----------+---------------+------------+</span><br><span class="line">| 1         | 2        | New York City | New York   |</span><br><span class="line">| 2         | 3        | Leetcode      | California |</span><br><span class="line">+-----------+----------+---------------+------------+</span><br><span class="line">输出: </span><br><span class="line">+-----------+----------+---------------+----------+</span><br><span class="line">| firstName | lastName | city          | state    |</span><br><span class="line">+-----------+----------+---------------+----------+</span><br><span class="line">| Allen     | Wang     | Null          | Null     |</span><br><span class="line">| Bob       | Alice    | New York City | New York |</span><br><span class="line">+-----------+----------+---------------+----------+</span><br><span class="line">解释: </span><br><span class="line">地址表中没有 personId = 1 的地址，所以它们的城市和州返回 null。</span><br><span class="line">addressId = 1 包含了 personId = 2 的地址信息。</span><br></pre></td></tr></table></figure>
-
-<h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select firstName, lastName, city, state</span><br><span class="line">from Person</span><br><span class="line">left join Address</span><br><span class="line">on Person.personId = Address.personId;</span><br></pre></td></tr></table></figure>
-
-<h2 id="176-第二高的薪水"><a href="#176-第二高的薪水" class="headerlink" title="176. 第二高的薪水"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9zZWNvbmQtaGlnaGVzdC1zYWxhcnkv">176. 第二高的薪水<i class="fa fa-external-link-alt"></i></span></h2><h3 id="题——中等"><a href="#题——中等" class="headerlink" title="题——中等"></a>题——中等</h3><hr>
+<h3 id="代码">代码：</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select firstName, lastName, city, state</span><br><span class="line">from Person</span><br><span class="line">left join Address</span><br><span class="line">on Person.personId = Address.personId;</span><br></pre></td></tr></table></figure>
+<h2 id="第二高的薪水"><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9zZWNvbmQtaGlnaGVzdC1zYWxhcnkv">176.
+第二高的薪水<i class="fa fa-external-link-alt"></i></span></h2>
+<h3 id="题中等">题——中等</h3>
+<hr>
 <p><code>Employee</code> 表：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+------+</span><br><span class="line">| Column Name | Type |</span><br><span class="line">+-------------+------+</span><br><span class="line">| id          | int  |</span><br><span class="line">| salary      | int  |</span><br><span class="line">+-------------+------+</span><br><span class="line">在 SQL 中，id 是这个表的主键。</span><br><span class="line">表的每一行包含员工的工资信息。</span><br></pre></td></tr></table></figure>
-
-<p>查询并返回 <code>Employee</code> 表中第二高的薪水 。如果不存在第二高的薪水，查询应该返回 <code>null(Pandas 则返回 None)</code> 。</p>
+<p>查询并返回 <code>Employee</code> 表中第二高的薪水
+。如果不存在第二高的薪水，查询应该返回
+<code>null(Pandas 则返回 None)</code> 。</p>
 <p>查询结果如下例所示。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">Employee 表：</span><br><span class="line">+----+--------+</span><br><span class="line">| id | salary |</span><br><span class="line">+----+--------+</span><br><span class="line">| 1  | 100    |</span><br><span class="line">| 2  | 200    |</span><br><span class="line">| 3  | 300    |</span><br><span class="line">+----+--------+</span><br><span class="line">输出：</span><br><span class="line">+---------------------+</span><br><span class="line">| SecondHighestSalary |</span><br><span class="line">+---------------------+</span><br><span class="line">| 200                 |</span><br><span class="line">+---------------------+</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 2：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">Employee 表：</span><br><span class="line">+----+--------+</span><br><span class="line">| id | salary |</span><br><span class="line">+----+--------+</span><br><span class="line">| 1  | 100    |</span><br><span class="line">+----+--------+</span><br><span class="line">输出：</span><br><span class="line">+---------------------+</span><br><span class="line">| SecondHighestSalary |</span><br><span class="line">+---------------------+</span><br><span class="line">| null                |</span><br><span class="line">+---------------------+</span><br></pre></td></tr></table></figure>
-
-<h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><p><code>limit</code>回顾</p>
+<h3 id="代码-1">代码：</h3>
+<p><code>limit</code>回顾</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">limit m, n</span><br></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 第一种妙一次排序拓展强任意高薪水都能处理，第二种同一表多次排序操作</span><br><span class="line"></span><br><span class="line"># Write your MySQL query statement below</span><br><span class="line"></span><br><span class="line"># 方法1：使用 排序+limit</span><br><span class="line">select (select salary</span><br><span class="line">from Employee</span><br><span class="line">order by salary desc</span><br><span class="line">limit 1,1)  as SecondHighestSalary;</span><br><span class="line"></span><br><span class="line"># 方法2：去掉最高再求最高</span><br><span class="line">select max(salary) as SecondHighestSalary</span><br><span class="line">from Employee</span><br><span class="line">where salary &lt; (select max(salary) from Employee);</span><br></pre></td></tr></table></figure>
-
-<h2 id="181-超过经理收入的员工"><a href="#181-超过经理收入的员工" class="headerlink" title="181. 超过经理收入的员工"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9lbXBsb3llZXMtZWFybmluZy1tb3JlLXRoYW4tdGhlaXItbWFuYWdlcnMv">181. 超过经理收入的员工<i class="fa fa-external-link-alt"></i></span></h2><h3 id="题——简单-1"><a href="#题——简单-1" class="headerlink" title="题——简单"></a>题——简单</h3><hr>
-<p>表：<code>Employee</code> </p>
+<h2 id="超过经理收入的员工"><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9lbXBsb3llZXMtZWFybmluZy1tb3JlLXRoYW4tdGhlaXItbWFuYWdlcnMv">181.
+超过经理收入的员工<i class="fa fa-external-link-alt"></i></span></h2>
+<h3 id="题简单-1">题——简单</h3>
+<hr>
+<p>表：<code>Employee</code></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| Column Name | Type    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| id          | int     |</span><br><span class="line">| name        | varchar |</span><br><span class="line">| salary      | int     |</span><br><span class="line">| managerId   | int     |</span><br><span class="line">+-------------+---------+</span><br><span class="line">id 是该表的主键（具有唯一值的列）。</span><br><span class="line">该表的每一行都表示雇员的ID、姓名、工资和经理的ID。</span><br></pre></td></tr></table></figure>
-
 <p>编写解决方案，找出收入比经理高的员工。</p>
 <p>以 <strong>任意顺序</strong> 返回结果表。</p>
 <p>结果格式如下所示。</p>
 <p><strong>示例 1:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入: </span><br><span class="line">Employee 表:</span><br><span class="line">+----+-------+--------+-----------+</span><br><span class="line">| id | name  | salary | managerId |</span><br><span class="line">+----+-------+--------+-----------+</span><br><span class="line">| 1  | Joe   | 70000  | 3         |</span><br><span class="line">| 2  | Henry | 80000  | 4         |</span><br><span class="line">| 3  | Sam   | 60000  | Null      |</span><br><span class="line">| 4  | Max   | 90000  | Null      |</span><br><span class="line">+----+-------+--------+-----------+</span><br><span class="line">输出: </span><br><span class="line">+----------+</span><br><span class="line">| Employee |</span><br><span class="line">+----------+</span><br><span class="line">| Joe      |</span><br><span class="line">+----------+</span><br><span class="line">解释: Joe 是唯一挣得比经理多的雇员。</span><br></pre></td></tr></table></figure>
-
-<h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select a.name Employee</span><br><span class="line">from Employee a</span><br><span class="line">join Employee b</span><br><span class="line">on a.salary &gt; b.salary and a.managerId = b.id;</span><br></pre></td></tr></table></figure>
-
-
-
+<h3 id="代码-2">代码：</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select a.name Employee</span><br><span class="line">from Employee a</span><br><span class="line">join Employee b</span><br><span class="line">on a.salary &gt; b.salary and a.managerId = b.id;</span><br></pre></td></tr></table></figure>
 <p>考虑到SQL语句执行顺序，进行筛选优化</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select a.name Employee</span><br><span class="line">from Employee a</span><br><span class="line">join Employee b</span><br><span class="line">on a.salary &gt; b.salary </span><br><span class="line">where a.managerId = b.id;</span><br></pre></td></tr></table></figure>
-
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>为啥使用子查询后效率差的一批</p>
+<h3 id="问题">问题</h3>
+<p>为啥使用子查询后效率差的一批</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select name Employee</span><br><span class="line">from Employee e1</span><br><span class="line">where e1.salary &gt;(</span><br><span class="line">    select salary </span><br><span class="line">    from Employee e2</span><br><span class="line">    where e2.id = e1.managerID</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240508015457750.png" alt="image-20240508015457750"></p>
-<h2 id="182-查找重复的电子邮箱"><a href="#182-查找重复的电子邮箱" class="headerlink" title="182. 查找重复的电子邮箱"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9kdXBsaWNhdGUtZW1haWxzLw==">182. 查找重复的电子邮箱<i class="fa fa-external-link-alt"></i></span></h2><h3 id="题目——简单"><a href="#题目——简单" class="headerlink" title="题目——简单"></a>题目——简单</h3><p>表: <code>Person</code></p>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240508015457750.png" alt="image-20240508015457750">
+<figcaption aria-hidden="true">image-20240508015457750</figcaption>
+</figure>
+<h2 id="查找重复的电子邮箱"><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9kdXBsaWNhdGUtZW1haWxzLw==">182.
+查找重复的电子邮箱<i class="fa fa-external-link-alt"></i></span></h2>
+<h3 id="题目简单">题目——简单</h3>
+<p>表: <code>Person</code></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| Column Name | Type    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| id          | int     |</span><br><span class="line">| email       | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">id 是该表的主键（具有唯一值的列）。</span><br><span class="line">此表的每一行都包含一封电子邮件。电子邮件不包含大写字母。</span><br></pre></td></tr></table></figure>
-
-<p>编写解决方案来报告所有重复的电子邮件。 请注意，可以保证电子邮件字段不为 NULL。</p>
+<p>编写解决方案来报告所有重复的电子邮件。
+请注意，可以保证电子邮件字段不为 NULL。</p>
 <p>以 <strong>任意顺序</strong> 返回结果表。</p>
 <p>结果格式如下例。</p>
 <p><strong>示例 1:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入: </span><br><span class="line">Person 表:</span><br><span class="line">+----+---------+</span><br><span class="line">| id | email   |</span><br><span class="line">+----+---------+</span><br><span class="line">| 1  | a@b.com |</span><br><span class="line">| 2  | c@d.com |</span><br><span class="line">| 3  | a@b.com |</span><br><span class="line">+----+---------+</span><br><span class="line">输出: </span><br><span class="line">+---------+</span><br><span class="line">| Email   |</span><br><span class="line">+---------+</span><br><span class="line">| a@b.com |</span><br><span class="line">+---------+</span><br><span class="line">解释: a@b.com 出现了两次。</span><br></pre></td></tr></table></figure>
-
-<h3 id="代码：-3"><a href="#代码：-3" class="headerlink" title="代码："></a>代码：</h3><p>方法一：自连接</p>
+<h3 id="代码-3">代码：</h3>
+<p>方法一：自连接</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select distinct p1.email</span><br><span class="line">from person p1</span><br><span class="line">left join person p2</span><br><span class="line">on p1.id &lt;&gt; p2.id</span><br><span class="line">where p1.email = p2.email;</span><br></pre></td></tr></table></figure>
-
 <p>方法二：分组（后来突然自己想到的一种方法）</p>
 <p>虽然效率低，单字节想到的哦</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select email Email</span><br><span class="line">from Person</span><br><span class="line">group by email</span><br><span class="line">having count(*) &gt; 1;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="183-从不订购的客户"><a href="#183-从不订购的客户" class="headerlink" title="183. 从不订购的客户"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9jdXN0b21lcnMtd2hvLW5ldmVyLW9yZGVyLw==">183. 从不订购的客户<i class="fa fa-external-link-alt"></i></span></h2><h3 id="题目——简单-1"><a href="#题目——简单-1" class="headerlink" title="题目——简单"></a>题目——简单</h3><hr>
+<h2 id="从不订购的客户"><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9jdXN0b21lcnMtd2hvLW5ldmVyLW9yZGVyLw==">183.
+从不订购的客户<i class="fa fa-external-link-alt"></i></span></h2>
+<h3 id="题目简单-1">题目——简单</h3>
+<hr>
 <p><code>Customers</code> 表：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| Column Name | Type    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| id          | int     |</span><br><span class="line">| name        | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">在 SQL 中，id 是该表的主键。</span><br><span class="line">该表的每一行都表示客户的 ID 和名称。</span><br></pre></td></tr></table></figure>
-
 <p><code>Orders</code> 表：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+------+</span><br><span class="line">| Column Name | Type |</span><br><span class="line">+-------------+------+</span><br><span class="line">| id          | int  |</span><br><span class="line">| customerId  | int  |</span><br><span class="line">+-------------+------+</span><br><span class="line">在 SQL 中，id 是该表的主键。</span><br><span class="line">customerId 是 Customers 表中 ID 的外键( Pandas 中的连接键)。</span><br><span class="line">该表的每一行都表示订单的 ID 和订购该订单的客户的 ID。</span><br></pre></td></tr></table></figure>
-
 <p>找出所有从不点任何东西的顾客。</p>
 <p>以 <strong>任意顺序</strong> 返回结果表。</p>
 <p>结果格式如下所示。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">Customers table:</span><br><span class="line">+----+-------+</span><br><span class="line">| id | name  |</span><br><span class="line">+----+-------+</span><br><span class="line">| 1  | Joe   |</span><br><span class="line">| 2  | Henry |</span><br><span class="line">| 3  | Sam   |</span><br><span class="line">| 4  | Max   |</span><br><span class="line">+----+-------+</span><br><span class="line">Orders table:</span><br><span class="line">+----+------------+</span><br><span class="line">| id | customerId |</span><br><span class="line">+----+------------+</span><br><span class="line">| 1  | 3          |</span><br><span class="line">| 2  | 1          |</span><br><span class="line">+----+------------+</span><br><span class="line">输出：</span><br><span class="line">+-----------+</span><br><span class="line">| Customers |</span><br><span class="line">+-----------+</span><br><span class="line">| Henry     |</span><br><span class="line">| Max       |</span><br></pre></td></tr></table></figure>
-
-<h3 id="代码：-4"><a href="#代码：-4" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select name Customers</span><br><span class="line">from Customers </span><br><span class="line">where id not in (</span><br><span class="line">    select customerId</span><br><span class="line">    from Orders</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="178-分数排名"><a href="#178-分数排名" class="headerlink" title="178. 分数排名"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9yYW5rLXNjb3Jlcy8=">178. 分数排名<i class="fa fa-external-link-alt"></i></span></h2><h3 id="题——中等（rank内置函数使用）"><a href="#题——中等（rank内置函数使用）" class="headerlink" title="题——中等（rank内置函数使用）"></a>题——中等（rank内置函数使用）</h3><p>表: <code>Scores</code></p>
+<h3 id="代码-4">代码：</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select name Customers</span><br><span class="line">from Customers </span><br><span class="line">where id not in (</span><br><span class="line">    select customerId</span><br><span class="line">    from Orders</span><br><span class="line">);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="分数排名"><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9yYW5rLXNjb3Jlcy8=">178. 分数排名<i class="fa fa-external-link-alt"></i></span></h2>
+<h3 id="题中等rank内置函数使用">题——中等（rank内置函数使用）</h3>
+<p>表: <code>Scores</code></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| Column Name | Type    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| id          | int     |</span><br><span class="line">| score       | decimal |</span><br><span class="line">+-------------+---------+</span><br><span class="line">在 SQL 中，id 是该表的主键。</span><br><span class="line">该表的每一行都包含了一场比赛的分数。Score 是一个有两位小数点的浮点值。</span><br></pre></td></tr></table></figure>
-
 <p>查询并对分数进行排序。排名按以下规则计算:</p>
 <ul>
 <li>分数应按从高到低排列。</li>
@@ -14057,43 +14007,60 @@ _jspService 方法中！</p>
 <p>查询结果格式如下所示。</p>
 <p><strong>示例 1:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入: </span><br><span class="line">Scores 表:</span><br><span class="line">+----+-------+</span><br><span class="line">| id | score |</span><br><span class="line">+----+-------+</span><br><span class="line">| 1  | 3.50  |</span><br><span class="line">| 2  | 3.65  |</span><br><span class="line">| 3  | 4.00  |</span><br><span class="line">| 4  | 3.85  |</span><br><span class="line">| 5  | 4.00  |</span><br><span class="line">| 6  | 3.65  |</span><br><span class="line">+----+-------+</span><br><span class="line">输出: </span><br><span class="line">+-------+------+</span><br><span class="line">| score | rank |</span><br><span class="line">+-------+------+</span><br><span class="line">| 4.00  | 1    |</span><br><span class="line">| 4.00  | 1    |</span><br><span class="line">| 3.85  | 2    |</span><br><span class="line">| 3.65  | 3    |</span><br><span class="line">| 3.65  | 3    |</span><br><span class="line">| 3.50  | 4    |</span><br><span class="line">+-------+------+</span><br></pre></td></tr></table></figure>
-
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>各位可以参考<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9saW5rLz90YXJnZXQ9aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMDU3ODg1L2FydGljbGUvZGV0YWlscy8xMDkxNzYwMTQ=">https://blog.csdn.net/qq_41057885&#x2F;article&#x2F;details&#x2F;109176014<i class="fa fa-external-link-alt"></i></span></p>
-<h4 id="1-rank-over"><a href="#1-rank-over" class="headerlink" title="1. rank() over"></a>1. rank() over</h4><p>作用：查出指定条件后的进行排名，条件相同排名相同，排名间断不连续。<br>说明：例如学生排名，使用这个函数，成绩相同的两名是并列，下一位同学空出所占的名次。即：1 1 3 4 5 5 7</p>
-<h4 id="2-dense-rank-over"><a href="#2-dense-rank-over" class="headerlink" title="2. dense_rank() over"></a>2. dense_rank() over</h4><p>作用：查出指定条件后的进行排名，条件相同排名相同，排名间断不连续。<br>说明：和rank() over 的作用相同，区别在于dense_rank() over 排名是密集连续的。例如学生排名，使用这个函数，成绩相同的两名是并列，下一位同学接着下一个名次。即：1 1 2 3 4 5 5 6</p>
-<h4 id="3-row-number-over"><a href="#3-row-number-over" class="headerlink" title="3. row_number() over"></a>3. row_number() over</h4><p>作用：查出指定条件后的进行排名，条件相同排名也不相同，排名间断不连续。<br>说明：这个函数不需要考虑是否并列，即使根据条件查询出来的数值相同也会进行连续排序。即：1 2 3 4 5 6</p>
-<h4 id="使用小提示"><a href="#使用小提示" class="headerlink" title="使用小提示"></a>使用小提示</h4><p>dense_rank() over 后面跟排序的依据的列，下面是用了一个排序好的列(order by score desc)。<br>注意：如果select中有一列是用rank()这类函数，其他的列都会按着他这列规定好的顺序排。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select score, dense_rank() over (order by score desc) &#x27;rank&#x27; </span><br><span class="line">from Scores;</span><br></pre></td></tr></table></figure>
-
-<h2 id="180-连续出现的数字"><a href="#180-连续出现的数字" class="headerlink" title="180. 连续出现的数字"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9jb25zZWN1dGl2ZS1udW1iZXJzLw==">180. 连续出现的数字<i class="fa fa-external-link-alt"></i></span></h2><h3 id="题目——中等"><a href="#题目——中等" class="headerlink" title="题目——中等"></a>题目——中等</h3><hr>
+<h3 id="解题思路">解题思路</h3>
+<p>各位可以参考<span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9saW5rLz90YXJnZXQ9aHR0cHMlM0ElMkYlMkZibG9nLmNzZG4ubmV0JTJGcXFfNDEwNTc4ODUlMkZhcnRpY2xlJTJGZGV0YWlscyUyRjEwOTE3NjAxNA==">https://blog.csdn.net/qq_41057885/article/details/109176014<i class="fa fa-external-link-alt"></i></span></p>
+<h4 id="rank-over">1. rank() over</h4>
+<p>作用：查出指定条件后的进行排名，条件相同排名相同，排名间断不连续。
+说明：例如学生排名，使用这个函数，成绩相同的两名是并列，下一位同学空出所占的名次。即：1
+1 3 4 5 5 7</p>
+<h4 id="dense_rank-over">2. dense_rank() over</h4>
+<p>作用：查出指定条件后的进行排名，条件相同排名相同，排名间断不连续。
+说明：和rank() over 的作用相同，区别在于dense_rank() over
+排名是密集连续的。例如学生排名，使用这个函数，成绩相同的两名是并列，下一位同学接着下一个名次。即：1
+1 2 3 4 5 5 6</p>
+<h4 id="row_number-over">3. row_number() over</h4>
+<p>作用：查出指定条件后的进行排名，条件相同排名也不相同，排名间断不连续。
+说明：这个函数不需要考虑是否并列，即使根据条件查询出来的数值相同也会进行连续排序。即：1
+2 3 4 5 6</p>
+<h4 id="使用小提示">使用小提示</h4>
+<p>dense_rank() over
+后面跟排序的依据的列，下面是用了一个排序好的列(order by score desc)。
+注意：如果select中有一列是用rank()这类函数，其他的列都会按着他这列规定好的顺序排。</p>
+<h3 id="代码-5">代码</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select score, dense_rank() over (order by score desc) &#x27;rank&#x27; </span><br><span class="line">from Scores;</span><br></pre></td></tr></table></figure>
+<h2 id="连续出现的数字"><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9jb25zZWN1dGl2ZS1udW1iZXJzLw==">180.
+连续出现的数字<i class="fa fa-external-link-alt"></i></span></h2>
+<h3 id="题目中等">题目——中等</h3>
+<hr>
 <p>表：<code>Logs</code></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| Column Name | Type    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| id          | int     |</span><br><span class="line">| num         | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">在 SQL 中，id 是该表的主键。</span><br><span class="line">id 是一个自增列。</span><br></pre></td></tr></table></figure>
-
 <p>找出所有至少连续出现三次的数字。</p>
 <p>返回的结果表中的数据可以按 <strong>任意顺序</strong> 排列。</p>
 <p>结果格式如下面的例子所示：</p>
 <p><strong>示例 1:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">Logs 表：</span><br><span class="line">+----+-----+</span><br><span class="line">| id | num |</span><br><span class="line">+----+-----+</span><br><span class="line">| 1  | 1   |</span><br><span class="line">| 2  | 1   |</span><br><span class="line">| 3  | 1   |</span><br><span class="line">| 4  | 2   |</span><br><span class="line">| 5  | 1   |</span><br><span class="line">| 6  | 2   |</span><br><span class="line">| 7  | 2   |</span><br><span class="line">+----+-----+</span><br><span class="line">输出：</span><br><span class="line">Result 表：</span><br><span class="line">+-----------------+</span><br><span class="line">| ConsecutiveNums |</span><br><span class="line">+-----------------+</span><br><span class="line">| 1               |</span><br><span class="line">+-----------------+</span><br><span class="line">解释：1 是唯一连续出现至少三次的数字。</span><br></pre></td></tr></table></figure>
-
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>使用自连接创建三个表，让三个的<code>id</code>连续，然后让<code>num</code>值相等，对于一直连续三次以上的还会重复选取同样的值，因此还需要加<code>distinct</code>去重。</p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select distinct l1.num ConsecutiveNums</span><br><span class="line">from Logs l1, Logs l2, Logs l3</span><br><span class="line">where l1.id = l2.id - 1</span><br><span class="line">    and l2.id = l3.id -1  -- 先保证id连续</span><br><span class="line"></span><br><span class="line">    and l1.num = l2.num</span><br><span class="line">    and l2.num = l3.num;  -- 再保证num连续</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="184-部门工资最高的员工"><a href="#184-部门工资最高的员工" class="headerlink" title="184. 部门工资最高的员工"></a><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9kZXBhcnRtZW50LWhpZ2hlc3Qtc2FsYXJ5Lw==">184. 部门工资最高的员工<i class="fa fa-external-link-alt"></i></span></h2><h3 id="题目——中等-1"><a href="#题目——中等-1" class="headerlink" title="题目——中等"></a>题目——中等</h3><p>表： <code>Employee</code></p>
+<h3 id="思路">思路</h3>
+<p>使用自连接创建三个表，让三个的<code>id</code>连续，然后让<code>num</code>值相等，对于一直连续三次以上的还会重复选取同样的值，因此还需要加<code>distinct</code>去重。</p>
+<h3 id="代码-6">代码</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select distinct l1.num ConsecutiveNums</span><br><span class="line">from Logs l1, Logs l2, Logs l3</span><br><span class="line">where l1.id = l2.id - 1</span><br><span class="line">    and l2.id = l3.id -1  -- 先保证id连续</span><br><span class="line"></span><br><span class="line">    and l1.num = l2.num</span><br><span class="line">    and l2.num = l3.num;  -- 再保证num连续</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="部门工资最高的员工"><span class="exturl" data-url="aHR0cHM6Ly9sZWV0Y29kZS5jbi9wcm9ibGVtcy9kZXBhcnRtZW50LWhpZ2hlc3Qtc2FsYXJ5Lw==">184.
+部门工资最高的员工<i class="fa fa-external-link-alt"></i></span></h2>
+<h3 id="题目中等-1">题目——中等</h3>
+<p>表： <code>Employee</code></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+--------------+---------+</span><br><span class="line">| 列名          | 类型    |</span><br><span class="line">+--------------+---------+</span><br><span class="line">| id           | int     |</span><br><span class="line">| name         | varchar |</span><br><span class="line">| salary       | int     |</span><br><span class="line">| departmentId | int     |</span><br><span class="line">+--------------+---------+</span><br><span class="line">在 SQL 中，id是此表的主键。</span><br><span class="line">departmentId 是 Department 表中 id 的外键（在 Pandas 中称为 join key）。</span><br><span class="line">此表的每一行都表示员工的 id、姓名和工资。它还包含他们所在部门的 id。</span><br></pre></td></tr></table></figure>
-
 <p>表： <code>Department</code></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">+-------------+---------+</span><br><span class="line">| 列名         | 类型    |</span><br><span class="line">+-------------+---------+</span><br><span class="line">| id          | int     |</span><br><span class="line">| name        | varchar |</span><br><span class="line">+-------------+---------+</span><br><span class="line">在 SQL 中，id 是此表的主键列。</span><br><span class="line">此表的每一行都表示一个部门的 id 及其名称。</span><br></pre></td></tr></table></figure>
-
-<p>查找出每个部门中薪资最高的员工。<br>按 <strong>任意顺序</strong> 返回结果表。<br>查询结果格式如下例所示。</p>
+<p>查找出每个部门中薪资最高的员工。 按 <strong>任意顺序</strong>
+返回结果表。 查询结果格式如下例所示。</p>
 <p><strong>示例 1:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">输入：</span><br><span class="line">Employee 表:</span><br><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| id | name  | salary | departmentId |</span><br><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| 1  | Joe   | 70000  | 1            |</span><br><span class="line">| 2  | Jim   | 90000  | 1            |</span><br><span class="line">| 3  | Henry | 80000  | 2            |</span><br><span class="line">| 4  | Sam   | 60000  | 2            |</span><br><span class="line">| 5  | Max   | 90000  | 1            |</span><br><span class="line">+----+-------+--------+--------------+</span><br><span class="line">Department 表:</span><br><span class="line">+----+-------+</span><br><span class="line">| id | name  |</span><br><span class="line">+----+-------+</span><br><span class="line">| 1  | IT    |</span><br><span class="line">| 2  | Sales |</span><br><span class="line">+----+-------+</span><br><span class="line">输出：</span><br><span class="line">+------------+----------+--------+</span><br><span class="line">| Department | Employee | Salary |</span><br><span class="line">+------------+----------+--------+</span><br><span class="line">| IT         | Jim      | 90000  |</span><br><span class="line">| Sales      | Henry    | 80000  |</span><br><span class="line">| IT         | Max      | 90000  |</span><br><span class="line">+------------+----------+--------+</span><br><span class="line">解释：Max 和 Jim 在 IT 部门的工资都是最高的，Henry 在销售部的工资最高。</span><br></pre></td></tr></table></figure>
-
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol>
+<h3 id="思路-1">思路</h3>
+<ol type="1">
 <li>按部门Id分组并选出部门最大薪资的部门Id和salary</li>
 <li>用连接表判断部门Id和salary是否在1表中</li>
 </ol>
-<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    d.name Department, e.name Employee, Salary</span><br><span class="line">from </span><br><span class="line">    Employee e</span><br><span class="line">join </span><br><span class="line">    Department d on departmentId=d.id</span><br><span class="line">where </span><br><span class="line">    (departmentId, Salary) in </span><br><span class="line">    (   select </span><br><span class="line">            departmentId, Max(Salary)</span><br><span class="line">        from </span><br><span class="line">            Employee</span><br><span class="line">        group by departmentId</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
-
+<h3 id="代码-7">代码</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Write your MySQL query statement below</span><br><span class="line">select </span><br><span class="line">    d.name Department, e.name Employee, Salary</span><br><span class="line">from </span><br><span class="line">    Employee e</span><br><span class="line">join </span><br><span class="line">    Department d on departmentId=d.id</span><br><span class="line">where </span><br><span class="line">    (departmentId, Salary) in </span><br><span class="line">    (   select </span><br><span class="line">            departmentId, Max(Salary)</span><br><span class="line">        from </span><br><span class="line">            Employee</span><br><span class="line">        group by departmentId</span><br><span class="line">    );</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>刷题——MySQL</category>
@@ -14101,5 +14068,118 @@ _jspService 方法中！</p>
       <tags>
         <tag>LeetCode-MySQL</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>个人日记24-04-22</title>
+    <url>/2024/04/22/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-22/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p><strong>先完成，再完善</strong></p>
+
+</blockquote>
+<span id="more"></span>
+<p>  先去做，做出一堆狗屎，再慢慢改。一个粗糙的开始就是最好的开始，想干一件事，可以非常懒惰地去干、非常粗糙地去干、丢掉一切认知地去干，不要等自己准备完美了再去干，混上一段时间你就会发现，你这个技能已经突飞猛进了，突然就变得厉害了，只要开始了，后面就会越来越往上升，越来越有正面反馈，然后就有起色了。无从下手的时候，随便糊弄一下就行了，假装自己游刃有余就好了。其实这个就跟由低到高、由慢到快、量变引起质变的一个过程，干的烂总比不干要好。<strong>先完成，再完善。</strong></p>
+]]></content>
+      <categories>
+        <category>个人日记</category>
+      </categories>
+      <tags>
+        <tag>个人日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>焦虑、压力</title>
+    <url>/2024/06/01/diary/xx/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title>个人日记24-04-28</title>
+    <url>/2024/04/28/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-28%20/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>学会厚脸皮，学会控制情绪，学会虚心请教</p>
+
+</blockquote>
+<span id="more"></span>
+<p>  学会厚脸皮，更有钝感力。学会内心强大，向着目标前行。</p>
+<p>“这个世界从来不会在意你的自尊，在你取得成绩之前，不要过分强调自尊。”认清现实，用实例说话。</p>
+]]></content>
+      <categories>
+        <category>个人日记</category>
+      </categories>
+      <tags>
+        <tag>个人日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人日记24-04-28</title>
+    <url>/2024/04/28/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-28/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p><strong>我的状态，关你屁事</strong></p>
+
+</blockquote>
+<span id="more"></span>
+<p>  我有我自己要达到目标，我是我自己的主宰，没必要成为你的NPC，不过也谢谢你，让我知道自己赶得快却没有深度思考某些东西，但这又怎样呢？我也没有不尊重你的课堂，只是我与你不同。</p>
+]]></content>
+      <categories>
+        <category>个人日记</category>
+      </categories>
+      <tags>
+        <tag>个人日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>个人日记24-04-29</title>
+    <url>/2024/04/30/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-29/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>第一次算法面试回顾</p>
+
+</blockquote>
+<span id="more"></span>
+<p>  前几天学习的时候就被触发记忆了，想起了上学期期末自己投简面试的接到的第一家面试，现在想起来那会自己确实算法思维很差，就连应试的都没咋准备，今天了，还是准备的很少很少。</p>
+<p>  上次学习中学到一个文件夹下查询不同类型文件的算法，用的是IO和HashMap，这里增加了难度，从一个父目录下去查找，里面有很多子文件夹，子文件的层级不一，最后查询指定文件类型的路径（或者说依旧是不同类型文件的个数），这里采用在原来的基础上增加递归思想即可完成，但要注意递归的隐患。下面用java具体实现一下该算法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> digui;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/29 23:52</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 综合案例: 打印给定文件夹下的所有java或者Python文件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义文件输入流</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">strFile</span> <span class="operator">=</span> <span class="string">&quot;/users/ethan.liu/desktop/&quot;</span>;</span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(strFile);</span><br><span class="line"></span><br><span class="line">        String[] types = &#123;<span class="string">&quot;ppt&quot;</span>, <span class="string">&quot;java&quot;</span>, <span class="string">&quot;py&quot;</span>, <span class="string">&quot;docx&quot;</span>, <span class="string">&quot;zip&quot;</span>&#125;;</span><br><span class="line">        getSearchFile(file, types);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file 给定指定文件夹</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> types 指定查询文件类型</span></span><br><span class="line"><span class="comment">     *              (以.结尾的文件扩展名</span></span><br><span class="line"><span class="comment">     *              eg:&quot;py&quot;)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getSearchFile</span><span class="params">(File file, String[] types)</span> &#123;</span><br><span class="line">        <span class="comment">//给定文件夹不存在, 抛出异常</span></span><br><span class="line">        <span class="keyword">if</span> (!file.exists()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;输入文件路径不存在&quot;</span>);</span><br><span class="line">        &#125;<span class="comment">//存在,查找</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//获取文件元素列表</span></span><br><span class="line">            File[] files = file.listFiles();</span><br><span class="line">            <span class="comment">//判断是文件还是文件夹</span></span><br><span class="line">            <span class="keyword">for</span> (File f : files) &#123;</span><br><span class="line">                <span class="keyword">if</span> (f.isFile()) &#123; <span class="comment">//是文件, 查询</span></span><br><span class="line">                    <span class="keyword">for</span> (String type : types) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (f.getName().endsWith(<span class="string">&quot;.&quot;</span> + type)) &#123; <span class="comment">//判断文件类型是否为指定文件类型</span></span><br><span class="line">                            System.out.println(f.getAbsoluteFile()); <span class="comment">//获取指定文件类型的绝对路径</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (f.isDirectory()) &#123; <span class="comment">//是文件夹, 递归调用方法</span></span><br><span class="line">                    getSearchFile(f, types);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>个人日记</category>
+      </categories>
+      <tags>
+        <tag>个人日记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MacOS端口占用解决</title>
+    <url>/2024/05/30/%E6%9D%82Error/MacOS%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/06/01/JavaNotes/MyBatis/Mybatis/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="mybatis注意事项">Mybatis注意事项</h1>
+<h2 id="注意事项">注意事项</h2>
+<ul>
+<li><p>Mybatis操作三步走策略</p></li>
+<li><p>在mapper.xml配置文件中书写的SQL如果注释请用标注注释，不要直接使用快捷键注释</p></li>
+<li><p>#和$</p></li>
+<li><p>特殊字符需要转义</p></li>
+<li><p>SQL返回结果从业务角度只能有一个，但实际返回有多个会出异常（执行SQL并不会报错）</p></li>
+<li><p>delete标签写在select标签依旧会成功，切记不要使用</p></li>
+<li><p>对于插入数据当业务需要返回主键字段做后续业务时候，需要添加两个属性</p></li>
+<li><p>多参数查询的参数传参问题</p></li>
+<li><p>动态SQL的编写和业务理解set和if，where和if</p></li>
+<li><p>批量删除用户foreach</p></li>
+<li><p>javaBean和数据库表字段的驼峰命名映射</p>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202406011906916.png" alt="image-20240601190621234">
+<figcaption aria-hidden="true">image-20240601190621234</figcaption>
+</figure></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2024/05/31/JavaNotes/Redis/Redis/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="redis">Redis</h1>
+]]></content>
   </entry>
 </search>
