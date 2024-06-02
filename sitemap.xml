@@ -2,7 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://ethanliu6.github.io/2024/06/01/diary/%E7%84%A6%E8%99%91%E3%80%81%E5%8E%8B%E5%8A%9B/</loc>
+    <loc>http://ethanliu6.github.io/2024/04/13/reader/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/</loc>
+    
+    <lastmod>2024-06-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/2024/06/01/diary/%E7%84%A6%E8%99%91%E3%80%81%E5%8E%8B%E5%8A%9B24-06-01/</loc>
+    
+    <lastmod>2024-06-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/2024/04/30/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-29/</loc>
+    
+    <lastmod>2024-06-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/2024/04/28/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-28/</loc>
+    
+    <lastmod>2024-06-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/2024/04/28/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-28%20/</loc>
+    
+    <lastmod>2024-06-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/2024/04/22/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-22/</loc>
     
     <lastmod>2024-06-02</lastmod>
     
@@ -308,33 +353,6 @@
   </url>
   
   <url>
-    <loc>http://ethanliu6.github.io/2024/04/30/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-29/</loc>
-    
-    <lastmod>2024-04-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/2024/04/28/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-28%20/</loc>
-    
-    <lastmod>2024-04-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/2024/04/28/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-28/</loc>
-    
-    <lastmod>2024-04-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://ethanliu6.github.io/2024/04/27/JavaNotes/JavaSE%E8%BF%9B%E9%98%B6/day09/2024-04-27-JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day09-%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/</loc>
     
     <lastmod>2024-04-28</lastmod>
@@ -471,15 +489,6 @@
   
   <url>
     <loc>http://ethanliu6.github.io/2001/10/10/BlogSet/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%B8%80)/</loc>
-    
-    <lastmod>2024-04-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://ethanliu6.github.io/2024/04/22/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-22/</loc>
     
     <lastmod>2024-04-22</lastmod>
     
@@ -758,6 +767,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://ethanliu6.github.io/tags/%E9%98%85%E8%AF%BB/</loc>
+    <lastmod>2024-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -874,6 +890,13 @@
   
   <url>
     <loc>http://ethanliu6.github.io/categories/Spring/</loc>
+    <lastmod>2024-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://ethanliu6.github.io/categories/reader/</loc>
     <lastmod>2024-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
