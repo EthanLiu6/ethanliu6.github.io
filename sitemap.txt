@@ -1,4 +1,4 @@
-http://ethanliu6.github.io/2024/06/02/reader/text/
+http://ethanliu6.github.io/2024/04/30/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-06-03/
 http://ethanliu6.github.io/2024/04/13/reader/%E6%AF%8F%E6%97%A5%E8%AE%B0%E5%BD%9524-02-13/
 http://ethanliu6.github.io/2024/06/01/diary/%E7%84%A6%E8%99%91%E3%80%81%E5%8E%8B%E5%8A%9B24-06-01/
 http://ethanliu6.github.io/2024/04/30/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-04-29/
@@ -11,7 +11,6 @@ http://ethanliu6.github.io/2024/05/31/JavaNotes/Redis/Redis/
 http://ethanliu6.github.io/2024/05/30/%E6%9D%82Error/MacOS%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3/
 http://ethanliu6.github.io/2024/05/11/LeetCode/arithmetic/leetcode%E5%88%B7%E9%A2%98/
 http://ethanliu6.github.io/2024/05/06/JavaNotes/MySQL/%E5%88%B7MySQL/
-http://ethanliu6.github.io/2024/05/23/JavaNotes/Spring/Spring-IOC/
 http://ethanliu6.github.io/2024/05/17/LeetCode/arithmetic/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95+%E5%89%91%E6%8C%87offer+LeetCode%E4%B8%93%E9%A2%98/
 http://ethanliu6.github.io/2024/05/13/%E6%9D%82Error/MacOS%E7%9A%84IDEA%E8%AE%BF%E9%97%AE%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/
 http://ethanliu6.github.io/2024/05/18/JavaNotes/JavaWeb/%E7%8B%82%E7%A5%9E/%E7%8B%82%E7%A5%9EJavaWeb%E5%AE%8C%E6%95%B4%E7%89%88/

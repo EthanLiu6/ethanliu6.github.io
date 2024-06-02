@@ -13850,21 +13850,6 @@ _jspService 方法中！</p>
 ]]></content>
   </entry>
   <entry>
-    <title>Spring——IOC</title>
-    <url>/2024/05/23/JavaNotes/Spring/Spring-IOC/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="Spring——IOC"><a href="#Spring——IOC" class="headerlink" title="Spring——IOC"></a>Spring——IOC</h1><h2 id="spring框架"><a href="#spring框架" class="headerlink" title="spring框架"></a>spring框架</h2><h3 id="IoC控制反转"><a href="#IoC控制反转" class="headerlink" title="IoC控制反转"></a>IoC控制反转</h3><span id="more"></span>
-
-<p><img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/202405232349079.png" alt="image-20240523234941076"></p>
-]]></content>
-      <categories>
-        <category>Spring</category>
-      </categories>
-      <tags>
-        <tag>Spring-IOC</tag>
-        <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MyBatis</title>
     <url>/2024/05/22/JavaNotes/MyBatis/%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8BMyBatis/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="mybatis">mybatis</h1>
@@ -14224,36 +14209,22 @@ _jspService 方法中！</p>
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2024/06/02/reader/text/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>测试更改图床</p>
+    <title>回归状态，稍慢下来</title>
+    <url>/2024/04/30/diary/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B024-06-03/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>当我重新回头，慢慢放下脚步，发现是那么开心</p>
+
+</blockquote>
 <span id="more"></span>
-<ul>
-<li><figure>
-<img data-src="https://gitee.com/ethanliu6/ImgsForMe/raw/master/blog_images/202406021604023.png" alt="img">
-<figcaption aria-hidden="true">img</figcaption>
-</figure></li>
-<li><figure>
-<img data-src="https://gitee.com/ethanliu6/ImgsForMe/raw/master/blog_images/202406021604096.png" alt="img">
-<figcaption aria-hidden="true">img</figcaption>
-</figure></li>
-<li><figure>
-<img data-src="https://gitee.com/ethanliu6/ImgsForMe/raw/master/blog_images/202406021604851.png" alt="img">
-<figcaption aria-hidden="true">img</figcaption>
-</figure></li>
-</ul>
-<figure>
-<img data-src="https://gitee.com/ethanliu6/ImgsForMe/raw/master/blog_images/202406021605002.png" alt="image-20240602160502848">
-<figcaption aria-hidden="true">image-20240602160502848</figcaption>
-</figure>
-<figure>
-<img data-src="https://gitee.com/ethanliu6/ImgsForMe/raw/master/blog_images/202406021605371.png" alt="image-20240602160518248">
-<figcaption aria-hidden="true">image-20240602160518248</figcaption>
-</figure>
-<figure>
-<img data-src="https://gitee.com/ethanliu6/ImgsForMe/raw/master/blog_images/202406021606833.png" alt="image-20240602160611663">
-<figcaption aria-hidden="true">image-20240602160611663</figcaption>
-</figure>
+<p>现在已是第二天凌晨三点半，昨天虽然一觉醒来十一点多了，但没有太多焦虑，收拾完开始学习，中途却被博客问题缠绕了许久，一看下午四点多了，专心投入到Spring了，晚饭时间听了学长在喜马拉雅的一些分享，晚上洗澡完去跟珠珠约会啦，没有昨天那样消沉，我俩很开心，回来嘴馋看了好久零食和早餐，一看一点半了，然后状态还不错，继续学习Spring，学完xml配置的IOC和DI思想，一下子觉得之前自己慌慌张张学习的Spring啥也不是，今天收获颇丰，感谢黑马老师，让我对Spring第一次理解的如此深刻，简单就能理解和入手，谢谢</p>
+<p>幕布同步记录了今日学习笔记导图，以后会一直这样学习，有框架感学的东西感觉一下子清晰很多</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubXVidS5jb20vZG9jLzlkd0pWVlpMUHQ=">笔记——Spring之xml<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
+      <categories>
+        <category>个人日记</category>
+      </categories>
+      <tags>
+        <tag>个人日记</tag>
+      </tags>
   </entry>
 </search>
