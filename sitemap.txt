@@ -1,3 +1,4 @@
+http://ethanliu6.github.io/2024/06/19/diary/%E5%B4%A9%E6%BA%83%2024-06-19/
 http://ethanliu6.github.io/2024/06/12/LeetCode/arithmetic/leetcode%E4%B8%93%E9%A1%B9%E9%A2%98/
 http://ethanliu6.github.io/2024/05/11/LeetCode/arithmetic/leetcode%E7%83%AD%E9%A2%98100%E9%A2%98/
 http://ethanliu6.github.io/2024/05/17/LeetCode/arithmetic/%E5%89%91%E6%8C%87offer/
