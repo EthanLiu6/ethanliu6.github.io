@@ -21,12 +21,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="从数值矩阵到像素点计算机底层将数值转换为像素点的过程，涉及从内存中的数值数据到屏幕上显示的视觉图像的完整流程。这主要包括以下几个步骤： 1. 图像数据的表示在计算机中，图像是以 像素矩阵 的形式存储的，每个像素可以通过数值表示其颜色。对于 RGB 图像，每个像素由 红色 (Red)、绿色 (Green) 和 蓝色 (Blue) 三个颜色通道组成，每个通道的颜色强度通常用 8 位（即 0-255）来">
+    <meta name="description" content="从数值矩阵到像素点 计算机底层将数值转换为像素点的过程，涉及从内存中的数值数据到屏幕上显示的视觉图像的完整流程。这主要包括以下几个步骤： 1. 图像数据的表示 在计算机中，图像是以 像素矩阵 的形式存储的，每个像素可以通过数值表示其颜色。对于 RGB 图像，每个像素由 红色 (Red)、绿色 (Green) 和 蓝色 (Blue) 三个颜色通道组成，每个通道的颜色强度通常用 8 位（即 0-255">
 <meta property="og:type" content="article">
 <meta property="og:title" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
 <meta property="og:url" content="http://ethanliu6.github.io/2024/09/13/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/001.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E4%BB%8E%E6%95%B0%E5%80%BC%E7%9F%A9%E9%98%B5%E5%88%B0%E5%83%8F%E7%B4%A0%E7%82%B9/index.html">
 <meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
-<meta property="og:description" content="从数值矩阵到像素点计算机底层将数值转换为像素点的过程，涉及从内存中的数值数据到屏幕上显示的视觉图像的完整流程。这主要包括以下几个步骤： 1. 图像数据的表示在计算机中，图像是以 像素矩阵 的形式存储的，每个像素可以通过数值表示其颜色。对于 RGB 图像，每个像素由 红色 (Red)、绿色 (Green) 和 蓝色 (Blue) 三个颜色通道组成，每个通道的颜色强度通常用 8 位（即 0-255）来">
+<meta property="og:description" content="从数值矩阵到像素点 计算机底层将数值转换为像素点的过程，涉及从内存中的数值数据到屏幕上显示的视觉图像的完整流程。这主要包括以下几个步骤： 1. 图像数据的表示 在计算机中，图像是以 像素矩阵 的形式存储的，每个像素可以通过数值表示其颜色。对于 RGB 图像，每个像素由 红色 (Red)、绿色 (Green) 和 蓝色 (Blue) 三个颜色通道组成，每个通道的颜色强度通常用 8 位（即 0-255">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-13T04:56:28.446Z">
 <meta property="article:modified_time" content="2024-09-13T04:57:03.691Z">
@@ -91,7 +91,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">28</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">68</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li><li class="menu-item menu-item-个人感悟"><a href="/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/" rel="section"><i class="fa fa-pen-nib fa-fw"></i>个人感悟</a></li><li class="menu-item menu-item-阅读笔记"><a href="/categories/reader/" rel="section"><i class="fa fa-book-open-reader fa-fw"></i>阅读笔记</a></li><li class="menu-item menu-item-ethan云盘"><span class="exturl" data-url="aHR0cDovLzE3Mi4yNi44LjU4OjUyNDQv"><i class="fa fa-cloud fa-fw"></i>Ethan云盘</span></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">19</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">68</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li><li class="menu-item menu-item-个人感悟"><a href="/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/" rel="section"><i class="fa fa-pen-nib fa-fw"></i>个人感悟</a></li><li class="menu-item menu-item-阅读笔记"><a href="/categories/reader/" rel="section"><i class="fa fa-book-open-reader fa-fw"></i>阅读笔记</a></li><li class="menu-item menu-item-ethan云盘"><span class="exturl" data-url="aHR0cDovLzE3Mi4yNi44LjU4OjUyNDQv"><i class="fa fa-cloud fa-fw"></i>Ethan云盘</span></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E6%95%B0%E5%80%BC%E7%9F%A9%E9%98%B5%E5%88%B0%E5%83%8F%E7%B4%A0%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">从数值矩阵到像素点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 图像数据的表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%A2%9C%E8%89%B2%E7%BC%96%E7%A0%81"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 颜色编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%83%8F%E7%B4%A0%E6%98%A0%E5%B0%84%E5%88%B0%E6%98%BE%E5%AD%98"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. 像素映射到显存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%B8%A7%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. 帧缓冲区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8A%E7%9A%84%E6%98%BE%E7%A4%BA"><span class="nav-number">1.0.5.</span> <span class="nav-text">5. 显示器上的显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%88%B7%E6%96%B0%E7%8E%87%E4%B8%8E%E6%9B%B4%E6%96%B0"><span class="nav-number">1.0.6.</span> <span class="nav-text">6. 刷新率与更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%95%E5%B1%82%E7%9A%84%E5%85%B7%E4%BD%93%E8%BF%87%E7%A8%8B%E5%8F%AF%E4%BB%A5%E6%80%BB%E7%BB%93%E4%B8%BA%E4%BB%A5%E4%B8%8B%E5%87%A0%E4%B8%AA%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="nav-number">1.0.7.</span> <span class="nav-text">底层的具体过程可以总结为以下几个步骤：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%B8%B2%E6%9F%93%E7%9A%84%E7%A1%AC%E4%BB%B6%E6%94%AF%E6%8C%81"><span class="nav-number">1.0.8.</span> <span class="nav-text">图像渲染的硬件支持</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%8E%E6%95%B0%E5%80%BC%E7%9F%A9%E9%98%B5%E5%88%B0%E5%83%8F%E7%B4%A0%E7%82%B9"><span class="nav-number">1.</span> <span class="nav-text">从数值矩阵到像素点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 图像数据的表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%9C%E8%89%B2%E7%BC%96%E7%A0%81"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 颜色编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%83%8F%E7%B4%A0%E6%98%A0%E5%B0%84%E5%88%B0%E6%98%BE%E5%AD%98"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. 像素映射到显存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A7%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. 帧缓冲区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%BE%E7%A4%BA%E5%99%A8%E4%B8%8A%E7%9A%84%E6%98%BE%E7%A4%BA"><span class="nav-number">1.0.5.</span> <span class="nav-text">5. 显示器上的显示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B7%E6%96%B0%E7%8E%87%E4%B8%8E%E6%9B%B4%E6%96%B0"><span class="nav-number">1.0.6.</span> <span class="nav-text">6. 刷新率与更新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%95%E5%B1%82%E7%9A%84%E5%85%B7%E4%BD%93%E8%BF%87%E7%A8%8B%E5%8F%AF%E4%BB%A5%E6%80%BB%E7%BB%93%E4%B8%BA%E4%BB%A5%E4%B8%8B%E5%87%A0%E4%B8%AA%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.0.7.</span> <span class="nav-text">底层的具体过程可以总结为以下几个步骤：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F%E6%B8%B2%E6%9F%93%E7%9A%84%E7%A1%AC%E4%BB%B6%E6%94%AF%E6%8C%81"><span class="nav-number">1.0.8.</span> <span class="nav-text">图像渲染的硬件支持</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -163,12 +163,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">28</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -287,46 +287,58 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="从数值矩阵到像素点"><a href="#从数值矩阵到像素点" class="headerlink" title="从数值矩阵到像素点"></a>从数值矩阵到像素点</h1><p>计算机底层将数值转换为像素点的过程，涉及从内存中的数值数据到屏幕上显示的视觉图像的完整流程。这主要包括以下几个步骤：</p>
-<h3 id="1-图像数据的表示"><a href="#1-图像数据的表示" class="headerlink" title="1. 图像数据的表示"></a>1. <strong>图像数据的表示</strong></h3><p>在计算机中，图像是以 <strong>像素矩阵</strong> 的形式存储的，每个像素可以通过数值表示其颜色。对于 RGB 图像，每个像素由 <strong>红色 (Red)<strong>、</strong>绿色 (Green)</strong> 和 <strong>蓝色 (Blue)</strong> 三个颜色通道组成，每个通道的颜色强度通常用 8 位（即 0-255）来表示。</p>
-<p>例如，对于一个 16x16 的 RGB 图像，图像在内存中的表示形式是一个 16x16x3 的数组：</p>
-<ul>
-<li>16 表示图像的宽度和高度，即 16x16 个像素点。</li>
-<li>3 表示每个像素的三个通道（R、G、B）。</li>
-</ul>
-<p><strong>灰度图像</strong>通常只包含一个通道，用单个数值表示亮度，0 表示黑色，255 表示白色。</p>
-<h3 id="2-颜色编码"><a href="#2-颜色编码" class="headerlink" title="2. 颜色编码"></a>2. <strong>颜色编码</strong></h3><p>计算机使用的颜色模型通常是 RGB，每个像素都有三个数值来表示红、绿、蓝三种颜色的强度。计算机将这些数值存储在内存中，表示屏幕上每个像素的颜色。</p>
-<p>对于 RGB 图像，每个像素的颜色值通过组合三个通道来定义。比如：</p>
-<ul>
-<li>(255, 0, 0) 表示红色。</li>
-<li>(0, 255, 0) 表示绿色。</li>
-<li>(0, 0, 255) 表示蓝色。</li>
-<li>(255, 255, 255) 表示白色。</li>
-<li>(0, 0, 0) 表示黑色。</li>
-</ul>
-<h3 id="3-像素映射到显存"><a href="#3-像素映射到显存" class="headerlink" title="3. 像素映射到显存"></a>3. <strong>像素映射到显存</strong></h3><p>显卡（GPU）负责将内存中的图像数据映射到屏幕上显示。在计算机显示图像的过程中，图像数据首先被加载到 <strong>显存 (VRAM)</strong> 中。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="从数值矩阵到像素点">从数值矩阵到像素点</h1>
+<p>计算机底层将数值转换为像素点的过程，涉及从内存中的数值数据到屏幕上显示的视觉图像的完整流程。这主要包括以下几个步骤：</p>
+<h3 id="图像数据的表示">1. <strong>图像数据的表示</strong></h3>
+<p>在计算机中，图像是以 <strong>像素矩阵</strong>
+的形式存储的，每个像素可以通过数值表示其颜色。对于 RGB 图像，每个像素由
+<strong>红色 (Red)</strong>、<strong>绿色 (Green)</strong> 和
+<strong>蓝色 (Blue)</strong> 三个颜色通道组成，每个通道的颜色强度通常用
+8 位（即 0-255）来表示。</p>
+<p>例如，对于一个 16x16 的 RGB 图像，图像在内存中的表示形式是一个
+16x16x3 的数组： - 16 表示图像的宽度和高度，即 16x16 个像素点。 - 3
+表示每个像素的三个通道（R、G、B）。</p>
+<p><strong>灰度图像</strong>通常只包含一个通道，用单个数值表示亮度，0
+表示黑色，255 表示白色。</p>
+<h3 id="颜色编码">2. <strong>颜色编码</strong></h3>
+<p>计算机使用的颜色模型通常是
+RGB，每个像素都有三个数值来表示红、绿、蓝三种颜色的强度。计算机将这些数值存储在内存中，表示屏幕上每个像素的颜色。</p>
+<p>对于 RGB 图像，每个像素的颜色值通过组合三个通道来定义。比如： - (255,
+0, 0) 表示红色。 - (0, 255, 0) 表示绿色。 - (0, 0, 255) 表示蓝色。 -
+(255, 255, 255) 表示白色。 - (0, 0, 0) 表示黑色。</p>
+<h3 id="像素映射到显存">3. <strong>像素映射到显存</strong></h3>
+<p>显卡（GPU）负责将内存中的图像数据映射到屏幕上显示。在计算机显示图像的过程中，图像数据首先被加载到
+<strong>显存 (VRAM)</strong> 中。</p>
 <p>每个像素点的数值会被传送到显存中，显存中的数据结构与图像的像素矩阵一致。显卡驱动程序会处理这些数据，并将每个像素的颜色值与显示器的物理像素点相对应。</p>
-<h3 id="4-帧缓冲区"><a href="#4-帧缓冲区" class="headerlink" title="4. 帧缓冲区"></a>4. <strong>帧缓冲区</strong></h3><p>帧缓冲区是显卡的一个存储区域，它保存了当前要显示的像素颜色信息。这个缓冲区中存储着从图像数据转换而来的像素信息。</p>
-<p>具体过程：</p>
+<h3 id="帧缓冲区">4. <strong>帧缓冲区</strong></h3>
+<p>帧缓冲区是显卡的一个存储区域，它保存了当前要显示的像素颜色信息。这个缓冲区中存储着从图像数据转换而来的像素信息。</p>
+<p>具体过程： - 图像数据被转换并存储在帧缓冲区中，每个像素的颜色值通过其
+RGB 组件表示。 - 这些值会通过数字信号传输到显示器中。</p>
+<h3 id="显示器上的显示">5. <strong>显示器上的显示</strong></h3>
+<p>显示器由成千上万个物理像素点（<strong>子像素</strong>）组成，每个像素点由红、绿、蓝三个小灯（<strong>子像素</strong>）组成。</p>
 <ul>
-<li>图像数据被转换并存储在帧缓冲区中，每个像素的颜色值通过其 RGB 组件表示。</li>
-<li>这些值会通过数字信号传输到显示器中。</li>
+<li>当显卡将颜色值发送到显示器时，每个像素的 RGB
+数值会控制相应的红、绿、蓝子像素的亮度。</li>
+<li>红、绿、蓝子像素通过不同的亮度组合出不同的颜色。比如，红绿蓝全亮的情况下（255,
+255, 255），显示的颜色就是白色，而所有子像素关闭（0, 0,
+0）时，显示的是黑色。</li>
 </ul>
-<h3 id="5-显示器上的显示"><a href="#5-显示器上的显示" class="headerlink" title="5. 显示器上的显示"></a>5. <strong>显示器上的显示</strong></h3><p>显示器由成千上万个物理像素点（<strong>子像素</strong>）组成，每个像素点由红、绿、蓝三个小灯（<strong>子像素</strong>）组成。</p>
-<ul>
-<li>当显卡将颜色值发送到显示器时，每个像素的 RGB 数值会控制相应的红、绿、蓝子像素的亮度。</li>
-<li>红、绿、蓝子像素通过不同的亮度组合出不同的颜色。比如，红绿蓝全亮的情况下（255, 255, 255），显示的颜色就是白色，而所有子像素关闭（0, 0, 0）时，显示的是黑色。</li>
-</ul>
-<h3 id="6-刷新率与更新"><a href="#6-刷新率与更新" class="headerlink" title="6. 刷新率与更新"></a>6. <strong>刷新率与更新</strong></h3><p>显示器以一定的 <strong>刷新率</strong>（比如 60Hz、120Hz）不断地更新屏幕上的像素。每次刷新时，显示器从显存中读取帧缓冲区的数据，并在屏幕上显示相应的图像。</p>
+<h3 id="刷新率与更新">6. <strong>刷新率与更新</strong></h3>
+<p>显示器以一定的 <strong>刷新率</strong>（比如
+60Hz、120Hz）不断地更新屏幕上的像素。每次刷新时，显示器从显存中读取帧缓冲区的数据，并在屏幕上显示相应的图像。</p>
 <p>由于显示器是逐行扫描的，每行像素会依次被点亮，最终整个屏幕上的图像就会显现出来。</p>
-<h3 id="底层的具体过程可以总结为以下几个步骤："><a href="#底层的具体过程可以总结为以下几个步骤：" class="headerlink" title="底层的具体过程可以总结为以下几个步骤："></a>底层的具体过程可以总结为以下几个步骤：</h3><ol>
+<h3 id="底层的具体过程可以总结为以下几个步骤">底层的具体过程可以总结为以下几个步骤：</h3>
+<ol type="1">
 <li><strong>图像数据准备</strong>：内存中存储的图像数据（数值表示的像素）准备好。</li>
 <li><strong>图像数据传输到显卡</strong>：图像数据从内存传输到显卡的帧缓冲区。</li>
-<li><strong>显卡处理</strong>：显卡根据 RGB 数值生成相应的电信号，控制物理显示器的像素。</li>
+<li><strong>显卡处理</strong>：显卡根据 RGB
+数值生成相应的电信号，控制物理显示器的像素。</li>
 <li><strong>显示器显示图像</strong>：每个物理像素根据接收到的信号调整红、绿、蓝子像素的亮度，从而呈现图像。</li>
 </ol>
-<h3 id="图像渲染的硬件支持"><a href="#图像渲染的硬件支持" class="headerlink" title="图像渲染的硬件支持"></a>图像渲染的硬件支持</h3><ul>
-<li>**显卡 (GPU)**：负责将图像数据从内存传输到显存，处理这些数据，并转换成适合显示器理解的信号。</li>
+<h3 id="图像渲染的硬件支持">图像渲染的硬件支持</h3>
+<ul>
+<li><strong>显卡
+(GPU)</strong>：负责将图像数据从内存传输到显存，处理这些数据，并转换成适合显示器理解的信号。</li>
 <li><strong>显示器</strong>：由红绿蓝（RGB）灯组成的物理像素阵列，接收来自显卡的信号，并显示相应的颜色。</li>
 </ul>
 <p>通过上述机制，计算机能够将存储在内存中的图像数据（数值表示）转化为屏幕上的图像，展现出我们所看到的像素点的颜色和亮度变化。</p>
