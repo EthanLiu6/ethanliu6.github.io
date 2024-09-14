@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+  <link rel="mask-icon" href="/images/avatar.jpg" color="#222">
+  <meta name="msvalidate.01" content="4AF2328B2035748153A041B7EEF3D15C">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CLobster:300,300italic,400,400italic,700,700italic%7CPingFang+SC:300,300italic,400,400italic,700,700italic%7CRoboto+Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="JavaSE进阶——该篇主要讲解Java中的网络编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaSE进阶——Day12 网络编程">
+<meta property="og:url" content="http://ethanliu6.github.io/2024/04/30/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/002.%20Java%E5%85%A8%E6%A0%88/02.%20JavaSE%E8%BF%9B%E9%98%B6/day12/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day12-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
+<meta property="og:description" content="JavaSE进阶——该篇主要讲解Java中的网络编程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-09-14T12:19:47.441Z">
+<meta property="article:author" content="Ethan Liu">
+<meta property="article:tag" content="JavaSE">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://ethanliu6.github.io/2024/04/30/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/002.%20Java%E5%85%A8%E6%A0%88/02.%20JavaSE%E8%BF%9B%E9%98%B6/day12/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day12-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/04/30/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/002.%20Java%E5%85%A8%E6%A0%88/02.%20JavaSE%E8%BF%9B%E9%98%B6/day12/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day12-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/","path":"2024/04/30/03. 学习笔记【150】/151. IT类/002. Java全栈/02. JavaSE进阶/day12/JavaSE进阶——Day12-网络编程/","title":"JavaSE进阶——Day12 网络编程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JavaSE进阶——Day12 网络编程 | <font color='white' >Ethan の Blog</font></title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title"><font color='white' >Ethan の Blog</font></p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"><font color='#FDABC1' size=3>清醒的停留，胜过——盲目的前行</font></p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">36</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">26</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">69</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li><li class="menu-item menu-item-个人感悟"><a href="/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/" rel="section"><i class="fa fa-pen-nib fa-fw"></i>个人感悟</a></li><li class="menu-item menu-item-阅读笔记"><a href="/categories/reader/" rel="section"><i class="fa fa-book-open-reader fa-fw"></i>阅读笔记</a></li><li class="menu-item menu-item-内网云盘"><span class="exturl" data-url="aHR0cDovLzE3Mi4yNi44LjU4OjUyNDQv"><i class="fa fa-cloud fa-fw"></i>内网云盘</span></li><li class="menu-item menu-item-外网云盘"><span class="exturl" data-url="aHR0cHM6Ly83OWQzLTI0MDktODc2Mi1lMzQtMjAtODg5OS0wMC0xNzYubmdyb2stZnJlZS5hcHA="><i class="fa fa-cloud fa-fw"></i>外网云盘</span></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">网络编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">1.2.</span> <span class="nav-text">网络三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-1"><span class="nav-number">1.3.</span> <span class="nav-text">网络编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.4.</span> <span class="nav-text">常见通信协议 ：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#socket"><span class="nav-number">1.5.</span> <span class="nav-text">Socket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E4%B8%80"><span class="nav-number">1.6.</span> <span class="nav-text">案例一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%E5%B9%B6%E8%A1%8C%E5%AF%B9%E4%B8%80%E5%AE%9E%E7%8E%B0%E6%8E%A5%E5%8F%91"><span class="nav-number">1.7.</span> <span class="nav-text">使用多（并行）对一实现接发</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ethan Liu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Ethan Liu</p>
+  <div class="site-description" itemprop="description"><font color='#0000FF' size=1.5px>语言学 | IT | 脑科学 | 心理学</font></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2V0aGFubGl1Ng==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ethanliu6"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxpdWUyMzM2QGdtYWlsLmNvbQ==" title="E-Mail → mailto:liue2336@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMTMyNzA5OTk3Nw==" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1327099977"><i class="fa-brands fa-bilibili fa-fw"></i>BiliBili</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/categories/Love/" title="Love → &#x2F;categories&#x2F;Love&#x2F;" rel="noopener me"><i class="fa fa-heart fa-fw"></i>Love</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/04/30/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/002.%20Java%E5%85%A8%E6%A0%88/02.%20JavaSE%E8%BF%9B%E9%98%B6/day12/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day12-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Ethan Liu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | IT | 脑科学 | 心理学</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JavaSE进阶——Day12 网络编程 | <font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaSE进阶——Day12 网络编程<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy8wMy4g5a2m5Lmg56yU6K6w44CQMTUw44CRLzE1MS4gSVTnsbsvMDAyLiBKYXZh5YWo5qCILzAyLiBKYXZhU0Xov5vpmLYvZGF5MTIvSmF2YVNF6L+b6Zi24oCU4oCURGF5MTIt572R57uc57yW56iLLm1k" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-04-30 00:00:00" itemprop="dateCreated datePublished" datetime="2024-04-30T00:00:00+08:00">2024-04-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-09-14 20:19:47" itemprop="dateModified" datetime="2024-09-14T20:19:47+08:00">2024-09-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Java%E5%85%A8%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">Java全栈</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="JavaSE进阶——Day12 网络编程" href="/2024/04/30/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/002.%20Java%E5%85%A8%E6%A0%88/02.%20JavaSE%E8%BF%9B%E9%98%B6/day12/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day12-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::a82725c6792b122bcf1ed5d58471d46b" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>492</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
+<p>JavaSE进阶——该篇主要讲解Java中的<strong>网络编程</strong></p>
+
+</blockquote>
+<span id="more"></span>
+<h2 id="网络编程">网络编程</h2>
+<h3 id="概述">概述</h3>
+<p>在企业开发中，程序存在两种结构模型：</p>
+<ul>
+<li>C / S ： 客户端/服务端
+<ul>
+<li>需要开发客户端和服务端，两端程序（开发成本高）</li>
+</ul></li>
+<li>B / S ： 浏览器/服务端
+<ul>
+<li>浏览器：是由第三方浏览器厂商已提供了（不需要开发了）</li>
+<li>服务端：需要开发程序</li>
+</ul></li>
+</ul>
+<h3 id="网络三要素">网络三要素</h3>
+<p>在网络中想要实现编程，必须有：网络三要素</p>
+<ul>
+<li>IP地址：网络上计算机的唯一标识</li>
+<li>端口号：计算机中程序的唯一标识（每一个程序都有自己唯一的端口号）</li>
+<li>通信协议：网络上程序之间交互的规则
+<ul>
+<li>TCP协议</li>
+<li>UDP协议</li>
+</ul></li>
+</ul>
+<h3 id="网络编程-1">网络编程</h3>
+<p>会使用到java.net包下的AIP</p>
+<ul>
+<li><p>java.net.InetAddress类 ： IP地址</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取InetAddress对象</span></span><br><span class="line"><span class="type">InetAddress</span> <span class="variable">ipObj</span> <span class="operator">=</span> InetAddress.getByName(<span class="string">&quot;计算机名 / IP地址&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用方法</span></span><br><span class="line"><span class="type">String</span> <span class="variable">hostname</span> <span class="operator">=</span> ipObj.getHostName();</span><br><span class="line"><span class="type">String</span> <span class="variable">ip</span> <span class="operator">=</span> ipObj.getHostAddress();</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="常见通信协议">常见通信协议 ：</h3>
+<ul>
+<li>UDP协议
+<ul>
+<li>特点：
+<ol type="1">
+<li>面向无连接协议</li>
+<li>数据大于限制在64K以内</li>
+<li>数据不安全，容易丢失</li>
+<li>传输速度快</li>
+</ol></li>
+</ul></li>
+<li>TCP协议：传输控制协议
+<ul>
+<li>特点：
+<ol type="1">
+<li>面向有连接协议（利用TCP三次握手机制）</li>
+<li>数据大小没有限制</li>
+<li>数据相对安全（相对UDP协议来讲）</li>
+<li>传输速度慢</li>
+</ol></li>
+</ul></li>
+</ul>
+<p>TCP通信程序，要求必须有两端程序：</p>
+<ul>
+<li>客户端/浏览器</li>
+<li>服务端</li>
+</ul>
+<h3 id="socket">Socket</h3>
+<p>在Java语言中，想要实现客户端、服务端两个程序之间进行交互，需要依赖：Socket
+（利用TCP协议）</p>
+<ul>
+<li>客户端程序：Socket
+<ul>
+<li>先找到计算机 ==//IP地址==</li>
+<li>再找到计算机上的服务端程序 ==//端口号==</li>
+<li>按照TCP协议进行数据发送、接收
+<ul>
+<li>是基于IO流实现数据的发送、接收</li>
+</ul></li>
+</ul></li>
+<li>服务端程序：ServerSocket
+<ul>
+<li>绑定服务端程序的端口号</li>
+</ul></li>
+</ul>
+<p>java.net.Socket类：客户端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Socket</span><span class="params">(String address , <span class="type">int</span> port)</span></span><br><span class="line"><span class="comment">//参数1： ip地址或主机名</span></span><br><span class="line"><span class="comment">//参数2： 端口号（服务端程序的端口号）</span></span><br><span class="line"></span><br><span class="line">OutputStream  <span class="title function_">getOutputStream</span><span class="params">()</span>  <span class="comment">//基于socket对象获取网络输出流（发送数据）</span></span><br><span class="line">InputStream  <span class="title function_">getInputStream</span><span class="params">()</span>  <span class="comment">//基于socket对象获取网络输入流（接收数据）</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 创建客户端Socket对象，并连接服务端程序</span></span><br><span class="line"><span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(<span class="string">&quot;对方计算机IP地址&quot;</span>, <span class="string">&quot;服务端程序端口号&quot;</span>);</span><br><span class="line"><span class="comment">//2. 基于socket对象，获取网络输出流（发送数据）</span></span><br><span class="line"><span class="type">OutputStream</span> <span class="variable">netOut</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line"><span class="comment">//3. 发送数据</span></span><br><span class="line">netOut.write(<span class="string">&quot;数据&quot;</span>.getBytes());</span><br><span class="line"></span><br><span class="line"><span class="comment">//4. 关闭资源</span></span><br><span class="line">netOut.close();</span><br><span class="line">socket.close();</span><br></pre></td></tr></table></figure>
+<p>java.net.ServerSocket：服务端</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">ServerSocket</span><span class="params">(<span class="type">int</span> port)</span></span><br><span class="line"><span class="comment">//参数：port 当前服务端程序要绑定的端口号（客户端Socket程序要使用这个端口号和服务端连接） </span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span> Socket <span class="title function_">accept</span><span class="params">()</span>;<span class="comment">//监听客户端连接，并生成连接，返回一个Socket对象    </span></span><br></pre></td></tr></table></figure>
+<h3 id="案例一">案例一</h3>
+<p>使用一对一接发数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> netsocket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.ServerSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/5/2 12:40</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 服务端</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServerDemo2</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LoggerFactory.getLogger(<span class="string">&quot;服务端&quot;</span>);</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//创建服务端对象</span></span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">serverSocket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">8888</span>);</span><br><span class="line">        LOGGER.trace(<span class="string">&quot;服务端已启动.......&quot;</span>);</span><br><span class="line">        <span class="comment">//监听客户端</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">sever</span> <span class="operator">=</span> serverSocket.accept();</span><br><span class="line">        LOGGER.trace(<span class="string">&quot;已连接客户端:&quot;</span> + sever.getInetAddress().getHostAddress());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建输入流对象</span></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> sever.getInputStream();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//接受客户端发送的数据(IO流)</span></span><br><span class="line">        <span class="type">byte</span>[] buf = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> inputStream.read(buf);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//收到数据</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf, <span class="number">0</span>, len);</span><br><span class="line">        System.out.println(msg);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//回馈数据</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建输出流并添加数据</span></span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> sever.getOutputStream();</span><br><span class="line">        outputStream.write(<span class="string">&quot;你好你好&quot;</span>.getBytes());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//资源关闭</span></span><br><span class="line">        inputStream.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line">        serverSocket.close(); <span class="comment">//服务端一般是不用关闭的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> netsocket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/5/2 12:31</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 客户端</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ClientDemo2</span> &#123;</span><br><span class="line">    <span class="comment">//创建日志成员变量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LoggerFactory.getLogger(<span class="string">&quot;客户端&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//创建客户端对象</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(<span class="string">&quot;127.0.0.1&quot;</span>, <span class="number">8888</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//给服务端发送数据</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建输出流并写入数据</span></span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> client.getOutputStream();</span><br><span class="line">        outputStream.write(<span class="string">&quot;你好啊,我的客户端&quot;</span>.getBytes());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//接收服务端信息</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建输入流并读取</span></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> client.getInputStream();</span><br><span class="line">        <span class="type">byte</span>[] buf = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> inputStream.read(buf);</span><br><span class="line">        <span class="type">String</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf, <span class="number">0</span>, len);</span><br><span class="line">        LOGGER.trace(<span class="string">&quot;收到客户端数据:&quot;</span> + msg);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭资源</span></span><br><span class="line">        inputStream.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line">        client.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="使用多并行对一实现接发">使用多（并行）对一实现接发</h3>
+<p>java编程中使用的包：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">java.lang</span><br><span class="line"></span><br><span class="line">java.util.集合</span><br><span class="line"></span><br><span class="line">java.text.SimpleDateFormat</span><br><span class="line"></span><br><span class="line">java.io</span><br><span class="line"></span><br><span class="line">java.net</span><br><span class="line"></span><br><span class="line">java.sql</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">javax //扩展包</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wChat.png" alt="Ethan Liu 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ethan Liu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ethanliu6.github.io/2024/04/30/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/002.%20Java%E5%85%A8%E6%A0%88/02.%20JavaSE%E8%BF%9B%E9%98%B6/day12/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day12-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="JavaSE进阶——Day12 网络编程">http://ethanliu6.github.io/2024/04/30/03. 学习笔记【150】/151. IT类/002. Java全栈/02. JavaSE进阶/day12/JavaSE进阶——Day12-网络编程/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+          <div class="post-tags">
+              <a href="/tags/JavaSE/" rel="tag"><i class="fa fa-tag"></i> JavaSE</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/04/29/05.%20%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E3%80%90180%E3%80%91/240429%20%E5%9B%9E%E9%A1%BE%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/" rel="prev" title="回顾第一次面试">
+                  <i class="fa fa-angle-left"></i> 回顾第一次面试
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/05/01/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/002.%20Java%E5%85%A8%E6%A0%88/02.%20JavaSE%E8%BF%9B%E9%98%B6/day13/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94-Junit%E6%B5%8B%E8%AF%95%E5%8D%95%E5%85%83/" rel="next" title="JavaSE进阶—— Junit测试单元">
+                  JavaSE进阶—— Junit测试单元 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="a82725c6792b122bcf1ed5d58471d46b"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023-2024 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Is Ethan's</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">100k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">6:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni8=" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2024/04/30/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/002.%20Java%E5%85%A8%E6%A0%88/02.%20JavaSE%E8%BF%9B%E9%98%B6/day12/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day12-%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyxf6tytI","appkey":"90987f30c4b5248baad5a04c7a6abfe1","count":true}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>
