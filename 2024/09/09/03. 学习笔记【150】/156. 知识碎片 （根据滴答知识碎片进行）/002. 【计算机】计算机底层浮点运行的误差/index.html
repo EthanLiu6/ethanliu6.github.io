@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+  <link rel="mask-icon" href="/images/avatar.jpg" color="#222">
+  <meta name="msvalidate.01" content="4AF2328B2035748153A041B7EEF3D15C">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CLobster:300,300italic,400,400italic,700,700italic%7CPingFang+SC:300,300italic,400,400italic,700,700italic%7CRoboto+Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="计算机底层存在浮点运行的误差？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机底层浮点运行的误差">
+<meta property="og:url" content="http://ethanliu6.github.io/2024/09/09/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/002.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E6%B5%AE%E7%82%B9%E8%BF%90%E8%A1%8C%E7%9A%84%E8%AF%AF%E5%B7%AE/index.html">
+<meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
+<meta property="og:description" content="计算机底层存在浮点运行的误差？">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-09-14T11:28:19.593Z">
+<meta property="article:author" content="Ethan Liu">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="计算机组成原理">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://ethanliu6.github.io/2024/09/09/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/002.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E6%B5%AE%E7%82%B9%E8%BF%90%E8%A1%8C%E7%9A%84%E8%AF%AF%E5%B7%AE/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/09/09/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/002.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E6%B5%AE%E7%82%B9%E8%BF%90%E8%A1%8C%E7%9A%84%E8%AF%AF%E5%B7%AE/","path":"2024/09/09/03. 学习笔记【150】/156. 知识碎片 （根据滴答知识碎片进行）/002. 【计算机】计算机底层浮点运行的误差/","title":"计算机底层浮点运行的误差"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>计算机底层浮点运行的误差 | <font color='white' >Ethan の Blog</font></title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title"><font color='white' >Ethan の Blog</font></p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"><font color='#FDABC1' size=3>清醒的停留，胜过——盲目的前行</font></p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">24</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">69</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li><li class="menu-item menu-item-个人感悟"><a href="/categories/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/" rel="section"><i class="fa fa-pen-nib fa-fw"></i>个人感悟</a></li><li class="menu-item menu-item-阅读笔记"><a href="/categories/reader/" rel="section"><i class="fa fa-book-open-reader fa-fw"></i>阅读笔记</a></li><li class="menu-item menu-item-内网云盘"><span class="exturl" data-url="aHR0cDovLzE3Mi4yNi44LjU4OjUyNDQv"><i class="fa fa-cloud fa-fw"></i>内网云盘</span></li><li class="menu-item menu-item-外网云盘"><span class="exturl" data-url="aHR0cHM6Ly83OWQzLTI0MDktODc2Mi1lMzQtMjAtODg5OS0wMC0xNzYubmdyb2stZnJlZS5hcHA="><i class="fa fa-cloud fa-fw"></i>外网云盘</span></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E6%B5%AE%E7%82%B9%E8%BF%90%E8%A1%8C%E7%9A%84%E8%AF%AF%E5%B7%AE"><span class="nav-number">1.</span> <span class="nav-text">计算机底层浮点运行的误差</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-0-1-0-2-0-3"><span class="nav-number">1.0.1.</span> <span class="nav-text">例子:0.1 + 0.2 !&#x3D; 0.3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">解释：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%8F%91%E7%94%9F%E8%BF%99%E7%A7%8D%E6%83%85%E5%86%B5%EF%BC%9F"><span class="nav-number">1.0.2.</span> <span class="nav-text">为什么会发生这种情况？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%BA%94%E5%AF%B9%E6%B5%AE%E7%82%B9%E8%AF%AF%E5%B7%AE%EF%BC%9F"><span class="nav-number">1.0.3.</span> <span class="nav-text">如何应对浮点误差？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.0.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B"><span class="nav-number">1.1.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E7%B4%AF%E7%A7%AF%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.1.</span> <span class="nav-text">浮点数精度丢失累积问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E9%87%8D%E5%A4%8D%E7%B4%AF%E5%8A%A0"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">例子：重复累加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-1"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">解释：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E8%88%8D%E5%85%A5%E8%AF%AF%E5%B7%AE"><span class="nav-number">1.1.2.</span> <span class="nav-text">浮点数舍入误差</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E9%99%A4%E6%B3%95%E8%BF%90%E7%AE%97"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">例子：除法运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-2"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">解释：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E5%92%8C%E5%B0%8F%E6%95%B0%E8%BF%90%E7%AE%97%E5%BC%95%E5%8F%91%E7%9A%84%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1"><span class="nav-number">1.1.3.</span> <span class="nav-text">大数和小数运算引发的精度丢失</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E5%A4%A7%E6%95%B0%E4%B8%8E%E5%B0%8F%E6%95%B0%E7%9B%B8%E5%8A%A0"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">例子：大数与小数相加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-3"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">解释：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E9%9D%9E%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="nav-number">1.1.4.</span> <span class="nav-text">浮点数的非对称性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E6%B5%AE%E7%82%B9%E6%95%B0%E5%87%8F%E6%B3%95%E7%9A%84%E9%9D%9E%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">例子：浮点数减法的非对称性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-4"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">解释：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E9%99%B7%E9%98%B1"><span class="nav-number">1.1.5.</span> <span class="nav-text">比较浮点数的陷阱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E6%B5%AE%E7%82%B9%E6%95%B0%E6%AF%94%E8%BE%83"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">例子：浮点数比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-5"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">解释：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E8%AE%A1%E7%AE%97%E4%B8%AD%E7%9A%84%E8%AF%AF%E5%B7%AE"><span class="nav-number">1.1.6.</span> <span class="nav-text">三角函数计算中的误差</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AF%E5%B7%AE"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">例子：三角函数的误差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-6"><span class="nav-number">1.1.6.2.</span> <span class="nav-text">解释：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E6%BA%A2%E5%87%BA%E5%92%8C%E4%B8%8B%E6%BA%A2"><span class="nav-number">1.1.7.</span> <span class="nav-text">浮点数溢出和下溢</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E6%BA%A2%E5%87%BA%E5%92%8C%E4%B8%8B%E6%BA%A2"><span class="nav-number">1.1.7.1.</span> <span class="nav-text">例子：溢出和下溢</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A%EF%BC%9A-7"><span class="nav-number">1.1.7.2.</span> <span class="nav-text">解释：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-1"><span class="nav-number">1.1.8.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ethan Liu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Ethan Liu</p>
+  <div class="site-description" itemprop="description"><font color='#0000FF' size=1.5px>语言学 | IT | 脑科学 | 心理学</font></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2V0aGFubGl1Ng==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ethanliu6"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxpdWUyMzM2QGdtYWlsLmNvbQ==" title="E-Mail → mailto:liue2336@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMTMyNzA5OTk3Nw==" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1327099977"><i class="fa-brands fa-bilibili fa-fw"></i>BiliBili</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/categories/Love/" title="Love → &#x2F;categories&#x2F;Love&#x2F;" rel="noopener me"><i class="fa fa-heart fa-fw"></i>Love</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/09/09/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/002.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E6%B5%AE%E7%82%B9%E8%BF%90%E8%A1%8C%E7%9A%84%E8%AF%AF%E5%B7%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Ethan Liu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | IT | 脑科学 | 心理学</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="计算机底层浮点运行的误差 | <font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机底层浮点运行的误差<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy8wMy4g5a2m5Lmg56yU6K6w44CQMTUw44CRLzE1Ni4g55+l6K+G56KO54mHIO+8iOagueaNrua7tOetlOefpeivhueijueJh+i/m+ihjO+8iS8wMDIuIOOAkOiuoeeul+acuuOAkeiuoeeul+acuuW6leWxgua1rueCuei/kOihjOeahOivr+W3ri5tZA==" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-09-09 00:00:00" itemprop="dateCreated datePublished" datetime="2024-09-09T00:00:00+08:00">2024-09-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-09-14 19:28:19" itemprop="dateModified" datetime="2024-09-14T19:28:19+08:00">2024-09-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%A2%8E%E7%89%87%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">碎片知识</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="计算机底层浮点运行的误差" href="/2024/09/09/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/002.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E6%B5%AE%E7%82%B9%E8%BF%90%E8%A1%8C%E7%9A%84%E8%AF%AF%E5%B7%AE/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::55548e97cc03353c4649bc5bc1bd8b0a" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
+<p>计算机底层存在浮点运行的误差？</p>
+
+</blockquote>
+<span id="more"></span>
+<h1 id="计算机底层浮点运行的误差"><a href="#计算机底层浮点运行的误差" class="headerlink" title="计算机底层浮点运行的误差"></a>计算机底层浮点运行的误差</h1><p>计算机在进行浮点数运算时，由于浮点数的有限精度，会出现舍入误差。这是因为计算机使用有限的位数来表示实数，不能精确表示所有小数。以下是一个常见的浮点运算误差的例子：</p>
+<h3 id="例子-0-1-0-2-0-3"><a href="#例子-0-1-0-2-0-3" class="headerlink" title="例子:0.1 + 0.2 != 0.3"></a>例子:<code>0.1 + 0.2 != 0.3</code></h3><blockquote>
+<p> 我们来看一个简单的 Python 示例：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0.1</span></span><br><span class="line">b = <span class="number">0.2</span></span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)        <span class="comment"># 输出 0.30000000000000004</span></span><br><span class="line"><span class="built_in">print</span>(c == <span class="number">0.3</span>) <span class="comment"># 输出 False</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h4><ol>
+<li><p><strong>问题的核心</strong>：<code>0.1</code> 和 <code>0.2</code> 不能被计算机精确表示为二进制浮点数。计算机内部使用 IEEE 754 标准来表示浮点数，在这种表示法中，像 <code>0.1</code> 和 <code>0.2</code> 这样的十进制数没有精确的二进制表示，因此在存储它们时，计算机会引入微小的误差。</p>
+</li>
+<li><p><strong>实际存储的值</strong>：虽然在代码中我们写的是 <code>0.1</code> 和 <code>0.2</code>，但计算机实际上存储的值是接近这些数的二进制近似值。</p>
+<ul>
+<li><code>0.1</code> 实际上被表示为 <code>0.10000000000000000555111512312578...</code></li>
+<li><code>0.2</code> 实际上被表示为 <code>0.20000000000000001110223024625156...</code></li>
+</ul>
+</li>
+<li><p><strong>误差累积</strong>：当将这两个数相加时，误差会累积，因此 <code>0.1 + 0.2</code> 得到的结果不是 <code>0.3</code>，而是 <code>0.30000000000000004</code>。</p>
+</li>
+<li><p><strong>比较失败</strong>：在计算机中，<code>0.3</code> 也不能被精确表示，实际上被表示为 <code>0.29999999999999998889776975374843...</code>。因此，当你将 <code>0.1 + 0.2</code> 的结果与 <code>0.3</code> 进行比较时，二者的二进制表示不一样，导致 <code>0.1 + 0.2 != 0.3</code>。</p>
+</li>
+</ol>
+<h3 id="为什么会发生这种情况？"><a href="#为什么会发生这种情况？" class="headerlink" title="为什么会发生这种情况？"></a>为什么会发生这种情况？</h3><p>这是因为计算机使用二进制表示数，而某些十进制小数无法在二进制系统中精确表示。例如：</p>
+<ul>
+<li>在十进制中，<code>1/3</code> 是无限循环小数 <code>0.3333...</code>；</li>
+<li>在二进制中，<code>0.1</code> 和 <code>0.2</code> 也是类似的无限循环小数。</li>
+</ul>
+<p>浮点数在存储时必须被截断为有限的位数，因此无法精确表示，这会导致计算误差。</p>
+<h3 id="如何应对浮点误差？"><a href="#如何应对浮点误差？" class="headerlink" title="如何应对浮点误差？"></a>如何应对浮点误差？</h3><ol>
+<li><p><strong>使用误差范围进行比较</strong>：在比较两个浮点数时，可以使用一个允许的误差范围（如 epsilon）来避免误差带来的问题。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">epsilon = <span class="number">1e-9</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">abs</span>((a + b) - <span class="number">0.3</span>) &lt; epsilon:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a + b 等于 0.3&quot;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使用 <code>decimal</code> 模块</strong>：如果需要更高精度的计算，可以使用 Python 的 <code>decimal</code> 模块，它可以进行任意精度的十进制运算。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> decimal <span class="keyword">import</span> Decimal</span><br><span class="line"></span><br><span class="line">a = Decimal(<span class="string">&#x27;0.1&#x27;</span>)</span><br><span class="line">b = Decimal(<span class="string">&#x27;0.2&#x27;</span>)</span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)        <span class="comment"># 输出 0.3</span></span><br><span class="line"><span class="built_in">print</span>(c == Decimal(<span class="string">&#x27;0.3&#x27;</span>))  <span class="comment"># 输出 True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使用 <code>fractions</code> 模块</strong>：可以使用 <code>fractions.Fraction</code> 模块进行有理数运算，避免浮点误差。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> fractions <span class="keyword">import</span> Fraction</span><br><span class="line"></span><br><span class="line">a = Fraction(<span class="number">1</span>, <span class="number">10</span>)  <span class="comment"># 0.1</span></span><br><span class="line">b = Fraction(<span class="number">2</span>, <span class="number">10</span>)  <span class="comment"># 0.2</span></span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)            <span class="comment"># 输出 3/10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(c))     <span class="comment"># 输出 0.3</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>浮点运算中的误差是由计算机使用有限位数来表示无限精度的实数造成的。了解浮点数的底层表示和局限性有助于我们编写更加健壮的数值计算程序，避免常见的误差问题。</p>
+<p>————————————————————————————————————————</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>当然，除了 <code>0.1 + 0.2 != 0.3</code> 这个经典的例子之外，还有其他常见的浮点数运算误差案例。下面是几个典型的例子：</p>
+<h3 id="浮点数精度丢失累积问题"><a href="#浮点数精度丢失累积问题" class="headerlink" title="浮点数精度丢失累积问题"></a><strong>浮点数精度丢失累积问题</strong></h3><p>在进行大量浮点运算时，精度丢失会逐渐累积，导致结果与预期相差甚远。</p>
+<h4 id="例子：重复累加"><a href="#例子：重复累加" class="headerlink" title="例子：重复累加"></a>例子：重复累加</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sum_value = <span class="number">0.0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">    sum_value += <span class="number">0.0001</span> <span class="comment">#按理来说应该是0.0001*1000000=100</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sum_value)  <span class="comment"># 输出 100.00000000219612</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-1"><a href="#解释：-1" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>理论上，<code>0.0001</code> 累加 1,000,000 次应该等于 <code>100</code>，但实际上输出是 <code>100.00000000015625</code>，比预期值多了一点点。</li>
+<li>这是因为在每次累加过程中，浮点数的微小舍入误差逐渐累积，导致最终的结果与预期值有差异。</li>
+</ul>
+<h3 id="浮点数舍入误差"><a href="#浮点数舍入误差" class="headerlink" title="浮点数舍入误差"></a><strong>浮点数舍入误差</strong></h3><p>某些浮点数在运算过程中，舍入误差会导致最终结果不精确。</p>
+<h4 id="例子：除法运算"><a href="#例子：除法运算" class="headerlink" title="例子：除法运算"></a>例子：除法运算</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1.0</span></span><br><span class="line">b = <span class="number">3.0</span></span><br><span class="line">result = a / b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出 0.3333333333333333</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-2"><a href="#解释：-2" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>理论上 <code>1 / 3</code> 应该是 <code>0.333...</code>，但由于计算机存储位数有限，结果被截断为 <code>0.3333333333333333</code>。</li>
+<li>这是因为浮点数无法精确表示无限小数，计算机会在某个点舍入，从而引入误差。</li>
+</ul>
+<h3 id="大数和小数运算引发的精度丢失"><a href="#大数和小数运算引发的精度丢失" class="headerlink" title="大数和小数运算引发的精度丢失"></a><strong>大数和小数运算引发的精度丢失</strong></h3><p>当一个很大的数和一个很小的数相加时，较小的数可能会被忽略，导致结果失去精度。</p>
+<h4 id="例子：大数与小数相加"><a href="#例子：大数与小数相加" class="headerlink" title="例子：大数与小数相加"></a>例子：大数与小数相加</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1e16</span>  <span class="comment"># 一个非常大的数</span></span><br><span class="line">b = <span class="number">1.0</span>   <span class="comment"># 一个很小的数</span></span><br><span class="line">result = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出 1e16， b 被忽略了</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-3"><a href="#解释：-3" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>理论上，<code>a + b</code> 应该是 <code>1e16 + 1 = 10000000000000001</code>，但由于 <code>1e16</code> 远大于 <code>1.0</code>，浮点数无法表示这样的精度差异，因此 <code>b</code> 被忽略了，结果仅输出 <code>1e16</code>。</li>
+<li>这种误差在处理非常大或非常小的数时尤其明显。</li>
+</ul>
+<h3 id="浮点数的非对称性"><a href="#浮点数的非对称性" class="headerlink" title="浮点数的非对称性"></a><strong>浮点数的非对称性</strong></h3><p>浮点数在加法和减法时，结果可能表现出非对称性，导致不可逆的运算。</p>
+<h4 id="例子：浮点数减法的非对称性"><a href="#例子：浮点数减法的非对称性" class="headerlink" title="例子：浮点数减法的非对称性"></a>例子：浮点数减法的非对称性</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1.0000001</span></span><br><span class="line">b = <span class="number">1.0</span></span><br><span class="line">c = a - b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)        <span class="comment"># 输出 1.0000000005838672e-07</span></span><br><span class="line"><span class="built_in">print</span>(c + b)    <span class="comment"># 输出 1.0000001000000001</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-4"><a href="#解释：-4" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li><code>c = a - b</code> 的结果应该是 <code>0.0000001</code>，但由于浮点数精度的限制，计算结果是 <code>1.0000000005838672e-07</code>。</li>
+<li>当你将这个结果再加上 <code>b</code>，你会发现得不到原来的 <code>a = 1.0000001</code>，而是稍大一些的 <code>1.0000001000000001</code>，这说明浮点数的加减法是非对称的，存在舍入误差。</li>
+</ul>
+<h3 id="比较浮点数的陷阱"><a href="#比较浮点数的陷阱" class="headerlink" title="比较浮点数的陷阱"></a><strong>比较浮点数的陷阱</strong></h3><p>由于浮点数的误差问题，直接比较浮点数时可能得不到预期的结果。</p>
+<h4 id="例子：浮点数比较"><a href="#例子：浮点数比较" class="headerlink" title="例子：浮点数比较"></a>例子：浮点数比较</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0.3</span> * <span class="number">3</span></span><br><span class="line">b = <span class="number">0.9</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)        <span class="comment"># 输出 0.8999999999999999</span></span><br><span class="line"><span class="built_in">print</span>(b)        <span class="comment"># 输出 0.9</span></span><br><span class="line"><span class="built_in">print</span>(a == b)   <span class="comment"># 输出 False</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-5"><a href="#解释：-5" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>理论上，<code>0.3 * 3</code> 应该等于 <code>0.9</code>，但是由于浮点数的误差，<code>0.3 * 3</code> 的结果是 <code>0.8999999999999999</code>，所以 <code>a == b</code> 的结果是 <code>False</code>。</li>
+<li>这是由于浮点数的表示精度有限，乘法运算中引入了微小的舍入误差，导致直接比较结果不相等。</li>
+</ul>
+<h3 id="三角函数计算中的误差"><a href="#三角函数计算中的误差" class="headerlink" title="三角函数计算中的误差"></a><strong>三角函数计算中的误差</strong></h3><p>浮点数运算不仅仅出现在简单的加减乘除，甚至在三角函数等更复杂的计算中也会有误差。</p>
+<h4 id="例子：三角函数的误差"><a href="#例子：三角函数的误差" class="headerlink" title="例子：三角函数的误差"></a>例子：三角函数的误差</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">x = math.cos(math.pi / <span class="number">3</span>)  <span class="comment"># cos(60°)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(x)         <span class="comment"># 输出 0.5000000000000001</span></span><br><span class="line"><span class="built_in">print</span>(x == <span class="number">0.5</span>)  <span class="comment"># 输出 False</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-6"><a href="#解释：-6" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>理论上 <code>cos(60°)</code> 应该等于 <code>0.5</code>，但是实际输出是 <code>0.5000000000000001</code>，比预期多了一点。</li>
+<li>这是因为 <code>math.cos()</code> 计算时使用的浮点数表示存在精度限制，因此导致了微小的误差。</li>
+<li>同样的，直接比较 <code>x == 0.5</code> 会返回 <code>False</code>，因为二者并不完全相等。</li>
+</ul>
+<h3 id="浮点数溢出和下溢"><a href="#浮点数溢出和下溢" class="headerlink" title="浮点数溢出和下溢"></a><strong>浮点数溢出和下溢</strong></h3><p>当浮点数过大或者过小时，计算机会产生溢出或下溢（即精度丢失为零）。</p>
+<h4 id="例子：溢出和下溢"><a href="#例子：溢出和下溢" class="headerlink" title="例子：溢出和下溢"></a>例子：溢出和下溢</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浮点数上限</span></span><br><span class="line">large_num = sys.float_info.<span class="built_in">max</span></span><br><span class="line">small_num = sys.float_info.<span class="built_in">min</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 溢出例子</span></span><br><span class="line"><span class="built_in">print</span>(large_num * <span class="number">2</span>)  <span class="comment"># 输出 inf（无穷大）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下溢例子</span></span><br><span class="line"><span class="built_in">print</span>(small_num / <span class="number">2</span>)  <span class="comment"># 输出 0.0</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-7"><a href="#解释：-7" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>当浮点数超出最大表示范围时，计算机会发生<strong>溢出</strong>，并返回 <code>inf</code>（无穷大）。</li>
+<li>当浮点数接近最小表示范围，并且除以一个较大的数时，计算结果会被下溢为 <code>0.0</code>，这是由于计算精度不够导致的。</li>
+</ul>
+<hr>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>浮点数运算中的误差主要是由于计算机在底层使用有限位数来表示实数。在进行复杂运算时，舍入误差会累积，导致结果与预期不符。因此，在数值计算中：</p>
+<ul>
+<li>尽量避免直接比较浮点数。</li>
+<li>使用误差容忍范围（如 <code>epsilon</code>）进行比较。</li>
+<li>对需要高精度计算的场景，建议使用 <code>decimal</code> 或 <code>fractions</code> 模块。</li>
+</ul>
+<p>这些例子展示了浮点数运算中的常见误差，并提醒我们在设计数值算法时需要考虑这些潜在问题。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wChat.png" alt="Ethan Liu 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ethan Liu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ethanliu6.github.io/2024/09/09/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/002.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E6%B5%AE%E7%82%B9%E8%BF%90%E8%A1%8C%E7%9A%84%E8%AF%AF%E5%B7%AE/" title="计算机底层浮点运行的误差">http://ethanliu6.github.io/2024/09/09/03. 学习笔记【150】/156. 知识碎片 （根据滴答知识碎片进行）/002. 【计算机】计算机底层浮点运行的误差/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" rel="tag"><i class="fa fa-tag"></i> 计算机</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 计算机组成原理</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/09/05/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/001.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E4%BB%8E%E6%95%B0%E5%80%BC%E7%9F%A9%E9%98%B5%E5%88%B0%E5%83%8F%E7%B4%A0%E7%82%B9/" rel="prev" title="从数值矩阵到像素点">
+                  <i class="fa fa-angle-left"></i> 从数值矩阵到像素点
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/09/10/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/003.%20%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%CF%80%E6%98%AF%E5%90%A6%E5%9C%A8%E6%9F%90%E7%A7%8D%E7%89%B9%E5%AE%9A%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E4%B8%8B%E4%BC%9A%E6%88%90%E4%B8%BA%E6%9C%89%E9%99%90%E5%80%BC%EF%BC%9F/" rel="next" title="π是否在某种特定进制表示下会成为有限值？">
+                  π是否在某种特定进制表示下会成为有限值？ <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="55548e97cc03353c4649bc5bc1bd8b0a"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023-2024 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Is Ethan's</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">100k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">6:03</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni8=" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2024/09/09/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/002.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E6%B5%AE%E7%82%B9%E8%BF%90%E8%A1%8C%E7%9A%84%E8%AF%AF%E5%B7%AE/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyxf6tytI","appkey":"90987f30c4b5248baad5a04c7a6abfe1","count":true}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>

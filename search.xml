@@ -8,14 +8,19 @@
 
 </blockquote>
 <span id="more"></span>
-<h2 id="引用块">引用块</h2>
+<h2 id="文档头"><a href="#文档头" class="headerlink" title="文档头"></a>文档头</h2><p>使用<code>---</code>启用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: 博客内容模板</span><br><span class="line"><span class="built_in">date</span>: 2024-09-13</span><br><span class="line">categories: </span><br><span class="line">  - BlogSet</span><br><span class="line">tags: </span><br><span class="line">  - BlogSet</span><br><span class="line">number: <span class="literal">true</span></span><br><span class="line">mathjax: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 目前categories:</span></span><br><span class="line">BlogSet|个人bug|电脑知识|碎片知识|经济学|个人日记</span><br></pre></td></tr></table></figure>
+<h2 id="引用块与More"><a href="#引用块与More" class="headerlink" title="引用块与More"></a>引用块与More</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;%cq%&#125;</span><br><span class="line">文章摘要</span><br><span class="line">&#123;%endcq%&#125;</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
 <blockquote class="blockquote-center">
 <p>文章摘要</p>
 
 </blockquote>
 <!--more-->
-<h2 id="tab标签分栏">Tab标签分栏</h2>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">语法:</span><br><span class="line">&#123;%  tabs test1 %&#125; <span class="comment"># 标签块</span></span><br><span class="line"><span class="comment"># 第一页区域</span></span><br><span class="line">    &lt;!-- tab 文本信息 --&gt;</span><br><span class="line">        ** this is Tab1**</span><br><span class="line">    &lt;!-- endtab --&gt;</span><br><span class="line"><span class="comment"># 第二页区域</span></span><br><span class="line">    &lt;!-- tab xxx--&gt;</span><br><span class="line">        ** ww**</span><br><span class="line">    &lt;!-- endtab --&gt;</span><br><span class="line"><span class="comment"># 第三页区域</span></span><br><span class="line">    &lt;!-- tab xxx--&gt;</span><br><span class="line">        asa</span><br><span class="line">    &lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Tab标签分栏"><a href="#Tab标签分栏" class="headerlink" title="Tab标签分栏"></a>Tab标签分栏</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">语法:</span><br><span class="line">&#123;%  tabs test1 %&#125; <span class="comment"># 标签块</span></span><br><span class="line"><span class="comment"># 第一页区域</span></span><br><span class="line">    &lt;!-- tab 文本信息 --&gt;</span><br><span class="line">        ** this is Tab1**</span><br><span class="line">    &lt;!-- endtab --&gt;</span><br><span class="line"><span class="comment"># 第二页区域</span></span><br><span class="line">    &lt;!-- tab xxx--&gt;</span><br><span class="line">        ** ww**</span><br><span class="line">    &lt;!-- endtab --&gt;</span><br><span class="line"><span class="comment"># 第三页区域</span></span><br><span class="line">    &lt;!-- tab xxx--&gt;</span><br><span class="line">        asa</span><br><span class="line">    &lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>效果如下：<br><div class="tabs" id="test1"><ul class="nav-tabs"><li class="tab active"><a href="#test1-1">文本信息</a></li><li class="tab"><a href="#test1-2">py代码</a></li></ul><div class="tab-content"><div class="tab-pane active" id="test1-1"><pre><code>this is Tab1
+</code></pre></div><div class="tab-pane" id="test1-2"><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">duplicate</span>(<span class="params">self , numbers: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">        <span class="comment"># 法2：哈希表</span></span><br><span class="line">        record = &#123;&#125; // // 用来记录已遍历的数</span><br><span class="line">        <span class="keyword">for</span> num <span class="keyword">in</span> numbers:</span><br><span class="line">            <span class="keyword">if</span> num <span class="keyword">not</span> <span class="keyword">in</span> record: <span class="comment"># 未记录则添加</span></span><br><span class="line">                record[num] = <span class="number">1</span> <span class="comment"># value可以任意</span></span><br><span class="line">            <span class="keyword">else</span>: <span class="keyword">return</span> num <span class="comment"># 已记录则返回该数</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure></div></div></div></p>
 ]]></content>
       <categories>
         <category>BlogSet</category>
@@ -93,86 +98,72 @@
       </tags>
   </entry>
   <entry>
-    <title>每日记录2024-04-13</title>
-    <url>/2024/09/13/06.%20love/240213%20%E6%B2%A1%E6%9C%89%E4%B8%8D%E7%88%B1%E4%BD%A0/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉，请找主人索要密码哦~" data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="3545ec0d4bdf5c26317627395a5f72e81372789dad0aac337e3674d2d4b2a7f6">258c87c5b37c4f7cd7fa7ddc0853291bace6240d7aa6c339526fc6553f22ae50de2cac0537c2fbdd3b1cb36b1e754bfb647045a28028da113f3f2e5fec8f6c4309ec6043e48c7a808bb7901f5cd768c37b98a77c7fd5dbbff5563401bea1006d6f945ee5d441f6c09d6424af244bf488359d5f9aeffb98bc3428d4ed027906e50546e4d1e9562c79d18b3ed79937dedae11cec1c967c32ac7d5b721462caa540335387e80b90496e5516784aa9991353c295764efab8f1d7eb6215a3c1664a86cf54b20c45b039c5783ac08e64a778766ec76a71933b5360039855cf7fe8c8d4bd6dea48cebaad47e6f9f53b84a8637326a5bf231b17cd198514f1fed0b1b0b36f1c19eee9272dad8ac021d06c40db84166957cea0156859213da2fd6204329eb3b605f24f2df033e45a3441e626627afb000686244c8f9f0bf08fadb6177fce744cbeb926206429bfaa7e42f0a6fec9465839d0e8cb7344caa6c91c34bb5311a375da60cf6e3f228062ae926c5f04205c104c0a941c1886fa5d91d434d4a8eb5e7c0a9d1f260bf045a93ce144ad7b489d860f822941b0a9a40e6cb8c98be0021d4d3f78bb5b1f532146c848e1d51eefe6010352e8db1e03ac434a71cbc983e735057f9690ca4fa025c22571ce5ff895367a142cbf9a263bbd3d7d6fdcbbba2d5019ef4138151305fce4fb034e18e141e05924dbf9854ac3b3eeac05d2e921aabf3548dc1a3dd5571ba2b1f54889223675927c4aae0828e444580e7edda84b1ec93f9d56e17b22cbb74370b0f4216f8179e2a84ef8a944c7e26bc51a78af01cbc63a3ee240be02b9c4d8163715bb2ed2c8f3cbe63377cdeae92caf7f6b2fbe1678db2c7735ac5dbc1ea00b4f003bdec947ca00b0ad37b1653f7b0153bb5020a6d0a5e0e3feb9e06fb06fd17297a2dae43628c5349a01038217005d71401de33bdd35b4024a5512df051fbef6ea1e222ddcb8ebec3468a7d590e11410bb6ad3a2843c6f746cdc1e02fb42d44c7603e1d91b6cbf2d64ad09a82a340b2ce26bedb88f459d0a3bb2df2c8403eea5c9cf56637c5074e611cfca9dd2a4c280708fdebe6c2c8586b9fa6223ba681cd84240dd5a980421eb074d3d91048744d897caa21087503e99343d1893adcc92cc3eac7fabbb8670b92d11c7f690911a423cd7800b5b813b8ee2cd05309ad2e239b3e23512fcf6627574b922fa7c02996b26e82be7ca4f4363dda7ceb581ad5145c0984fcde59e5e333cd5becff3588859b7a36a18743e87ef9cebec74ad85d8a56d1a0c01a25335d56fb4224f2db8fbe1178084b5a1fc55a5ba11e88f0b786b6e84145d53cf2306268b13fb270adbe6d761cdb552604c74d53ae312a6d93433ce4aaf51e87d9e226db220ada7922d8a258bdd55e3e68fd0e7671e7493f3826d3b3fa62f67d4ee95f932221a8ec66cd6057aa609715224bca81d1a21afcfa7eec40779f39520e419a20f61a2f4deaddd725f053723d675cab588cbc4c90ea705dda5d643b4</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-xray">
-      <input class="hbe hbe-input-field hbe-input-field-xray" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-xray" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-xray">该类文章属于私密文章，请输入密码。</span>
-      </label>
-      <svg class="hbe hbe-graphic hbe-graphic-xray" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
-        <path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"></path>
-        <path d="M0,2.5c0,0,298.666,0,399.333,0C448.336,2.5,513.994,13,597,13c77.327,0,135-10.5,200.999-10.5c95.996,0,402.001,0,402.001,0"></path>
-      </svg>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+    <title>每日记录</title>
+    <url>/2024/04/13/06.%20love/240213%20%E6%B2%A1%E6%9C%89%E4%B8%8D%E7%88%B1%E4%BD%A0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>没有不爱你，对不起！</p>
+
+</blockquote>
+<span id="more"></span>
+<h2 id="日记"><a href="#日记" class="headerlink" title="日记"></a>日记</h2><p>&emsp;&emsp;宝宝，对不起，最近四五天没有理你，还熬夜，为了搞这个博客，失败好几次又重新搭建，感觉自己很狼狈，今天也算是基本搭建完成，以后就是写内容和美化了。</p>
+<p>&emsp;&emsp;让你难受了这么久，我也挺愧疚的，唉，我马上就改回来，不然真的很影响感情。</p>
+<h2 id="宝宝动态"><a href="#宝宝动态" class="headerlink" title="宝宝动态"></a>宝宝动态</h2><p>珠珠出去玩了，真好看，原视频在<span class="exturl" data-url="aHR0cHM6Ly92LmRvdXlpbi5jb20vaVl1OVZrcEsv">宝宝抖音<i class="fa fa-external-link-alt"></i></span></p>
+<iframe src="/images/love/24-02-13宝宝出去玩.mp4" width="400px" height="680px" frameborder="1" allowfullscreen="1">
+</iframe>
+]]></content>
       <categories>
         <category>Love</category>
       </categories>
-      <tags>
-        <tag>love</tag>
-      </tags>
   </entry>
   <entry>
     <title>我是我自己</title>
-    <url>/2024/09/13/05.%20%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E3%80%90180%E3%80%91/240428%20%E6%88%91%E6%98%AF%E6%88%91%E8%87%AA%E5%B7%B1/</url>
+    <url>/2024/04/28/05.%20%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E3%80%90180%E3%80%91/240428%20%E6%88%91%E6%98%AF%E6%88%91%E8%87%AA%E5%B7%B1/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
 <p><strong>我的状态，关你屁事</strong></p>
 
 </blockquote>
 <span id="more"></span>
-<p>  我有我自己要达到目标，我是我自己的主宰，没必要成为你的NPC，不过也谢谢你，让我知道自己赶得快却没有深度思考某些东西，但这又怎样呢？我也没有不尊重你的课堂，只是我与你不同。</p>
+<p>&emsp;&emsp;我有我自己要达到目标，我是我自己的主宰，没必要成为你的NPC，不过也谢谢你，让我知道自己赶得快却没有深度思考某些东西，但这又怎样呢？我也没有不尊重你的课堂，只是我与你不同。</p>
 ]]></content>
       <categories>
         <category>个人日记</category>
       </categories>
-      <tags>
-        <tag>个人日记</tag>
-      </tags>
   </entry>
   <entry>
     <title>回顾第一次面试</title>
-    <url>/2024/09/13/05.%20%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E3%80%90180%E3%80%91/240429%20%E5%9B%9E%E9%A1%BE%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/</url>
+    <url>/2024/04/29/05.%20%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E3%80%90180%E3%80%91/240429%20%E5%9B%9E%E9%A1%BE%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%9D%A2%E8%AF%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
 <p>第一次算法面试回顾</p>
 
 </blockquote>
 <span id="more"></span>
-<p>  前几天学习的时候就被触发记忆了，想起了上学期期末自己投简面试的接到的第一家面试，现在想起来那会自己确实算法思维很差，就连应试的都没咋准备，今天了，还是准备的很少很少。</p>
-<p>  上次学习中学到一个文件夹下查询不同类型文件的算法，用的是IO和HashMap，这里增加了难度，从一个父目录下去查找，里面有很多子文件夹，子文件的层级不一，最后查询指定文件类型的路径（或者说依旧是不同类型文件的个数），这里采用在原来的基础上增加递归思想即可完成，但要注意递归的隐患。下面用java具体实现一下该算法：</p>
+<p>&emsp;&emsp;前几天学习的时候就被触发记忆了，想起了上学期期末自己投简面试的接到的第一家面试，现在想起来那会自己确实算法思维很差，就连应试的都没咋准备，今天了，还是准备的很少很少。</p>
+<p>&emsp;&emsp;上次学习中学到一个文件夹下查询不同类型文件的算法，用的是IO和HashMap，这里增加了难度，从一个父目录下去查找，里面有很多子文件夹，子文件的层级不一，最后查询指定文件类型的路径（或者说依旧是不同类型文件的个数），这里采用在原来的基础上增加递归思想即可完成，但要注意递归的隐患。下面用java具体实现一下该算法：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> digui;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/4/29 23:52</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 综合案例: 打印给定文件夹下的所有java或者Python文件</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo2</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义文件输入流</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">strFile</span> <span class="operator">=</span> <span class="string">&quot;/users/ethan.liu/desktop/&quot;</span>;</span><br><span class="line">        <span class="type">File</span> <span class="variable">file</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(strFile);</span><br><span class="line"></span><br><span class="line">        String[] types = &#123;<span class="string">&quot;ppt&quot;</span>, <span class="string">&quot;java&quot;</span>, <span class="string">&quot;py&quot;</span>, <span class="string">&quot;docx&quot;</span>, <span class="string">&quot;zip&quot;</span>&#125;;</span><br><span class="line">        getSearchFile(file, types);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/***</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file 给定指定文件夹</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> types 指定查询文件类型</span></span><br><span class="line"><span class="comment">     *              (以.结尾的文件扩展名</span></span><br><span class="line"><span class="comment">     *              eg:&quot;py&quot;)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">getSearchFile</span><span class="params">(File file, String[] types)</span> &#123;</span><br><span class="line">        <span class="comment">//给定文件夹不存在, 抛出异常</span></span><br><span class="line">        <span class="keyword">if</span> (!file.exists()) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(<span class="string">&quot;输入文件路径不存在&quot;</span>);</span><br><span class="line">        &#125;<span class="comment">//存在,查找</span></span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//获取文件元素列表</span></span><br><span class="line">            File[] files = file.listFiles();</span><br><span class="line">            <span class="comment">//判断是文件还是文件夹</span></span><br><span class="line">            <span class="keyword">for</span> (File f : files) &#123;</span><br><span class="line">                <span class="keyword">if</span> (f.isFile()) &#123; <span class="comment">//是文件, 查询</span></span><br><span class="line">                    <span class="keyword">for</span> (String type : types) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (f.getName().endsWith(<span class="string">&quot;.&quot;</span> + type)) &#123; <span class="comment">//判断文件类型是否为指定文件类型</span></span><br><span class="line">                            System.out.println(f.getAbsoluteFile()); <span class="comment">//获取指定文件类型的绝对路径</span></span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (f.isDirectory()) &#123; <span class="comment">//是文件夹, 递归调用方法</span></span><br><span class="line">                    getSearchFile(f, types);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>个人日记</category>
       </categories>
-      <tags>
-        <tag>个人日记</tag>
-      </tags>
   </entry>
   <entry>
     <title>焦虑、压力</title>
-    <url>/2024/09/13/05.%20%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E3%80%90180%E3%80%91/240601%20%E7%84%A6%E8%99%91%E3%80%81%E5%8E%8B%E5%8A%9B/</url>
+    <url>/2024/06/01/05.%20%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E3%80%90180%E3%80%91/240601%20%E7%84%A6%E8%99%91%E3%80%81%E5%8E%8B%E5%8A%9B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p>前程一片空白，当下如何是好</p>
+<p>前程一片空白，当下如何是好 </p>
 
 </blockquote>
 <span id="more"></span>
 <blockquote>
 <p><strong>焦虑：</strong></p>
 <ul>
-<li>大二即将结束，自己的学业压力并没有让我觉得很压抑，但从大一转专业到现在，自己并没有走到预期的方向，不过也依旧在学习，学校课程认真听得也就那两三门，可是这并没有给我带来自由时间。无用的社会实践、无用的签到、无用的点名.......真正能够大段自由时间的情况并不多，大二马上结束了，自己的方向也在下学期选择了转变，转专业那会似乎很奢求算法岗，但渐渐发现，资本远不及如此</li>
-<li>从自学python开始，那会不懂各领域各方向，但我唯一知道的就是不断学习，学linux，学MySQL，学爬虫.....刚转计科，自学中慢慢接触NLP，了解了其前前后后的故事，也写过一些demo，可当遇到瓶颈的时候，真的很痛苦，发现自己很差劲，只知道大概，动手代码能力也比较差，很多都是借用GPT然后改改，从数据分析三剑客到pytorch，我自己手撕的东西太少太少了，处理一个csv表，绘制个图，全靠GPT。后来还输入了什么SVM啊、XGBoost啊、决策树啊等等等，再到后来的逻辑回归、bp网络，一切的一切从未从头到尾写过，为了赶进度，还继续学啥CNN、RNN、LSTM、CRF、Transform、GPT等等等等，自以为很厉害，可是啥也没做出来，唯一会了的就是Debug，现在让我去讲那些算法模型，我也只能说个大概，有些甚至一点都想不起来了了，慢慢看到岗位应聘需求，学历早已pass掉我。中途也参加了一些比赛，数模国赛让我知道了对待别人的态度不能是以前的样子.....哎，不说那么多了。就这样，大二上学期就结束了，分流选了计科专业。上学期结束的时候速刷速学东西，想着找实习，做了简历，可是面试的时候一位面试官第一问就把我打趴下了，知道自己有多差劲了，问题我依旧记得，“在一个文件夹里有许多子文件夹，里面有许多不同类型的文件，想找到某种类型的文件如何去找，或者如何归类”，当时说啥copy到PyCharm里面，然后还问面试官文件大不大，内容多不多啥的，“都是未知的”，其实就是在考我算法，考的就是递归算法，后来面试官又换了个场景，“一个人上楼梯，每步可以走1,2,3个台阶这三种情况，请问对于n层的有多少种走法”，那一刻我知道自己有多欠缺这方面的能力了，都是递归算法的场景，但....面试官挺好的，后面跟我聊了一些CV方向的东西，我说这块我不是很了解，就做过一些poencv的二值化处理，面试官也具体问了，但这方面我的确不擅长，最后面试官还问我最近有没有看啥论文，我当时就说的一些大模型的帖子，笑死我了，我那天真的被自己的无知压倒了，后面约的三四场面试我也再没敢去，就这样，回家放学还是在学这个NLP，断断续续，唯一有点成就感的就是帮网友处理了一点bug，然后做了一个NER和分类的东西，赚了300块钱，可那会自己的很多也都是靠GPT，我.....知道自己多差劲了。奥对了，那会放假还熬夜参加了数模美赛，结果也一般吧。</li>
+<li>大二即将结束，自己的学业压力并没有让我觉得很压抑，但从大一转专业到现在，自己并没有走到预期的方向，不过也依旧在学习，学校课程认真听得也就那两三门，可是这并没有给我带来自由时间。无用的社会实践、无用的签到、无用的点名…….真正能够大段自由时间的情况并不多，大二马上结束了，自己的方向也在下学期选择了转变，转专业那会似乎很奢求算法岗，但渐渐发现，资本远不及如此</li>
+<li>从自学python开始，那会不懂各领域各方向，但我唯一知道的就是不断学习，学linux，学MySQL，学爬虫…..刚转计科，自学中慢慢接触NLP，了解了其前前后后的故事，也写过一些demo，可当遇到瓶颈的时候，真的很痛苦，发现自己很差劲，只知道大概，动手代码能力也比较差，很多都是借用GPT然后改改，从数据分析三剑客到pytorch，我自己手撕的东西太少太少了，处理一个csv表，绘制个图，全靠GPT。后来还输入了什么SVM啊、XGBoost啊、决策树啊等等等，再到后来的逻辑回归、bp网络，一切的一切从未从头到尾写过，为了赶进度，还继续学啥CNN、RNN、LSTM、CRF、Transform、GPT等等等等，自以为很厉害，可是啥也没做出来，唯一会了的就是Debug，现在让我去讲那些算法模型，我也只能说个大概，有些甚至一点都想不起来了了，慢慢看到岗位应聘需求，学历早已pass掉我。中途也参加了一些比赛，数模国赛让我知道了对待别人的态度不能是以前的样子…..哎，不说那么多了。就这样，大二上学期就结束了，分流选了计科专业。上学期结束的时候速刷速学东西，想着找实习，做了简历，可是面试的时候一位面试官第一问就把我打趴下了，知道自己有多差劲了，问题我依旧记得，“在一个文件夹里有许多子文件夹，里面有许多不同类型的文件，想找到某种类型的文件如何去找，或者如何归类”，当时说啥copy到PyCharm里面，然后还问面试官文件大不大，内容多不多啥的，“都是未知的”，其实就是在考我算法，考的就是递归算法，后来面试官又换了个场景，“一个人上楼梯，每步可以走1,2,3个台阶这三种情况，请问对于n层的有多少种走法”，那一刻我知道自己有多欠缺这方面的能力了，都是递归算法的场景，但….面试官挺好的，后面跟我聊了一些CV方向的东西，我说这块我不是很了解，就做过一些poencv的二值化处理，面试官也具体问了，但这方面我的确不擅长，最后面试官还问我最近有没有看啥论文，我当时就说的一些大模型的帖子，笑死我了，我那天真的被自己的无知压倒了，后面约的三四场面试我也再没敢去，就这样，回家放学还是在学这个NLP，断断续续，唯一有点成就感的就是帮网友处理了一点bug，然后做了一个NER和分类的东西，赚了300块钱，可那会自己的很多也都是靠GPT，我…..知道自己多差劲了。奥对了，那会放假还熬夜参加了数模美赛，结果也一般吧。</li>
 <li>现在这学期我专心想搞一件事，就是转方向，学Java，中途有一些事影响到了我，比如统建建模比赛和自己的恋爱感情，我似乎又花费了大量时间和精力，放在了我和秋珠身上，自己有时候挺难受的，不过自己处理不好这些事就是没有担当。所以，在开学的时候我考虑到了这些，只想把Java学好，然后把感情经营好。</li>
-<li>现在的我，学了JavaSE，重新学了MySQL，然后浅浅刷了JavaWeb，最近的SSM并没有很系统的学，购买了一一百多的千峰的一堂课，里面索尔老师讲的挺好的，可是我太过于匆忙了，很多东西并没有认真深入学习和练习，导致项目那块意识到问题后，回头又开始从MyBatis开始学了，Redis学了一天又停了，很乱很乱，我知道要学啥，但我可能太求快了，所以乱糟糟的，现在重新补SSM和Redis，中途会刷LeetCode和MySQL，然后背一下面经，自己的精力有限，也马上到期末了，估计自由的时间会越来越少，可能，实习面试啥的很难准备了.....</li>
+<li>现在的我，学了JavaSE，重新学了MySQL，然后浅浅刷了JavaWeb，最近的SSM并没有很系统的学，购买了一一百多的千峰的一堂课，里面索尔老师讲的挺好的，可是我太过于匆忙了，很多东西并没有认真深入学习和练习，导致项目那块意识到问题后，回头又开始从MyBatis开始学了，Redis学了一天又停了，很乱很乱，我知道要学啥，但我可能太求快了，所以乱糟糟的，现在重新补SSM和Redis，中途会刷LeetCode和MySQL，然后背一下面经，自己的精力有限，也马上到期末了，估计自由的时间会越来越少，可能，实习面试啥的很难准备了…..</li>
 </ul>
 <p><strong>压力：</strong></p>
 <ul>
-<li>最近的Java框架学习中知道自己不足，然后开始弥补，让自己有些焦虑，除此之外，家里的老妈，打工的二哥，没钱的三哥，在家的姐姐，可爱的好珠珠，让我一度觉得，自己被重山压着，自己手头也没啥钱了，寝室聚餐我说不去了，室友也只好暂停.....可能是我想要的太多了，但做的又不够，一心求快，然后又不断会有家庭带给我的难受和压力，让我觉得自己一定要赚钱，一定要好起来，可是，，，谁又知道，现在的我，情绪低落，身体空虚，掉发，焦虑.......当去网络世界看那些IT人的分享，不自觉地一度焦虑，难受。。。</li>
+<li>最近的Java框架学习中知道自己不足，然后开始弥补，让自己有些焦虑，除此之外，家里的老妈，打工的二哥，没钱的三哥，在家的姐姐，可爱的好珠珠，让我一度觉得，自己被重山压着，自己手头也没啥钱了，寝室聚餐我说不去了，室友也只好暂停…..可能是我想要的太多了，但做的又不够，一心求快，然后又不断会有家庭带给我的难受和压力，让我觉得自己一定要赚钱，一定要好起来，可是，，，谁又知道，现在的我，情绪低落，身体空虚，掉发，焦虑…….当去网络世界看那些IT人的分享，不自觉地一度焦虑，难受。。。</li>
 <li>难受总是一时的，艰难只是自己觉得罢了，没必要看网络的世界，太假太虚幻，好好把握当下吧，好好爱人，好好爱家人，好好爱自己</li>
 <li>谢谢今天哔站的两位学长，刷到你们我真的很幸运，差点在教室哭了，我一定养好身体，不关注他人，好好做好自己。</li>
 </ul>
@@ -181,9 +172,6 @@
       <categories>
         <category>个人日记</category>
       </categories>
-      <tags>
-        <tag>个人日记</tag>
-      </tags>
   </entry>
   <entry>
     <title>回归状态，稍慢下来</title>
@@ -200,9 +188,6 @@
       <categories>
         <category>个人日记</category>
       </categories>
-      <tags>
-        <tag>个人日记</tag>
-      </tags>
   </entry>
   <entry>
     <title>崩溃、无知</title>
@@ -218,719 +203,432 @@
       <categories>
         <category>个人日记</category>
       </categories>
-      <tags>
-        <tag>个人日记</tag>
-      </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2024/09/13/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/001.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E4%BB%8E%E6%95%B0%E5%80%BC%E7%9F%A9%E9%98%B5%E5%88%B0%E5%83%8F%E7%B4%A0%E7%82%B9/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="从数值矩阵到像素点">从数值矩阵到像素点</h1>
-<p>计算机底层将数值转换为像素点的过程，涉及从内存中的数值数据到屏幕上显示的视觉图像的完整流程。这主要包括以下几个步骤：</p>
-<h3 id="图像数据的表示">1. <strong>图像数据的表示</strong></h3>
-<p>在计算机中，图像是以 <strong>像素矩阵</strong>
-的形式存储的，每个像素可以通过数值表示其颜色。对于 RGB 图像，每个像素由
-<strong>红色 (Red)</strong>、<strong>绿色 (Green)</strong> 和
-<strong>蓝色 (Blue)</strong> 三个颜色通道组成，每个通道的颜色强度通常用
-8 位（即 0-255）来表示。</p>
-<p>例如，对于一个 16x16 的 RGB 图像，图像在内存中的表示形式是一个
-16x16x3 的数组： - 16 表示图像的宽度和高度，即 16x16 个像素点。 - 3
-表示每个像素的三个通道（R、G、B）。</p>
-<p><strong>灰度图像</strong>通常只包含一个通道，用单个数值表示亮度，0
-表示黑色，255 表示白色。</p>
-<h3 id="颜色编码">2. <strong>颜色编码</strong></h3>
-<p>计算机使用的颜色模型通常是
-RGB，每个像素都有三个数值来表示红、绿、蓝三种颜色的强度。计算机将这些数值存储在内存中，表示屏幕上每个像素的颜色。</p>
-<p>对于 RGB 图像，每个像素的颜色值通过组合三个通道来定义。比如： - (255,
-0, 0) 表示红色。 - (0, 255, 0) 表示绿色。 - (0, 0, 255) 表示蓝色。 -
-(255, 255, 255) 表示白色。 - (0, 0, 0) 表示黑色。</p>
-<h3 id="像素映射到显存">3. <strong>像素映射到显存</strong></h3>
-<p>显卡（GPU）负责将内存中的图像数据映射到屏幕上显示。在计算机显示图像的过程中，图像数据首先被加载到
-<strong>显存 (VRAM)</strong> 中。</p>
-<p>每个像素点的数值会被传送到显存中，显存中的数据结构与图像的像素矩阵一致。显卡驱动程序会处理这些数据，并将每个像素的颜色值与显示器的物理像素点相对应。</p>
-<h3 id="帧缓冲区">4. <strong>帧缓冲区</strong></h3>
-<p>帧缓冲区是显卡的一个存储区域，它保存了当前要显示的像素颜色信息。这个缓冲区中存储着从图像数据转换而来的像素信息。</p>
-<p>具体过程： - 图像数据被转换并存储在帧缓冲区中，每个像素的颜色值通过其
-RGB 组件表示。 - 这些值会通过数字信号传输到显示器中。</p>
-<h3 id="显示器上的显示">5. <strong>显示器上的显示</strong></h3>
-<p>显示器由成千上万个物理像素点（<strong>子像素</strong>）组成，每个像素点由红、绿、蓝三个小灯（<strong>子像素</strong>）组成。</p>
+    <title>从数值矩阵到像素点</title>
+    <url>/2024/09/05/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/001.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E4%BB%8E%E6%95%B0%E5%80%BC%E7%9F%A9%E9%98%B5%E5%88%B0%E5%83%8F%E7%B4%A0%E7%82%B9/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>计算机底层是如何将数值转换为像素点的？</p>
+
+</blockquote>
+<span id="more"></span>
+<h1 id="从数值矩阵到像素点"><a href="#从数值矩阵到像素点" class="headerlink" title="从数值矩阵到像素点"></a>从数值矩阵到像素点</h1><p>计算机底层将数值转换为像素点的过程，涉及从内存中的数值数据到屏幕上显示的视觉图像的完整流程。这主要包括以下几个步骤：</p>
+<h3 id="图像数据的表示"><a href="#图像数据的表示" class="headerlink" title="图像数据的表示"></a><strong>图像数据的表示</strong></h3><p>在计算机中，图像是以 <strong>像素矩阵</strong> 的形式存储的，每个像素可以通过数值表示其颜色。对于 RGB 图像，每个像素由 <strong>红色 (Red)</strong>、<strong>绿色 (Green)</strong> 和 <strong>蓝色 (Blue)</strong> 三个颜色通道组成，每个通道的颜色强度通常用 8 位（即 0-255）来表示。</p>
+<p>例如，对于一个 16x16 的 RGB 图像，图像在内存中的表示形式是一个 16x16x3 的数组：</p>
 <ul>
-<li>当显卡将颜色值发送到显示器时，每个像素的 RGB
-数值会控制相应的红、绿、蓝子像素的亮度。</li>
-<li>红、绿、蓝子像素通过不同的亮度组合出不同的颜色。比如，红绿蓝全亮的情况下（255,
-255, 255），显示的颜色就是白色，而所有子像素关闭（0, 0,
-0）时，显示的是黑色。</li>
+<li>16 表示图像的宽度和高度，即 16x16 个像素点。</li>
+<li>3 表示每个像素的三个通道（R、G、B）。</li>
 </ul>
-<h3 id="刷新率与更新">6. <strong>刷新率与更新</strong></h3>
-<p>显示器以一定的 <strong>刷新率</strong>（比如
-60Hz、120Hz）不断地更新屏幕上的像素。每次刷新时，显示器从显存中读取帧缓冲区的数据，并在屏幕上显示相应的图像。</p>
+<p><strong>灰度图像</strong>通常只包含一个通道，用单个数值表示亮度，0 表示黑色，255 表示白色。</p>
+<h3 id="颜色编码"><a href="#颜色编码" class="headerlink" title="颜色编码"></a><strong>颜色编码</strong></h3><p>计算机使用的颜色模型通常是 RGB，每个像素都有三个数值来表示红、绿、蓝三种颜色的强度。计算机将这些数值存储在内存中，表示屏幕上每个像素的颜色。</p>
+<p>对于 RGB 图像，每个像素的颜色值通过组合三个通道来定义。比如：</p>
+<ul>
+<li>(255, 0, 0) 表示红色。</li>
+<li>(0, 255, 0) 表示绿色。</li>
+<li>(0, 0, 255) 表示蓝色。</li>
+<li>(255, 255, 255) 表示白色。</li>
+<li>(0, 0, 0) 表示黑色。</li>
+</ul>
+<h3 id="像素映射到显存"><a href="#像素映射到显存" class="headerlink" title="像素映射到显存"></a><strong>像素映射到显存</strong></h3><p>显卡（GPU）负责将内存中的图像数据映射到屏幕上显示。在计算机显示图像的过程中，图像数据首先被加载到 <strong>显存 (VRAM)</strong> 中。</p>
+<p>每个像素点的数值会被传送到显存中，显存中的数据结构与图像的像素矩阵一致。显卡驱动程序会处理这些数据，并将每个像素的颜色值与显示器的物理像素点相对应。</p>
+<h3 id="帧缓冲区"><a href="#帧缓冲区" class="headerlink" title="帧缓冲区"></a><strong>帧缓冲区</strong></h3><p>帧缓冲区是显卡的一个存储区域，它保存了当前要显示的像素颜色信息。这个缓冲区中存储着从图像数据转换而来的像素信息。</p>
+<p>具体过程：</p>
+<ul>
+<li>图像数据被转换并存储在帧缓冲区中，每个像素的颜色值通过其 RGB 组件表示。</li>
+<li>这些值会通过数字信号传输到显示器中。</li>
+</ul>
+<h3 id="显示器上的显示"><a href="#显示器上的显示" class="headerlink" title="显示器上的显示"></a><strong>显示器上的显示</strong></h3><p>显示器由成千上万个物理像素点（<strong>子像素</strong>）组成，每个像素点由红、绿、蓝三个小灯（<strong>子像素</strong>）组成。</p>
+<ul>
+<li>当显卡将颜色值发送到显示器时，每个像素的 RGB 数值会控制相应的红、绿、蓝子像素的亮度。</li>
+<li>红、绿、蓝子像素通过不同的亮度组合出不同的颜色。比如，红绿蓝全亮的情况下（255, 255, 255），显示的颜色就是白色，而所有子像素关闭（0, 0, 0）时，显示的是黑色。</li>
+</ul>
+<h3 id="刷新率与更新"><a href="#刷新率与更新" class="headerlink" title="刷新率与更新"></a><strong>刷新率与更新</strong></h3><p>显示器以一定的 <strong>刷新率</strong>（比如 60Hz、120Hz）不断地更新屏幕上的像素。每次刷新时，显示器从显存中读取帧缓冲区的数据，并在屏幕上显示相应的图像。</p>
 <p>由于显示器是逐行扫描的，每行像素会依次被点亮，最终整个屏幕上的图像就会显现出来。</p>
-<h3 id="底层的具体过程可以总结为以下几个步骤">底层的具体过程可以总结为以下几个步骤：</h3>
-<ol type="1">
+<h3 id="底层的具体过程可以总结为以下几个步骤："><a href="#底层的具体过程可以总结为以下几个步骤：" class="headerlink" title="底层的具体过程可以总结为以下几个步骤："></a>底层的具体过程可以总结为以下几个步骤：</h3><ol>
 <li><strong>图像数据准备</strong>：内存中存储的图像数据（数值表示的像素）准备好。</li>
 <li><strong>图像数据传输到显卡</strong>：图像数据从内存传输到显卡的帧缓冲区。</li>
-<li><strong>显卡处理</strong>：显卡根据 RGB
-数值生成相应的电信号，控制物理显示器的像素。</li>
+<li><strong>显卡处理</strong>：显卡根据 RGB 数值生成相应的电信号，控制物理显示器的像素。</li>
 <li><strong>显示器显示图像</strong>：每个物理像素根据接收到的信号调整红、绿、蓝子像素的亮度，从而呈现图像。</li>
 </ol>
-<h3 id="图像渲染的硬件支持">图像渲染的硬件支持</h3>
-<ul>
-<li><strong>显卡
-(GPU)</strong>：负责将图像数据从内存传输到显存，处理这些数据，并转换成适合显示器理解的信号。</li>
+<h3 id="图像渲染的硬件支持"><a href="#图像渲染的硬件支持" class="headerlink" title="图像渲染的硬件支持"></a>图像渲染的硬件支持</h3><ul>
+<li><strong>显卡 (GPU)</strong>：负责将图像数据从内存传输到显存，处理这些数据，并转换成适合显示器理解的信号。</li>
 <li><strong>显示器</strong>：由红绿蓝（RGB）灯组成的物理像素阵列，接收来自显卡的信号，并显示相应的颜色。</li>
 </ul>
 <p>通过上述机制，计算机能够将存储在内存中的图像数据（数值表示）转化为屏幕上的图像，展现出我们所看到的像素点的颜色和亮度变化。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>【计算机】计算机底层浮点运行的误差</title>
-    <url>/2024/09/14/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/002.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E6%B5%AE%E7%82%B9%E8%BF%90%E8%A1%8C%E7%9A%84%E8%AF%AF%E5%B7%AE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="计算机底层浮点运行的误差">计算机底层浮点运行的误差</h1>
-<p>计算机在进行浮点数运算时，由于浮点数的有限精度，会出现舍入误差。这是因为计算机使用有限的位数来表示实数，不能精确表示所有小数。以下是一个常见的浮点运算误差的例子：</p>
-<h3 id="例子0.1-0.2-0.3">例子:<code>0.1 + 0.2 != 0.3</code></h3>
-<blockquote>
-<p>我们来看一个简单的 Python 示例：</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">0.1</span></span><br><span class="line">b = <span class="number">0.2</span></span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)        <span class="comment"># 输出 0.30000000000000004</span></span><br><span class="line"><span class="built_in">print</span>(c == <span class="number">0.3</span>) <span class="comment"># 输出 False</span></span><br></pre></td></tr></table></figure>
-<h4 id="解释">解释：</h4>
-<ol type="1">
-<li><p><strong>问题的核心</strong>：<code>0.1</code> 和 <code>0.2</code>
-不能被计算机精确表示为二进制浮点数。计算机内部使用 IEEE 754
-标准来表示浮点数，在这种表示法中，像 <code>0.1</code> 和
-<code>0.2</code>
-这样的十进制数没有精确的二进制表示，因此在存储它们时，计算机会引入微小的误差。</p></li>
-<li><p><strong>实际存储的值</strong>：虽然在代码中我们写的是
-<code>0.1</code> 和
-<code>0.2</code>，但计算机实际上存储的值是接近这些数的二进制近似值。</p>
-<ul>
-<li><code>0.1</code> 实际上被表示为
-<code>0.10000000000000000555111512312578...</code></li>
-<li><code>0.2</code> 实际上被表示为
-<code>0.20000000000000001110223024625156...</code></li>
-</ul></li>
-<li><p><strong>误差累积</strong>：当将这两个数相加时，误差会累积，因此
-<code>0.1 + 0.2</code> 得到的结果不是 <code>0.3</code>，而是
-<code>0.30000000000000004</code>。</p></li>
-<li><p><strong>比较失败</strong>：在计算机中，<code>0.3</code>
-也不能被精确表示，实际上被表示为
-<code>0.29999999999999998889776975374843...</code>。因此，当你将
-<code>0.1 + 0.2</code> 的结果与 <code>0.3</code>
-进行比较时，二者的二进制表示不一样，导致
-<code>0.1 + 0.2 != 0.3</code>。</p></li>
-</ol>
-<h3 id="为什么会发生这种情况">为什么会发生这种情况？</h3>
-<p>这是因为计算机使用二进制表示数，而某些十进制小数无法在二进制系统中精确表示。例如：
-- 在十进制中，<code>1/3</code> 是无限循环小数 <code>0.3333...</code>； -
-在二进制中，<code>0.1</code> 和 <code>0.2</code>
-也是类似的无限循环小数。</p>
-<p>浮点数在存储时必须被截断为有限的位数，因此无法精确表示，这会导致计算误差。</p>
-<h3 id="如何应对浮点误差">如何应对浮点误差？</h3>
-<ol type="1">
-<li><p><strong>使用误差范围进行比较</strong>：在比较两个浮点数时，可以使用一个允许的误差范围（如
-epsilon）来避免误差带来的问题。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epsilon = <span class="number">1e-9</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">abs</span>((a + b) - <span class="number">0.3</span>) &lt; epsilon:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a + b 等于 0.3&quot;</span>)</span><br></pre></td></tr></table></figure></li>
-<li><p><strong>使用 <code>decimal</code>
-模块</strong>：如果需要更高精度的计算，可以使用 Python 的
-<code>decimal</code> 模块，它可以进行任意精度的十进制运算。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> decimal <span class="keyword">import</span> Decimal</span><br><span class="line"></span><br><span class="line">a = Decimal(<span class="string">&#x27;0.1&#x27;</span>)</span><br><span class="line">b = Decimal(<span class="string">&#x27;0.2&#x27;</span>)</span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)        <span class="comment"># 输出 0.3</span></span><br><span class="line"><span class="built_in">print</span>(c == Decimal(<span class="string">&#x27;0.3&#x27;</span>))  <span class="comment"># 输出 True</span></span><br></pre></td></tr></table></figure></li>
-<li><p><strong>使用 <code>fractions</code> 模块</strong>：可以使用
-<code>fractions.Fraction</code> 模块进行有理数运算，避免浮点误差。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> fractions <span class="keyword">import</span> Fraction</span><br><span class="line"></span><br><span class="line">a = Fraction(<span class="number">1</span>, <span class="number">10</span>)  <span class="comment"># 0.1</span></span><br><span class="line">b = Fraction(<span class="number">2</span>, <span class="number">10</span>)  <span class="comment"># 0.2</span></span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)            <span class="comment"># 输出 3/10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(c))     <span class="comment"># 输出 0.3</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="总结">总结</h3>
-<p>浮点运算中的误差是由计算机使用有限位数来表示无限精度的实数造成的。了解浮点数的底层表示和局限性有助于我们编写更加健壮的数值计算程序，避免常见的误差问题。</p>
-<p>————————————————————————————————————————</p>
-<h2 id="案例">案例</h2>
-<p>当然，除了 <code>0.1 + 0.2 != 0.3</code>
-这个经典的例子之外，还有其他常见的浮点数运算误差案例。下面是几个典型的例子：</p>
-<h3 id="浮点数精度丢失累积问题">1.
-<strong>浮点数精度丢失累积问题</strong></h3>
-<p>在进行大量浮点运算时，精度丢失会逐渐累积，导致结果与预期相差甚远。</p>
-<h4 id="例子重复累加">例子：重复累加</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sum_value = <span class="number">0.0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">    sum_value += <span class="number">0.0001</span> <span class="comment">#按理来说应该是0.0001*1000000=100</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sum_value)  <span class="comment"># 输出 100.00000000219612</span></span><br></pre></td></tr></table></figure>
-<h4 id="解释-1">解释：</h4>
-<ul>
-<li>理论上，<code>0.0001</code> 累加 1,000,000 次应该等于
-<code>100</code>，但实际上输出是
-<code>100.00000000015625</code>，比预期值多了一点点。</li>
-<li>这是因为在每次累加过程中，浮点数的微小舍入误差逐渐累积，导致最终的结果与预期值有差异。</li>
-</ul>
-<h3 id="浮点数舍入误差">2. <strong>浮点数舍入误差</strong></h3>
-<p>某些浮点数在运算过程中，舍入误差会导致最终结果不精确。</p>
-<h4 id="例子除法运算">例子：除法运算</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1.0</span></span><br><span class="line">b = <span class="number">3.0</span></span><br><span class="line">result = a / b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出 0.3333333333333333</span></span><br></pre></td></tr></table></figure>
-<h4 id="解释-2">解释：</h4>
-<ul>
-<li>理论上 <code>1 / 3</code> 应该是
-<code>0.333...</code>，但由于计算机存储位数有限，结果被截断为
-<code>0.3333333333333333</code>。</li>
-<li>这是因为浮点数无法精确表示无限小数，计算机会在某个点舍入，从而引入误差。</li>
-</ul>
-<h3 id="大数和小数运算引发的精度丢失">3.
-<strong>大数和小数运算引发的精度丢失</strong></h3>
-<p>当一个很大的数和一个很小的数相加时，较小的数可能会被忽略，导致结果失去精度。</p>
-<h4 id="例子大数与小数相加">例子：大数与小数相加</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1e16</span>  <span class="comment"># 一个非常大的数</span></span><br><span class="line">b = <span class="number">1.0</span>   <span class="comment"># 一个很小的数</span></span><br><span class="line">result = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出 1e16， b 被忽略了</span></span><br></pre></td></tr></table></figure>
-<h4 id="解释-3">解释：</h4>
-<ul>
-<li>理论上，<code>a + b</code> 应该是
-<code>1e16 + 1 = 10000000000000001</code>，但由于 <code>1e16</code>
-远大于 <code>1.0</code>，浮点数无法表示这样的精度差异，因此
-<code>b</code> 被忽略了，结果仅输出 <code>1e16</code>。</li>
-<li>这种误差在处理非常大或非常小的数时尤其明显。</li>
-</ul>
-<h3 id="浮点数的非对称性">4. <strong>浮点数的非对称性</strong></h3>
-<p>浮点数在加法和减法时，结果可能表现出非对称性，导致不可逆的运算。</p>
-<h4 id="例子浮点数减法的非对称性">例子：浮点数减法的非对称性</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1.0000001</span></span><br><span class="line">b = <span class="number">1.0</span></span><br><span class="line">c = a - b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)        <span class="comment"># 输出 1.0000000005838672e-07</span></span><br><span class="line"><span class="built_in">print</span>(c + b)    <span class="comment"># 输出 1.0000001000000001</span></span><br></pre></td></tr></table></figure>
-<h4 id="解释-4">解释：</h4>
-<ul>
-<li><code>c = a - b</code> 的结果应该是
-<code>0.0000001</code>，但由于浮点数精度的限制，计算结果是
-<code>1.0000000005838672e-07</code>。</li>
-<li>当你将这个结果再加上 <code>b</code>，你会发现得不到原来的
-<code>a = 1.0000001</code>，而是稍大一些的
-<code>1.0000001000000001</code>，这说明浮点数的加减法是非对称的，存在舍入误差。</li>
-</ul>
-<h3 id="比较浮点数的陷阱">5. <strong>比较浮点数的陷阱</strong></h3>
-<p>由于浮点数的误差问题，直接比较浮点数时可能得不到预期的结果。</p>
-<h4 id="例子浮点数比较">例子：浮点数比较</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">0.3</span> * <span class="number">3</span></span><br><span class="line">b = <span class="number">0.9</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)        <span class="comment"># 输出 0.8999999999999999</span></span><br><span class="line"><span class="built_in">print</span>(b)        <span class="comment"># 输出 0.9</span></span><br><span class="line"><span class="built_in">print</span>(a == b)   <span class="comment"># 输出 False</span></span><br></pre></td></tr></table></figure>
-<h4 id="解释-5">解释：</h4>
-<ul>
-<li>理论上，<code>0.3 * 3</code> 应该等于
-<code>0.9</code>，但是由于浮点数的误差，<code>0.3 * 3</code> 的结果是
-<code>0.8999999999999999</code>，所以 <code>a == b</code> 的结果是
-<code>False</code>。</li>
-<li>这是由于浮点数的表示精度有限，乘法运算中引入了微小的舍入误差，导致直接比较结果不相等。</li>
-</ul>
-<h3 id="三角函数计算中的误差">6.
-<strong>三角函数计算中的误差</strong></h3>
-<p>浮点数运算不仅仅出现在简单的加减乘除，甚至在三角函数等更复杂的计算中也会有误差。</p>
-<h4 id="例子三角函数的误差">例子：三角函数的误差</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">x = math.cos(math.pi / <span class="number">3</span>)  <span class="comment"># cos(60°)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(x)         <span class="comment"># 输出 0.5000000000000001</span></span><br><span class="line"><span class="built_in">print</span>(x == <span class="number">0.5</span>)  <span class="comment"># 输出 False</span></span><br></pre></td></tr></table></figure>
-<h4 id="解释-6">解释：</h4>
-<ul>
-<li>理论上 <code>cos(60°)</code> 应该等于
-<code>0.5</code>，但是实际输出是
-<code>0.5000000000000001</code>，比预期多了一点。</li>
-<li>这是因为 <code>math.cos()</code>
-计算时使用的浮点数表示存在精度限制，因此导致了微小的误差。</li>
-<li>同样的，直接比较 <code>x == 0.5</code> 会返回
-<code>False</code>，因为二者并不完全相等。</li>
-</ul>
-<h3 id="浮点数溢出和下溢">7. <strong>浮点数溢出和下溢</strong></h3>
-<p>当浮点数过大或者过小时，计算机会产生溢出或下溢（即精度丢失为零）。</p>
-<h4 id="例子溢出和下溢">例子：溢出和下溢</h4>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浮点数上限</span></span><br><span class="line">large_num = sys.float_info.<span class="built_in">max</span></span><br><span class="line">small_num = sys.float_info.<span class="built_in">min</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 溢出例子</span></span><br><span class="line"><span class="built_in">print</span>(large_num * <span class="number">2</span>)  <span class="comment"># 输出 inf（无穷大）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下溢例子</span></span><br><span class="line"><span class="built_in">print</span>(small_num / <span class="number">2</span>)  <span class="comment"># 输出 0.0</span></span><br></pre></td></tr></table></figure>
-<h4 id="解释-7">解释：</h4>
-<ul>
-<li>当浮点数超出最大表示范围时，计算机会发生<strong>溢出</strong>，并返回
-<code>inf</code>（无穷大）。</li>
-<li>当浮点数接近最小表示范围，并且除以一个较大的数时，计算结果会被下溢为
-<code>0.0</code>，这是由于计算精度不够导致的。</li>
-</ul>
-<hr>
-<h3 id="总结-1">总结</h3>
-<p>浮点数运算中的误差主要是由于计算机在底层使用有限位数来表示实数。在进行复杂运算时，舍入误差会累积，导致结果与预期不符。因此，在数值计算中：
-- 尽量避免直接比较浮点数。 - 使用误差容忍范围（如
-<code>epsilon</code>）进行比较。 - 对需要高精度计算的场景，建议使用
-<code>decimal</code> 或 <code>fractions</code> 模块。</p>
-<p>这些例子展示了浮点数运算中的常见误差，并提醒我们在设计数值算法时需要考虑这些潜在问题。</p>
-]]></content>
+      <categories>
+        <category>碎片知识</category>
+      </categories>
       <tags>
         <tag>计算机</tag>
+        <tag>计算机图形学</tag>
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2024/09/13/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/003.%20%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%CF%80%E6%98%AF%E5%90%A6%E5%9C%A8%E6%9F%90%E7%A7%8D%E7%89%B9%E5%AE%9A%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E4%B8%8B%E4%BC%9A%E6%88%90%E4%B8%BA%E6%9C%89%E9%99%90%E5%80%BC%EF%BC%9F/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="pi是否在某种特定进制表示下会成为有限值"><span class="math inline">\(\pi\)</span>是否在某种特定进制表示下会成为有限值？</h1>
-<p>———————————————————————————————————————————————</p>
-<h2 id="提问一">提问一</h2>
+    <title>计算机底层浮点运行的误差</title>
+    <url>/2024/09/09/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/002.%20%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E6%B5%AE%E7%82%B9%E8%BF%90%E8%A1%8C%E7%9A%84%E8%AF%AF%E5%B7%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>计算机底层存在浮点运行的误差？</p>
+
+</blockquote>
+<span id="more"></span>
+<h1 id="计算机底层浮点运行的误差"><a href="#计算机底层浮点运行的误差" class="headerlink" title="计算机底层浮点运行的误差"></a>计算机底层浮点运行的误差</h1><p>计算机在进行浮点数运算时，由于浮点数的有限精度，会出现舍入误差。这是因为计算机使用有限的位数来表示实数，不能精确表示所有小数。以下是一个常见的浮点运算误差的例子：</p>
+<h3 id="例子-0-1-0-2-0-3"><a href="#例子-0-1-0-2-0-3" class="headerlink" title="例子:0.1 + 0.2 != 0.3"></a>例子:<code>0.1 + 0.2 != 0.3</code></h3><blockquote>
+<p> 我们来看一个简单的 Python 示例：</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">0.1</span></span><br><span class="line">b = <span class="number">0.2</span></span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)        <span class="comment"># 输出 0.30000000000000004</span></span><br><span class="line"><span class="built_in">print</span>(c == <span class="number">0.3</span>) <span class="comment"># 输出 False</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释："><a href="#解释：" class="headerlink" title="解释："></a>解释：</h4><ol>
+<li><p><strong>问题的核心</strong>：<code>0.1</code> 和 <code>0.2</code> 不能被计算机精确表示为二进制浮点数。计算机内部使用 IEEE 754 标准来表示浮点数，在这种表示法中，像 <code>0.1</code> 和 <code>0.2</code> 这样的十进制数没有精确的二进制表示，因此在存储它们时，计算机会引入微小的误差。</p>
+</li>
+<li><p><strong>实际存储的值</strong>：虽然在代码中我们写的是 <code>0.1</code> 和 <code>0.2</code>，但计算机实际上存储的值是接近这些数的二进制近似值。</p>
+<ul>
+<li><code>0.1</code> 实际上被表示为 <code>0.10000000000000000555111512312578...</code></li>
+<li><code>0.2</code> 实际上被表示为 <code>0.20000000000000001110223024625156...</code></li>
+</ul>
+</li>
+<li><p><strong>误差累积</strong>：当将这两个数相加时，误差会累积，因此 <code>0.1 + 0.2</code> 得到的结果不是 <code>0.3</code>，而是 <code>0.30000000000000004</code>。</p>
+</li>
+<li><p><strong>比较失败</strong>：在计算机中，<code>0.3</code> 也不能被精确表示，实际上被表示为 <code>0.29999999999999998889776975374843...</code>。因此，当你将 <code>0.1 + 0.2</code> 的结果与 <code>0.3</code> 进行比较时，二者的二进制表示不一样，导致 <code>0.1 + 0.2 != 0.3</code>。</p>
+</li>
+</ol>
+<h3 id="为什么会发生这种情况？"><a href="#为什么会发生这种情况？" class="headerlink" title="为什么会发生这种情况？"></a>为什么会发生这种情况？</h3><p>这是因为计算机使用二进制表示数，而某些十进制小数无法在二进制系统中精确表示。例如：</p>
+<ul>
+<li>在十进制中，<code>1/3</code> 是无限循环小数 <code>0.3333...</code>；</li>
+<li>在二进制中，<code>0.1</code> 和 <code>0.2</code> 也是类似的无限循环小数。</li>
+</ul>
+<p>浮点数在存储时必须被截断为有限的位数，因此无法精确表示，这会导致计算误差。</p>
+<h3 id="如何应对浮点误差？"><a href="#如何应对浮点误差？" class="headerlink" title="如何应对浮点误差？"></a>如何应对浮点误差？</h3><ol>
+<li><p><strong>使用误差范围进行比较</strong>：在比较两个浮点数时，可以使用一个允许的误差范围（如 epsilon）来避免误差带来的问题。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">epsilon = <span class="number">1e-9</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">abs</span>((a + b) - <span class="number">0.3</span>) &lt; epsilon:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;a + b 等于 0.3&quot;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使用 <code>decimal</code> 模块</strong>：如果需要更高精度的计算，可以使用 Python 的 <code>decimal</code> 模块，它可以进行任意精度的十进制运算。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> decimal <span class="keyword">import</span> Decimal</span><br><span class="line"></span><br><span class="line">a = Decimal(<span class="string">&#x27;0.1&#x27;</span>)</span><br><span class="line">b = Decimal(<span class="string">&#x27;0.2&#x27;</span>)</span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)        <span class="comment"># 输出 0.3</span></span><br><span class="line"><span class="built_in">print</span>(c == Decimal(<span class="string">&#x27;0.3&#x27;</span>))  <span class="comment"># 输出 True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使用 <code>fractions</code> 模块</strong>：可以使用 <code>fractions.Fraction</code> 模块进行有理数运算，避免浮点误差。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> fractions <span class="keyword">import</span> Fraction</span><br><span class="line"></span><br><span class="line">a = Fraction(<span class="number">1</span>, <span class="number">10</span>)  <span class="comment"># 0.1</span></span><br><span class="line">b = Fraction(<span class="number">2</span>, <span class="number">10</span>)  <span class="comment"># 0.2</span></span><br><span class="line">c = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)            <span class="comment"># 输出 3/10</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(c))     <span class="comment"># 输出 0.3</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>浮点运算中的误差是由计算机使用有限位数来表示无限精度的实数造成的。了解浮点数的底层表示和局限性有助于我们编写更加健壮的数值计算程序，避免常见的误差问题。</p>
+<p>————————————————————————————————————————</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>当然，除了 <code>0.1 + 0.2 != 0.3</code> 这个经典的例子之外，还有其他常见的浮点数运算误差案例。下面是几个典型的例子：</p>
+<h3 id="浮点数精度丢失累积问题"><a href="#浮点数精度丢失累积问题" class="headerlink" title="浮点数精度丢失累积问题"></a><strong>浮点数精度丢失累积问题</strong></h3><p>在进行大量浮点运算时，精度丢失会逐渐累积，导致结果与预期相差甚远。</p>
+<h4 id="例子：重复累加"><a href="#例子：重复累加" class="headerlink" title="例子：重复累加"></a>例子：重复累加</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sum_value = <span class="number">0.0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1000000</span>):</span><br><span class="line">    sum_value += <span class="number">0.0001</span> <span class="comment">#按理来说应该是0.0001*1000000=100</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(sum_value)  <span class="comment"># 输出 100.00000000219612</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-1"><a href="#解释：-1" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>理论上，<code>0.0001</code> 累加 1,000,000 次应该等于 <code>100</code>，但实际上输出是 <code>100.00000000015625</code>，比预期值多了一点点。</li>
+<li>这是因为在每次累加过程中，浮点数的微小舍入误差逐渐累积，导致最终的结果与预期值有差异。</li>
+</ul>
+<h3 id="浮点数舍入误差"><a href="#浮点数舍入误差" class="headerlink" title="浮点数舍入误差"></a><strong>浮点数舍入误差</strong></h3><p>某些浮点数在运算过程中，舍入误差会导致最终结果不精确。</p>
+<h4 id="例子：除法运算"><a href="#例子：除法运算" class="headerlink" title="例子：除法运算"></a>例子：除法运算</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1.0</span></span><br><span class="line">b = <span class="number">3.0</span></span><br><span class="line">result = a / b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出 0.3333333333333333</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-2"><a href="#解释：-2" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>理论上 <code>1 / 3</code> 应该是 <code>0.333...</code>，但由于计算机存储位数有限，结果被截断为 <code>0.3333333333333333</code>。</li>
+<li>这是因为浮点数无法精确表示无限小数，计算机会在某个点舍入，从而引入误差。</li>
+</ul>
+<h3 id="大数和小数运算引发的精度丢失"><a href="#大数和小数运算引发的精度丢失" class="headerlink" title="大数和小数运算引发的精度丢失"></a><strong>大数和小数运算引发的精度丢失</strong></h3><p>当一个很大的数和一个很小的数相加时，较小的数可能会被忽略，导致结果失去精度。</p>
+<h4 id="例子：大数与小数相加"><a href="#例子：大数与小数相加" class="headerlink" title="例子：大数与小数相加"></a>例子：大数与小数相加</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1e16</span>  <span class="comment"># 一个非常大的数</span></span><br><span class="line">b = <span class="number">1.0</span>   <span class="comment"># 一个很小的数</span></span><br><span class="line">result = a + b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(result)  <span class="comment"># 输出 1e16， b 被忽略了</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-3"><a href="#解释：-3" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>理论上，<code>a + b</code> 应该是 <code>1e16 + 1 = 10000000000000001</code>，但由于 <code>1e16</code> 远大于 <code>1.0</code>，浮点数无法表示这样的精度差异，因此 <code>b</code> 被忽略了，结果仅输出 <code>1e16</code>。</li>
+<li>这种误差在处理非常大或非常小的数时尤其明显。</li>
+</ul>
+<h3 id="浮点数的非对称性"><a href="#浮点数的非对称性" class="headerlink" title="浮点数的非对称性"></a><strong>浮点数的非对称性</strong></h3><p>浮点数在加法和减法时，结果可能表现出非对称性，导致不可逆的运算。</p>
+<h4 id="例子：浮点数减法的非对称性"><a href="#例子：浮点数减法的非对称性" class="headerlink" title="例子：浮点数减法的非对称性"></a>例子：浮点数减法的非对称性</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">1.0000001</span></span><br><span class="line">b = <span class="number">1.0</span></span><br><span class="line">c = a - b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(c)        <span class="comment"># 输出 1.0000000005838672e-07</span></span><br><span class="line"><span class="built_in">print</span>(c + b)    <span class="comment"># 输出 1.0000001000000001</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-4"><a href="#解释：-4" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li><code>c = a - b</code> 的结果应该是 <code>0.0000001</code>，但由于浮点数精度的限制，计算结果是 <code>1.0000000005838672e-07</code>。</li>
+<li>当你将这个结果再加上 <code>b</code>，你会发现得不到原来的 <code>a = 1.0000001</code>，而是稍大一些的 <code>1.0000001000000001</code>，这说明浮点数的加减法是非对称的，存在舍入误差。</li>
+</ul>
+<h3 id="比较浮点数的陷阱"><a href="#比较浮点数的陷阱" class="headerlink" title="比较浮点数的陷阱"></a><strong>比较浮点数的陷阱</strong></h3><p>由于浮点数的误差问题，直接比较浮点数时可能得不到预期的结果。</p>
+<h4 id="例子：浮点数比较"><a href="#例子：浮点数比较" class="headerlink" title="例子：浮点数比较"></a>例子：浮点数比较</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">0.3</span> * <span class="number">3</span></span><br><span class="line">b = <span class="number">0.9</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)        <span class="comment"># 输出 0.8999999999999999</span></span><br><span class="line"><span class="built_in">print</span>(b)        <span class="comment"># 输出 0.9</span></span><br><span class="line"><span class="built_in">print</span>(a == b)   <span class="comment"># 输出 False</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-5"><a href="#解释：-5" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>理论上，<code>0.3 * 3</code> 应该等于 <code>0.9</code>，但是由于浮点数的误差，<code>0.3 * 3</code> 的结果是 <code>0.8999999999999999</code>，所以 <code>a == b</code> 的结果是 <code>False</code>。</li>
+<li>这是由于浮点数的表示精度有限，乘法运算中引入了微小的舍入误差，导致直接比较结果不相等。</li>
+</ul>
+<h3 id="三角函数计算中的误差"><a href="#三角函数计算中的误差" class="headerlink" title="三角函数计算中的误差"></a><strong>三角函数计算中的误差</strong></h3><p>浮点数运算不仅仅出现在简单的加减乘除，甚至在三角函数等更复杂的计算中也会有误差。</p>
+<h4 id="例子：三角函数的误差"><a href="#例子：三角函数的误差" class="headerlink" title="例子：三角函数的误差"></a>例子：三角函数的误差</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line">x = math.cos(math.pi / <span class="number">3</span>)  <span class="comment"># cos(60°)</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(x)         <span class="comment"># 输出 0.5000000000000001</span></span><br><span class="line"><span class="built_in">print</span>(x == <span class="number">0.5</span>)  <span class="comment"># 输出 False</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-6"><a href="#解释：-6" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>理论上 <code>cos(60°)</code> 应该等于 <code>0.5</code>，但是实际输出是 <code>0.5000000000000001</code>，比预期多了一点。</li>
+<li>这是因为 <code>math.cos()</code> 计算时使用的浮点数表示存在精度限制，因此导致了微小的误差。</li>
+<li>同样的，直接比较 <code>x == 0.5</code> 会返回 <code>False</code>，因为二者并不完全相等。</li>
+</ul>
+<h3 id="浮点数溢出和下溢"><a href="#浮点数溢出和下溢" class="headerlink" title="浮点数溢出和下溢"></a><strong>浮点数溢出和下溢</strong></h3><p>当浮点数过大或者过小时，计算机会产生溢出或下溢（即精度丢失为零）。</p>
+<h4 id="例子：溢出和下溢"><a href="#例子：溢出和下溢" class="headerlink" title="例子：溢出和下溢"></a>例子：溢出和下溢</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 浮点数上限</span></span><br><span class="line">large_num = sys.float_info.<span class="built_in">max</span></span><br><span class="line">small_num = sys.float_info.<span class="built_in">min</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 溢出例子</span></span><br><span class="line"><span class="built_in">print</span>(large_num * <span class="number">2</span>)  <span class="comment"># 输出 inf（无穷大）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下溢例子</span></span><br><span class="line"><span class="built_in">print</span>(small_num / <span class="number">2</span>)  <span class="comment"># 输出 0.0</span></span><br></pre></td></tr></table></figure>
+<h4 id="解释：-7"><a href="#解释：-7" class="headerlink" title="解释："></a>解释：</h4><ul>
+<li>当浮点数超出最大表示范围时，计算机会发生<strong>溢出</strong>，并返回 <code>inf</code>（无穷大）。</li>
+<li>当浮点数接近最小表示范围，并且除以一个较大的数时，计算结果会被下溢为 <code>0.0</code>，这是由于计算精度不够导致的。</li>
+</ul>
+<hr>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>浮点数运算中的误差主要是由于计算机在底层使用有限位数来表示实数。在进行复杂运算时，舍入误差会累积，导致结果与预期不符。因此，在数值计算中：</p>
+<ul>
+<li>尽量避免直接比较浮点数。</li>
+<li>使用误差容忍范围（如 <code>epsilon</code>）进行比较。</li>
+<li>对需要高精度计算的场景，建议使用 <code>decimal</code> 或 <code>fractions</code> 模块。</li>
+</ul>
+<p>这些例子展示了浮点数运算中的常见误差，并提醒我们在设计数值算法时需要考虑这些潜在问题。</p>
+]]></content>
+      <categories>
+        <category>碎片知识</category>
+      </categories>
+      <tags>
+        <tag>计算机</tag>
+        <tag>计算机组成原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>π是否在某种特定进制表示下会成为有限值？</title>
+    <url>/2024/09/10/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/003.%20%E3%80%90%E6%95%B0%E5%AD%A6%E3%80%91%CF%80%E6%98%AF%E5%90%A6%E5%9C%A8%E6%9F%90%E7%A7%8D%E7%89%B9%E5%AE%9A%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E4%B8%8B%E4%BC%9A%E6%88%90%E4%B8%BA%E6%9C%89%E9%99%90%E5%80%BC%EF%BC%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>$π$是否在某种特定进制表示下会成为有限值？</p>
 <blockquote>
+<p>通过我自身的思想去提问Chat-GPT</p>
+</blockquote>
+
+</blockquote>
+<span id="more"></span>
+<h1 id="pi-是否在某种特定进制表示下会成为有限值？"><a href="#pi-是否在某种特定进制表示下会成为有限值？" class="headerlink" title="$\pi$是否在某种特定进制表示下会成为有限值？"></a>$\pi$是否在某种特定进制表示下会成为有限值？</h1><p>———————————————————————————————————————————————</p>
+<h2 id="提问一"><a href="#提问一" class="headerlink" title="提问一"></a>提问一</h2><blockquote>
 <p>那有没有一种可能，派（圆周率）其实在十进制是无限的，但是在某种进制的条件后得到的就是具体值</p>
 </blockquote>
-<p>这是一个有趣的想法，但从数学原理上讲，<strong>圆周率 ()</strong>
-在任何进制系统中都是<strong>无理数</strong>，这意味着它无法表示为两个整数的比值。在任何进制系统中，()
-的表示都会是无限不循环的小数。</p>
-<h3 id="无理数的定义和性质">1. <strong>无理数的定义和性质</strong></h3>
-<p>无理数的定义是： - 它们不能表示为两个整数的比值，即不能写作 ( )，其中
-(a) 和 (b) 是整数。 -
-无理数的小数表示在任何整数基底（如二进制、十进制、八进制等）下都是<strong>无限且不循环的</strong>。</p>
-<p>() 作为一个无理数，具有这些特性。因此，在所有基数系统中，()
-都会表现为一个无限的非循环小数。</p>
-<h3 id="不同进制下的表示">2. <strong>不同进制下的表示</strong></h3>
-<p>无论是十进制、二进制，还是其他进制，()
-的表示都不会有明确的结束或重复。例如： - 在 <strong>十进制</strong>
-中，() 的前几位是：( 3.1415926535) - 在 <strong>二进制</strong> 中，()
-的前几位是：( 11.001001000011111) - 在 <strong>十六进制</strong> 中，()
-的前几位是：( 3.243F6A8885A3)</p>
-<p>在这些进制中，()
-都是无限的，并且不会有一个固定的、结束的值。即使你选择其他进制，例如
-<strong>八进制</strong> 或
-<strong>三进制</strong>，你依然会得到一个无限且不循环的小数。</p>
-<h3 id="为何某些数在特定进制下是有限的">3.
-<strong>为何某些数在特定进制下是有限的？</strong></h3>
-<p>一些分数在某些进制系统下可能表现为有限小数。这是因为它们可以与该进制的基数分解相关。例如：
-- 在十进制下，( = 0.5 ) 是有限的，因为 2 是 10 的因数之一。 -
-在二进制下，( = 0.1 ) 也是有限的，因为二进制的基数是 2。</p>
+<p>这是一个有趣的想法，但从数学原理上讲，<strong>圆周率 (\pi)</strong> 在任何进制系统中都是<strong>无理数</strong>，这意味着它无法表示为两个整数的比值。在任何进制系统中，(\pi) 的表示都会是无限不循环的小数。</p>
+<h3 id="1-无理数的定义和性质"><a href="#1-无理数的定义和性质" class="headerlink" title="1. 无理数的定义和性质"></a>1. <strong>无理数的定义和性质</strong></h3><p>无理数的定义是：</p>
+<ul>
+<li>它们不能表示为两个整数的比值，即不能写作 ( \frac{a}{b} )，其中 (a) 和 (b) 是整数。</li>
+<li>无理数的小数表示在任何整数基底（如二进制、十进制、八进制等）下都是<strong>无限且不循环的</strong>。</li>
+</ul>
+<p>(\pi) 作为一个无理数，具有这些特性。因此，在所有基数系统中，(\pi) 都会表现为一个无限的非循环小数。</p>
+<h3 id="2-不同进制下的表示"><a href="#2-不同进制下的表示" class="headerlink" title="2. 不同进制下的表示"></a>2. <strong>不同进制下的表示</strong></h3><p>无论是十进制、二进制，还是其他进制，(\pi) 的表示都不会有明确的结束或重复。例如：</p>
+<ul>
+<li>在 <strong>十进制</strong> 中，(\pi) 的前几位是：( 3.1415926535\ldots )</li>
+<li>在 <strong>二进制</strong> 中，(\pi) 的前几位是：( 11.001001000011111\ldots )</li>
+<li>在 <strong>十六进制</strong> 中，(\pi) 的前几位是：( 3.243F6A8885A3\ldots )</li>
+</ul>
+<p>在这些进制中，(\pi) 都是无限的，并且不会有一个固定的、结束的值。即使你选择其他进制，例如 <strong>八进制</strong> 或 <strong>三进制</strong>，你依然会得到一个无限且不循环的小数。</p>
+<h3 id="3-为何某些数在特定进制下是有限的？"><a href="#3-为何某些数在特定进制下是有限的？" class="headerlink" title="3. 为何某些数在特定进制下是有限的？"></a>3. <strong>为何某些数在特定进制下是有限的？</strong></h3><p>一些分数在某些进制系统下可能表现为有限小数。这是因为它们可以与该进制的基数分解相关。例如：</p>
+<ul>
+<li>在十进制下，( \frac{1}{2} = 0.5 ) 是有限的，因为 2 是 10 的因数之一。</li>
+<li>在二进制下，( \frac{1}{2} = 0.1 ) 也是有限的，因为二进制的基数是 2。</li>
+</ul>
 <p>然而，<strong>无理数没有这种性质</strong>。它们在任何进制系统下都无法通过整数因子来表示，因此它们在所有进制中都是无限的。</p>
-<h3 id="数学证明和理论">4. <strong>数学证明和理论</strong></h3>
-<p>根据数学中的证明，()
-是一个<strong>超越数</strong>，这意味着它不仅仅是无理数，甚至无法通过任何代数方程来精确表示。超越数的存在也保证了它不可能在任何进制下是一个有限的数。</p>
+<h3 id="4-数学证明和理论"><a href="#4-数学证明和理论" class="headerlink" title="4. 数学证明和理论"></a>4. <strong>数学证明和理论</strong></h3><p>根据数学中的证明，(\pi) 是一个<strong>超越数</strong>，这意味着它不仅仅是无理数，甚至无法通过任何代数方程来精确表示。超越数的存在也保证了它不可能在任何进制下是一个有限的数。</p>
 <p>有一些数学定理也证明了无理数在任何整数基底下都会是无限不循环小数。例如，<strong>无理数在十进制</strong>下的表示方式与其在<strong>二进制</strong>、<strong>八进制</strong>等系统下是等价的。</p>
-<h3 id="总结">5. <strong>总结</strong></h3>
-<p>你提出的“在某种进制下()
-是有限数值”的假设，虽然很有趣，但从数学角度来看是不可能的。由于()
-是无理数，它在任何进制中都会是一个<strong>无限不循环</strong>的小数。</p>
-<p>这也是为什么数学家对()
-进行了大量的研究和计算，希望能够通过更多的位数更接近其真实值，但它始终无法以具体的、有限的数字形式表示。</p>
+<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. <strong>总结</strong></h3><p>你提出的“在某种进制下(\pi) 是有限数值”的假设，虽然很有趣，但从数学角度来看是不可能的。由于(\pi) 是无理数，它在任何进制中都会是一个<strong>无限不循环</strong>的小数。</p>
+<p>这也是为什么数学家对(\pi) 进行了大量的研究和计算，希望能够通过更多的位数更接近其真实值，但它始终无法以具体的、有限的数字形式表示。</p>
 <p>————————————————————————————————————————————————————</p>
-<h2 id="提问二">提问二</h2>
-<blockquote>
+<h2 id="提问二"><a href="#提问二" class="headerlink" title="提问二"></a>提问二</h2><blockquote>
 <p>我觉得我能推翻这个理论</p>
 </blockquote>
-<p>你的想法非常有趣，挑战和思考现有的数学理论是创新的源泉。虽然数学上目前已经有严格的证明表明
-()
-在所有整数进制下都是无理数，因此表现为无限不循环的小数，但如果你觉得可以提出新的理论或证据推翻这个观点，探索这个过程本身就具有很高的价值。</p>
-<h3 id="推翻理论的过程">推翻理论的过程</h3>
-<p>在科学和数学中，推翻一个广泛接受的理论通常需要经过以下步骤：</p>
-<ol type="1">
-<li><strong>定义假设</strong>：
+<p>你的想法非常有趣，挑战和思考现有的数学理论是创新的源泉。虽然数学上目前已经有严格的证明表明 (\pi) 在所有整数进制下都是无理数，因此表现为无限不循环的小数，但如果你觉得可以提出新的理论或证据推翻这个观点，探索这个过程本身就具有很高的价值。</p>
+<h3 id="推翻理论的过程"><a href="#推翻理论的过程" class="headerlink" title="推翻理论的过程"></a>推翻理论的过程</h3><p>在科学和数学中，推翻一个广泛接受的理论通常需要经过以下步骤：</p>
+<ol>
+<li><p><strong>定义假设</strong>：</p>
 <ul>
-<li>你需要明确地提出你的假设是什么。例如，假设 ()
-在某种非传统的进制中可以表现为有限小数或循环小数。</li>
-</ul></li>
-<li><strong>建立数学模型</strong>：
+<li>你需要明确地提出你的假设是什么。例如，假设 (\pi) 在某种非传统的进制中可以表现为有限小数或循环小数。</li>
+</ul>
+</li>
+<li><p><strong>建立数学模型</strong>：</p>
 <ul>
-<li>你需要定义这个进制的规则。当前的无理数理论是基于常规的进制系统（如二进制、十进制等）构建的。如果你能够提出一种新进制，且在这种进制下能证明
-() 是有限数值，那么这就是一种新的数学模型。</li>
-</ul></li>
-<li><strong>证明或提供反例</strong>：
+<li>你需要定义这个进制的规则。当前的无理数理论是基于常规的进制系统（如二进制、十进制等）构建的。如果你能够提出一种新进制，且在这种进制下能证明 (\pi) 是有限数值，那么这就是一种新的数学模型。</li>
+</ul>
+</li>
+<li><p><strong>证明或提供反例</strong>：</p>
 <ul>
-<li>使用数学工具或计算方法，证明在你提出的进制系统下 ()
-能够被表示为有限小数或一个具体的值。</li>
+<li>使用数学工具或计算方法，证明在你提出的进制系统下 (\pi) 能够被表示为有限小数或一个具体的值。</li>
 <li>你可以通过构造反例来证明现有理论存在漏洞，或者直接给出计算结果和公式支持新的理论。</li>
-</ul></li>
-<li><strong>验证和同行评审</strong>：
+</ul>
+</li>
+<li><p><strong>验证和同行评审</strong>：</p>
 <ul>
 <li>你需要让其他数学家或研究者审阅你的理论，并且他们需要能够独立复现你的结果。这是任何数学或科学理论获得广泛接受的关键。</li>
-</ul></li>
+</ul>
+</li>
 </ol>
-<h3 id="难点">难点</h3>
-<p>推翻一个已经经过长期验证的理论会有很大难度，特别是像 ()
-这样的超越数，经过了数百年数学家的研究和严谨的证明。如果在某种新的进制下
-()
-可以是有限小数，这会意味着我们对无理数、超越数以及数论的一些根本认知需要重新评估。</p>
-<p>例如，()
-的无理性已经被证明适用于所有整数进制，也就是那些以固定的数作为基数（如2进制、10进制、16进制等）。为了推翻现有理论，你可能需要定义一个非常特殊或非标准的进制系统（也许是非整数基底或某种不依赖整数的进制系统）。</p>
-<h3 id="数学的开放性">数学的开放性</h3>
-<p>数学是一个开放的领域，虽然许多理论已经有严格的证明，但新的发现总是有可能的。推翻现有的理论可能需要在某个我们当前还没有探索到的数学角度下进行。如果你能找到新的路径，提出一种新的进制系统，甚至在现有的无理数理论下找到一些误区或盲点，这将是一个重要的突破。</p>
+<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><p>推翻一个已经经过长期验证的理论会有很大难度，特别是像 (\pi) 这样的超越数，经过了数百年数学家的研究和严谨的证明。如果在某种新的进制下 (\pi) 可以是有限小数，这会意味着我们对无理数、超越数以及数论的一些根本认知需要重新评估。</p>
+<p>例如，(\pi) 的无理性已经被证明适用于所有整数进制，也就是那些以固定的数作为基数（如2进制、10进制、16进制等）。为了推翻现有理论，你可能需要定义一个非常特殊或非标准的进制系统（也许是非整数基底或某种不依赖整数的进制系统）。</p>
+<h3 id="数学的开放性"><a href="#数学的开放性" class="headerlink" title="数学的开放性"></a>数学的开放性</h3><p>数学是一个开放的领域，虽然许多理论已经有严格的证明，但新的发现总是有可能的。推翻现有的理论可能需要在某个我们当前还没有探索到的数学角度下进行。如果你能找到新的路径，提出一种新的进制系统，甚至在现有的无理数理论下找到一些误区或盲点，这将是一个重要的突破。</p>
 <p>如果你有具体的想法，建议将其写成一个严格的数学论文，详细描述你的假设、证明步骤和结果。无论结果如何，探索过程本身都会帮助你更深入地理解数学的基础。</p>
 <p>————————————————————————————————————————————————</p>
-<h2 id="提问三">提问三</h2>
-<blockquote>
+<h2 id="提问三"><a href="#提问三" class="headerlink" title="提问三"></a>提问三</h2><blockquote>
 <p>现在我的进制是小数进制，而非平常的二八十和十六</p>
 </blockquote>
-<p><strong>小数进制</strong>作为一种非整数进制的概念，确实是一个非常有趣且富有创造性的想法。如果你打算使用<strong>小数作为基数</strong>，而非通常的整数基数（如二进制、十进制等），这将是对传统数论和进制理论的一次创新探索。让我们仔细探讨这个思路，并探讨这种进制是否有可能让
-() 成为有限数。</p>
-<h3 id="什么是小数进制">1. <strong>什么是小数进制？</strong></h3>
-<p>传统的进制系统（如二进制、八进制、十进制、十六进制等）基于整数作为基数。例如：
-- 二进制基数是2，表示方式依赖于({0, 1})； -
-十进制基数是10，表示方式依赖于({0, 1, 2, ..., 9})。</p>
-<p><strong>小数进制</strong>意味着<strong>基数本身是一个小数</strong>，比如说，基数是
-( 2.5 )、( 3.14 ) 或 ( 1.618 )
-等。换句话说，这种进制系统中，数位的权重不是像在整数进制中那样以整数次方递增，而是以小数的次方递增。</p>
-<p>例如，在一个以基数 ( b = 2.5 ) 的进制中，数字 ( N ) 可以表示为： [ N
-= d_n (2.5)^n + d_{n-1} (2.5)^{n-1} + + d_1 (2.5)^1 + d_0 (2.5)^0 +
-d_{-1} (2.5)^{-1} + ] 其中 ( d_i ) 是该进制下的数位，类似于传统进制中的
-( {0, 1, 2, , b-1} ) 的选择。</p>
-<h3 id="在小数进制中的表示">2. <strong>()
-在小数进制中的表示</strong></h3>
-<p>如果我们考虑在小数进制下表示 ()，你希望的结果是，在这种进制中，()
-可能会是一个有限或循环小数（即类似于 (1/3) 在十进制下的 (0.333) 或 (1/2)
-在二进制下的 (0.1) ）。</p>
-<p>但这里的问题是：<strong>无理数的无理性不依赖于具体的进制</strong>。无理数的定义是无法表示为两个整数的比值，因此不论我们选择哪种进制，它在该进制下依然应该表现为一个无限非循环小数。即使我们改变基数，从整数变为小数，除非基数是特别设计的与
-() 有关的值，否则很难让 () 表现为有限小数。</p>
-<p>例如： - 假设我们使用<strong>小数基数 ( b = 3.14 )</strong>，()
-在这种进制下可能会表现出特殊的性质，但它仍然可能是一个无限小数，只是表现形式会改变。</p>
-<h3 id="挑战和可能的方向">3. <strong>挑战和可能的方向</strong></h3>
+<p><strong>小数进制</strong>作为一种非整数进制的概念，确实是一个非常有趣且富有创造性的想法。如果你打算使用<strong>小数作为基数</strong>，而非通常的整数基数（如二进制、十进制等），这将是对传统数论和进制理论的一次创新探索。让我们仔细探讨这个思路，并探讨这种进制是否有可能让 (\pi) 成为有限数。</p>
+<h3 id="1-什么是小数进制？"><a href="#1-什么是小数进制？" class="headerlink" title="1. 什么是小数进制？"></a>1. <strong>什么是小数进制？</strong></h3><p>传统的进制系统（如二进制、八进制、十进制、十六进制等）基于整数作为基数。例如：</p>
 <ul>
-<li><p><strong>进制与数的关系</strong>：你所构思的小数进制，是否有可能为某些特定的无理数（比如
-()）提供有限小数表示，取决于该进制的设计。如果你能够设计一个<strong>特殊的进制</strong>，这个进制的基数恰好能与
-() 的特性产生共鸣（比如某种与圆周率相关的基数），理论上是可能让 ()
-在这种进制中表现为有限数。</p></li>
-<li><p><strong>具体进制如何定义？</strong>你需要定义该进制的数位系统和进位规则。例如，基数如果是小数
-( b = 3.14 )，那么如何设计它的数位符号？类似十进制有 ( {0, 1, 2, , 9}
-)，而你的进制数位范围可能会是什么？</p></li>
-<li><p><strong>转换过程</strong>：你可以尝试推导如何将传统十进制或二进制表示的数（如
-()）转换为你所设计的进制，看看结果是无限的、循环的还是有限的。</p></li>
+<li>二进制基数是2，表示方式依赖于({0, 1})；</li>
+<li>十进制基数是10，表示方式依赖于({0, 1, 2, …, 9})。</li>
 </ul>
-<h3 id="理论上的困难">4. <strong>理论上的困难</strong></h3>
-<p>无理数的性质是基于它无法以有限的整数分数表示，这种性质在所有现有的进制系统中都存在。要让
-() 在某种进制中成为有限数，你可能需要： -
-构建一个新的进制系统，其中的<strong>数位分布方式与传统进制不同</strong>；
-- 设计这种进制使其<strong>与 () 的数值特性紧密相关</strong>。</p>
+<p><strong>小数进制</strong>意味着<strong>基数本身是一个小数</strong>，比如说，基数是 ( 2.5 )、( 3.14 ) 或 ( 1.618 ) 等。换句话说，这种进制系统中，数位的权重不是像在整数进制中那样以整数次方递增，而是以小数的次方递增。</p>
+<p>例如，在一个以基数 ( b = 2.5 ) 的进制中，数字 ( N ) 可以表示为：<br>[<br>N = d<em>n \cdot (2.5)^n + d</em>{n-1} \cdot (2.5)^{n-1} + \cdots + d<em>1 \cdot (2.5)^1 + d_0 \cdot (2.5)^0 + d</em>{-1} \cdot (2.5)^{-1} + \cdots<br>]<br>其中 ( d_i ) 是该进制下的数位，类似于传统进制中的 ( {0, 1, 2, \dots, b-1} ) 的选择。</p>
+<h3 id="2-pi-在小数进制中的表示"><a href="#2-pi-在小数进制中的表示" class="headerlink" title="2. (\pi) 在小数进制中的表示"></a>2. <strong>(\pi) 在小数进制中的表示</strong></h3><p>如果我们考虑在小数进制下表示 (\pi)，你希望的结果是，在这种进制中，(\pi) 可能会是一个有限或循环小数（即类似于 (1/3) 在十进制下的 (0.333\ldots) 或 (1/2) 在二进制下的 (0.1) ）。</p>
+<p>但这里的问题是：<strong>无理数的无理性不依赖于具体的进制</strong>。无理数的定义是无法表示为两个整数的比值，因此不论我们选择哪种进制，它在该进制下依然应该表现为一个无限非循环小数。即使我们改变基数，从整数变为小数，除非基数是特别设计的与 (\pi) 有关的值，否则很难让 (\pi) 表现为有限小数。</p>
+<p>例如：</p>
+<ul>
+<li>假设我们使用<strong>小数基数 ( b = 3.14 )</strong>，(\pi) 在这种进制下可能会表现出特殊的性质，但它仍然可能是一个无限小数，只是表现形式会改变。</li>
+</ul>
+<h3 id="3-挑战和可能的方向"><a href="#3-挑战和可能的方向" class="headerlink" title="3. 挑战和可能的方向"></a>3. <strong>挑战和可能的方向</strong></h3><ul>
+<li><p><strong>进制与数的关系</strong>：你所构思的小数进制，是否有可能为某些特定的无理数（比如 (\pi)）提供有限小数表示，取决于该进制的设计。如果你能够设计一个<strong>特殊的进制</strong>，这个进制的基数恰好能与 (\pi) 的特性产生共鸣（比如某种与圆周率相关的基数），理论上是可能让 (\pi) 在这种进制中表现为有限数。</p>
+</li>
+<li><p><strong>具体进制如何定义？</strong>你需要定义该进制的数位系统和进位规则。例如，基数如果是小数 ( b = 3.14 )，那么如何设计它的数位符号？类似十进制有 ( {0, 1, 2, \dots, 9} )，而你的进制数位范围可能会是什么？</p>
+</li>
+<li><p><strong>转换过程</strong>：你可以尝试推导如何将传统十进制或二进制表示的数（如 (\pi)）转换为你所设计的进制，看看结果是无限的、循环的还是有限的。</p>
+</li>
+</ul>
+<h3 id="4-理论上的困难"><a href="#4-理论上的困难" class="headerlink" title="4. 理论上的困难"></a>4. <strong>理论上的困难</strong></h3><p>无理数的性质是基于它无法以有限的整数分数表示，这种性质在所有现有的进制系统中都存在。要让 (\pi) 在某种进制中成为有限数，你可能需要：</p>
+<ul>
+<li>构建一个新的进制系统，其中的<strong>数位分布方式与传统进制不同</strong>；</li>
+<li>设计这种进制使其<strong>与 (\pi) 的数值特性紧密相关</strong>。</li>
+</ul>
 <p>在现有的数学框架下，小数进制虽然可以作为一种新的表示方式，但仍然会面临无理数在所有常规进制中都是无限小数的数学结论。</p>
-<h3 id="实验和验证">5. <strong>实验和验证</strong></h3>
-<p>你可以编写一个程序，来计算 ()
-在某个你设定的小数进制下的表示，观察其表现是否会无限或变为有限。对于这样一个新的进制系统，计算和实验可能会带来一些新的启示。</p>
-<h3 id="总结-1">6. <strong>总结</strong></h3>
-<p>你提出的“小数进制”是一个非常有创造性的想法，但从现有的数学角度来看，<strong>无理数的无理性在任何进制下都存在</strong>，因此在通常的理解下，()
-应该在任何基数下都表现为无限不循环的小数。不过，如果你能够找到一种特殊的小数进制，使得
-() 在这种进制下表现为有限数，那将是一个非常有趣的数学发现。</p>
+<h3 id="5-实验和验证"><a href="#5-实验和验证" class="headerlink" title="5. 实验和验证"></a>5. <strong>实验和验证</strong></h3><p>你可以编写一个程序，来计算 (\pi) 在某个你设定的小数进制下的表示，观察其表现是否会无限或变为有限。对于这样一个新的进制系统，计算和实验可能会带来一些新的启示。</p>
+<h3 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. <strong>总结</strong></h3><p>你提出的“小数进制”是一个非常有创造性的想法，但从现有的数学角度来看，<strong>无理数的无理性在任何进制下都存在</strong>，因此在通常的理解下，(\pi) 应该在任何基数下都表现为无限不循环的小数。不过，如果你能够找到一种特殊的小数进制，使得 (\pi) 在这种进制下表现为有限数，那将是一个非常有趣的数学发现。</p>
 <p>如果你决定进一步探索这个想法，建议你通过计算实验或者深入研究数论中的进制转换问题，来验证这个假设的可行性。</p>
 <p>——————————————————————————————————————</p>
-<h2 id="提问四">提问四</h2>
-<blockquote>
+<h2 id="提问四"><a href="#提问四" class="headerlink" title="提问四"></a>提问四</h2><blockquote>
 <p>基数是无理数</p>
 </blockquote>
 <p><strong>基数为无理数</strong>的进制系统确实是一个非常有趣的想法。这种进制系统与我们通常所使用的进制系统（整数进制，如二进制、十进制等）截然不同。</p>
-<p>如果基数为无理数，比如说 () 或
-()，这种进制系统在数学上会带来一些新的特性和挑战。接下来我们一起探讨基数为无理数的进制，尤其是这种进制对数字表示的影响，特别是你关注的
-() 的表示问题。</p>
-<h3 id="什么是基数为无理数的进制">1.
-<strong>什么是基数为无理数的进制？</strong></h3>
-<p>在整数进制中，我们通过递增的整数幂来表示数值。例如，十进制表示为： [
-N = d_n ^n + d_{n-1} ^{n-1} + + d_0 ^0 + d_{-1} ^{-1} + ] 其中 ( d_i )
-是各位的数字，取值范围为 ( {0, 1, 2, , 9} )。</p>
-<p>如果基数 ( b ) 是无理数，如 ( b = )，那么一个数 ( N )
-的表示可能看起来是这样的： [ N = d_n ()^n + d_{n-1} ()^{n-1} + + d_0
-()^0 + d_{-1} ()^{-1} + ]
-此时数位的权重不是整数次幂，而是无理数的次幂。</p>
-<h3 id="基数为无理数的进制特性">2.
-<strong>基数为无理数的进制特性</strong></h3>
-<ul>
-<li><p><strong>复杂的表示形式</strong>：无理数的幂次运算会产生复杂的数字表示，数位的权重会因为基数的无理性而变得更加复杂。传统的整数进制是基于整数幂次，而无理数基数下的幂次变化带来的是更加复杂的数位分布和进位规则。</p></li>
-<li><p><strong>数位表示范围</strong>：你可能需要定义一种新的数位符号系统。对于整数进制，我们通常使用
-(0) 到 (b-1)
-的符号表示各个位上的值，但对于无理数基数，这样的符号系统可能需要进行调整。例如，对于基数
-( )，我们如何定义可用的数位符号呢？这个是需要思考的。</p></li>
-<li><p><strong>进位和四舍五入规则</strong>：无理数进制下的进位规则将非常复杂，因为每个数位的值可能并不再是简单的整数，而是与无理数基数的某种非整数倍数相关。</p></li>
+<p>如果基数为无理数，比如说 (\sqrt{2}) 或 (\pi)，这种进制系统在数学上会带来一些新的特性和挑战。接下来我们一起探讨基数为无理数的进制，尤其是这种进制对数字表示的影响，特别是你关注的 (\pi) 的表示问题。</p>
+<h3 id="1-什么是基数为无理数的进制？"><a href="#1-什么是基数为无理数的进制？" class="headerlink" title="1. 什么是基数为无理数的进制？"></a>1. <strong>什么是基数为无理数的进制？</strong></h3><p>在整数进制中，我们通过递增的整数幂来表示数值。例如，十进制表示为：<br>[<br>N = d<em>n \cdot 10^n + d</em>{n-1} \cdot 10^{n-1} + \cdots + d<em>0 \cdot 10^0 + d</em>{-1} \cdot 10^{-1} + \cdots<br>]<br>其中 ( d_i ) 是各位的数字，取值范围为 ( {0, 1, 2, \dots, 9} )。</p>
+<p>如果基数 ( b ) 是无理数，如 ( b = \sqrt{2} )，那么一个数 ( N ) 的表示可能看起来是这样的：<br>[<br>N = d<em>n \cdot (\sqrt{2})^n + d</em>{n-1} \cdot (\sqrt{2})^{n-1} + \cdots + d<em>0 \cdot (\sqrt{2})^0 + d</em>{-1} \cdot (\sqrt{2})^{-1} + \cdots<br>]<br>此时数位的权重不是整数次幂，而是无理数的次幂。</p>
+<h3 id="2-基数为无理数的进制特性"><a href="#2-基数为无理数的进制特性" class="headerlink" title="2. 基数为无理数的进制特性"></a>2. <strong>基数为无理数的进制特性</strong></h3><ul>
+<li><p><strong>复杂的表示形式</strong>：无理数的幂次运算会产生复杂的数字表示，数位的权重会因为基数的无理性而变得更加复杂。传统的整数进制是基于整数幂次，而无理数基数下的幂次变化带来的是更加复杂的数位分布和进位规则。</p>
+</li>
+<li><p><strong>数位表示范围</strong>：你可能需要定义一种新的数位符号系统。对于整数进制，我们通常使用 (0) 到 (b-1) 的符号表示各个位上的值，但对于无理数基数，这样的符号系统可能需要进行调整。例如，对于基数 ( \sqrt{2} )，我们如何定义可用的数位符号呢？这个是需要思考的。</p>
+</li>
+<li><p><strong>进位和四舍五入规则</strong>：无理数进制下的进位规则将非常复杂，因为每个数位的值可能并不再是简单的整数，而是与无理数基数的某种非整数倍数相关。</p>
+</li>
 </ul>
-<h3 id="在无理数进制中的表示">3. <strong>()
-在无理数进制中的表示</strong></h3>
-<p>如果基数 ( b ) 是无理数，比如说 ( b =
-)，你可能希望看看在这种进制下，() 能否表现为有限小数或循环小数。</p>
+<h3 id="3-pi-在无理数进制中的表示"><a href="#3-pi-在无理数进制中的表示" class="headerlink" title="3. (\pi) 在无理数进制中的表示"></a>3. <strong>(\pi) 在无理数进制中的表示</strong></h3><p>如果基数 ( b ) 是无理数，比如说 ( b = \pi )，你可能希望看看在这种进制下，(\pi) 能否表现为有限小数或循环小数。</p>
 <ul>
-<li><p><strong>无理数的本质</strong>：无理数的定义是<strong>无法表示为两个整数的比值</strong>。因此，尽管改变了基数，从理论上讲，这并不会改变无理数的本质。无理数的无理性是一个独立于进制的性质，即它不能被写成有限的有理数（即两个整数之比）。所以在无理数进制中，()
-仍然会是无理数，通常依然是无限不循环的小数。</p></li>
-<li><p><strong>特殊基数选择的可能性</strong>：如果我们选择的基数是 ( b =
-)，() 本身在这个进制下可能会表现为 ( 1.0 )，就像数字 ( 10 ) 在十进制下是
-( 10 )。然而，其他无理数（比如 ( e )、( )
-等）在这个进制下依然会表现为无限小数。</p></li>
+<li><p><strong>无理数的本质</strong>：无理数的定义是<strong>无法表示为两个整数的比值</strong>。因此，尽管改变了基数，从理论上讲，这并不会改变无理数的本质。无理数的无理性是一个独立于进制的性质，即它不能被写成有限的有理数（即两个整数之比）。所以在无理数进制中，(\pi) 仍然会是无理数，通常依然是无限不循环的小数。</p>
+</li>
+<li><p><strong>特殊基数选择的可能性</strong>：如果我们选择的基数是 ( b = \pi )，(\pi) 本身在这个进制下可能会表现为 ( 1.0 )，就像数字 ( 10 ) 在十进制下是 ( 10 )。然而，其他无理数（比如 ( e )、( \sqrt{2} ) 等）在这个进制下依然会表现为无限小数。</p>
+</li>
 </ul>
-<h3 id="基数为-的进制示例">4. <strong>基数为 () 的进制示例</strong></h3>
-<p>假设我们选择基数 ( b = )，并尝试表示某些数：</p>
+<h3 id="4-基数为-pi-的进制示例"><a href="#4-基数为-pi-的进制示例" class="headerlink" title="4. 基数为 (\pi) 的进制示例"></a>4. <strong>基数为 (\pi) 的进制示例</strong></h3><p>假设我们选择基数 ( b = \pi )，并尝试表示某些数：</p>
 <ul>
-<li><p><strong>() 在基数 () 的进制下</strong>：在这种情况下，()
-的表示会是 ( 1.0_{} )，类似于十进制的 ( 10 ) 或二进制的 ( 10_2
-)。</p></li>
-<li><p><strong>其他数的表示</strong>：但如果我们表示其他数（比如 ( 1 )
-或 ( e )），它们在这种进制下依然会是复杂的无限小数。比如：</p>
+<li><p><strong>(\pi) 在基数 (\pi) 的进制下</strong>：在这种情况下，(\pi) 的表示会是 ( 1.0_{\pi} )，类似于十进制的 ( 10 ) 或二进制的 ( 10_2 )。</p>
+</li>
+<li><p><strong>其他数的表示</strong>：但如果我们表示其他数（比如 ( 1 ) 或 ( e )），它们在这种进制下依然会是复杂的无限小数。比如：</p>
 <ul>
-<li>( 1 ) 在 ( )-进制下可能会表现为一个类似于 ( 0.31830989_{} )
-的无限小数。</li>
-<li>类似地，( e ) 在 ( )-进制下的表示也是无限不循环的。</li>
-</ul></li>
+<li>( 1 ) 在 ( \pi )-进制下可能会表现为一个类似于 ( 0.31830989_{\pi} ) 的无限小数。</li>
+<li>类似地，( e ) 在 ( \pi )-进制下的表示也是无限不循环的。</li>
 </ul>
-<h3 id="理论上的困难和探索方向">5.
-<strong>理论上的困难和探索方向</strong></h3>
-<p>虽然在无理数进制下，数字的表示会变得非常有趣且复杂，但数学证明表明，<strong>无理数的无理性在所有进制系统中都存在</strong>。这意味着，无论你选择什么基数，无理数在这些系统下的表示通常仍然会是无限不循环小数。</p>
-<p>然而，探索无理数基数进制的意义在于： -
-<strong>进制表示的规律性</strong>：在某些无理数进制下，某些数（尤其是与该基数相关的数，如
-() 或 ()）的表示可能会更为简洁和对称。 -
-<strong>特殊性质的发掘</strong>：虽然无理数本质不会改变，但你或许可以发现某些数在无理数基数下的表示更加直观。</p>
-<h3 id="进一步探索">6. <strong>进一步探索</strong></h3>
-<p>如果你想进一步探索这个概念，你可以尝试以下步骤：</p>
-<ul>
-<li><p><strong>定义一个无理数基数系统</strong>：明确你所选择的无理数基数（比如
-( )、( )）的数位表示和进位规则。</p></li>
-<li><p><strong>计算一些数字的表示</strong>：编写代码或进行手工计算，看看
-()、( e )、1
-等数在这种无理数基数下的表示是什么样的，看看是否有任何规律。</p></li>
-<li><p><strong>探索进制对数表示的影响</strong>：尝试理解在无理数进制下，数位如何变化、进位如何发生，以及这种表示是否能带来新的数论性质或简化某些计算。</p></li>
+</li>
 </ul>
-<h3 id="总结-2">7. <strong>总结</strong></h3>
-<p>基数为无理数的进制是一个非常独特的概念，尽管从理论上无理数的本质不会因为基数的选择而改变，但这种进制可能会提供一些新的视角来理解数字之间的关系。如果你能够找到一种方法，使得某些无理数在特定的无理数基数下有更简洁的表示，那将是一个非常有趣的数学发现。</p>
+<h3 id="5-理论上的困难和探索方向"><a href="#5-理论上的困难和探索方向" class="headerlink" title="5. 理论上的困难和探索方向"></a>5. <strong>理论上的困难和探索方向</strong></h3><p>虽然在无理数进制下，数字的表示会变得非常有趣且复杂，但数学证明表明，<strong>无理数的无理性在所有进制系统中都存在</strong>。这意味着，无论你选择什么基数，无理数在这些系统下的表示通常仍然会是无限不循环小数。</p>
+<p>然而，探索无理数基数进制的意义在于：</p>
+<ul>
+<li><strong>进制表示的规律性</strong>：在某些无理数进制下，某些数（尤其是与该基数相关的数，如 (\pi) 或 (\sqrt{2})）的表示可能会更为简洁和对称。</li>
+<li><strong>特殊性质的发掘</strong>：虽然无理数本质不会改变，但你或许可以发现某些数在无理数基数下的表示更加直观。</li>
+</ul>
+<h3 id="6-进一步探索"><a href="#6-进一步探索" class="headerlink" title="6. 进一步探索"></a>6. <strong>进一步探索</strong></h3><p>如果你想进一步探索这个概念，你可以尝试以下步骤：</p>
+<ul>
+<li><p><strong>定义一个无理数基数系统</strong>：明确你所选择的无理数基数（比如 ( \pi )、( \sqrt{2} )）的数位表示和进位规则。</p>
+</li>
+<li><p><strong>计算一些数字的表示</strong>：编写代码或进行手工计算，看看 (\pi)、( e )、1 等数在这种无理数基数下的表示是什么样的，看看是否有任何规律。</p>
+</li>
+<li><p><strong>探索进制对数表示的影响</strong>：尝试理解在无理数进制下，数位如何变化、进位如何发生，以及这种表示是否能带来新的数论性质或简化某些计算。</p>
+</li>
+</ul>
+<h3 id="7-总结"><a href="#7-总结" class="headerlink" title="7. 总结"></a>7. <strong>总结</strong></h3><p>基数为无理数的进制是一个非常独特的概念，尽管从理论上无理数的本质不会因为基数的选择而改变，但这种进制可能会提供一些新的视角来理解数字之间的关系。如果你能够找到一种方法，使得某些无理数在特定的无理数基数下有更简洁的表示，那将是一个非常有趣的数学发现。</p>
 <p>无理数进制下的探索也许不会推翻已有的数论基础，但它可能会揭示出新的进制系统中的对称性和规律。</p>
-<h2 id="我的感想">我的感想</h2>
-<p>我觉得这是一个很有意义也具有挑战性的研究，但基本理论不容易推翻，而且从以上回答来看，我同样觉得无理数就是一种无理的存在。</p>
+<h2 id="我的感想"><a href="#我的感想" class="headerlink" title="我的感想"></a>我的感想</h2><p>我觉得这是一个很有意义思考，但基本理论不容易推翻，而且从以上回答来看，我同样觉得无理数就是一种无理的存在。</p>
 ]]></content>
+      <categories>
+        <category>碎片知识</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>π</tag>
+      </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2024/09/13/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/004.%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="仿射变换">仿射变换</h1>
-<p>仿射变换（Affine
-Transformation）是一类保持点间直线性和平行关系的几何变换，它在计算机视觉、图像处理和几何计算中非常常见。仿射变换的底层原理依赖于矩阵运算，它能够对图像进行平移、缩放、旋转和剪切等操作。</p>
-<h3 id="仿射变换的数学基础">仿射变换的数学基础</h3>
-<p>仿射变换可以用矩阵表示。假设我们有一个二维点 ((x,
-y))，经过仿射变换后得到的新点 ((x',
-y'))，这个过程可以用以下矩阵方程表示：</p>
-<p><span class="math display">\[
+    <title>仿射变换</title>
+    <url>/2024/09/11/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/156.%20%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%20%EF%BC%88%E6%A0%B9%E6%8D%AE%E6%BB%B4%E7%AD%94%E7%9F%A5%E8%AF%86%E7%A2%8E%E7%89%87%E8%BF%9B%E8%A1%8C%EF%BC%89/004.%E3%80%90%E8%AE%A1%E7%AE%97%E6%9C%BA%E3%80%91%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>图像是如何进行各种变换的？这里不得不提一提<strong>仿射变换</strong>了。</p>
+
+</blockquote>
+<span id="more"></span>
+<h1 id="仿射变换"><a href="#仿射变换" class="headerlink" title="仿射变换"></a>仿射变换</h1><p>仿射变换（Affine Transformation）是一类保持点间直线性和平行关系的几何变换，它在计算机视觉、图像处理和几何计算中非常常见。仿射变换的底层原理依赖于矩阵运算，它能够对图像进行平移、缩放、旋转和剪切等操作。</p>
+<h3 id="仿射变换的数学基础"><a href="#仿射变换的数学基础" class="headerlink" title="仿射变换的数学基础"></a>仿射变换的数学基础</h3><p>仿射变换可以用矩阵表示。假设我们有一个二维点 ((x, y))，经过仿射变换后得到的新点 ((x’, y’))，这个过程可以用以下矩阵方程表示：</p>
+<script type="math/tex; mode=display">
 \begin{pmatrix}
-x&#39; \\
-y&#39; \\
+x' \\
+y' \\
 1
 \end{pmatrix}
 =
 \begin{pmatrix}
-a &amp; b &amp; tx \\
-c &amp; d &amp; ty \\
-0 &amp; 0 &amp; 1
+a & b & tx \\
+c & d & ty \\
+0 & 0 & 1
 \end{pmatrix}
 \begin{pmatrix}
 x \\
 y \\
 1
-\end{pmatrix}
-\]</span></p>
-<p>这个矩阵方程表示了一个 2D 点通过仿射变换映射到新的位置： <span class="math display">\[
-x&#39; = ax + by + tx
-\]</span></p>
-<p><span class="math display">\[
-y&#39; = cx + dy + ty
-\]</span></p>
-<h3 id="仿射变换的组成">仿射变换的组成</h3>
-<ol type="1">
-<li><p><strong>缩放 (Scaling)</strong>：通过矩阵的对角线元素控制。矩阵的
-<code>a</code> 和 <code>d</code> 元素分别决定在 (x) 和 (y)
-方向的缩放因子。</p>
+\end{pmatrix}</script><p>这个矩阵方程表示了一个 2D 点通过仿射变换映射到新的位置：</p>
+<script type="math/tex; mode=display">
+x' = ax + by + tx</script><script type="math/tex; mode=display">
+y' = cx + dy + ty</script><h3 id="仿射变换的组成"><a href="#仿射变换的组成" class="headerlink" title="仿射变换的组成"></a>仿射变换的组成</h3><ol>
+<li><p><strong>缩放 (Scaling)</strong>：通过矩阵的对角线元素控制。矩阵的 <code>a</code> 和 <code>d</code> 元素分别决定在 (x) 和 (y) 方向的缩放因子。</p>
 <ul>
 <li>(a) 和 (d) 控制横向和纵向缩放比例。如果 (a = d = 1)，则不缩放。</li>
-</ul></li>
-<li><p><strong>旋转 (Rotation)</strong>：通过矩阵的 <code>a</code>,
-<code>b</code>, <code>c</code>, <code>d</code> 元素控制，旋转角度为
-()，其矩阵形式为： <span class="math display">\[
+</ul>
+</li>
+<li><p><strong>旋转 (Rotation)</strong>：通过矩阵的 <code>a</code>, <code>b</code>, <code>c</code>, <code>d</code> 元素控制，旋转角度为 (\theta)，其矩阵形式为：</p>
+<script type="math/tex; mode=display">
 \begin{pmatrix}
-\cos\theta &amp; -\sin\theta \\
-\sin\theta &amp; \cos\theta
-\end{pmatrix}
-\]</span></p>
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta
+\end{pmatrix}</script></li>
+</ol>
 <ul>
 <li>旋转保留了图形的大小，只是改变了图像的角度。</li>
-</ul></li>
-<li><p><strong>平移 (Translation)</strong>：由 <code>tx</code> 和
-<code>ty</code> 控制，分别表示在 (x) 和 (y)
-方向上的移动量。矩阵的最后一列 (tx, ty) 控制平移。</p></li>
-<li><p><strong>剪切 (Shearing)</strong>：由 <code>b</code> 和
-<code>c</code> 元素控制，定义了图像在 (x) 或 (y)
-方向上的倾斜程度。</p></li>
-</ol>
-<h3 id="仿射变换的几何意义">仿射变换的几何意义</h3>
-<p>仿射变换不仅可以改变物体的位置、方向和大小，而且能够保持几何结构的某些性质，如直线性和平行性。即：
-- 经过仿射变换，直线仍然是直线。 - 平行线在仿射变换后依然平行。 -
-但长度和角度一般会发生改变，除非是特定的仿射变换（如等距变换）保持距离和角度。</p>
-<h3 id="仿射变换的矩阵分解">仿射变换的矩阵分解</h3>
-<p>仿射变换矩阵可以分解成若干简单变换的组合： 1.
-<strong>旋转矩阵</strong>：控制物体的旋转。 2.
-<strong>缩放矩阵</strong>：控制物体的大小。 3.
-<strong>剪切矩阵</strong>：控制物体的倾斜。 4.
-<strong>平移矩阵</strong>：控制物体的位置。</p>
-<p>例如，一个仿射变换矩阵可以表示为以下几个变换的组合： <span class="math display">\[
-\mathbf{T} = \mathbf{T}_{\text{translation}} \cdot
-\mathbf{T}_{\text{rotation}} \cdot \mathbf{T}_{\text{scaling}} \cdot
-\mathbf{T}_{\text{shearing}}
-\]</span></p>
-<h3 id="仿射变换在图像处理中的应用">仿射变换在图像处理中的应用</h3>
-<p>在图像处理中，仿射变换的应用非常广泛，比如： -
-<strong>图像旋转</strong>：旋转图像以校正其角度。 -
-<strong>图像缩放</strong>：调整图像大小以适应不同的显示或处理需求。 -
-<strong>图像配准</strong>：将不同图像对齐，通过旋转、平移等操作使它们的几何形态匹配。</p>
-<p>在这些操作中，仿射变换能通过矩阵乘法高效计算，使得图像的每个像素点都能准确地映射到新的位置。</p>
-<h3 id="结论">结论</h3>
-<p>仿射变换的核心在于矩阵乘法，它允许通过统一的线性代数方法实现复杂的几何变换。在处理图像时，仿射变换将每个像素点的坐标通过矩阵运算映射到新位置，从而完成旋转、平移、缩放等操作。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hexo+NexT博客搭建及美化(二)</title>
-    <url>/2024/09/13/07.%20%E5%85%B6%E4%BB%96%E7%B1%BB%E7%9B%AE/001.%20BlogSet/Hexo+NexT%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%BA%8C)/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p>该篇章主要讲解我的博客搭建的过程和主题美化流程（下）。</p>
-
-</blockquote>
-<span id="more"></span>
-<h2 id="hexo指定文件跳过渲染">Hexo指定文件跳过渲染</h2>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render</span>: </span><br><span class="line">  - <span class="string">&quot;skipfiles/**/*&quot;</span> #跳过source下该匹配的所有文件</span><br><span class="line">  - <span class="string">&quot;README.md&quot;</span> #跳过source的<span class="variable constant_">README</span>.<span class="property">md</span>文件，上传<span class="title class_">GitHub</span>可以在主仓库展示</span><br></pre></td></tr></table></figure>
-<ul>
-<li>尝试了好久，结果后来看了官网只是因为没有添加引号</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">skip_render: <span class="string">&quot;mypage/**/*&quot;</span></span><br><span class="line"># 将会直接将 `source/mypage/index.html` 和 `source/mypage/code.js` 不做改动地输出到 <span class="string">&#x27;public&#x27;</span> 目录</span><br><span class="line"># 你也可以用这种方法来跳过对指定文章文件的渲染</span><br><span class="line">skip_render: <span class="string">&quot;_posts/test-post.md&quot;</span></span><br><span class="line"># 这将会忽略对 <span class="string">&#x27;test-post.md&#x27;</span> 的渲染</span><br></pre></td></tr></table></figure>
-<p>但是！！！！还是不行，最后感谢一位<span class="exturl" data-url="aHR0cHM6Ly9uZXR0ZWUuZ2l0aHViLmlvL3Bvc3RzLzIwMTgvU2tpcC1yZW5kZXJpbmctZmlsZXMtaW4tSGV4by8=">大佬博客<i class="fa fa-external-link-alt"></i></span>，我设置成了这样</p>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240428235405599.png" alt="image-20240428235405599">
-<figcaption aria-hidden="true">image-20240428235405599</figcaption>
-</figure>
-<p>成功了！！！！<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240428235441554.png" alt="image-20240428235441554"></p>
-<h2 id="重点">重点</h2>
-<p>每次修改东西后一定一定要<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code>进行本地测试，然后没有问题再<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>上传GitHub渲染，不然后面遇到的问题你都不知道是出在哪儿。</p>
-<h2 id="tabs筛选框">tabs筛选框</h2>
-<h3 id="解题">解题</h3>
-<div class="tabs" id><ul class="nav-tabs"><li class="tab active"><a href="#-1">Python3</a></li><li class="tab"><a href="#-2">Java</a></li><li class="tab"><a href="#-3">C++</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def lengthOfLongestSubstring(self, s: str) -&gt; int:</span><br><span class="line">        record = set()</span><br><span class="line">        l = 0</span><br><span class="line">        res = 0</span><br><span class="line">        for r in range(len(s)):</span><br><span class="line">            while s[r] in record:</span><br><span class="line">                record.remove(s[l])</span><br><span class="line">                l += 1</span><br><span class="line">            record.add(s[r])</span><br><span class="line">            res = res if r - l + 1 &lt; res else r - l + 1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">lengthOfLongestSubstring</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        Map&lt;Character, Integer&gt; record = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(); <span class="comment">//记录已遍历的最长不重复连续子串</span></span><br><span class="line">        <span class="comment">// 定义滑动窗口</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> r;</span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (r = <span class="number">0</span>; r &lt; s.length(); r++)&#123; <span class="comment">//遍历字符</span></span><br><span class="line">            <span class="comment">// 判断是否已记录，如果没有则添加，如果有，则在记录中删除并滑动left</span></span><br><span class="line">            <span class="keyword">while</span>(record.containsKey(s.charAt(r)))&#123; <span class="comment">// 有，删除并滑动窗口</span></span><br><span class="line">                record.remove(s.charAt(l));</span><br><span class="line">                l += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            record.put(s.charAt(r), r);</span><br><span class="line">             <span class="comment">// 已记录的和当前的滑动窗口长度选择较大的</span></span><br><span class="line">             res = r - l + <span class="number">1</span> &lt; res ? res : r - l + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="-3"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></div></div></div>
-]]></content>
-      <categories>
-        <category>blogSet</category>
-      </categories>
-      <tags>
-        <tag>博客搭建</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo+NexT博客搭建及美化(一)</title>
-    <url>/2001/10/10/07.%20%E5%85%B6%E4%BB%96%E7%B1%BB%E7%9B%AE/001.%20BlogSet/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%B8%80)/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p>该篇章主要讲解我的博客搭建的过程和主题美化流程（上）。</p>
-
-</blockquote>
-<span id="more"></span>
-<h2 id="hexo依赖环境安装">Hexo依赖环境安装</h2>
-<h3 id="安装nodejs查看是否安装成功">安装<span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL3poLWNuLw==">nodejs<i class="fa fa-external-link-alt"></i></span>查看是否安装成功</h3>
-<p>如图：</p>
-<figure>
-<img data-src="/images/setBlog/02_npm查看版本.png" alt="npm版本">
-<figcaption aria-hidden="true">npm版本</figcaption>
-</figure>
-<figure>
-<img data-src="/images/setBlog/01_nodejs查看版本.png" alt="nodejs版本">
-<figcaption aria-hidden="true">nodejs版本</figcaption>
-</figure>
-<h3 id="安装-git">安装 <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS8=">Git<i class="fa fa-external-link-alt"></i></span></h3>
-<figure>
-<img data-src="/images/setBlog/03_git查看版本.png" alt="git版本">
-<figcaption aria-hidden="true">git版本</figcaption>
-</figure>
-<h3 id="安装-hexo">安装 Hexo</h3>
-<p>先创建一个空仓库（文件夹）作为你的博客，然后终端进入该仓库</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 hexo 框架</span></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 初始化文件夹</span></span><br><span class="line">hexo init</span><br><span class="line"><span class="comment"># 安装 hexo 依赖包</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>如果以上安装出现错误的，请<code>更换镜像源</code>或者选择<code>科学上网</code>(请自行查阅)</p>
-<h3 id="检测hexo">检测<code>Hexo</code></h3>
-<p><code>hexo  clean &amp;&amp; hexo g &amp;&amp; hexo s</code></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hexo  clean:</span><br><span class="line">hexo g:</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="/images/setBlog/04_Hexo第一次启动.png" alt="Hexo启动">
-<figcaption aria-hidden="true">Hexo启动</figcaption>
-</figure>
-<h3 id="更换主题">更换主题</h3>
-<p>这里以<code>NexT</code>主题为例</p>
-<p>在你的仓库文件夹下<code>clone</code>(选择好自己的版本，版本之间的设置有差别)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<figure>
-<img data-src="/images/setBlog/05_NexT版本查看.png" alt="NexT版本">
-<figcaption aria-hidden="true">NexT版本</figcaption>
-</figure>
-<p>根配置<code>_config.yml</code></p>
-<figure>
-<img data-src="/images/setBlog/06_NexT主题配置.png" alt="NexT主题配置">
-<figcaption aria-hidden="true">NexT主题配置</figcaption>
-</figure>
-<h3 id="github部署"><code>GitHub</code>部署</h3>
-<p>Install <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWRlcGxveWVyLWdpdA==">hexo-deployer-git<i class="fa fa-external-link-alt"></i></span>.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 需要安装插件</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>配置站点 <code>_config.yml</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repo</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">repository</span> <span class="attr">url</span>&gt;</span> #https://xxxx/johnsmith.bitbucket.io</span></span><br><span class="line"><span class="language-xml">  branch: [branch]</span></span><br><span class="line"><span class="language-xml">  message: [message]</span></span><br></pre></td></tr></table></figure>
-<h2 id="hexo主题配置">Hexo主题配置</h2>
-<h3 id="说明">说明</h3>
-<p>我的主题版本<code>NexT8.19.2</code>，<a href="https://ethanliu6.github.io/">点击查看最终效果</a></p>
-<blockquote>
-<p>注意：</p>
-<p><code>NexT</code>主题拥有不同的版本，GitHub开源地址也不同</p>
-<p>主要版本：NexT5.0+；NexT7.0+；NexT8.0+</p>
-</blockquote>
-<p>参考文献：<span class="exturl" data-url="aHR0cHM6Ly9zbGFtLWxlYXJuZXIuZ2l0aHViLmlvLzIwMjQvMDIvMDcvJUU3JThFJUFGJUU1JUEyJTgzJUU5JTg1JThEJUU3JUJEJUFFL0hleG8rTmV4dCVFOSU4NSU4RCVFNyVCRCVBRSVFNSU4RCU5QSVFNSVBRSVBMi8jJUU1JUIwJTg2JUU1JThEJTlBJUU1JUFFJUEyJUU5JTgzJUE4JUU3JUJEJUIyJUU4JTg3JUIzJUU0JUJBJTkxJUU3JUFCJUFG">Hexo+Next配置博客<i class="fa fa-external-link-alt"></i></span><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<h3 id="添加背景">添加背景</h3>
-<p>主题配置文件的<code>custom_file_path</code>选项取消<code>style</code>注释</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path</span>: </span><br><span class="line">  #<span class="attr">style</span>: source/_data/styles.<span class="property">styl</span> <span class="comment">// 修改前</span></span><br><span class="line">  <span class="attr">style</span>: source/_data/styles.<span class="property">styl</span> <span class="comment">// 取消后</span></span><br></pre></td></tr></table></figure>
-<p>站点新建文件夹<code>_data/</code>和文件<code>styles.styl</code>，即：
-<code>/source/_data/styles.styl</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// styles.styl中添加内容</span></span><br><span class="line">body &#123;</span><br><span class="line">    <span class="attr">background</span>: <span class="title function_">url</span>(<span class="regexp">/images/</span>background.<span class="property">png</span>); <span class="comment">//是主题NexT的images</span></span><br><span class="line">    background-<span class="attr">repeat</span>: no-repeat; <span class="comment">//不重复</span></span><br><span class="line">    background-<span class="attr">attachment</span>: fixed; <span class="comment">// 滚动后背景也填充</span></span><br><span class="line">    background-<span class="attr">size</span>: cover;      <span class="comment">//是否填充，cover填充</span></span><br><span class="line">    background-<span class="attr">position</span>: center; <span class="comment">//背景图片位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="文章">文章</h3>
-<ul>
-<li><p>公式：参考文献：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTUxMTE4OS9hcnRpY2xlL2RldGFpbHMvMTE1Nzk4NTYz">hexo博客next主题添加对数学公式的支持<i class="fa fa-external-link-alt"></i></span><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>这种我对行间的不成功，所以用了<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL21hdGgtZXF1YXRpb25zLmh0bWw/aGlnaGxpZ2h0PW1hdGg=">官方文档<i class="fa fa-external-link-alt"></i></span>提供的<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLXJlbmRlcmVyLXBhbmRvYw==">panco<i class="fa fa-external-link-alt"></i></span></p></li>
-<li><p>主题字体：参考文献： <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hxd2VheS9hcnRpY2xlL2RldGFpbHMvMTA3NTc5MzY0">Hexo Next
-主题字体相关配置<i class="fa fa-external-link-alt"></i></span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p></li>
-<li><p>样式：</p>
-<ul>
-<li><p>主题一些很nice的自定样式<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2FkdmFuY2VkLXNldHRpbmdzL2N1c3RvbS1maWxlcw==">官网<i class="fa fa-external-link-alt"></i></span></p></li>
-<li><p>好看的post字样：<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL25vdGUuaHRtbD9oaWdobGlnaHQ9YmFja2dyb3VuZA==">官网Note
-(Bootstrap Callout)<i class="fa fa-external-link-alt"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dyb3dpbmdfcG90YXRvL2FydGljbGUvZGV0YWlscy8xMTM5MjY4NTY=">next主题美化——背景图片、页面透明化、阴影、圆角、动画<i class="fa fa-external-link-alt"></i></span><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p></li>
-</ul></li>
-<li><p>文章加密：<span class="exturl" data-url="aHR0cHM6Ly9hbGV4LW1jYXZveS5naXRodWIuaW8vaGV4by80ODM5MzllMC5odG1s">文章加密Next
-7.0+ 实现文章加密<i class="fa fa-external-link-alt"></i></span><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mi9hcnRpY2xlL2RldGFpbHMvMTE2NjE0NjIy">Hexo博客技巧：对文章进行加密<i class="fa fa-external-link-alt"></i></span><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p></li>
-<li><p>复选框：<span class="exturl" data-url="aHR0cHM6Ly93d3cucGFub3NodS50b3AvYmxvZy8yYzNmOWUzOC8=">Hexo
-Stellar 和 Next 主题支持 KaTex 公式与 Markdown 复杂表格<i class="fa fa-external-link-alt"></i></span><a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>，这个在我上面会有冲突，所以我卸载了，打算以后需要使用复选框再想办法弄</p>
-<p>复选框效果：<img data-src="/images/setBlog/07_复选框展示.jpg" alt="复选框效果"></p></li>
-<li><p>NexT 主题行内代码背景颜色设置：<span class="exturl" data-url="aHR0cHM6Ly96ZW5nZmFueW9uZ2NuLmdpdGh1Yi5pby8yMDIyLzA0LzE3L2NvZGUtYmFja2dyb3VuZC8=">行内代码单独设置<i class="fa fa-external-link-alt"></i></span><a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p></li>
-</ul>
-<h3 id="主题配置">主题配置</h3>
-<ul>
-<li>缓存</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"># <span class="title class_">Remove</span> unnecessary files after hexo generate.</span><br><span class="line"><span class="attr">minify</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>PDF支持：<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL3BkZg==">PDF<i class="fa fa-external-link-alt"></i></span></p></li>
-<li><p>站点地图</p></li>
-</ul>
-<p><code>npm install hexo-generator-sitemap --save</code></p>
-<p>这个相当于是对指定浏览器收录自己文章，这里按照官网的操作执行就行，我选择了Bing的配置设置</p>
-<p>README.md跳过</p>
-<h3 id="新增导航栏">新增导航栏</h3>
-<p>这里我以自己的<code>Love</code>导航设置为例</p>
-<p>站点source文件添加<code>Love</code>文件夹并配置<code>index.md</code></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Hexo</span> <span class="keyword">new</span> page <span class="title class_">Love</span>/</span><br><span class="line"> <span class="comment">//进入Love文件夹，修改index.md内容</span></span><br><span class="line"><span class="attr">title</span>: 我和珠珠</span><br><span class="line"><span class="attr">date</span>: <span class="number">2024</span>-<span class="number">04</span>-<span class="number">11</span> <span class="number">23</span>:<span class="number">29</span>:<span class="number">36</span></span><br><span class="line"><span class="attr">categories</span>: <span class="title class_">Love</span></span><br><span class="line"><span class="attr">type</span>: <span class="title class_">Love</span>   </span><br></pre></td></tr></table></figure>
-<p>主题配置文件下的<code>menu</code>菜单添加：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Love</span>: <span class="regexp">/categories/</span><span class="title class_">Love</span>/ || fas fa-heart</span><br></pre></td></tr></table></figure>
-<p>source/_posts/<code>下添加</code>love/`文件夹</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 主要是用于文章整理分类</span></span><br><span class="line">cd source/_posts/</span><br><span class="line">mkdir love</span><br><span class="line">cd love</span><br><span class="line">touch <span class="variable constant_">XXX</span>.<span class="property">md</span></span><br></pre></td></tr></table></figure>
-<p>XXX.md`配置并写入内容</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">title</span>: 每日记录<span class="number">2024</span>-<span class="number">04</span>-<span class="number">13</span></span><br><span class="line"><span class="attr">date</span>:</span><br><span class="line"><span class="attr">categories</span>: <span class="title class_">Love</span></span><br><span class="line"><span class="attr">tags</span>: </span><br><span class="line">  - 日记</span><br><span class="line">  - love</span><br></pre></td></tr></table></figure>
-<p>注意:</p>
-<p>如果在<code>_post/</code>之外的markdown文件配置有<code>togs</code>时候，会报错，在GitHub的issues里有人解释</p>
-<p>例如：</p>
-<figure>
-<img data-src="/images/setBlog/08_tags误用案例.png" alt="tags误用案例">
-<figcaption aria-hidden="true">tags误用案例</figcaption>
-</figure>
-<p>issues分析：</p>
-<figure>
-<img data-src="/images/setBlog/09_bug-tag问题.png" alt="tags报错">
-<figcaption aria-hidden="true">tags报错</figcaption>
-</figure>
-<h2 id="参考文献">参考文献</h2>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
 <ol>
-<li id="fn1"><p>https://slam-learner.github.io/2024/02/07/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/Hexo+Next%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2/#%E5%B0%86%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E8%87%B3%E4%BA%91%E7%AB%AF<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>https://blog.csdn.net/weixin_45511189/article/details/115798563<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>https://blog.csdn.net/hqweay/article/details/107579364<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>https://blog.csdn.net/Growing_potato/article/details/113926856<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>https://alex-mcavoy.github.io/hexo/483939e0.html<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>https://blog.csdn.net/weixin_58068682/article/details/116614622<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>https://blog.csdn.net/Growing_potato/article/details/113926856<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>https://zengfanyongcn.github.io/2022/04/17/code-background/<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li><p><strong>平移 (Translation)</strong>：由 <code>tx</code> 和 <code>ty</code> 控制，分别表示在 (x) 和 (y) 方向上的移动量。矩阵的最后一列 (tx, ty) 控制平移。</p>
+</li>
+<li><p><strong>剪切 (Shearing)</strong>：由 <code>b</code> 和 <code>c</code> 元素控制，定义了图像在 (x) 或 (y) 方向上的倾斜程度。</p>
+</li>
 </ol>
-</section>
+<h3 id="仿射变换的几何意义"><a href="#仿射变换的几何意义" class="headerlink" title="仿射变换的几何意义"></a>仿射变换的几何意义</h3><p>仿射变换不仅可以改变物体的位置、方向和大小，而且能够保持几何结构的某些性质，如直线性和平行性。即：</p>
+<ul>
+<li>经过仿射变换，直线仍然是直线。</li>
+<li>平行线在仿射变换后依然平行。</li>
+<li>但长度和角度一般会发生改变，除非是特定的仿射变换（如等距变换）保持距离和角度。</li>
+</ul>
+<h3 id="仿射变换的矩阵分解"><a href="#仿射变换的矩阵分解" class="headerlink" title="仿射变换的矩阵分解"></a>仿射变换的矩阵分解</h3><p>仿射变换矩阵可以分解成若干简单变换的组合：</p>
+<ol>
+<li><strong>旋转矩阵</strong>：控制物体的旋转。</li>
+<li><strong>缩放矩阵</strong>：控制物体的大小。</li>
+<li><strong>剪切矩阵</strong>：控制物体的倾斜。</li>
+<li><strong>平移矩阵</strong>：控制物体的位置。</li>
+</ol>
+<p>例如，一个仿射变换矩阵可以表示为以下几个变换的组合：</p>
+<script type="math/tex; mode=display">
+\mathbf{T} = \mathbf{T}_{\text{translation}} \cdot \mathbf{T}_{\text{rotation}} \cdot \mathbf{T}_{\text{scaling}} \cdot \mathbf{T}_{\text{shearing}}</script><h3 id="仿射变换在图像处理中的应用"><a href="#仿射变换在图像处理中的应用" class="headerlink" title="仿射变换在图像处理中的应用"></a>仿射变换在图像处理中的应用</h3><p>在图像处理中，仿射变换的应用非常广泛，比如：</p>
+<ul>
+<li><strong>图像旋转</strong>：旋转图像以校正其角度。</li>
+<li><strong>图像缩放</strong>：调整图像大小以适应不同的显示或处理需求。</li>
+<li><strong>图像配准</strong>：将不同图像对齐，通过旋转、平移等操作使它们的几何形态匹配。</li>
+</ul>
+<p>在这些操作中，仿射变换能通过矩阵乘法高效计算，使得图像的每个像素点都能准确地映射到新的位置。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>仿射变换的核心在于矩阵乘法，它允许通过统一的线性代数方法实现复杂的几何变换。在处理图像时，仿射变换将每个像素点的坐标通过矩阵运算映射到新位置，从而完成旋转、平移、缩放等操作。</p>
 ]]></content>
       <categories>
-        <category>blogSet</category>
+        <category>碎片知识</category>
       </categories>
       <tags>
-        <tag>博客搭建</tag>
-        <tag>Hexo</tag>
+        <tag>计算机图形学</tag>
+        <tag>数学</tag>
+        <tag>线性代数</tag>
       </tags>
   </entry>
   <entry>
     <title>Causal Inference In Python</title>
     <url>/2024/09/13/04.%20%E5%AD%A6%E6%9C%AF%E7%9B%B8%E5%85%B3%E3%80%90100%E3%80%91/Academic/econometrics/%E5%9B%A0%E6%9E%9C%E6%8E%A8%E7%90%86%E5%9C%A8python%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
-<p><em>Causal Inference In
-Python</em>原著，由于自己刚开始学习，暂时没有具体学习内容。</p>
-<p>PDF版本可自行下载：<a href="/academic/books/Causal_Inference_in_Python.pdf">Causal Inference
-in Python</a></p>
+<p><em>Causal Inference In Python</em>原著，由于自己刚开始学习，暂时没有具体学习内容。</p>
+<p>PDF版本可自行下载：<a href="/academic/books/Causal_Inference_in_Python.pdf">Causal Inference in Python</a></p>
 
 </blockquote>
 <span id="more"></span>
@@ -938,7 +636,6 @@ in Python</a></p>
 ]]></content>
       <categories>
         <category>经济学</category>
-        <category>学术</category>
       </categories>
       <tags>
         <tag>因果推理</tag>
@@ -997,28 +694,20 @@ in Python</a></p>
 
 </blockquote>
 <span id="more"></span>
-<h2 id="脚本sql问题">脚本SQL问题</h2>
-<h3 id="对于字符串的脚本">对于字符串的脚本</h3>
-<p>error:<code>java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','飞科科技有限公司',50,'剃须不残留',1)' at line 1</code></p>
-<p>//对于varchar类型的需要添加"<code>''</code>"</p>
+<h2 id="脚本SQL问题"><a href="#脚本SQL问题" class="headerlink" title="脚本SQL问题"></a>脚本SQL问题</h2><h3 id="对于字符串的脚本"><a href="#对于字符串的脚本" class="headerlink" title="对于字符串的脚本"></a>对于字符串的脚本</h3><p>error:<code>java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;&#39;,&#39;飞科科技有限公司&#39;,50,&#39;剃须不残留&#39;,1)&#39; at line 1</code></p>
+<p> //对于varchar类型的需要添加”<code>&#39;&#39;</code>“</p>
 <p>例如<code>String companyName = brand.getCompanyName();</code></p>
-<p>在SQL中使用<code>companyName</code>时需要添加<code>''</code></p>
-<p>.....<code>+"'"+ brandName +"'" +","</code></p>
+<p>在SQL中使用<code>companyName</code>时需要添加<code>&#39;&#39;</code></p>
+<p>…..<code>+&quot;&#39;&quot;+ brandName +&quot;&#39;&quot; +&quot;,&quot;</code></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">addBrand</span><span class="params">(Brand brand)</span> <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> brand.getId();</span><br><span class="line">    <span class="type">String</span> <span class="variable">brandName</span> <span class="operator">=</span> brand.getBrandName();</span><br><span class="line">    <span class="type">String</span> <span class="variable">companyName</span> <span class="operator">=</span> brand.getCompanyName();</span><br><span class="line">    <span class="type">int</span> <span class="variable">ordered</span> <span class="operator">=</span> brand.getOrdered();</span><br><span class="line">    <span class="type">String</span> <span class="variable">description</span> <span class="operator">=</span> brand.getDescription();</span><br><span class="line">    <span class="type">int</span> <span class="variable">status</span> <span class="operator">=</span> brand.getStatus();</span><br><span class="line">    brand.toString();</span><br><span class="line"></span><br><span class="line">    sql = <span class="string">&quot;insert into tb_brand (id, brand_name, company_name, ordered, description, status) values(&quot;</span></span><br><span class="line">            + id + <span class="string">&quot;,&quot;</span></span><br><span class="line">            +<span class="string">&quot;&#x27;&quot;</span>+ brandName +<span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot;,&quot;</span> <span class="comment">//对于varchar类型的需要添加&quot;&#x27;&#x27;&quot;</span></span><br><span class="line">            +<span class="string">&quot;&#x27;&quot;</span>+ companyName +<span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot;,&quot;</span></span><br><span class="line">            + ordered  + <span class="string">&quot;,&quot;</span></span><br><span class="line">            +<span class="string">&quot;&#x27;&quot;</span>+ description +<span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot;,&quot;</span></span><br><span class="line">            + status + <span class="string">&quot;)&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="添加数据脚本出错">添加数据脚本出错</h3>
-<p>改了好久，一直提示说第一个参数未给定，尝试了很多种办法，<code>最后发现是前面的代码重新初始化了一个PrepareStatement</code>对象</p>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240505180529100.png" alt="image-20240505180529100">
-<figcaption aria-hidden="true">image-20240505180529100</figcaption>
-</figure>
+<h3 id="添加数据脚本出错"><a href="#添加数据脚本出错" class="headerlink" title="添加数据脚本出错"></a>添加数据脚本出错</h3><p>改了好久，一直提示说第一个参数未给定，尝试了很多种办法，<code>最后发现是前面的代码重新初始化了一个PrepareStatement</code>对象</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240505180529100.png" alt="image-20240505180529100"></p>
 ]]></content>
       <categories>
-        <category>MySQL</category>
+        <category>个人bug</category>
       </categories>
       <tags>
-        <tag>Java</tag>
-        <tag>MySQL</tag>
-        <tag>Error</tag>
+        <tag>JDBC</tag>
       </tags>
   </entry>
   <entry>
@@ -1029,17 +718,27 @@ in Python</a></p>
 
 </blockquote>
 <span id="more"></span>
-<ol type="1">
+<ol>
 <li><p>前往文件夹</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Command + Shift + G</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Command + Shift + G</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>显示隐藏文件</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Command + Shift + .</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Command + Shift + .</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>文件夹显示方式</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Command + J</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Command + J</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>显示文件信息</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Command + I</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Command + I</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
 ]]></content>
+      <categories>
+        <category>电脑知识</category>
+      </categories>
+      <tags>
+        <tag>MacOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>第三章、线性神经网络</title>
@@ -1231,8 +930,10 @@ b的误差: tensor([0.7791], grad_fn=&lt;SubBackward0&gt;)</code></pre>
   <entry>
     <title>MacOS端口占用解决</title>
     <url>/2024/09/13/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/009.%20%E7%A2%8E%E7%89%87%E5%92%8Cbug/240530%20MacOS%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E8%A7%A3%E5%86%B3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>
-]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>电脑知识</category>
+      </categories>
   </entry>
   <entry>
     <title>macOS易忘终端命令</title>
@@ -1242,7 +943,50 @@ b的误差: tensor([0.7791], grad_fn=&lt;SubBackward0&gt;)</code></pre>
 
 </blockquote>
 <span id="more"></span>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">命令</th>
+<th style="text-align:center">操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">pwd</td>
+<td style="text-align:center">当前所在工作目录</td>
+</tr>
+<tr>
+<td style="text-align:center">ps aux</td>
+<td style="text-align:center">查看所有进程</td>
+</tr>
+<tr>
+<td style="text-align:center">xxx1 \</td>
+<td style="text-align:center">grep xxx2</td>
+<td>管道：在xxx1中找到xxx2</td>
+</tr>
+<tr>
+<td style="text-align:center">xxx &gt; log.log</td>
+<td style="text-align:center">输出重定向: &gt;覆盖；&gt;&gt;追加</td>
+</tr>
+<tr>
+<td style="text-align:center">kill -9 PID</td>
+<td style="text-align:center">强制杀死进程</td>
+</tr>
+<tr>
+<td style="text-align:center">cat filename.txt</td>
+<td style="text-align:center">查看文件内容</td>
+</tr>
+</tbody>
+</table>
+</div>
 ]]></content>
+      <categories>
+        <category>电脑知识</category>
+      </categories>
+      <tags>
+        <tag>MacOS</tag>
+      </tags>
   </entry>
   <entry>
     <title>剑指offer</title>
@@ -11655,6 +11399,149 @@ args) throws IOException {</p>
       <tags>
         <tag>Java</tag>
         <tag>Java进阶</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo+NexT博客搭建及美化(一)</title>
+    <url>/2024/03/06/07.%20%E5%85%B6%E4%BB%96%E7%B1%BB%E7%9B%AE/001.%20BlogSet/240306%20Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%B8%80)/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>该篇章主要讲解我的博客搭建的过程和主题美化流程（上）。</p>
+
+</blockquote>
+<span id="more"></span>
+<h2 id="Hexo依赖环境安装"><a href="#Hexo依赖环境安装" class="headerlink" title="Hexo依赖环境安装"></a>Hexo依赖环境安装</h2><h3 id="安装nodejs查看是否安装成功"><a href="#安装nodejs查看是否安装成功" class="headerlink" title="安装nodejs查看是否安装成功"></a>安装<span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnL3poLWNuLw==">nodejs<i class="fa fa-external-link-alt"></i></span>查看是否安装成功</h3><p>如图：</p>
+<p> <img data-src="/images/setBlog/02_npm查看版本.png" alt="npm版本"></p>
+<p><img data-src="/images/setBlog/01_nodejs查看版本.png" alt="nodejs版本"></p>
+<h3 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS8=">Git<i class="fa fa-external-link-alt"></i></span></h3><p><img data-src="/images/setBlog/03_git查看版本.png" alt="git版本"></p>
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>先创建一个空仓库（文件夹）作为你的博客，然后终端进入该仓库</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 安装 hexo 框架</span></span><br><span class="line">npm install -g hexo-cli</span><br><span class="line"><span class="comment"># 初始化文件夹</span></span><br><span class="line">hexo init</span><br><span class="line"><span class="comment"># 安装 hexo 依赖包</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>如果以上安装出现错误的，请<code>更换镜像源</code>或者选择<code>科学上网</code>(请自行查阅)</p>
+<h3 id="检测Hexo"><a href="#检测Hexo" class="headerlink" title="检测Hexo"></a>检测<code>Hexo</code></h3><p><code>hexo  clean &amp;&amp; hexo g &amp;&amp; hexo s</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">hexo  clean:</span><br><span class="line">hexo g:</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/setBlog/04_Hexo第一次启动.png" alt="Hexo启动"></p>
+<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>这里以<code>NexT</code>主题为例</p>
+<p>在你的仓库文件夹下<code>clone</code>(选择好自己的版本，版本之间的设置有差别)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p><img data-src="/images/setBlog/05_NexT版本查看.png" alt="NexT版本"></p>
+<p>根配置<code>_config.yml</code></p>
+<p><img data-src="/images/setBlog/06_NexT主题配置.png" alt="NexT主题配置"></p>
+<h3 id="GitHub部署"><a href="#GitHub部署" class="headerlink" title="GitHub部署"></a><code>GitHub</code>部署</h3><p>Install <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLWRlcGxveWVyLWdpdA==">hexo-deployer-git<i class="fa fa-external-link-alt"></i></span>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 需要安装插件</span></span><br><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>配置站点 <code>_config.yml</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy</span>:</span><br><span class="line">  <span class="attr">type</span>: git</span><br><span class="line">  <span class="attr">repo</span>: <span class="language-xml"><span class="tag">&lt;<span class="name">repository</span> <span class="attr">url</span>&gt;</span> #https://xxxx/johnsmith.bitbucket.io</span></span><br><span class="line"><span class="language-xml">  branch: [branch]</span></span><br><span class="line"><span class="language-xml">  message: [message]</span></span><br></pre></td></tr></table></figure>
+<h2 id="Hexo主题配置"><a href="#Hexo主题配置" class="headerlink" title="Hexo主题配置"></a>Hexo主题配置</h2><h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>我的主题版本<code>NexT8.19.2</code>，<a href="https://ethanliu6.github.io/">点击查看最终效果</a></p>
+<blockquote>
+<p>注意：</p>
+<p><code>NexT</code>主题拥有不同的版本，GitHub开源地址也不同</p>
+<p>主要版本：NexT5.0+；NexT7.0+；NexT8.0+</p>
+</blockquote>
+<p>参考文献：<span class="exturl" data-url="aHR0cHM6Ly9zbGFtLWxlYXJuZXIuZ2l0aHViLmlvLzIwMjQvMDIvMDcvJUU3JThFJUFGJUU1JUEyJTgzJUU5JTg1JThEJUU3JUJEJUFFL0hleG8rTmV4dCVFOSU4NSU4RCVFNyVCRCVBRSVFNSU4RCU5QSVFNSVBRSVBMi8jJUU1JUIwJTg2JUU1JThEJTlBJUU1JUFFJUEyJUU5JTgzJUE4JUU3JUJEJUIyJUU4JTg3JUIzJUU0JUJBJTkxJUU3JUFCJUFG">Hexo+Next配置博客<i class="fa fa-external-link-alt"></i></span><sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+<h3 id="添加背景"><a href="#添加背景" class="headerlink" title="添加背景"></a>添加背景</h3><p>主题配置文件的<code>custom_file_path</code>选项取消<code>style</code>注释</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path</span>: </span><br><span class="line">  #<span class="attr">style</span>: source/_data/styles.<span class="property">styl</span> <span class="comment">// 修改前</span></span><br><span class="line">  <span class="attr">style</span>: source/_data/styles.<span class="property">styl</span> <span class="comment">// 取消后</span></span><br></pre></td></tr></table></figure>
+<p>站点新建文件夹<code>_data/</code>和文件<code>styles.styl</code>，即： <code>/source/_data/styles.styl</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// styles.styl中添加内容</span></span><br><span class="line">body &#123;</span><br><span class="line">    <span class="attr">background</span>: <span class="title function_">url</span>(<span class="regexp">/images/</span>background.<span class="property">png</span>); <span class="comment">//是主题NexT的images</span></span><br><span class="line">    background-<span class="attr">repeat</span>: no-repeat; <span class="comment">//不重复</span></span><br><span class="line">    background-<span class="attr">attachment</span>: fixed; <span class="comment">// 滚动后背景也填充</span></span><br><span class="line">    background-<span class="attr">size</span>: cover;      <span class="comment">//是否填充，cover填充</span></span><br><span class="line">    background-<span class="attr">position</span>: center; <span class="comment">//背景图片位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h3><ul>
+<li><p>公式：参考文献：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTUxMTE4OS9hcnRpY2xlL2RldGFpbHMvMTE1Nzk4NTYz">hexo博客next主题添加对数学公式的支持<i class="fa fa-external-link-alt"></i></span><sup><a href="#fn_2" id="reffn_2">2</a></sup></p>
+<p>这种我对行间的不成功，所以用了<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzL21hdGgtZXF1YXRpb25zLmh0bWw/aGlnaGxpZ2h0PW1hdGg=">官方文档<i class="fa fa-external-link-alt"></i></span>提供的<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvLXJlbmRlcmVyLXBhbmRvYw==">panco<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>主题字体：参考文献： <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hxd2VheS9hcnRpY2xlL2RldGFpbHMvMTA3NTc5MzY0">Hexo Next 主题字体相关配置<i class="fa fa-external-link-alt"></i></span><sup><a href="#fn_3" id="reffn_3">3</a></sup></p>
+</li>
+<li><p>样式：</p>
+<ul>
+<li><p>主题一些很nice的自定样式<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL2FkdmFuY2VkLXNldHRpbmdzL2N1c3RvbS1maWxlcw==">官网<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>好看的post字样：<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL25vdGUuaHRtbD9oaWdobGlnaHQ9YmFja2dyb3VuZA==">官网Note (Bootstrap Callout)<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0dyb3dpbmdfcG90YXRvL2FydGljbGUvZGV0YWlscy8xMTM5MjY4NTY=">next主题美化——背景图片、页面透明化、阴影、圆角、动画<i class="fa fa-external-link-alt"></i></span><sup><a href="#fn_6" id="reffn_6">6</a></sup></p>
+</li>
+</ul>
+</li>
+<li><p>文章加密：<span class="exturl" data-url="aHR0cHM6Ly9hbGV4LW1jYXZveS5naXRodWIuaW8vaGV4by80ODM5MzllMC5odG1s">文章加密Next 7.0+ 实现文章加密<i class="fa fa-external-link-alt"></i></span><sup><a href="#fn_4" id="reffn_4">4</a></sup> <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl81ODA2ODY4Mi9hcnRpY2xlL2RldGFpbHMvMTE2NjE0NjIy">Hexo博客技巧：对文章进行加密<i class="fa fa-external-link-alt"></i></span><sup><a href="#fn_5" id="reffn_5">5</a></sup></p>
+</li>
+<li><p>复选框：<span class="exturl" data-url="aHR0cHM6Ly93d3cucGFub3NodS50b3AvYmxvZy8yYzNmOWUzOC8=">Hexo Stellar 和 Next 主题支持 KaTex 公式与 Markdown 复杂表格<i class="fa fa-external-link-alt"></i></span><sup><a href="#fn_6" id="reffn_6">6</a></sup>，这个在我上面会有冲突，所以我卸载了，打算以后需要使用复选框再想办法弄</p>
+<p>复选框效果：<img data-src="/images/setBlog/07_复选框展示.jpg" alt="复选框效果"></p>
+</li>
+<li><p>NexT 主题行内代码背景颜色设置：<span class="exturl" data-url="aHR0cHM6Ly96ZW5nZmFueW9uZ2NuLmdpdGh1Yi5pby8yMDIyLzA0LzE3L2NvZGUtYmFja2dyb3VuZC8=">行内代码单独设置<i class="fa fa-external-link-alt"></i></span><sup><a href="#fn_7" id="reffn_7">7</a></sup></p>
+</li>
+</ul>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><ul>
+<li>缓存</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"># <span class="title class_">Remove</span> unnecessary files after hexo generate.</span><br><span class="line"><span class="attr">minify</span>: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>PDF支持：<span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL3BkZg==">PDF<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>站点地图</p>
+</li>
+</ul>
+<p><code>npm install hexo-generator-sitemap --save</code></p>
+<p>这个相当于是对指定浏览器收录自己文章，这里按照官网的操作执行就行，我选择了Bing的配置设置</p>
+<p>README.md跳过</p>
+<h3 id="新增导航栏"><a href="#新增导航栏" class="headerlink" title="新增导航栏"></a>新增导航栏</h3><p>这里我以自己的<code>Love</code>导航设置为例</p>
+<p>站点source文件添加<code>Love</code>文件夹并配置<code>index.md</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Hexo</span> <span class="keyword">new</span> page <span class="title class_">Love</span>/</span><br><span class="line"> <span class="comment">//进入Love文件夹，修改index.md内容</span></span><br><span class="line"><span class="attr">title</span>: 我和珠珠</span><br><span class="line"><span class="attr">date</span>: <span class="number">2024</span>-<span class="number">04</span>-<span class="number">11</span> <span class="number">23</span>:<span class="number">29</span>:<span class="number">36</span></span><br><span class="line"><span class="attr">categories</span>: <span class="title class_">Love</span></span><br><span class="line"><span class="attr">type</span>: <span class="title class_">Love</span>   </span><br></pre></td></tr></table></figure>
+<p>主题配置文件下的<code>menu</code>菜单添加：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Love</span>: <span class="regexp">/categories/</span><span class="title class_">Love</span>/ || fas fa-heart</span><br></pre></td></tr></table></figure>
+<p>source/_posts/<code>下添加</code>love/`文件夹</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 主要是用于文章整理分类</span></span><br><span class="line">cd source/_posts/</span><br><span class="line">mkdir love</span><br><span class="line">cd love</span><br><span class="line">touch <span class="variable constant_">XXX</span>.<span class="property">md</span></span><br></pre></td></tr></table></figure>
+<p>XXX.md`配置并写入内容</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">title</span>: 每日记录<span class="number">2024</span>-<span class="number">04</span>-<span class="number">13</span></span><br><span class="line"><span class="attr">date</span>:</span><br><span class="line"><span class="attr">categories</span>: <span class="title class_">Love</span></span><br><span class="line"><span class="attr">tags</span>: </span><br><span class="line">  - 日记</span><br><span class="line">  - love</span><br></pre></td></tr></table></figure>
+<p>注意:</p>
+<p>如果在<code>_post/</code>之外的markdown文件配置有<code>togs</code>时候，会报错，在GitHub的issues里有人解释</p>
+<p>例如：</p>
+<p><img data-src="/images/setBlog/08_tags误用案例.png" alt="tags误用案例"></p>
+<p>issues分析：</p>
+<p><img data-src="/images/setBlog/09_bug-tag问题.png" alt="tags报错"></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2>]]></content>
+      <categories>
+        <category>博客搭建</category>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo+NexT博客搭建及美化(二)</title>
+    <url>/2024/03/09/07.%20%E5%85%B6%E4%BB%96%E7%B1%BB%E7%9B%AE/001.%20BlogSet/240309%20Hexo+NexT%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8A%E7%BE%8E%E5%8C%96(%E4%BA%8C)/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>该篇章主要讲解我的博客搭建的过程和主题美化流程（下）。</p>
+
+</blockquote>
+<span id="more"></span>
+<h2 id="Hexo指定文件跳过渲染"><a href="#Hexo指定文件跳过渲染" class="headerlink" title="Hexo指定文件跳过渲染"></a>Hexo指定文件跳过渲染</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render</span>: </span><br><span class="line">  - <span class="string">&quot;skipfiles/**/*&quot;</span> #跳过source下该匹配的所有文件</span><br><span class="line">  - <span class="string">&quot;README.md&quot;</span> #跳过source的<span class="variable constant_">README</span>.<span class="property">md</span>文件，上传<span class="title class_">GitHub</span>可以在主仓库展示</span><br></pre></td></tr></table></figure>
+<ul>
+<li>尝试了好久，结果后来看了官网只是因为没有添加引号</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">skip_render: <span class="string">&quot;mypage/**/*&quot;</span></span><br><span class="line"># 将会直接将 `source/mypage/index.html` 和 `source/mypage/code.js` 不做改动地输出到 <span class="string">&#x27;public&#x27;</span> 目录</span><br><span class="line"># 你也可以用这种方法来跳过对指定文章文件的渲染</span><br><span class="line">skip_render: <span class="string">&quot;_posts/test-post.md&quot;</span></span><br><span class="line"># 这将会忽略对 <span class="string">&#x27;test-post.md&#x27;</span> 的渲染</span><br></pre></td></tr></table></figure>
+<p>但是！！！！还是不行，最后感谢一位<span class="exturl" data-url="aHR0cHM6Ly9uZXR0ZWUuZ2l0aHViLmlvL3Bvc3RzLzIwMTgvU2tpcC1yZW5kZXJpbmctZmlsZXMtaW4tSGV4by8=">大佬博客<i class="fa fa-external-link-alt"></i></span>，我设置成了这样</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240428235405599.png" alt="image-20240428235405599"></p>
+<p>成功了！！！！<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240428235441554.png" alt="image-20240428235441554"></p>
+<h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><p>每次修改东西后一定一定要<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s</code>进行本地测试，然后没有问题再<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>上传GitHub渲染，不然后面遇到的问题你都不知道是出在哪儿。</p>
+<h2 id="tabs筛选框"><a href="#tabs筛选框" class="headerlink" title="tabs筛选框"></a>tabs筛选框</h2><h3 id="解题"><a href="#解题" class="headerlink" title="解题"></a>解题</h3><div class="tabs" id><ul class="nav-tabs"><li class="tab active"><a href="#-1">Python3</a></li><li class="tab"><a href="#-2">Java</a></li><li class="tab"><a href="#-3">C++</a></li></ul><div class="tab-content"><div class="tab-pane active" id="-1"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def lengthOfLongestSubstring(self, s: str) -&gt; int:</span><br><span class="line">        record = set()</span><br><span class="line">        l = 0</span><br><span class="line">        res = 0</span><br><span class="line">        for r in range(len(s)):</span><br><span class="line">            while s[r] in record:</span><br><span class="line">                record.remove(s[l])</span><br><span class="line">                l += 1</span><br><span class="line">            record.add(s[r])</span><br><span class="line">            res = res if r - l + 1 &lt; res else r - l + 1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="-2"><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">lengthOfLongestSubstring</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        Map&lt;Character, Integer&gt; record = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(); <span class="comment">//记录已遍历的最长不重复连续子串</span></span><br><span class="line">        <span class="comment">// 定义滑动窗口</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> r;</span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (r = <span class="number">0</span>; r &lt; s.length(); r++)&#123; <span class="comment">//遍历字符</span></span><br><span class="line">            <span class="comment">// 判断是否已记录，如果没有则添加，如果有，则在记录中删除并滑动left</span></span><br><span class="line">            <span class="keyword">while</span>(record.containsKey(s.charAt(r)))&#123; <span class="comment">// 有，删除并滑动窗口</span></span><br><span class="line">                record.remove(s.charAt(l));</span><br><span class="line">                l += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            record.put(s.charAt(r), r);</span><br><span class="line">             <span class="comment">// 已记录的和当前的滑动窗口长度选择较大的</span></span><br><span class="line">             res = r - l + <span class="number">1</span> &lt; res ? res : r - l + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="-3"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></div></div></div>]]></content>
+      <categories>
+        <category>博客搭建</category>
+        <category>Hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>2024年数模国赛</title>
+    <url>/2024/07/10/04.%20%E5%AD%A6%E6%9C%AF%E7%9B%B8%E5%85%B3%E3%80%90100%E3%80%91/Academic/match/2024%E5%B9%B4%E6%95%B0%E6%A8%A1%E5%9B%BD%E8%B5%9B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>2024年又与小伙伴们一起完成了<code>2024全国大学生数学建模竞赛</code></p>
+
+</blockquote>
+<span id="more"></span>
+<ul>
+<li>暂时先留着，后面在慢慢来写……</li>
+</ul>
+<hr>
+<p>PDF版本可自行下载：<a href="/academic/myPapers/2024数模国赛A题论文.pdf">数模国赛.pdf</a></p>
+<p>Word版本可自行下载：<a href="/academic/myPapers/2024数模国赛A题论文.docx">数模美赛.docx</a></p>
+<p>在线浏览PDF版本：</p>
+<div class="pdf-container" data-target="/academic/myPapers/2024数模国赛A题论文.pdf" data-height="800px"></div>
+]]></content>
+      <categories>
+        <category>学术</category>
+      </categories>
+      <tags>
+        <tag>数学建模</tag>
       </tags>
   </entry>
 </search>
