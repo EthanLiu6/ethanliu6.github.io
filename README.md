@@ -1,10 +1,8 @@
-# Ethan's Blog
+# Ethan's Blog [我的博客]
 
-The rendered results of my blog can be found at [EthanLiu6.github.io](https://EthanLiu6.github.io)
+## My Blog  Environment Setup [基础环境]
 
-## My Blog  Environment Setup
-
-**Frame：[Hexo](https://hexo.io/)**
+Frame[框架]：[$Hexo$​](https://hexo.io/)
 
 ```js
  "hexo": {
@@ -12,7 +10,7 @@ The rendered results of my blog can be found at [EthanLiu6.github.io](https://Et
   },
 ```
 
-**Theme: [NexT](https://theme-next.js.org/)**
+Theme[主题]: [$NexT$](https://theme-next.js.org/)
 
 ```js
 {
@@ -21,13 +19,13 @@ The rendered results of my blog can be found at [EthanLiu6.github.io](https://Et
 }
 ```
 
-## Necessary Plug-in 
+## Necessary Plug-in [必要插件]
 
-**Default：**
+默认插件：
 
 ![默认插件](https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images%E9%BB%98%E8%AE%A4%E6%8F%92%E4%BB%B6.png)
 
-**My Plugs：**
+我的插件：
 
 ```sh
 ethan.liu@Mac ethanliu6.github.io % npm ls --depth=0                      
@@ -59,15 +57,14 @@ hexo-site@0.0.0 /Users/ethan.liu/00. 整体文档管理（总文档）/160. 个�
 └── hexo@7.1.1
 ```
 
-## Blog Contents
+## Blog Contents [博客内容]
 
 - everyday learned
 - some questions
 - some sum
 - my love with Qiuzhu
-- ………………
 
-## Blog's Frame
+## Blog's Frame [博客结构]
 
 ```sh
 ```
