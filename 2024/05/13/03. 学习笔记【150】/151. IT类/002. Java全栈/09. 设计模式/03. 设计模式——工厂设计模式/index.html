@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">工厂设计模式及其作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.1.</span> <span class="nav-text">工厂设计模式的作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4%E6%A1%88%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">工厂设计模式实现步骤（案例）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%8F%8A%E5%85%B6%E4%BD%9C%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">工厂设计模式及其作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.1.</span> <span class="nav-text">工厂设计模式的作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E5%8E%82%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4%EF%BC%88%E6%A1%88%E4%BE%8B%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">工厂设计模式实现步骤（案例）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -292,7 +292,7 @@
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -308,16 +308,11 @@
 </blockquote>
 <span id="more"></span>
 <p>sum: <font color="red">保证类与类的低耦合</font></p>
-<h2 id="工厂设计模式及其作用">工厂设计模式及其作用</h2>
-<p>工厂模式（Factory Pattern）是 Java
-中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。之前创建类对象时,
-都是使用 new 对象的形式创建, 除new 对象方式以外,
-工厂模式也可以创建对象.</p>
-<h3 id="工厂设计模式的作用">工厂设计模式的作用</h3>
-<p>解决类与类之间的耦合问题</p>
-<h2 id="工厂设计模式实现步骤案例">工厂设计模式实现步骤（案例）</h2>
-<div class="note primary"><ul>
-<li><p>需求：定义汽车工厂类，生产各种品牌的车</p></li>
+<h2 id="工厂设计模式及其作用"><a href="#工厂设计模式及其作用" class="headerlink" title="工厂设计模式及其作用"></a>工厂设计模式及其作用</h2><p>工厂模式（Factory Pattern）是 Java 中最常用的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。之前创建类对象时, 都是使用 new 对象的形式创建, 除new 对象方式以外, 工厂模式也可以创建对象.</p>
+<h3 id="工厂设计模式的作用"><a href="#工厂设计模式的作用" class="headerlink" title="工厂设计模式的作用"></a>工厂设计模式的作用</h3><p>解决类与类之间的耦合问题</p>
+<h2 id="工厂设计模式实现步骤（案例）"><a href="#工厂设计模式实现步骤（案例）" class="headerlink" title="工厂设计模式实现步骤（案例）"></a>工厂设计模式实现步骤（案例）</h2><div class="note primary"><ul>
+<li><p>需求：定义汽车工厂类，生产各种品牌的车</p>
+</li>
 <li><p>实现步骤</p>
 <ul>
 <li>编写一个Car接口, 提供run方法</li>
@@ -325,31 +320,22 @@
 <li>编写一个Benchi类实现Car接口,重写run方法</li>
 <li>提供一个CarFactory(汽车工厂),用于生产汽车对象</li>
 <li>定义CarFactoryTest测试汽车工厂</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 </div>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.itheima.factorydesign_demo;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  - 需求：定义汽车工厂类，生产各种品牌的车</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  - 实现步骤</span></span><br><span class="line"><span class="comment">      - 编写一个Car接口, 提供run方法</span></span><br><span class="line"><span class="comment">      - 编写一个Falali类实现Car接口,重写run方法</span></span><br><span class="line"><span class="comment">      - 编写一个Benchi类实现Car接口</span></span><br><span class="line"><span class="comment">      =============================================</span></span><br><span class="line"><span class="comment">      - 提供一个CarFactory(汽车工厂),用于生产汽车对象</span></span><br><span class="line"><span class="comment">      - 定义CarFactoryTest测试汽车工厂</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CarTest</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">Car</span> <span class="variable">benchi</span> <span class="operator">=</span> CarFactory.getInstance(Brand.BENCHI);</span><br><span class="line">        System.out.println(benchi);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 汽车接口</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Car</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 编写一个Falali类实现Car接口,重写run方法</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Falali</span> <span class="keyword">implements</span> <span class="title class_">Car</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Falali</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;法拉利破百需要3秒...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 编写一个Benchi类实现Car接口</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Benchi</span> <span class="keyword">implements</span> <span class="title class_">Car</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;奔驰破百需要5秒...&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 汽车品牌枚举</span></span><br><span class="line"><span class="keyword">enum</span> <span class="title class_">Brand</span> &#123;</span><br><span class="line">    BENCHI, FALALI, BAOMA, BINLI, AODI;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提供一个CarFactory(汽车工厂),用于生产汽车对象</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CarFactory</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">CarFactory</span><span class="params">()</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> Car <span class="title function_">getInstance</span><span class="params">(Brand brand)</span> &#123;</span><br><span class="line">        <span class="keyword">switch</span> (brand) &#123;</span><br><span class="line">            <span class="keyword">case</span> FALALI:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Falali</span>();</span><br><span class="line">            <span class="keyword">case</span> BENCHI:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Benchi</span>();</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//// 提供一个CarFactory(汽车工厂),用于生产汽车对象</span></span><br><span class="line"><span class="comment">//class CarFactory&#123;</span></span><br><span class="line"><span class="comment">//    private CarFactory()&#123;&#125;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//    public static Car getInstance(String brand) &#123;</span></span><br><span class="line"><span class="comment">//        if(brand.equals(&quot;Falali&quot;))&#123;</span></span><br><span class="line"><span class="comment">//            return new Falali(10);</span></span><br><span class="line"><span class="comment">//        &#125;else if(brand.equals(&quot;Benchi&quot;)) &#123;</span></span><br><span class="line"><span class="comment">//            return new Benchi();</span></span><br><span class="line"><span class="comment">//        &#125;else &#123;</span></span><br><span class="line"><span class="comment">//            return null;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"><span class="comment">//&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>public class Student{ .... }</p>
-<p>//耦合性高: 当更换类时，需要修改代码 MyStudent stu = new
-MyStudent();</p>
-<p>//新方案： 接口或父类 public interface Person{ } public class Student
-implements Person{ ... } public class Worker implements Person{ .... }
-//耦合降低了，但还是存在耦合 Person p = new Student();//多态</p>
-<p>//新方案： 工厂模式 （解决类和类之间耦合问题）</p>
-<p>public class 工厂类 { //实现对象的创建
-（例：创建学生对象、创建老师对象、创建工人对象、....）</p>
-<p>//私有构造方法 private 工厂类(){}</p>
-<p>//静态方法 public static Person getInstance(String name){
-if("teacher".eqauls(name)){ return new Teacher(); }
-if("student".equals(name)){ return new Student(); } } }</p>
-<p>//配置文件: bean.properties name=teacher</p>
-<p>//使用工具类，加载bean.properties配置文件 ResourceBundle rb =
-ResourceBundle.getBundle("bean"); String beanName =
-rb.getString("name");</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>public class Student{<br>   ….<br>}</p>
+<p>//耦合性高: 当更换类时，需要修改代码<br>MyStudent stu = new MyStudent();</p>
+<p>//新方案： 接口或父类<br>public interface Person{<br>}<br>public class Student implements Person{<br> …<br>}<br>public class Worker implements Person{<br> ….<br>}<br>//耦合降低了，但还是存在耦合<br>Person p = new Student();//多态</p>
+<p>//新方案： 工厂模式  （解决类和类之间耦合问题）</p>
+<p>public class 工厂类 {<br>   //实现对象的创建 （例：创建学生对象、创建老师对象、创建工人对象、….）</p>
+<p>   //私有构造方法<br>   private 工厂类(){}</p>
+<p>   //静态方法<br>   public static Person getInstance(String name){<br>       if(“teacher”.eqauls(name)){<br>          return new Teacher();<br>       }<br>       if(“student”.equals(name)){<br>          return new Student();<br>       }<br>   }<br>}</p>
+<p>//配置文件: bean.properties<br>name=teacher</p>
+<p>//使用工具类，加载bean.properties配置文件<br>ResourceBundle rb = ResourceBundle.getBundle(“bean”);<br>String beanName = rb.getString(“name”);</p>
 <p>Person p = 工厂类.getInstance( beanName );</p>
-<p>//由程序员主动创建对象，变为被动在获取对象
-（对象的创建权转移到：工厂类）</p>
+<p>//由程序员主动创建对象，变为被动在获取对象 （对象的创建权转移到：工厂类）</p>
 
     </div>
 
@@ -443,7 +429,7 @@ rb.getString("name");</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:32</span>
+    <span title="站点阅读时长">6:07</span>
   </span>
 </div>
 <div class="busuanzi-count">

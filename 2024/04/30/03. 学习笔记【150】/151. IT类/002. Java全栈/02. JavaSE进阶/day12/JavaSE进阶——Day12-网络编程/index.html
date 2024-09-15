@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">网络编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">1.2.</span> <span class="nav-text">网络三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-1"><span class="nav-number">1.3.</span> <span class="nav-text">网络编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.4.</span> <span class="nav-text">常见通信协议 ：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#socket"><span class="nav-number">1.5.</span> <span class="nav-text">Socket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E4%B8%80"><span class="nav-number">1.6.</span> <span class="nav-text">案例一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%E5%B9%B6%E8%A1%8C%E5%AF%B9%E4%B8%80%E5%AE%9E%E7%8E%B0%E6%8E%A5%E5%8F%91"><span class="nav-number">1.7.</span> <span class="nav-text">使用多（并行）对一实现接发</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">网络编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="nav-number">1.2.</span> <span class="nav-text">网络三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B-1"><span class="nav-number">1.3.</span> <span class="nav-text">网络编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE-%EF%BC%9A"><span class="nav-number">1.4.</span> <span class="nav-text">常见通信协议 ：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Socket"><span class="nav-number">1.5.</span> <span class="nav-text">Socket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%88%E4%BE%8B%E4%B8%80"><span class="nav-number">1.6.</span> <span class="nav-text">案例一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%A4%9A%EF%BC%88%E5%B9%B6%E8%A1%8C%EF%BC%89%E5%AF%B9%E4%B8%80%E5%AE%9E%E7%8E%B0%E6%8E%A5%E5%8F%91"><span class="nav-number">1.7.</span> <span class="nav-text">使用多（并行）对一实现接发</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -292,7 +292,7 @@
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>2 分钟</span>
     </span>
 </div>
 
@@ -307,94 +307,86 @@
 
 </blockquote>
 <span id="more"></span>
-<h2 id="网络编程">网络编程</h2>
-<h3 id="概述">概述</h3>
-<p>在企业开发中，程序存在两种结构模型：</p>
+<h2 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>在企业开发中，程序存在两种结构模型：</p>
 <ul>
-<li>C / S ： 客户端/服务端
-<ul>
+<li>C / S ：  客户端/服务端<ul>
 <li>需要开发客户端和服务端，两端程序（开发成本高）</li>
-</ul></li>
-<li>B / S ： 浏览器/服务端
-<ul>
+</ul>
+</li>
+<li>B / S ：  浏览器/服务端<ul>
 <li>浏览器：是由第三方浏览器厂商已提供了（不需要开发了）</li>
 <li>服务端：需要开发程序</li>
-</ul></li>
 </ul>
-<h3 id="网络三要素">网络三要素</h3>
-<p>在网络中想要实现编程，必须有：网络三要素</p>
+</li>
+</ul>
+<h3 id="网络三要素"><a href="#网络三要素" class="headerlink" title="网络三要素"></a>网络三要素</h3><p>在网络中想要实现编程，必须有：网络三要素</p>
 <ul>
 <li>IP地址：网络上计算机的唯一标识</li>
 <li>端口号：计算机中程序的唯一标识（每一个程序都有自己唯一的端口号）</li>
-<li>通信协议：网络上程序之间交互的规则
-<ul>
+<li>通信协议：网络上程序之间交互的规则<ul>
 <li>TCP协议</li>
 <li>UDP协议</li>
-</ul></li>
 </ul>
-<h3 id="网络编程-1">网络编程</h3>
-<p>会使用到java.net包下的AIP</p>
-<ul>
-<li><p>java.net.InetAddress类 ： IP地址</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取InetAddress对象</span></span><br><span class="line"><span class="type">InetAddress</span> <span class="variable">ipObj</span> <span class="operator">=</span> InetAddress.getByName(<span class="string">&quot;计算机名 / IP地址&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用方法</span></span><br><span class="line"><span class="type">String</span> <span class="variable">hostname</span> <span class="operator">=</span> ipObj.getHostName();</span><br><span class="line"><span class="type">String</span> <span class="variable">ip</span> <span class="operator">=</span> ipObj.getHostAddress();</span><br></pre></td></tr></table></figure></li>
+</li>
 </ul>
-<h3 id="常见通信协议">常见通信协议 ：</h3>
+<h3 id="网络编程-1"><a href="#网络编程-1" class="headerlink" title="网络编程"></a>网络编程</h3><p>会使用到java.net包下的AIP</p>
 <ul>
-<li>UDP协议
-<ul>
-<li>特点：
-<ol type="1">
+<li><p>java.net.InetAddress类  ： IP地址</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取InetAddress对象</span></span><br><span class="line"><span class="type">InetAddress</span> <span class="variable">ipObj</span> <span class="operator">=</span> InetAddress.getByName(<span class="string">&quot;计算机名 / IP地址&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用方法</span></span><br><span class="line"><span class="type">String</span> <span class="variable">hostname</span> <span class="operator">=</span> ipObj.getHostName();</span><br><span class="line"><span class="type">String</span> <span class="variable">ip</span> <span class="operator">=</span> ipObj.getHostAddress();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="常见通信协议-："><a href="#常见通信协议-：" class="headerlink" title="常见通信协议 ："></a>常见通信协议 ：</h3><ul>
+<li>UDP协议<ul>
+<li>特点：<ol>
 <li>面向无连接协议</li>
 <li>数据大于限制在64K以内</li>
 <li>数据不安全，容易丢失</li>
 <li>传输速度快</li>
-</ol></li>
-</ul></li>
-<li>TCP协议：传输控制协议
-<ul>
-<li>特点：
-<ol type="1">
+</ol>
+</li>
+</ul>
+</li>
+<li>TCP协议：传输控制协议<ul>
+<li>特点：<ol>
 <li>面向有连接协议（利用TCP三次握手机制）</li>
 <li>数据大小没有限制</li>
 <li>数据相对安全（相对UDP协议来讲）</li>
 <li>传输速度慢</li>
-</ol></li>
-</ul></li>
+</ol>
+</li>
+</ul>
+</li>
 </ul>
 <p>TCP通信程序，要求必须有两端程序：</p>
 <ul>
 <li>客户端/浏览器</li>
 <li>服务端</li>
 </ul>
-<h3 id="socket">Socket</h3>
-<p>在Java语言中，想要实现客户端、服务端两个程序之间进行交互，需要依赖：Socket
-（利用TCP协议）</p>
+<h3 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h3><p>在Java语言中，想要实现客户端、服务端两个程序之间进行交互，需要依赖：Socket （利用TCP协议）</p>
 <ul>
-<li>客户端程序：Socket
-<ul>
-<li>先找到计算机 ==//IP地址==</li>
-<li>再找到计算机上的服务端程序 ==//端口号==</li>
-<li>按照TCP协议进行数据发送、接收
-<ul>
+<li>客户端程序：Socket <ul>
+<li>先找到计算机  ==//IP地址==</li>
+<li>再找到计算机上的服务端程序   ==//端口号==</li>
+<li>按照TCP协议进行数据发送、接收<ul>
 <li>是基于IO流实现数据的发送、接收</li>
-</ul></li>
-</ul></li>
-<li>服务端程序：ServerSocket
-<ul>
+</ul>
+</li>
+</ul>
+</li>
+<li>服务端程序：ServerSocket<ul>
 <li>绑定服务端程序的端口号</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p>java.net.Socket类：客户端</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Socket</span><span class="params">(String address , <span class="type">int</span> port)</span></span><br><span class="line"><span class="comment">//参数1： ip地址或主机名</span></span><br><span class="line"><span class="comment">//参数2： 端口号（服务端程序的端口号）</span></span><br><span class="line"></span><br><span class="line">OutputStream  <span class="title function_">getOutputStream</span><span class="params">()</span>  <span class="comment">//基于socket对象获取网络输出流（发送数据）</span></span><br><span class="line">InputStream  <span class="title function_">getInputStream</span><span class="params">()</span>  <span class="comment">//基于socket对象获取网络输入流（接收数据）</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 创建客户端Socket对象，并连接服务端程序</span></span><br><span class="line"><span class="type">Socket</span> <span class="variable">socket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(<span class="string">&quot;对方计算机IP地址&quot;</span>, <span class="string">&quot;服务端程序端口号&quot;</span>);</span><br><span class="line"><span class="comment">//2. 基于socket对象，获取网络输出流（发送数据）</span></span><br><span class="line"><span class="type">OutputStream</span> <span class="variable">netOut</span> <span class="operator">=</span> socket.getOutputStream();</span><br><span class="line"><span class="comment">//3. 发送数据</span></span><br><span class="line">netOut.write(<span class="string">&quot;数据&quot;</span>.getBytes());</span><br><span class="line"></span><br><span class="line"><span class="comment">//4. 关闭资源</span></span><br><span class="line">netOut.close();</span><br><span class="line">socket.close();</span><br></pre></td></tr></table></figure>
 <p>java.net.ServerSocket：服务端</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">ServerSocket</span><span class="params">(<span class="type">int</span> port)</span></span><br><span class="line"><span class="comment">//参数：port 当前服务端程序要绑定的端口号（客户端Socket程序要使用这个端口号和服务端连接） </span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span> Socket <span class="title function_">accept</span><span class="params">()</span>;<span class="comment">//监听客户端连接，并生成连接，返回一个Socket对象    </span></span><br></pre></td></tr></table></figure>
-<h3 id="案例一">案例一</h3>
-<p>使用一对一接发数据</p>
+<h3 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a>案例一</h3><p>使用一对一接发数据</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> netsocket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.ServerSocket;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/5/2 12:40</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 服务端</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServerDemo2</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LoggerFactory.getLogger(<span class="string">&quot;服务端&quot;</span>);</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//创建服务端对象</span></span><br><span class="line">        <span class="type">ServerSocket</span> <span class="variable">serverSocket</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ServerSocket</span>(<span class="number">8888</span>);</span><br><span class="line">        LOGGER.trace(<span class="string">&quot;服务端已启动.......&quot;</span>);</span><br><span class="line">        <span class="comment">//监听客户端</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">sever</span> <span class="operator">=</span> serverSocket.accept();</span><br><span class="line">        LOGGER.trace(<span class="string">&quot;已连接客户端:&quot;</span> + sever.getInetAddress().getHostAddress());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建输入流对象</span></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> sever.getInputStream();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//接受客户端发送的数据(IO流)</span></span><br><span class="line">        <span class="type">byte</span>[] buf = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> inputStream.read(buf);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//收到数据</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf, <span class="number">0</span>, len);</span><br><span class="line">        System.out.println(msg);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//回馈数据</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建输出流并添加数据</span></span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> sever.getOutputStream();</span><br><span class="line">        outputStream.write(<span class="string">&quot;你好你好&quot;</span>.getBytes());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//资源关闭</span></span><br><span class="line">        inputStream.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line">        serverSocket.close(); <span class="comment">//服务端一般是不用关闭的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> netsocket;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.net.Socket;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span> EthanLiu 16693226842@163.com</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span> 2024/5/2 12:31</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Project</span> JavaCode_SE_Advance</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Theme</span> 客户端</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ClientDemo2</span> &#123;</span><br><span class="line">    <span class="comment">//创建日志成员变量</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">LOGGER</span> <span class="operator">=</span> LoggerFactory.getLogger(<span class="string">&quot;客户端&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        <span class="comment">//创建客户端对象</span></span><br><span class="line">        <span class="type">Socket</span> <span class="variable">client</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Socket</span>(<span class="string">&quot;127.0.0.1&quot;</span>, <span class="number">8888</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//给服务端发送数据</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建输出流并写入数据</span></span><br><span class="line">        <span class="type">OutputStream</span> <span class="variable">outputStream</span> <span class="operator">=</span> client.getOutputStream();</span><br><span class="line">        outputStream.write(<span class="string">&quot;你好啊,我的客户端&quot;</span>.getBytes());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//接收服务端信息</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建输入流并读取</span></span><br><span class="line">        <span class="type">InputStream</span> <span class="variable">inputStream</span> <span class="operator">=</span> client.getInputStream();</span><br><span class="line">        <span class="type">byte</span>[] buf = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> inputStream.read(buf);</span><br><span class="line">        <span class="type">String</span> <span class="variable">msg</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf, <span class="number">0</span>, len);</span><br><span class="line">        LOGGER.trace(<span class="string">&quot;收到客户端数据:&quot;</span> + msg);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//关闭资源</span></span><br><span class="line">        inputStream.close();</span><br><span class="line">        outputStream.close();</span><br><span class="line">        client.close();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="使用多并行对一实现接发">使用多（并行）对一实现接发</h3>
-<p>java编程中使用的包：</p>
+<h3 id="使用多（并行）对一实现接发"><a href="#使用多（并行）对一实现接发" class="headerlink" title="使用多（并行）对一实现接发"></a>使用多（并行）对一实现接发</h3><p>java编程中使用的包：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">java.lang</span><br><span class="line"></span><br><span class="line">java.util.集合</span><br><span class="line"></span><br><span class="line">java.text.SimpleDateFormat</span><br><span class="line"></span><br><span class="line">java.io</span><br><span class="line"></span><br><span class="line">java.net</span><br><span class="line"></span><br><span class="line">java.sql</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">javax //扩展包</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -489,7 +481,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:32</span>
+    <span title="站点阅读时长">6:07</span>
   </span>
 </div>
 <div class="busuanzi-count">

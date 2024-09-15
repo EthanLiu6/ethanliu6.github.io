@@ -21,12 +21,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="JavaSE进阶——Day10-11 随堂小记">
+    <meta name="description" content="JavaSE进阶——Day10-11  随堂小记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE进阶——Day10-11 随堂小记">
 <meta property="og:url" content="http://ethanliu6.github.io/2024/04/29/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/002.%20Java%E5%85%A8%E6%A0%88/02.%20JavaSE%E8%BF%9B%E9%98%B6/day11/JavaSE%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94Day10-11-%E9%9A%8F%E5%A0%82%E5%B0%8F%E8%AE%B0/index.html">
 <meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
-<meta property="og:description" content="JavaSE进阶——Day10-11 随堂小记">
+<meta property="og:description" content="JavaSE进阶——Day10-11  随堂小记">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-04-28T16:00:00.000Z">
 <meta property="article:modified_time" content="2024-09-14T12:19:20.830Z">
@@ -142,7 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#properties"><span class="nav-number">1.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81"><span class="nav-number">3.</span> <span class="nav-text">字符流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E8%A1%A8"><span class="nav-number">3.1.</span> <span class="nav-text">编码表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E6%B5%81"><span class="nav-number">4.</span> <span class="nav-text">转换流</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties"><span class="nav-number">1.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92"><span class="nav-number">2.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E6%B5%81"><span class="nav-number">3.</span> <span class="nav-text">字符流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E8%A1%A8"><span class="nav-number">3.1.</span> <span class="nav-text">编码表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E6%B5%81"><span class="nav-number">4.</span> <span class="nav-text">转换流</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -292,7 +292,7 @@
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -303,69 +303,78 @@
     
     
     <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
-<p>JavaSE进阶——Day10-11 随堂小记</p>
+<p>JavaSE进阶——Day10-11  随堂小记</p>
 
 </blockquote>
 <span id="more"></span>
 <p>IO流中的必须掌握的内容：</p>
-<ol type="1">
-<li><p>Properties</p></li>
-<li><p>基础流（字节流、字符流）</p></li>
-<li><p>概念：缓冲区（缓冲流的思想）</p></li>
-<li><p>编码表（在开发过程中，乱码经常出现）
-//编码和解码保证使用相同的编码表</p>
+<ol>
+<li><p>Properties</p>
+</li>
+<li><p>基础流（字节流、字符流）</p>
+</li>
+<li><p>概念：缓冲区（缓冲流的思想）</p>
+</li>
+<li><p>编码表（在开发过程中，乱码经常出现）   //编码和解码保证使用相同的编码表</p>
 <ul>
 <li><p>编码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;黑马&quot;</span>;</span><br><span class="line"><span class="type">byte</span>[] buf = str.getBytes();</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;黑马&quot;</span>;</span><br><span class="line"><span class="type">byte</span>[] buf = str.getBytes();</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>解码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span>[] buf = &#123;-<span class="number">21</span>, -<span class="number">13</span>, -<span class="number">38</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf);</span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf , <span class="string">&quot;编码表名字&quot;</span>);</span><br></pre></td></tr></table></figure></li>
-</ul></li>
-<li><p>使用转换流读写特定编码的文件</p></li>
-<li><p>序列化流（概念：序列化）</p></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">byte</span>[] buf = &#123;-<span class="number">21</span>, -<span class="number">13</span>, -<span class="number">38</span>&#125;;</span><br><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf);</span><br><span class="line"></span><br><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(buf , <span class="string">&quot;编码表名字&quot;</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>使用转换流读写特定编码的文件</p>
+</li>
+<li><p>序列化流（概念：序列化）</p>
+</li>
 </ol>
 <p>复习：线程通讯</p>
 <ul>
-<li><p>线程通讯：在A线程运行的过程中，可以去叫醒其他处于"等待状态"的线程</p></li>
+<li><p>线程通讯：在A线程运行的过程中，可以去叫醒其他处于”等待状态”的线程</p>
+</li>
 <li><p>线程通讯，需要使用到：等待唤醒机制</p>
 <ul>
 <li>等待：wait()</li>
 <li>唤醒：notify()、notifyAll()</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">同步代码块(对象锁)&#123;</span><br><span class="line">    对象锁.wait();</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    对象锁.notify();<span class="comment">//唤醒和当前对象锁绑定的其他处于等待状态的线程</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">非静态的同步方法()&#123; <span class="comment">//对象锁：this</span></span><br><span class="line">    <span class="built_in">this</span>.wait();</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="built_in">this</span>.notify();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">同步代码块(对象锁)&#123;</span><br><span class="line">    对象锁.wait();</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    对象锁.notify();<span class="comment">//唤醒和当前对象锁绑定的其他处于等待状态的线程</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">非静态的同步方法()&#123; <span class="comment">//对象锁：this</span></span><br><span class="line">    <span class="built_in">this</span>.wait();</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="built_in">this</span>.notify();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p>复习：IO流</p>
 <ul>
-<li>IO流的作用：对磁盘上的文件进行读、写操作
-<ul>
+<li>IO流的作用：对磁盘上的文件进行读、写操作<ul>
 <li>读：把文件中的数据，读取到内存中</li>
 <li>写：把内存中的数据，写入到文件中（持久化存储）</li>
-</ul></li>
-<li>IO流分类：
-<ul>
-<li>字节流
-<ul>
-<li>字节输入流：读 //父类：InputStream 常用子类：FileInputStream</li>
-<li>字节输出流：写 //父类：OutputStream 常用子类：FileOutputStream</li>
-</ul></li>
-<li>字符流
-<ul>
+</ul>
+</li>
+<li>IO流分类：<ul>
+<li>字节流<ul>
+<li>字节输入流：读         //父类：InputStream      常用子类：FileInputStream</li>
+<li>字节输出流：写        //父类：OutputStream    常用子类：FileOutputStream</li>
+</ul>
+</li>
+<li>字符流<ul>
 <li>字符输入流：读</li>
 <li>字符输出流：写</li>
-</ul></li>
-</ul></li>
-<li>IO流使用套路：
-<ol type="1">
+</ul>
+</li>
+</ul>
+</li>
+<li>IO流使用套路：<ol>
 <li>创建：创建流对象</li>
-<li>操作：读、写
-<ul>
+<li>操作：读、写<ul>
 <li>读：read()</li>
 <li>写：write()</li>
-</ul></li>
-<li>关闭：释放流资源
-<ul>
+</ul>
+</li>
+<li>关闭：释放流资源<ul>
 <li>close()</li>
-</ul></li>
-</ol></li>
+</ul>
+</li>
+</ol>
+</li>
 </ul>
 <p>文件复制：</p>
 <ul>
@@ -380,24 +389,23 @@
 <li>写文件：BufferedOutputStream</li>
 </ul>
 <p>在IO流中基础流只有两个：字节流、字符流</p>
-<p>BufferedInputStream流的创建： 读数据</p>
+<p>BufferedInputStream流的创建：  读数据</p>
 <ul>
 <li>自己没有读数据的能力，需要依赖字节输入流实现读数据</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法： public  BufferedInputStream( InputStream  is )</span></span><br><span class="line"></span><br><span class="line"><span class="type">BufferedInputStream</span> <span class="variable">bis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>( <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;关联文件&quot;</span>) );</span><br></pre></td></tr></table></figure>
-<p>BufferedOutputStream流的创建： 写数据</p>
+<p>BufferedOutputStream流的创建：   写数据</p>
 <ul>
 <li>自己没有写数据的能力，需要依赖字节输出流实现读数据</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造方法： public  BufferedOutputStream( OutputStream  os )</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//覆盖写入</span></span><br><span class="line"><span class="type">BufferedOutputStream</span> <span class="variable">bos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedOutputStream</span>( <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;关联文件&quot;</span>) );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//追加写入 （构造方法的第二个参数为true）</span></span><br><span class="line"><span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;关联文件&quot;</span> , <span class="literal">true</span>); <span class="comment">//追加写入</span></span><br><span class="line"><span class="type">BufferedOutputStream</span> <span class="variable">bos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedOutputStream</span>(  fos );<span class="comment">//当前流有具有追加写入能力</span></span><br></pre></td></tr></table></figure>
-<h2 id="properties">Properties</h2>
-<p>Properties类：</p>
-<ol type="1">
+<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><p>Properties类：</p>
+<ol>
 <li>作为Map集合的子类存在（存储的数据：key、value）</li>
 <li>可以结合IO流使用 （读、写）</li>
 </ol>
 <p>Properties类的基本使用：</p>
-<ol type="1">
+<ol>
 <li>作为集合使用</li>
 <li>结合IO流使用</li>
 </ol>
@@ -406,27 +414,26 @@
 <p>常用方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//向Properties集合中存储：key、value</span></span><br><span class="line">setPorperty(String key , String value)</span><br><span class="line"></span><br><span class="line"><span class="comment">//根据指定的key，获取Properties集合中对应的value    </span></span><br><span class="line">String <span class="title function_">getProperty</span><span class="params">(String key)</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">//获取Properties集合中所有的key元素    </span></span><br><span class="line">Set&lt;String&gt;  <span class="title function_">stringPropertyNames</span><span class="params">()</span>;   </span><br><span class="line"></span><br><span class="line"><span class="comment">//借用字节输入流，读取配置文件，读取配置文件中的数据会存储到Properties集合中</span></span><br><span class="line">load(InputStream  is )</span><br></pre></td></tr></table></figure>
 <p>在开发中，通常会使用到配置文件，而配置文件格式通常分为：</p>
-<ol type="1">
+<ol>
 <li>XML文件</li>
 <li>properties文件</li>
-<li>....</li>
+<li>….</li>
 </ol>
 <p>Properties类的作用：</p>
 <ul>
-<li>读取开发中使用的到.properties配置文件
-<ul>
+<li>读取开发中使用的到.properties配置文件<ul>
 <li>properties配置文件中的数据是以key/value形式体现</li>
 <li>把properties配置文件中的key，存储到Properties类中的key元素下</li>
 <li>把properties配置文件中的value，存储到Properties类中的value元素下</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p>ResourceBundle工具类</p>
 <ul>
 <li>作用： 读取项目工程下src目录中的.properties配置文件</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取ResourceBundle对象 （必须保证properties配置文件存放在src目录下）</span></span><br><span class="line"><span class="type">ResourceBundle</span> <span class="variable">rb</span> <span class="operator">=</span> ResourceBundle.getBundle(<span class="string">&quot;properites配置文件名[不包含后缀名]&quot;</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">//根据给定的key，获取value    </span></span><br><span class="line"><span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> rb.getString(<span class="string">&quot;key&quot;</span>)     </span><br></pre></td></tr></table></figure>
-<h2 id="递归">递归</h2>
-<p>什么是递归？</p>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>什么是递归？</p>
 <ul>
 <li>递归是应用于方法上的解决方案：方法自己调用自己</li>
 </ul>
@@ -437,14 +444,15 @@
 </ul>
 <p>递归的弊端：</p>
 <ul>
-<li><p>当递归调用的方法过多时，会造成栈内存的溢出</p></li>
+<li><p>当递归调用的方法过多时，会造成栈内存的溢出</p>
+</li>
 <li><p>解决方案： 队列结构</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 获取所有的File对象，存储到集合中</span><br><span class="line">2. 遍历集合</span><br><span class="line">   判断：是文件</span><br><span class="line">        判断：是否为java文件</span><br><span class="line">   判断：是目录</span><br><span class="line">        存储到集合中   </span><br><span class="line">  </span><br><span class="line">   细节： 从集合中获取一个数据后，该数据在集合中就无用了   </span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 获取所有的File对象，存储到集合中</span><br><span class="line">2. 遍历集合</span><br><span class="line">   判断：是文件</span><br><span class="line">        判断：是否为java文件</span><br><span class="line">   判断：是目录</span><br><span class="line">        存储到集合中   </span><br><span class="line">  </span><br><span class="line">   细节： 从集合中获取一个数据后，该数据在集合中就无用了   </span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p>回顾上午内容：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读写字节数组</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">read</span><span class="params">(<span class="type">byte</span>[] buf)</span>; <span class="comment">//最多读取buf.length个长度的字节数据，把读取的字节数据存储到buf数组中</span></span><br><span class="line">                      <span class="comment">//返回实际读取到字节数据的个数，读取到文件末尾返回：-1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//把buf数组中从index开始向后取len个字节数据写入到文件中</span></span><br><span class="line"><span class="keyword">void</span> <span class="title function_">write</span><span class="params">(<span class="type">byte</span>[] buf , <span class="type">int</span> index , <span class="type">int</span> len)</span></span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">//字节缓冲流（高效流）   本身不具备读写能力，需要依赖字节流</span></span><br><span class="line"><span class="comment">//读数据：BufferedInputStream</span></span><br><span class="line"><span class="comment">//写数据：BufferedOutputStream    </span></span><br><span class="line"><span class="type">BufferedInputStream</span> <span class="variable">bis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedInputStream</span>(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;关联文件&quot;</span>))</span><br><span class="line">    </span><br><span class="line"><span class="type">BufferedOutputStream</span> <span class="variable">bos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedOutputStream</span>(<span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(<span class="string">&quot;关联文件&quot;</span>))    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment">//读取properties配置文件</span></span><br><span class="line">方式<span class="number">1</span>：Properties类</span><br><span class="line">方式<span class="number">2</span>：ResourceBundle类    </span><br><span class="line"></span><br><span class="line"><span class="type">Properties</span> <span class="variable">prop</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">prop.load(<span class="keyword">new</span> <span class="title class_">FileInputStream</span>(<span class="string">&quot;xxxx.properties&quot;</span>));</span><br><span class="line"><span class="type">String</span> <span class="variable">value</span> <span class="operator">=</span> prop.getProperty(<span class="string">&quot;key&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="comment">//xxx.properties必须存放在当前项目工程的src目录下</span></span><br><span class="line"><span class="type">ResourceBundle</span> <span class="variable">rb</span> <span class="operator">=</span> ResourceBundle.getBundle(<span class="string">&quot;xxxx&quot;</span>);<span class="comment">//不需要指定后缀名</span></span><br><span class="line"><span class="type">String</span> <span class="variable">vaule</span> <span class="operator">=</span> rb.getString(<span class="string">&quot;key&quot;</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="字符流">字符流</h2>
-<p>为什么使用字符流？</p>
+<h2 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h2><p>为什么使用字符流？</p>
 <ul>
 <li>针对纯文本文件中的中文数据，进行读写操作</li>
 </ul>
@@ -452,17 +460,16 @@
 <ul>
 <li>答案：编码表</li>
 </ul>
-<h3 id="编码表">编码表</h3>
-<p>概念：</p>
+<h3 id="编码表"><a href="#编码表" class="headerlink" title="编码表"></a>编码表</h3><p>概念：</p>
 <ul>
-<li>编码
-<ul>
+<li>编码<ul>
 <li>把看得懂的数据，变为看不懂的数据</li>
-</ul></li>
-<li>解码
-<ul>
+</ul>
+</li>
+<li>解码<ul>
 <li>把看不懂的数据，变为看得懂的数据</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p>在进行编码、解码时必须保证使用相同的编码表。</p>
 <p>如果编码表不同，会出现：乱码</p>
@@ -470,6 +477,7 @@
 <ul>
 <li>把生活中的数据和计算机中的数据整合在一起，存放在一张表格中</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -496,17 +504,18 @@
 </tr>
 </tbody>
 </table>
-<p>字符流： 以字符为单位对文件进行读写操作 //读写都是做为字符数据</p>
+</div>
+<p>字符流： 以字符为单位对文件进行读写操作     //读写都是做为字符数据</p>
 <ul>
 <li>字符输入流：读</li>
 <li>字符输出流：写</li>
 </ul>
 <p>字符流可以读取中文的原因：</p>
 <ul>
-<li>字符流 = 字节流 + 编码表
-<ul>
-<li>底层还是使用字节流读写数据，但是由于指定编码表，那么就可以一次读写2或3个字节数据</li>
-</ul></li>
+<li>字符流 = 字节流 + 编码表<ul>
+<li>底层还是使用字节流读写数据，但是由于指定编码表，那么就可以一次读写2或3个字节数据 </li>
+</ul>
+</li>
 </ul>
 <p>字符输出流：java.io.Writer类</p>
 <ul>
@@ -528,22 +537,21 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//一次读取1个字符数据</span></span><br><span class="line"><span class="type">int</span> <span class="variable">data</span> <span class="operator">=</span> r.read();  <span class="comment">//data中存储的是字符数据的编码值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//一次读取多个字符数据</span></span><br><span class="line"><span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> r.read( <span class="type">char</span>[]  cbuf )<span class="comment">//一次最多读取cbuf.length个字符数据，并把读取的字符数据存储到cbuf数组中。  返回实际读取到的字符数据个数。 读取到文件末尾返回：-1</span></span><br></pre></td></tr></table></figure>
 <p>缓冲流（高效流）：</p>
 <ul>
-<li>字节缓冲流
-<ul>
+<li>字节缓冲流<ul>
 <li>BufferedInputStream：读</li>
 <li>BufferedOutputStream：写</li>
-</ul></li>
-<li>字符缓冲流（本身不具备读写能力，需要依赖基本的字符流）
-<ul>
+</ul>
+</li>
+<li>字符缓冲流（本身不具备读写能力，需要依赖基本的字符流）<ul>
 <li>BufferedReader：读</li>
 <li>BufferedWriter：写</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符输入缓冲流</span></span><br><span class="line"><span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;关联文件&quot;</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//字符输出缓冲流</span></span><br><span class="line"><span class="type">BufferedWriter</span> <span class="variable">bw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferWriter</span>(<span class="keyword">new</span> <span class="title class_">FileWriter</span>(<span class="string">&quot;关联文件&quot;</span>));<span class="comment">//覆盖写入</span></span><br><span class="line"><span class="type">BufferedWriter</span> <span class="variable">bw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferWriter</span>(<span class="keyword">new</span> <span class="title class_">FileWriter</span>(<span class="string">&quot;关联文件&quot;</span>,<span class="literal">true</span>));<span class="comment">//追加写入</span></span><br></pre></td></tr></table></figure>
 <p>字符缓冲流，提供了特有方法：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">BufferedReader类中特有方法：</span><br><span class="line">String <span class="title function_">readLine</span><span class="params">()</span>;<span class="comment">//一次读取一行数据(以&quot;\r\n&quot;结尾) ，读取到文件末尾时返回：null</span></span><br><span class="line"></span><br><span class="line">BufferedWriter类中特有方法：</span><br><span class="line"><span class="keyword">void</span>  <span class="title function_">newLine</span><span class="params">()</span>;<span class="comment">//写入换行符（跨平台）    </span></span><br></pre></td></tr></table></figure>
-<h2 id="转换流">转换流</h2>
-<p>转换流的作用：读写特定编码表的文件</p>
+<h2 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h2><p>转换流的作用：读写特定编码表的文件</p>
 <ul>
 <li>FileReader类默认是UTF-8编码表（无法读GBK编码表的文件）</li>
 </ul>
@@ -653,7 +661,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:32</span>
+    <span title="站点阅读时长">6:07</span>
   </span>
 </div>
 <div class="busuanzi-count">
