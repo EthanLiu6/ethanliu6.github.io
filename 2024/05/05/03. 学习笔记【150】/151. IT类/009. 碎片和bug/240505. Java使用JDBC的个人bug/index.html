@@ -144,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%84%9A%E6%9C%ACsql%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">脚本SQL问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="nav-number">1.1.</span> <span class="nav-text">对于字符串的脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE%E8%84%9A%E6%9C%AC%E5%87%BA%E9%94%99"><span class="nav-number">1.2.</span> <span class="nav-text">添加数据脚本出错</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%84%9A%E6%9C%ACSQL%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">脚本SQL问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%84%9A%E6%9C%AC"><span class="nav-number">1.1.</span> <span class="nav-text">对于字符串的脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%95%B0%E6%8D%AE%E8%84%9A%E6%9C%AC%E5%87%BA%E9%94%99"><span class="nav-number">1.2.</span> <span class="nav-text">添加数据脚本出错</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -309,20 +309,14 @@
 
 </blockquote>
 <span id="more"></span>
-<h2 id="脚本sql问题">脚本SQL问题</h2>
-<h3 id="对于字符串的脚本">对于字符串的脚本</h3>
-<p>error:<code>java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '','飞科科技有限公司',50,'剃须不残留',1)' at line 1</code></p>
-<p>//对于varchar类型的需要添加"<code>''</code>"</p>
+<h2 id="脚本SQL问题"><a href="#脚本SQL问题" class="headerlink" title="脚本SQL问题"></a>脚本SQL问题</h2><h3 id="对于字符串的脚本"><a href="#对于字符串的脚本" class="headerlink" title="对于字符串的脚本"></a>对于字符串的脚本</h3><p>error:<code>java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;&#39;,&#39;飞科科技有限公司&#39;,50,&#39;剃须不残留&#39;,1)&#39; at line 1</code></p>
+<p> //对于varchar类型的需要添加”<code>&#39;&#39;</code>“</p>
 <p>例如<code>String companyName = brand.getCompanyName();</code></p>
-<p>在SQL中使用<code>companyName</code>时需要添加<code>''</code></p>
-<p>.....<code>+"'"+ brandName +"'" +","</code></p>
+<p>在SQL中使用<code>companyName</code>时需要添加<code>&#39;&#39;</code></p>
+<p>…..<code>+&quot;&#39;&quot;+ brandName +&quot;&#39;&quot; +&quot;,&quot;</code></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">addBrand</span><span class="params">(Brand brand)</span> <span class="keyword">throws</span> SQLException &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> brand.getId();</span><br><span class="line">    <span class="type">String</span> <span class="variable">brandName</span> <span class="operator">=</span> brand.getBrandName();</span><br><span class="line">    <span class="type">String</span> <span class="variable">companyName</span> <span class="operator">=</span> brand.getCompanyName();</span><br><span class="line">    <span class="type">int</span> <span class="variable">ordered</span> <span class="operator">=</span> brand.getOrdered();</span><br><span class="line">    <span class="type">String</span> <span class="variable">description</span> <span class="operator">=</span> brand.getDescription();</span><br><span class="line">    <span class="type">int</span> <span class="variable">status</span> <span class="operator">=</span> brand.getStatus();</span><br><span class="line">    brand.toString();</span><br><span class="line"></span><br><span class="line">    sql = <span class="string">&quot;insert into tb_brand (id, brand_name, company_name, ordered, description, status) values(&quot;</span></span><br><span class="line">            + id + <span class="string">&quot;,&quot;</span></span><br><span class="line">            +<span class="string">&quot;&#x27;&quot;</span>+ brandName +<span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot;,&quot;</span> <span class="comment">//对于varchar类型的需要添加&quot;&#x27;&#x27;&quot;</span></span><br><span class="line">            +<span class="string">&quot;&#x27;&quot;</span>+ companyName +<span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot;,&quot;</span></span><br><span class="line">            + ordered  + <span class="string">&quot;,&quot;</span></span><br><span class="line">            +<span class="string">&quot;&#x27;&quot;</span>+ description +<span class="string">&quot;&#x27;&quot;</span> + <span class="string">&quot;,&quot;</span></span><br><span class="line">            + status + <span class="string">&quot;)&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="添加数据脚本出错">添加数据脚本出错</h3>
-<p>改了好久，一直提示说第一个参数未给定，尝试了很多种办法，<code>最后发现是前面的代码重新初始化了一个PrepareStatement</code>对象</p>
-<figure>
-<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240505180529100.png" alt="image-20240505180529100">
-<figcaption aria-hidden="true">image-20240505180529100</figcaption>
-</figure>
+<h3 id="添加数据脚本出错"><a href="#添加数据脚本出错" class="headerlink" title="添加数据脚本出错"></a>添加数据脚本出错</h3><p>改了好久，一直提示说第一个参数未给定，尝试了很多种办法，<code>最后发现是前面的代码重新初始化了一个PrepareStatement</code>对象</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240505180529100.png" alt="image-20240505180529100"></p>
 
     </div>
 
