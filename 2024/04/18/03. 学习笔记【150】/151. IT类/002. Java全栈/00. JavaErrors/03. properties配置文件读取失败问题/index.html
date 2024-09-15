@@ -310,14 +310,23 @@
 
 </blockquote>
 <span id="more"></span>
-<p>Error：<code>Exception in thread &quot;main&quot; java.io.FileNotFoundException: web.properties (No such file or directory)</code></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240512185147347.png" alt="image-20240512185147347"></p>
+<p>Error：<code>Exception in thread "main" java.io.FileNotFoundException: web.properties (No such file or directory)</code></p>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240512185147347.png" alt="image-20240512185147347">
+<figcaption aria-hidden="true">image-20240512185147347</figcaption>
+</figure>
 <p>读取方式：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读取配置文件</span></span><br><span class="line"><span class="type">FileReader</span> <span class="variable">fileReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;web.properties&quot;</span>);</span><br><span class="line"><span class="type">Properties</span> <span class="variable">prop</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();</span><br><span class="line">prop.load(fileReader);</span><br><span class="line">System.out.println(prop);</span><br><span class="line"><span class="comment">//关闭</span></span><br><span class="line">fileReader.close();</span><br></pre></td></tr></table></figure>
-<p><img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240512185016521.png" alt="image-20240512185016521"></p>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240512185016521.png" alt="image-20240512185016521">
+<figcaption aria-hidden="true">image-20240512185016521</figcaption>
+</figure>
 <p>结果出现找不到文件错误</p>
-<p><code>Exception in thread &quot;main&quot; java.io.FileNotFoundException: web.properties (No such file or directory)</code></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240512185147347.png" alt="image-20240512185147347"></p>
+<p><code>Exception in thread "main" java.io.FileNotFoundException: web.properties (No such file or directory)</code></p>
+<figure>
+<img data-src="https://cdn.jsdelivr.net/gh/EthanLiu6/ImgsForMe/blog_images/image-20240512185147347.png" alt="image-20240512185147347">
+<figcaption aria-hidden="true">image-20240512185147347</figcaption>
+</figure>
 <p>问题解决：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Properties</span> <span class="variable">pro</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Properties</span>();        </span><br><span class="line">        &#123;<span class="comment">//此方式要求   配置文件在 src 文件夹 内 </span></span><br><span class="line">            </span><br><span class="line">            <span class="comment">//类名.class.getClassLoader().getResourceAsStream(&quot;文件名&quot;)</span></span><br><span class="line">            <span class="type">InputStream</span> <span class="variable">inStream</span> <span class="operator">=</span> DatabaseConfig.class.getClassLoader().getResourceAsStream(<span class="string">&quot;database.properties&quot;</span>);        </span><br><span class="line">            pro.load(inStream);             </span><br><span class="line">            inStream.close();            </span><br><span class="line">        &#125;        </span><br><span class="line">        </span><br><span class="line">        &#123;<span class="comment">//此方式要求  文件名 要和 src 平级，不是在src目录之下(建议此种方式建立配置文件)</span></span><br><span class="line">            </span><br><span class="line">            <span class="type">FileReader</span> <span class="variable">reader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;database.properties&quot;</span>); </span><br><span class="line">            pro.load(reader);</span><br><span class="line">            reader.close();            </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 <p>项目结构：</p>
@@ -325,8 +334,11 @@
 <p>由于我的配置文件在<code>src</code>下，所以移动到项目文件下就行了</p>
 <p>但是，我使用的MacOS系统，还需要把项目跟添加上，不添加的话还是报同样的错误：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">FileReader</span> <span class="variable">fileReader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileReader</span>(<span class="string">&quot;servlet_simulate/web.properties&quot;</span>);</span><br></pre></td></tr></table></figure>
-<div class="note success"><p>这里需要注意的是，properties 文件的路径问题，两种方式要求的文件路径是不一样的，防止操作文件时会出现 FileNotFoundException 的情况。</p>
+<div class="note success"><p>这里需要注意的是，properties
+文件的路径问题，两种方式要求的文件路径是不一样的，防止操作文件时会出现
+FileNotFoundException 的情况。</p>
 </div>
+
     </div>
 
     
