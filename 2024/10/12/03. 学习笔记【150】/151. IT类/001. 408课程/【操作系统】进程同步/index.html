@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.1.1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/avatar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/avatar.jpg">
+  <link rel="mask-icon" href="/images/avatar.jpg" color="#222">
+  <meta name="msvalidate.01" content="4AF2328B2035748153A041B7EEF3D15C">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CLobster:300,300italic,400,400italic,700,700italic%7CPingFang+SC:300,300italic,400,400italic,700,700italic%7CRoboto+Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha256-wiz7ZSCn/btzhjKDQBms9Hx4sSeUYsDrTLg7roPstac=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.css" integrity="sha256-gkQVf8UKZgQ0HyuxL/VnacadJ+D2Kox2TCEBuNQg5+w=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ethanliu6.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.2","exturl":true,"sidebar":{"position":"left","display":"always","padding":12,"offset":18},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":300},"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":true,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":6,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="这篇笔记我们讲讲进程协作之间的进程同步。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【操作系统】进程同步">
+<meta property="og:url" content="http://ethanliu6.github.io/2024/10/12/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/001.%20408%E8%AF%BE%E7%A8%8B/%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/index.html">
+<meta property="og:site_name" content="&lt;font color&#x3D;&#39;white&#39; &gt;Ethan の Blog&lt;&#x2F;font&gt;">
+<meta property="og:description" content="这篇笔记我们讲讲进程协作之间的进程同步。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/blog-pics/image-20241012172750676.png">
+<meta property="og:image" content="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/blog-pics/image-20241012235407890.png">
+<meta property="og:image" content="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/blog-pics/image-20241013000945237.png">
+<meta property="article:published_time" content="2024-10-12T10:28:52.754Z">
+<meta property="article:modified_time" content="2024-10-12T16:34:49.648Z">
+<meta property="article:author" content="Ethan Liu">
+<meta property="article:tag" content="进程同步">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/blog-pics/image-20241012172750676.png">
+
+
+<link rel="canonical" href="http://ethanliu6.github.io/2024/10/12/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/001.%20408%E8%AF%BE%E7%A8%8B/%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://ethanliu6.github.io/2024/10/12/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/001.%20408%E8%AF%BE%E7%A8%8B/%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/","path":"2024/10/12/03. 学习笔记【150】/151. IT类/001. 408课程/【操作系统】进程同步/","title":"【操作系统】进程同步"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>【操作系统】进程同步 | <font color='white' >Ethan の Blog</font></title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title"><font color='white' >Ethan の Blog</font></p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description"><font color='#FDABC1' size=3>清醒的停留，胜过——盲目的前行</font></p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我"><a href="/aboutme/" rel="section"><i class="fa fa-user fa-fw"></i>关于我</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">26</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">19</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">72</span></a></li><li class="menu-item menu-item-love"><a href="/categories/Love/" rel="section"><i class="fas fa-heart fa-fw"></i>Love</a></li><li class="menu-item menu-item-个人感悟"><a href="/categories/%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F/" rel="section"><i class="fa fa-pen-nib fa-fw"></i>个人感悟</a></li><li class="menu-item menu-item-阅读笔记"><a href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" rel="section"><i class="fa fa-book-open-reader fa-fw"></i>阅读笔记</a></li><li class="menu-item menu-item-任务清单"><span class="exturl" data-url="aHR0cHM6Ly9kaWRhMzY1LmNvbS93ZWJhcHAjcC9pbmJveC90YXNrcw=="><i class="fa fa-list-check fa-fw"></i>任务清单</span></li><li class="menu-item menu-item-内网云盘"><span class="exturl" data-url="aHR0cDovLzE3Mi4yNi44LjU4OjUyNDQv"><i class="fa fa-cloud fa-fw"></i>内网云盘</span></li><li class="menu-item menu-item-外网云盘"><span class="exturl" data-url="aHR0cHM6Ly84YmFiLTI0MDktODc2Mi1lMzQtMjAtODg5OS0wMC1kNTAubmdyb2stZnJlZS5hcHA="><i class="fa fa-cloud fa-fw"></i>外网云盘</span></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="nav-number">1.</span> <span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">1. 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%8F%90%E5%87%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1为什么要提出？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 同步是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E5%8F%88%E6%98%AF%E4%BA%92%E6%96%A5"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 什么又是互斥？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%B4%E7%95%8C%E8%B5%84%E6%BA%90%E6%98%AF%E5%95%A5"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.4 临界资源是啥？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">1.4.1 系统资源</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%B4%E7%95%8C%E8%B5%84%E6%BA%90%E5%85%B1%E4%BA%AB%E8%B5%84%E6%BA%90"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">1.4.2 临界资源（共享资源）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%B4%E7%95%8C%E5%8C%BA"><span class="nav-number">1.1.4.3.</span> <span class="nav-text">1.4.3 临界区</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">2. 同步如何实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E5%8E%9F%E5%88%99"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 访问原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%90%8E%E7%BB%AD%E8%A1%A5%E5%85%85"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.2 软件实现（后续补充）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E6%A0%87%E5%BF%97%E6%B3%95"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">2.2.1 单标志法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E6%A0%87%E5%BF%97%E5%85%88%E6%A3%80%E6%9F%A5%E6%B3%95"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">2.2.2 双标志先检查法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E6%A0%87%E5%BF%97%E5%90%8E%E6%A3%80%E6%9F%A5%E6%B3%95"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">2.2.3 双标志后检查法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E5%AE%9E%E7%8E%B0%E5%90%8E%E7%BB%AD%E8%A1%A5%E5%85%85"><span class="nav-number">1.2.3.</span> <span class="nav-text">2.3 硬件实现（后续补充）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AD%E6%96%AD%E5%B1%8F%E8%94%BD%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">2.3.1 中断屏蔽方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#test-and-setts%E6%8C%87%E4%BB%A4tsl%E6%8C%87%E4%BB%A4"><span class="nav-number">1.2.3.2.</span> <span class="nav-text">2.3.2
+Test-And-Set（(TS指令&#x2F;TSL指令）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#swap%E6%8C%87%E4%BB%A4exchangexchg%E6%8C%87%E4%BB%A4"><span class="nav-number">1.2.3.3.</span> <span class="nav-text">2.3.3
+Swap指令（EXCHANGE，XCHG指令）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F%E6%9C%BA%E5%88%B6%E9%87%8D%E7%82%B9%E4%B8%8B%E4%B8%80%E8%8A%82%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3"><span class="nav-number">1.2.3.4.</span> <span class="nav-text">2.3.4
+信号量机制（重点，下一节详细讲解）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">1.3.</span> <span class="nav-text">3. 参考资料</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Ethan Liu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Ethan Liu</p>
+  <div class="site-description" itemprop="description"><font color='#0000FF' size=1.5px>语言学 | IT | 脑科学 | 心理学</font></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2V0aGFubGl1Ng==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ethanliu6"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmxpdWUyMzM2QGdtYWlsLmNvbQ==" title="E-Mail → mailto:liue2336@gmail.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zcGFjZS5iaWxpYmlsaS5jb20vMTMyNzA5OTk3Nw==" title="BiliBili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1327099977"><i class="fa-brands fa-bilibili fa-fw"></i>BiliBili</span>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/categories/Love/" title="Love → &#x2F;categories&#x2F;Love&#x2F;" rel="noopener me"><i class="fa fa-heart fa-fw"></i>Love</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ethanliu6.github.io/2024/10/12/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/001.%20408%E8%AF%BE%E7%A8%8B/%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Ethan Liu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="<font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="<font color='#0000FF' size=1.5px>语言学 | IT | 脑科学 | 心理学</font>">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="【操作系统】进程同步 | <font color='white' >Ethan の Blog</font>">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【操作系统】进程同步<span class="exturl post-edit-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni9ldGhhbmxpdTYuZ2l0aHViLmlvL3RyZWUvbWFzdGVyL19wb3N0cy8wMy4g5a2m5Lmg56yU6K6w44CQMTUw44CRLzE1MS4gSVTnsbsvMDAxLiA0MDjor77nqIsv44CQ5pON5L2c57O757uf44CR6L+b56iL5ZCM5q2lLm1k" title="编辑"><i class="fa fa-pen-nib"></i></span>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2024-10-12 18:28:52" itemprop="dateCreated datePublished" datetime="2024-10-12T18:28:52+08:00">2024-10-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-10-13 00:34:49" itemprop="dateModified" datetime="2024-10-13T00:34:49+08:00">2024-10-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">操作系统学习</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan：</span>
+    
+    <a title="【操作系统】进程同步" href="/2024/10/12/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/001.%20408%E8%AF%BE%E7%A8%8B/%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::cca71a604423c06e44ebcb51b981f88b" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><blockquote class="blockquote-center">
+<p>这篇笔记我们讲讲进程协作之间的<strong>进程同步</strong>。</p>
+
+</blockquote>
+<span id="more"></span>
+<p>首先还是看这张图，对我们当前正在学习的地方做一个定位：</p>
+<figure>
+<img data-src="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/blog-pics/image-20241012172750676.png" alt="image-20241012172750676">
+<figcaption aria-hidden="true">image-20241012172750676</figcaption>
+</figure>
+<p>上一篇笔记我们已经讲了进程通信相关的知识，这篇笔记我们讲讲进程协作之间的进程同步。</p>
+<h1 id="进程同步">进程同步</h1>
+<figure>
+<img data-src="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/blog-pics/image-20241012235407890.png" alt="image-20241012235407890">
+<figcaption aria-hidden="true">image-20241012235407890</figcaption>
+</figure>
+<h2 id="基本概念">1. 基本概念</h2>
+<h3 id="为什么要提出">1.1为什么要提出？</h3>
+<p>进程同步是为了<strong>协调多个进程或线程对共享资源的访问</strong>，以确保数据一致性、避免冲突，并保证程序按预期执行。在操作系统中，多个进程或线程可能需要同时访问共享资源（例如内存、文件、硬件设备等），如果没有合适的同步机制，可能会出现一些不可预期的问题，如数据竞争、死锁（后面详讲）、资源浪费等。</p>
+<h3 id="同步是什么">1.2 同步是什么？</h3>
+<blockquote>
+<p><strong>进程</strong>我们前面已经提及过了，这里不多赘述，直接理解同步</p>
+</blockquote>
+<p>同步分为<strong>进程同步</strong>和<strong>资源同步</strong>，进程同步我们下面会详细讲述，这里简单提一下。进程同步指多个进程在特定点会合（join
+up）或者<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kv5o+h5omLXyjmioDmnK8p">握手<i class="fa fa-external-link-alt"></i></span>使得达成协议或者使得操作序列有序。数据同步指一个数据集的多份拷贝一致以维护<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kv5a6M5pW05oCn">完整性<i class="fa fa-external-link-alt"></i></span>。常用进程同步原语实现数据同步。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<h3 id="什么又是互斥">1.3 什么又是互斥？</h3>
+<p>两个或两个以上的进程，不能同时进入关于同一组共享变量的临界区域，否则可能发生与时间有关的错误，这种现象被称作进程互斥。
+也就是说，一个进程正在访问<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/kuLTnlYzotYTmupAvMTg4MDI2OT9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">临界资源<i class="fa fa-external-link-alt"></i></span>，另一个要访问该资源的进程必须等待。</p>
+<h3 id="临界资源是啥">1.4 临界资源是啥？</h3>
+<h4 id="系统资源">1.4.1 系统资源</h4>
+<p>前面一直说系统资源，或许有同学会疑问啥是系统资源。在<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kv6KiI566X5qmf56eR5a24">计算机科学<i class="fa fa-external-link-alt"></i></span>中，<strong>系统资源</strong>（英语：system
+resource），或是<strong>资源</strong>（英语：resource），意指是一个电脑系统中，限制其运算能力的任何实体或是虚拟的组成元件。任何连结到电脑系统中的装置，都是一个资源，例如键盘、萤幕等。电脑系统内部的任何元件都是资源，如CPU，RAM。电脑系统中的软件虚拟元件，包括档案，网络连线与记忆体区块等，都是一种资源。<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<h4 id="临界资源共享资源">1.4.2 临界资源（共享资源）</h4>
+<p><strong>临界资源</strong>（Critical
+Resource）是指在<strong>并发环境</strong>中，多个进程或线程<strong>需要共享访问</strong>，但同一时刻<strong>只能被一个进程或线程使用</strong>的资源。也就是一种特殊的共享资源。<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>在<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/lpJrpgZPnqIvluo8vODE5MjM5Mj9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">多道程序<i class="fa fa-external-link-alt"></i></span>环境下，存在着临界资源，它是指<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/lpJrov5vnqIsvOTc5Njk3Nj9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">多进程<i class="fa fa-external-link-alt"></i></span>存在时必须互斥访问的资源。也就是某一时刻不允许多个进程同时访问，只能单个进程的访问。我们把这些程序的片段称作<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/kuLTnlYzljLovODk0MjEzND9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">临界区<i class="fa fa-external-link-alt"></i></span>或临界段，它存在的目的是有效的防止<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nq57kuonmnaHku7YvMTAzNTQ4MTU/ZnJvbU1vZHVsZT1sZW1tYV9pbmxpbms=">竞争条件<i class="fa fa-external-link-alt"></i></span>又能保证最大化使用共享数据。而这些并发进程必须有好的解决方案，才能防止出现以下情况：多个进程同时处于临界区，临界区外的进程阻塞其他的进程，有些进程在临界区外无休止的等待。除此以外，这些方案还不能对CPU的速度和数目做出任何的假设。只有满足了这些条件，才是一个好的解决方案。<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<h4 id="临界区">1.4.3 临界区</h4>
+<p><strong>临界区</strong>指的是一个访问共用资源（例如：共用设备或是共用存储器）的程序片段，而这些共用资源又无法同时被多个<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nur/nqIsvMTAzMTAxP2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">线程<i class="fa fa-external-link-alt"></i></span>访问的特性。当有线程进入临界区段时，其他线程或是<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/ov5vnqIsvMzgyNTAzP2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">进程<i class="fa fa-external-link-alt"></i></span>必须等待（例如：bounded
+waiting
+等待法），有一些同步的机制必须在临界区段的进入点与离开点实现，以确保这些共用资源是被互斥获得使用，例如：<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9zZW1hcGhvcmUvMTMyMjIzMT9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">semaphore<i class="fa fa-external-link-alt"></i></span>。只能被单一线程访问的设备，例如：<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/miZPljbDmnLovMjE1NTYzP2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">打印机<i class="fa fa-external-link-alt"></i></span>。<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<h2 id="同步如何实现">2. 同步如何实现</h2>
+<div class="tip">
+<p>实现同步也就是实现临界区进程（或线程）之间的互斥访问</p>
+</div>
+<h3 id="访问原则">2.1 访问原则</h3>
+<figure>
+<img data-src="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/blog-pics/image-20241013000945237.png" alt="image-20241013000945237">
+<figcaption aria-hidden="true">image-20241013000945237</figcaption>
+</figure>
+<h3 id="软件实现后续补充">2.2 软件实现（后续补充）</h3>
+<h4 id="单标志法">2.2.1 单标志法</h4>
+<h4 id="双标志先检查法">2.2.2 双标志先检查法</h4>
+<h4 id="双标志后检查法">2.2.3 双标志后检查法</h4>
+<h3 id="硬件实现后续补充">2.3 硬件实现（后续补充）</h3>
+<h4 id="中断屏蔽方法">2.3.1 中断屏蔽方法</h4>
+<h4 id="test-and-setts指令tsl指令">2.3.2
+Test-And-Set（(TS指令/TSL指令）</h4>
+<h4 id="swap指令exchangexchg指令">2.3.3
+Swap指令（EXCHANGE，XCHG指令）</h4>
+<h4 id="信号量机制重点下一节详细讲解">2.3.4
+信号量机制（重点，下一节详细讲解）</h4>
+<h2 id="参考资料">3. 参考资料</h2>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>维基百科：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%90%8C%E6%AD%A5_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">同步_<em>(计算机科学)</em></a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>维基百科：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B3%87%E6%BA%90_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%B8)">资源_<em>(计算机科学)</em></a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>ChatGPT：<span class="exturl" data-url="aHR0cHM6Ly9jaGF0Z3B0LmNvbS8=">临界资源<i class="fa fa-external-link-alt"></i></span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>百度百科：<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTglQkYlOUIlRTclQTglOEIlRTQlQkElOTIlRTYlOTYlQTUvNTA5NjUzMw==">进程互斥<i class="fa fa-external-link-alt"></i></span><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>百度百科：<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTQlQjglQjQlRTclOTUlOEMlRTUlOEMlQkEvODk0MjEzNA==">临界区<i class="fa fa-external-link-alt"></i></span><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wChat.png" alt="Ethan Liu 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Ethan Liu
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://ethanliu6.github.io/2024/10/12/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/001.%20408%E8%AF%BE%E7%A8%8B/%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/" title="【操作系统】进程同步">http://ethanliu6.github.io/2024/10/12/03. 学习笔记【150】/151. IT类/001. 408课程/【操作系统】进程同步/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+          <div class="post-tags">
+              <a href="/tags/%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/" rel="tag"><i class="fa fa-tag"></i> 进程同步</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/09/15/01.%20%E4%B8%AA%E4%BA%BA%E6%84%9F%E6%82%9F%E3%80%90130%E3%80%91/240915%E3%80%90%E4%BB%B7%E5%80%BC%E8%A7%82%E3%80%91%E4%BA%BA%E7%94%9F%E8%A7%89%E9%86%92%E2%80%94%E2%80%94%E6%98%8E%E7%A1%AE%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BB%B7%E5%80%BC%E8%A7%82/" rel="prev" title="人生觉醒——明确自己的价值观">
+                  <i class="fa fa-angle-left"></i> 人生觉醒——明确自己的价值观
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2024/10/13/05.%20%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E3%80%90180%E3%80%91/241013%20%E8%AF%A5%E5%8D%9A%E5%AE%A2%E5%81%9C%E6%9B%B4/" rel="next" title="博客停更">
+                  博客停更 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="cca71a604423c06e44ebcb51b981f88b"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 2023-2024 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Is Ethan's</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">154k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9:22</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0V0aGFuTGl1Ni8=" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/next-theme-pjax/0.6.0/pjax.min.js" integrity="sha256-vxLn1tSKWD4dqbMRyv940UYw4sXgMtYcK6reefzZrao=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.33/fancybox/fancybox.umd.js" integrity="sha256-+2+qOqR8CKoHh/AsVR9k2qaDBKWjYNC2nozhYmv5j9k=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.1.0/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script><script src="/js/pjax.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"all","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://ethanliu6.github.io/2024/10/12/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/001.%20408%E8%AF%BE%E7%A8%8B/%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cyxf6tytI","appkey":"90987f30c4b5248baad5a04c7a6abfe1","count":true}</script>
+<script src="/js/third-party/comments/changyan.js"></script>
+
+</body>
+</html>

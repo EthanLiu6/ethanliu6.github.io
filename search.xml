@@ -10,7 +10,7 @@
 <span id="more"></span>
 <h2 id="文档头"><a href="#文档头" class="headerlink" title="文档头"></a>文档头</h2><p>使用<code>---</code>启用</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: 博客内容模板</span><br><span class="line"><span class="built_in">date</span>: 2024-09-13</span><br><span class="line">categories: </span><br><span class="line">  - BlogSet</span><br><span class="line">tags: </span><br><span class="line">  - BlogSet</span><br><span class="line">number: <span class="literal">true</span></span><br><span class="line">mathjax: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 目前categories:</span></span><br><span class="line">Love</span><br><span class="line">BlogSet|个人bug|个人日记|个人感悟|</span><br><span class="line">电脑知识|碎片知识|经济学|数学|</span><br><span class="line">刷题|Redis|Java全栈|环境配置|深度学习|阅读笔记</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 目前categories:</span></span><br><span class="line">Love</span><br><span class="line">BlogSet|个人bug|个人日记|个人感悟|</span><br><span class="line">电脑知识|碎片知识|经济学|数学|</span><br><span class="line">刷题|Redis|Java全栈|环境配置|深度学习|阅读笔记|操作系统学习</span><br></pre></td></tr></table></figure>
 <h2 id="引用块与More"><a href="#引用块与More" class="headerlink" title="引用块与More"></a>引用块与More</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;%cq%&#125;</span><br><span class="line">文章摘要</span><br><span class="line">&#123;%endcq%&#125;</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <blockquote class="blockquote-center">
@@ -10088,5 +10088,102 @@ request.setAttribute(&quot;userObj&quot;, user);
       <tags>
         <tag>JavaWeb</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>【操作系统】进程同步</title>
+    <url>/2024/10/12/03.%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%90150%E3%80%91/151.%20IT%E7%B1%BB/001.%20408%E8%AF%BE%E7%A8%8B/%E3%80%90%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E3%80%91%E8%BF%9B%E7%A8%8B%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>这篇笔记我们讲讲进程协作之间的<strong>进程同步</strong>。</p>
+
+</blockquote>
+<span id="more"></span>
+<p>首先还是看这张图，对我们当前正在学习的地方做一个定位：</p>
+<figure>
+<img data-src="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/blog-pics/image-20241012172750676.png" alt="image-20241012172750676">
+<figcaption aria-hidden="true">image-20241012172750676</figcaption>
+</figure>
+<p>上一篇笔记我们已经讲了进程通信相关的知识，这篇笔记我们讲讲进程协作之间的进程同步。</p>
+<h1 id="进程同步">进程同步</h1>
+<figure>
+<img data-src="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/blog-pics/image-20241012235407890.png" alt="image-20241012235407890">
+<figcaption aria-hidden="true">image-20241012235407890</figcaption>
+</figure>
+<h2 id="基本概念">1. 基本概念</h2>
+<h3 id="为什么要提出">1.1为什么要提出？</h3>
+<p>进程同步是为了<strong>协调多个进程或线程对共享资源的访问</strong>，以确保数据一致性、避免冲突，并保证程序按预期执行。在操作系统中，多个进程或线程可能需要同时访问共享资源（例如内存、文件、硬件设备等），如果没有合适的同步机制，可能会出现一些不可预期的问题，如数据竞争、死锁（后面详讲）、资源浪费等。</p>
+<h3 id="同步是什么">1.2 同步是什么？</h3>
+<blockquote>
+<p><strong>进程</strong>我们前面已经提及过了，这里不多赘述，直接理解同步</p>
+</blockquote>
+<p>同步分为<strong>进程同步</strong>和<strong>资源同步</strong>，进程同步我们下面会详细讲述，这里简单提一下。进程同步指多个进程在特定点会合（join
+up）或者<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kv5o+h5omLXyjmioDmnK8p">握手<i class="fa fa-external-link-alt"></i></span>使得达成协议或者使得操作序列有序。数据同步指一个数据集的多份拷贝一致以维护<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kv5a6M5pW05oCn">完整性<i class="fa fa-external-link-alt"></i></span>。常用进程同步原语实现数据同步。<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<h3 id="什么又是互斥">1.3 什么又是互斥？</h3>
+<p>两个或两个以上的进程，不能同时进入关于同一组共享变量的临界区域，否则可能发生与时间有关的错误，这种现象被称作进程互斥。
+也就是说，一个进程正在访问<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/kuLTnlYzotYTmupAvMTg4MDI2OT9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">临界资源<i class="fa fa-external-link-alt"></i></span>，另一个要访问该资源的进程必须等待。</p>
+<h3 id="临界资源是啥">1.4 临界资源是啥？</h3>
+<h4 id="系统资源">1.4.1 系统资源</h4>
+<p>前面一直说系统资源，或许有同学会疑问啥是系统资源。在<span class="exturl" data-url="aHR0cHM6Ly96aC53aWtpcGVkaWEub3JnL3dpa2kv6KiI566X5qmf56eR5a24">计算机科学<i class="fa fa-external-link-alt"></i></span>中，<strong>系统资源</strong>（英语：system
+resource），或是<strong>资源</strong>（英语：resource），意指是一个电脑系统中，限制其运算能力的任何实体或是虚拟的组成元件。任何连结到电脑系统中的装置，都是一个资源，例如键盘、萤幕等。电脑系统内部的任何元件都是资源，如CPU，RAM。电脑系统中的软件虚拟元件，包括档案，网络连线与记忆体区块等，都是一种资源。<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<h4 id="临界资源共享资源">1.4.2 临界资源（共享资源）</h4>
+<p><strong>临界资源</strong>（Critical
+Resource）是指在<strong>并发环境</strong>中，多个进程或线程<strong>需要共享访问</strong>，但同一时刻<strong>只能被一个进程或线程使用</strong>的资源。也就是一种特殊的共享资源。<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>在<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/lpJrpgZPnqIvluo8vODE5MjM5Mj9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">多道程序<i class="fa fa-external-link-alt"></i></span>环境下，存在着临界资源，它是指<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/lpJrov5vnqIsvOTc5Njk3Nj9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">多进程<i class="fa fa-external-link-alt"></i></span>存在时必须互斥访问的资源。也就是某一时刻不允许多个进程同时访问，只能单个进程的访问。我们把这些程序的片段称作<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/kuLTnlYzljLovODk0MjEzND9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">临界区<i class="fa fa-external-link-alt"></i></span>或临界段，它存在的目的是有效的防止<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nq57kuonmnaHku7YvMTAzNTQ4MTU/ZnJvbU1vZHVsZT1sZW1tYV9pbmxpbms=">竞争条件<i class="fa fa-external-link-alt"></i></span>又能保证最大化使用共享数据。而这些并发进程必须有好的解决方案，才能防止出现以下情况：多个进程同时处于临界区，临界区外的进程阻塞其他的进程，有些进程在临界区外无休止的等待。除此以外，这些方案还不能对CPU的速度和数目做出任何的假设。只有满足了这些条件，才是一个好的解决方案。<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<h4 id="临界区">1.4.3 临界区</h4>
+<p><strong>临界区</strong>指的是一个访问共用资源（例如：共用设备或是共用存储器）的程序片段，而这些共用资源又无法同时被多个<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/nur/nqIsvMTAzMTAxP2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">线程<i class="fa fa-external-link-alt"></i></span>访问的特性。当有线程进入临界区段时，其他线程或是<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/ov5vnqIsvMzgyNTAzP2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">进程<i class="fa fa-external-link-alt"></i></span>必须等待（例如：bounded
+waiting
+等待法），有一些同步的机制必须在临界区段的进入点与离开点实现，以确保这些共用资源是被互斥获得使用，例如：<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS9zZW1hcGhvcmUvMTMyMjIzMT9mcm9tTW9kdWxlPWxlbW1hX2lubGluaw==">semaphore<i class="fa fa-external-link-alt"></i></span>。只能被单一线程访问的设备，例如：<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS/miZPljbDmnLovMjE1NTYzP2Zyb21Nb2R1bGU9bGVtbWFfaW5saW5r">打印机<i class="fa fa-external-link-alt"></i></span>。<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<h2 id="同步如何实现">2. 同步如何实现</h2>
+<div class="tip">
+<p>实现同步也就是实现临界区进程（或线程）之间的互斥访问</p>
+</div>
+<h3 id="访问原则">2.1 访问原则</h3>
+<figure>
+<img data-src="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/blog-pics/image-20241013000945237.png" alt="image-20241013000945237">
+<figcaption aria-hidden="true">image-20241013000945237</figcaption>
+</figure>
+<h3 id="软件实现后续补充">2.2 软件实现（后续补充）</h3>
+<h4 id="单标志法">2.2.1 单标志法</h4>
+<h4 id="双标志先检查法">2.2.2 双标志先检查法</h4>
+<h4 id="双标志后检查法">2.2.3 双标志后检查法</h4>
+<h3 id="硬件实现后续补充">2.3 硬件实现（后续补充）</h3>
+<h4 id="中断屏蔽方法">2.3.1 中断屏蔽方法</h4>
+<h4 id="test-and-setts指令tsl指令">2.3.2
+Test-And-Set（(TS指令/TSL指令）</h4>
+<h4 id="swap指令exchangexchg指令">2.3.3
+Swap指令（EXCHANGE，XCHG指令）</h4>
+<h4 id="信号量机制重点下一节详细讲解">2.3.4
+信号量机制（重点，下一节详细讲解）</h4>
+<h2 id="参考资料">3. 参考资料</h2>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>维基百科：<a href="https://zh.wikipedia.org/wiki/%E5%90%8C%E6%AD%A5_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)">同步_<em>(计算机科学)</em></a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>维基百科：<a href="https://zh.wikipedia.org/wiki/%E8%B3%87%E6%BA%90_(%E8%A8%88%E7%AE%97%E6%A9%9F%E7%A7%91%E5%AD%B8)">资源_<em>(计算机科学)</em></a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>ChatGPT：<span class="exturl" data-url="aHR0cHM6Ly9jaGF0Z3B0LmNvbS8=">临界资源<i class="fa fa-external-link-alt"></i></span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>百度百科：<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTglQkYlOUIlRTclQTglOEIlRTQlQkElOTIlRTYlOTYlQTUvNTA5NjUzMw==">进程互斥<i class="fa fa-external-link-alt"></i></span><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>百度百科：<span class="exturl" data-url="aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTQlQjglQjQlRTclOTUlOEMlRTUlOEMlQkEvODk0MjEzNA==">临界区<i class="fa fa-external-link-alt"></i></span><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>操作系统学习</category>
+      </categories>
+      <tags>
+        <tag>进程同步</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客停更</title>
+    <url>/2024/10/13/05.%20%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0%E3%80%90180%E3%80%91/241013%20%E8%AF%A5%E5%8D%9A%E5%AE%A2%E5%81%9C%E6%9B%B4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote class="blockquote-center">
+<p>博客停更</p>
+
+</blockquote>
+<span id="more"></span>
+<p>主要还是Hexo整理不方便而且笔记渲染繁杂，不在打算继续更新维护了，以后的内容绘发布在我vitepress搭建的博客：<span class="exturl" data-url="aHR0cDovL3d3dy5jb2RlcmV0aGFuLmZ1bi8=">码医森<i class="fa fa-external-link-alt"></i></span>。</p>
+]]></content>
+      <categories>
+        <category>个人日记</category>
+      </categories>
   </entry>
 </search>
