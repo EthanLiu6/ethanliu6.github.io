@@ -1,0 +1,4 @@
+/* custom overrides for Hugo NexT theme */
+/* Hide the footer language/translation selector and the tool-button that opens it */
+#i18n-translate, .i18n-translate, #goto-i18n-translate { display: none !important; }
+
