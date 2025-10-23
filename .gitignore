@@ -1,0 +1,19 @@
+# Hugo generated files
+public/
+resources/_gen/
+
+# macOS system files
+.DS_Store
+
+# Backup files
+*.backup
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Node.js dependencies (if applicable)
+node_modules/
+
+# Go dependencies
+go.sum
