@@ -202,7 +202,7 @@ menus:
   main:
     - identifier: home
       name: 首页
-      pageRef: /posts
+      pageRef: /archives
       pre: home
       weight: 1
     - identifier: about
@@ -211,24 +211,30 @@ menus:
       pre: user
       weight: 2
 
-    - identifier: archives
-      name: 归档
-      pageRef: /archives
-      pre: archive
-      weight: 3
-
     - identifier: think
       name: 感悟
       pageRef: /think
       pre: book
-      # pre: lightbulb
+      weight: 3
+
+    - identifier: learn
+      name: 学习
+      pageRef: /learn
+      pre: book-open
       weight: 4
+
+    - identifier: archives
+      name: 归档
+      pageRef: /archives
+      pre: archive
+      weight: 5
 
     - identifier: categories
       name: 分类
       pageRef: /categories
       pre: list
-      weight: 5
+      weight: 6
+
 
 
 
@@ -242,7 +248,7 @@ params:
   # 需要显示文章的部分，即content目录下的文件夹名称
   # Sections for show in home & archive page 
   # and it's folder name which under content
-  mainSections: ["posts", "about"]
+  mainSections: ["posts", "about", 'think', 'learn']
   # 年，月，日及时间的格式化样式
   # Format style for year,month,date & time
   yearFormat: "2006"

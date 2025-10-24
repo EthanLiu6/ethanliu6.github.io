@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EthanLiu6's Blog</title><link>https://ethanliu6.github.io/</link><description>Recent content on EthanLiu6's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 23 Oct 2025 02:23:25 +0800</lastBuildDate><atom:link href="https://ethanliu6.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>关于EthanLiu6</title><link>https://ethanliu6.github.io/about/</link><pubDate>Thu, 23 Oct 2025 02:23:25 +0800</pubDate><guid>https://ethanliu6.github.io/about/</guid><description>&lt;div class="post-alert-caution"&gt;
- &lt;div class="post-alert-title"&gt;
- &lt;i class="fa-solid fa-"&gt;&lt;/i&gt;
- &lt;span&gt;
- 
- 关于我
- 
- &lt;/span&gt;
- &lt;/div&gt;
- &lt;div class="post-alert-content"&gt;
- 
- &lt;/div&gt;
- &lt;/div&gt;
-&lt;p&gt;就是一个普普通通的人&lt;/p&gt;</description></item><item><title>我的第一篇文章</title><link>https://ethanliu6.github.io/posts/hello-world/</link><pubDate>Wed, 22 Oct 2025 14:00:00 +0800</pubDate><guid>https://ethanliu6.github.io/posts/hello-world/</guid><description>&lt;p&gt;fgfggggfggg&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EthanLiu6's Blog</title><link>https://ethanliu6.github.io/</link><description>Recent content on EthanLiu6's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 24 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ethanliu6.github.io/rss.xml" rel="self" type="application/rss+xml"/><item><title>Prompt-Cache、A2A、ReAct</title><link>https://ethanliu6.github.io/learn/25-10-24/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://ethanliu6.github.io/learn/25-10-24/</guid><description>&lt;p&gt;今天抽空了解一下Prompt-Cache、A2A、ReAct，之前都是听听别人或者有博客提到&lt;/p&gt;</description></item><item><title>文章模版</title><link>https://ethanliu6.github.io/posts/my_template/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://ethanliu6.github.io/posts/my_template/</guid><description>&lt;p&gt;新建文章直接复制的模版&lt;/p&gt;</description></item><item><title>我的提示词模版库</title><link>https://ethanliu6.github.io/posts/my_prompts/</link><pubDate>Fri, 24 Oct 2025 00:00:00 +0000</pubDate><guid>https://ethanliu6.github.io/posts/my_prompts/</guid><description>&lt;p&gt;这里会记录我的一些提示词模板，比较好用的我就会放在里。&lt;/p&gt;</description></item><item><title>关于EthanLiu6</title><link>https://ethanliu6.github.io/about/</link><pubDate>Thu, 23 Oct 2025 02:23:25 +0800</pubDate><guid>https://ethanliu6.github.io/about/</guid><description>&lt;p&gt;就是一个普普通通的人&lt;/p&gt;</description></item></channel></rss>
