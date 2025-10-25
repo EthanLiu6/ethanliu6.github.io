@@ -168,7 +168,7 @@ outputFormats:
 # By default use local search, before switch to Algolia engine
 # Please replace LocalIndexes with AlgoliaIndexes
 outputs:
-  home: ["HTML", "RSS", "AlgoliaIndexes"]
+  home: ["HTML", "RSS", "AlgoliaIndexes", "LocalIndexes"]
 
 # 输出 robots 文件支持爬虫扫描
 # Enable robots with support crawler scan
@@ -225,13 +225,13 @@ menus:
 
     - identifier: archives
       name: 归档
-      pageRef: /archives
+      pageRef: /archives/
       pre: archive
       weight: 5
 
     - identifier: categories
       name: 分类
-      pageRef: /categories
+      pageRef: /categories/
       pre: list
       weight: 6
 
@@ -248,7 +248,7 @@ params:
   # 需要显示文章的部分，即content目录下的文件夹名称
   # Sections for show in home & archive page 
   # and it's folder name which under content
-  mainSections: ["posts", "about", 'think', 'learn']
+  mainSections: ["posts", "about", "think", "learn"]
   # 年，月，日及时间的格式化样式
   # Format style for year,month,date & time
   yearFormat: "2006"
@@ -394,7 +394,7 @@ params:
     rounded: true
     # 开启头像随鼠标转动动画
     # If true, the avatar will be rotated with the cursor.
-    rotated: true
+    rotated: false
   siteState: 
     # 是否在侧边栏显示文章、分类、标签信息
     # Posts / Categories / Tags in sidebar.
@@ -417,7 +417,9 @@ params:
   # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
   socials: 
     social0: Github || https://github.com/EthanLiu6 || fab fa-github
-    social1: E-Mail || mailto:16693226842@163.com || fa fa-envelope
+    social1: Bilibili || https://space.bilibili.com/1327099977 || fab fa-bilibili
+    social2: 邮箱 || mailto:16693226842@163.com || fa fa-envelope
+    social3: 微信 || /imgs/wechat.png || fab fa-weixin
     # social2: 知乎 || https://www.zhihu.com/people/lisenhui || fa fa-book
     #Google: https://plus.google.com/yourname || fab fa-google
     #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -674,7 +676,7 @@ params:
   # Easily browse and edit blog source code online.
   postEdit:
     enable: true
-    url: https://github.com/EthanLiu6/ethanliu6.github.io/tree/master/posts/
+    url: https://github.com/EthanLiu6/ethanliu6.github.io/tree/master/content/
 
 
   # 设置文本的对齐方式
@@ -1291,4 +1293,4 @@ params:
 #   - path: github.com/hugomods/icons/vendors/bootstrap
 #   - path: github.com/hugomods/icons/vendors/font-awesome
 
-publishDir: docs
+publishDir: docs 
