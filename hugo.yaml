@@ -278,10 +278,10 @@ params:
   # 不同尺寸站点图标
   # Different size of favicon
   favicon:
-    icon: /imgs/icons/favicon.png
-    small: /imgs/icons/favicon.png
-    medium: /imgs/icons/favicon.png
-    appleTouchIcon: /imgs/icons/favicon.png
+    icon: /imgs/favicon.png
+    small: /imgs/favicon.png
+    medium: /imgs/favicon.png
+    appleTouchIcon: /imgs/favicon.png
 
     # icon: /imgs/icons/favicon.ico
     # small: /imgs/icons/favicon_16x16_next.png
@@ -388,7 +388,7 @@ params:
   avatar:
     # 设置显示头像的相对路径
     # Replace the default image and set the url here.
-    url: /imgs/icons/favicon.png
+    url: /imgs/favicon.png
     # 开启头像的圆形显示效果
     # If true, the avatar will be displayed in circle.
     rounded: true
