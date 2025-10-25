@@ -5,8 +5,9 @@ draft: false
 tags: ["大模型", "Prompt"]
 categories: ["工具"] 
 ---
-
+{{< quote >}}
 这里会记录我的一些提示词模板，比较好用的我就会放在里。
+{{< /quote >}}
 <!--more-->
 
 ## 决策和工具调用
