@@ -5,11 +5,6 @@ draft: false
 # type: "posts" # "learn" "think"
 # tags: ["大模型", "AI"]
 categories: ["工具"] # 感悟 学习
-# cover: 
-#     image: img/a.jpg
-#     # 设置图片的小标题
-#     alt: "图片"
-#     caption: "图片"
 
 ---
 {{< quote >}}

@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>Prompt-Cache、A2A、ReAct</title><url>/learn/25-10-24/</url><categories><category>学习</category></categories><tags><tag>大模型</tag><tag>AI</tag></tags><content type="html"><![CDATA[   今天抽空了解一下Prompt-Cache、A2A、ReAct，之前都是听听别人或者有博客提到 Prompt-Cache 由名字可以直观了解到就是通过缓存常用的一些提示词，从而提高推理响应效率
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>今夜，行走钱塘江边</title><url>/posts/%E9%92%B1%E5%A1%98%E6%B1%9F%E8%BE%B9/</url><categories><category>生活</category></categories><tags><tag>散步</tag></tags><content type="html">   今夜，行走钱塘江边 在宿舍（员工宿舍）里待了一天，着实不怎么自在，再加上今天阴天，我的情绪也比较低沉。夜色来临后，我独自骑上了小黄车，本打算熟悉一下去西湖的路，奈何半途遇到跨江大桥（复兴大桥）不知怎么过去，就骑着车转了好一会儿，往西北走去，眼前突然涌现出一片风景——一片江、一座桥、一排公寓楼，心情一下舒畅许多。我就这样沿着江边走着，走着走着，心情感慨，不知道是什么情绪，站上看台，望着这眼前的一切，江拍打着岸边，我以为是鱼儿跳跃的声音，中途突然低了几滴雨，跟我情绪恰好。最后望了望“复兴大桥”，重返公司，不过是徒步走回去的。
+杭州真的好大，公司都很大，但是感觉差点人情味。
+在封闭环境待久了真的很有必要出去走走，可以是贴近大自然，可以是望星空，也可以是去热闹的地方溜达，当然也可以像我一样漫无目的地走，走，走……
+  </content></entry><entry><title>Prompt-Cache、A2A、ReAct</title><url>/learn/25-10-24/</url><categories><category>学习</category></categories><tags><tag>大模型</tag><tag>AI</tag></tags><content type="html"><![CDATA[   今天抽空了解一下Prompt-Cache、A2A、ReAct，之前都是听听别人或者有博客提到 Prompt-Cache 由名字可以直观了解到就是通过缓存常用的一些提示词，从而提高推理响应效率
 想想场景，其实这个应用场景蛮多，但是在LMM API请求的时候最为实用，因为很多时候我们通过API请求LLM的时候，同一个节点或者模块的Prompt一般都是一样的，唯一就是会有一些变量信息携带进去，这时候就完全可以采用缓存策略，把当前请求节点的Prompt（复用的内容）做缓存，下次请求过来直接使用就行，但是如何快速识别出当前节点也是个问题，也就是缓存命中率问题。
 我觉得这个在用户层面进行模版化操作比较方便，就是让用户的prompt内容分为「复用」和「变量」部分，APi后端接口解析传参然后再通过缓存走LLM，这样我觉得是比较高效的策略，其实就是如何快速识别cache的问题。
 这个场景其实是可以做一套规范的，分析必要的要素、结构、输入输出、上下游，基本上就可以应用在各种LMM的API服务当中了。当然，还需要考虑实时更改prompt的情况。
