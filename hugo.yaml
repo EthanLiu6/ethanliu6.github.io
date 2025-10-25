@@ -202,7 +202,7 @@ menus:
   main:
     - identifier: home
       name: 首页
-      pageRef: /archives
+      pageRef: /
       pre: home
       weight: 1
     - identifier: about
