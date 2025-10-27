@@ -807,8 +807,7 @@ params:
     enable: true
 
     # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
-    host: https://fonts.googleapis.com
-
+    host:
     # Font options:
     # `external: true` will load this font family from `host` above.
     # `family: Times New Roman`. Without any quotes.
@@ -817,7 +816,7 @@ params:
     # Global font settings used for all elements inside <body>.
     global:
       external: true
-      family: ZCOOL KuaiLe
+      family:
       size: 
 
     # Font settings for site title (.site-title).
