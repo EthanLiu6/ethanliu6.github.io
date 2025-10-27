@@ -3,8 +3,8 @@ title: "文章模版"
 date: 2025-10-24
 draft: false
 # type: "posts" # "learn" "think"
-# tags: ["大模型", "AI"]
-categories: ["工具"] # 感悟 学习
+# tags: ["大模型", "AI", "prompt", "散步"]
+categories: ["工具"] # 感悟 学习 功过 工具
 
 ---
 {{< quote >}}
