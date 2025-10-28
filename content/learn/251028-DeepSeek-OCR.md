@@ -9,5 +9,5 @@ categories: ["学习"]
 DeepSeek-OCR 论文解读
 {{< /quote >}}
 <!--more-->
-<iframe src="https://coderethan-1327000741.cos.ap-chengdu.myqcloud.com/pdf/test.pdf#zoom=45" width="750" height="630"></iframe>
+<iframe src="/pdf/deepseek-OCR.pdf#zoom=45" width="750" height="630"></iframe>
 
