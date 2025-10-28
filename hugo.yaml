@@ -869,7 +869,7 @@ params:
   # 微软 Bing 站验证
   # Bing Webmaster tools verification.
   # See: https://www.bing.com/webmasters
-  bingSiteVerification: #<verify_code>
+  bingSiteVerification: 4AF2328B2035748153A041B7EEF3D15C
 
   # Yandex 站点验证
   # Yandex Webmaster tools verification.
