@@ -223,23 +223,29 @@ menus:
       pre: book-open
       weight: 4
 
+    - identifier: trophy
+      name: 我的比赛
+      pageRef: categories/比赛
+      pre: trophy
+      weight: 5
+
     - identifier: gonguo
       name: 我的功过
       pageRef: /gongguo
       pre: table-list
-      weight: 5
+      weight: 6
 
     - identifier: archives
       name: 我的归档
       pageRef: /archives/
       pre: archive
-      weight: 6
+      weight: 7
 
     - identifier: categories
       name: 我的分类
       pageRef: /categories/
       pre: list
-      weight: 7
+      weight: 8
 
 
 
