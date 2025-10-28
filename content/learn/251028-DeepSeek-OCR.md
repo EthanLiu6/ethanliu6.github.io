@@ -9,6 +9,7 @@ categories: ["学习"]
 DeepSeek-OCR 论文解读
 {{< /quote >}}
 <!--more-->
+
 <iframe src="/pdf/deepseek-OCR.pdf#zoom=45" width="750" height="630"></iframe>
 
 > [!Note]关键点
