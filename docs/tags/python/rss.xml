@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on EthanLiu6's Blog</title><link>https://ethanliu6.github.io/tags/python/</link><description>Recent content in Python on EthanLiu6's Blog</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 30 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ethanliu6.github.io/tags/python/rss.xml" rel="self" type="application/rss+xml"/><item><title>251030-python补充</title><link>https://ethanliu6.github.io/learn/251030-python%E8%A1%A5%E5%85%85/</link><pubDate>Thu, 30 Oct 2025 00:00:00 +0000</pubDate><guid>https://ethanliu6.github.io/learn/251030-python%E8%A1%A5%E5%85%85/</guid><description>&lt;blockquote class="blockquote-center"&gt;
+ python中的异步、事件循环、协程、Ruff分析工具
+装饰器、迭代器、生成器、zip
+&lt;/blockquote&gt;</description></item></channel></rss>

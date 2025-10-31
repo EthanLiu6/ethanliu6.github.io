@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>今夜重阳，登高冠山</title><url>/posts/%E9%87%8D%E9%98%B3%E7%99%BB%E9%AB%98/</url><categories><category>生活</category></categories><tags><tag>爬山</tag></tags><content type="html">   今日重阳节，下班后登高冠山 下班后跟几个实习生去爬山（我喊的），我后面觉得他们没有很想爬，而且自己也没做啥攻略，单纯重阳节，所以感觉有点对不住他们。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>25-10-30 功与过</title><url>/gongguo/25-10-30/</url><categories><category>功过</category></categories><tags/><content type="html">   25年10月30日——功与过 今日功 NOTE 慢慢改变状态 谦卑、低调、慢慢讲 慢慢健身 今日过 WARNING None
+  </content></entry><entry><title>251030-python补充</title><url>/learn/251030-python%E8%A1%A5%E5%85%85/</url><categories><category>学习</category></categories><tags><tag>python</tag></tags><content type="html"><![CDATA[   python中的异步、事件循环、协程、Ruff分析工具 装饰器、迭代器、生成器、zip NOTE 事件循环：管理和调度异步任务的核心组件。 协程：使用 async def 定义的函数，可以在事件循环中异步运行。 任务：由事件循环调度的协程对象。 Future：表示一个异步操作的最终结果，类似于 JavaScript 中的 Promise。 异步 在 Python 中，将异步方法转换为同步协程可以通过 asyncio 库实现。这种转换通常用于在同步代码中调用异步函数，确保主线程不被阻塞。
+Python中的异步编程的核心语法就是async/await两个关键字，主要涉及的概念就是协程（coroutine）。
+协程 尽量提前了解线程、进程、同步、异步、并行、并发 简单来说，协程就是在一个线程（thread）里通过事件循环（event loop）模拟出多个线程并发的效果。
+关于协程（coroutine）
+使用async def定义的函数是一个coroutine，这个函数内部可以用await关键字。 使用async def定义的函数，调用之后返回的值，是一个coroutine对象，可以被用于await或者asyncio.run等 Python 引入了 async/await 语法来支持异步编程。当我们在函数定义前加上 async 关键字时，这个函数就变成了一个&amp;quot;协程&amp;quot;（coroutine）。而 await 关键字则用于等待一个协程完成。让我们改写上面的代码：
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 import asyncio import random import time async def process_item(item): print(f&amp;#34;处理中：{item}&amp;#34;) # async 定义的函数变成了协程 process_time = random.uniform(0.5, 2.0) await asyncio.sleep(process_time) # await 等待异步操作完成，说明这个seleep也是个协程 return f&amp;#34;处理完成：{item}， …  ]]></content></entry><entry><title>今夜重阳，登高冠山</title><url>/posts/%E9%87%8D%E9%98%B3%E7%99%BB%E9%AB%98/</url><categories><category>生活</category></categories><tags><tag>爬山</tag></tags><content type="html">   今日重阳节，下班后登高冠山 下班后跟几个实习生去爬山（我喊的），我后面觉得他们没有很想爬，而且自己也没做啥攻略，单纯重阳节，所以感觉有点对不住他们。
 但是我也会被一些点点滴滴的小事或者一句话影响到，我就是如此敏感，如此感性，这就是我。
 我想尝试这种疯狂活泼的风格，想回归小孩的世界，让自己重新长大，不被这些繁杂的烂摊子世界所污染。
 天呐，东边小路上去有好多坟墓，靠着“重阳”一直激励自己往前，但是还是有些些怕怕，我的胆子比较小，别的不怕，就怕这些，哈哈哈。
