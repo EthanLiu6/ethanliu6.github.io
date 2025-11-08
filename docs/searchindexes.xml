@@ -1,8 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>前端知识</title><url>/learn/2511108-%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/</url><categories><category>学习</category></categories><tags><tag>前端</tag></tags><content type="html">   一些前端学习的知识记录 CSS预处理器 能够用一些逻辑操作来实现css，相关编译器编译成对应的css代码
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>25-11-08 功与过</title><url>/gongguo/25-11-08/</url><categories><category>功过</category></categories><tags/><content type="html">   25年11月08日——功与过 今日功 NOTE 反思、记录 冥想 前端学习 今日过 WARNING 吐槽别人   </content></entry><entry><title>前端知识</title><url>/learn/2511108-%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86/</url><categories><category>学习</category></categories><tags><tag>前端</tag></tags><content type="html">   一些前端学习的知识记录 CSS预处理器 能够用一些逻辑操作来实现css，相关编译器编译成对应的css代码
 TypeScript DOM Vue 模块化开发（mvvm）+ 虚拟DOM
 条件-循环 事件处理 双向数据绑定 Vue的组件 组件是为了复用
 计算属性 内容分发 自定义事件 Vue-Router Axios 解决Vue通信不友好问题
 webPack打包工具 专门用于前端打包 还有一些类似的工具，比如vite
+  </content></entry><entry><title>一丁点行动，请放慢脚步</title><url>/think/001-%E6%94%BE%E6%85%A2%E8%84%9A%E6%AD%A5/</url><categories><category>感悟</category></categories><tags><tag>生活</tag></tags><content type="html">   空虚寂寞，我该如何耐得住寂寞：一丁点行动，请放慢脚步 来杭州上班将近一个月了，渐渐习惯了这边的上班生活，可每当周末假期时候，除了睡觉打游戏刷视频可以短暂转移自己的内心，也不知道该干些什么。最近把这些玩意儿卸载了，放假继续早起去工位，尽可能地保持着学习的状态，可这又能怎。
+感觉自己耐心大不如大二大三那会，不知道是不是没有再持续冥想静心过，有些想法和事就三分钟热度。
+最难受的是那种空虚感，感觉自己不应该做点什么或者学点什么，但是又不想去做，那种空虚感，没有伙伴没有朋友，异地他乡，似乎找不到支点，不知道该怎么调整，很容易陷入低情绪的状态。挺想念家人、猪猪、童长他们的，至少还有敞开心扉聊天说话的。
+看到室友每天打游戏、打视频 ……，我觉得已经有些影响到我的状态了，不过也是给自己找台阶罢了。想到上班时候那些正式员工，想想他们的现在我在想：“我也要这样子吗？”。不知道为什么，总是有很多不甘心，不想就这样荒废自己的大好青春，不想以后就是一个螺丝钉。
+我想想也正常，人嘛，都这样，其实蛮佩服我哥他这两年怎么过来的，除了打发时间，还能怎么做？
+还是给自己一点点支点吧，就先坚持冥想、做一些目标中的一丁点事（不要有太大负担）、放慢脚步，想想自己之前的座右铭还是“清醒的停留，胜过盲目的前行”，我决定改的更现实一点，就改成”一丁点行动，请放慢脚步”
   </content></entry><entry><title>cv的一些模型</title><url>/learn/251101-cv%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A8%A1%E5%9E%8B/</url><categories><category>学习</category></categories><tags><tag>CV</tag></tags><content type="html">   CV中不同领域的模型，包括分类、定位、检测、分割等 NOTE 粗略汇集 图像分类 图像定位 单一目标
 目标检测 有两阶段和一阶段的策略 1.多目标，子窗口滑动（候选区域）+分类 2.end-end，网络+分支，分支：分类+回归（候选框） RCNN 选择性搜索（Selective Search），贪婪相邻相似度计算（相似度策略：颜色、纹理、大小、覆盖） Fast RNN Faster RCNN SSD YOLO
 IOU
