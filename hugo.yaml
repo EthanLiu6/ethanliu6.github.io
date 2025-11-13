@@ -142,8 +142,39 @@ markup:
 # Site map of all articles
 sitemap:
   filename: "sitemap.xml"
-  changefreq: "weekly"
-  priority: 0.5
+  homepage:
+    changefreq: "daily"
+    priority: 1.0
+    # 文章页面
+    section:
+      posts:
+        changefreq: "daily"
+        priority: 0.8
+      think:
+        changefreq: "daily"
+        priority: 0.8
+      learn:
+        changefreq: "daily"
+        priority: 0.8
+      gongguo:
+        changefreq: "daily"
+        priority: 0.8
+    # 分类、归档等页面
+    taxonomy:
+      category:
+        changefreq: "daily"
+        priority: 0.5
+      tag:
+        changefreq: "daily"
+        priority: 0.5
+    # 其他页面
+    page:
+      about:
+        changefreq: "weekly"
+        priority: 0.5
+      flinks:
+        changefreq: "weekly"
+        priority: 0.5
 
 outputFormats:
   RSS:
@@ -722,7 +753,15 @@ params:
   codeblock:    
     # 支持样式类型： default | flat | mac
     # Available values: default | flat | mac
-    style: mac
+    # style: mac
+    # # 在代码块上添加拷贝按钮
+    # # Add copy button on codeblock
+    # copyBtn: true
+    # # 代码块的默认显示行高
+    # # Default max height of codeblock.
+    # maxHeight: 200
+
+    style: mac  # 改为 default，配合自定义 CSS 使用
     # 在代码块上添加拷贝按钮
     # Add copy button on codeblock
     copyBtn: true
