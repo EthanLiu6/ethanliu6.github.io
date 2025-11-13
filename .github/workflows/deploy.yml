@@ -38,6 +38,6 @@ jobs:
 
     - name: Sync to COS
       run: |
-        coscmd upload -r public/ / --delete
-      # --delete 参数会删除 COS 中存在但本地 public/ 中不存在的文件
+        coscmd upload -r docs/ / --delete
+      # --delete 参数会删除 COS 中存在但本地 docs/ 中不存在的文件
       # 这样可以实现完全同步（覆盖上传）
