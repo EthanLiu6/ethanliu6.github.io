@@ -1329,8 +1329,8 @@ td {
 /* GenericUnderline */
 /* TextWhitespace */
 kbd, p > code, li > code {
-  background: var(--highlight-background);
-  color: var(--highlight-foreground);
+  background: transparent;
+  color: #e96900;
 }
 
 pre {

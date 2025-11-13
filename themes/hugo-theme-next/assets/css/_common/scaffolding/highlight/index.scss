@@ -2,8 +2,8 @@
 @import 'monokai';
 
 %code-inline {
-  background: var(--highlight-background);
-  color: var(--highlight-foreground);
+  background: transparent;
+  color: #e96900;
 }
 
 pre {
