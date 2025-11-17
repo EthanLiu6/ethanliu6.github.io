@@ -614,6 +614,9 @@ params:
   # If true, the read more button will be displayed in excerpt section.
   readMoreBtn: true
 
+  # new: add开启未来日期文章的显示
+  buildfuture: true
+
   # 开启文章头部元素显示
   # Post meta display settings
   postMeta:
