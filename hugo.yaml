@@ -616,6 +616,9 @@ params:
 
   # new: add开启未来日期文章的显示
   buildfuture: true
+  
+  # new: add设置时区
+  timezone: "Asia/Shanghai"
 
   # 开启文章头部元素显示
   # Post meta display settings
