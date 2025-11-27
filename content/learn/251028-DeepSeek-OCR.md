@@ -3,7 +3,7 @@ title: "DeepSeek-OCR 论文解读"
 date: 2025-10-28
 draft: false
 tags: ["大模型", "AI"]
-categories: ["学习"]
+categories: ["学习", "大模型"]
 ---
 {{< quote >}}
 DeepSeek-OCR 论文解读
