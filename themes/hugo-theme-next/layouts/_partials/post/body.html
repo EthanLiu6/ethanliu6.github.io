@@ -6,36 +6,97 @@
   {{ .Summary }}
   {{ end }}
 {{ else }}
-  {{/** Post expired tip message **/}}
-  {{ $expired := default .Site.Params.PostMeta.expired .Params.Expired }}
-  {{ if $expired }}
-  <div class="post-expired-tip" id="post-expired-tip">
-    <div class="post-expired-title">
-      <i class="fa-solid fa-hourglass-half"></i>
-      <span>{{ T "PostMeta.expired.title" }}</span>
+  {{ if .Params.password }}
+  <div class="post-password-wrapper" id="post-pw-form">
+    <div class="post-password-title">
+      <i class="fa-solid fa-lock"></i>
+      <span>请输入密码以查看全文</span>
     </div>
-    <div id="post-expired-content" class="post-expired-content"></div>
-  </div>
-  {{ end }}
-  {{/** Post summary **/}}
-  {{ if .Site.Params.PostMeta.summary }}
-  {{ with .Params.Description }}
-  <div class="post-summary-wrapper">
-    <div class="summary-title">
-      <span><i class="fa-solid fa-list"></i></span>
-      <span>{{ T "PostMeta.summary.title" }}</span>
-    </div>
-    <div class="summary-content">
-      {{ . }}
+    <div class="post-password-form">
+      <input type="password" id="post-password-input" placeholder="Password" autocomplete="off" />
+      <button id="post-password-button">解锁</button>
+      <div id="post-password-error" style="display:none;color:#dc3545;">密码错误</div>
     </div>
   </div>
+  <div id="post-pw-content" style="display:none;">
+    {{ $expired := default .Site.Params.PostMeta.expired .Params.Expired }}
+    {{ if $expired }}
+    <div class="post-expired-tip" id="post-expired-tip">
+      <div class="post-expired-title">
+        <i class="fa-solid fa-hourglass-half"></i>
+        <span>{{ T "PostMeta.expired.title" }}</span>
+      </div>
+      <div id="post-expired-content" class="post-expired-content"></div>
+    </div>
+    {{ end }}
+    {{ if .Site.Params.PostMeta.summary }}
+    {{ with .Params.Description }}
+    <div class="post-summary-wrapper">
+      <div class="summary-title">
+        <span><i class="fa-solid fa-list"></i></span>
+        <span>{{ T "PostMeta.summary.title" }}</span>
+      </div>
+      <div class="summary-content">
+        {{ . }}
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ .Summary }}
+    <a id="more"></a>
+    {{ .ContentWithoutSummary }}
+  </div>
+  <script>
+  (function(){
+    var e=function(s){return (s||'').split('').join('_')};
+    var EXP='l_2_0_0_3_1_2_2_0';
+    var input=document.getElementById('post-password-input');
+    var btn=document.getElementById('post-password-button');
+    var err=document.getElementById('post-password-error');
+    var form=document.getElementById('post-pw-form');
+    var content=document.getElementById('post-pw-content');
+    var unlock=function(){
+      var v=input.value||'';
+      if(e(v)===EXP){
+        form.style.display='none';
+        content.style.display='';
+      }else{
+        err.style.display='';
+      }
+    };
+    btn.addEventListener('click', unlock);
+    input.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter'){ unlock(); }
+    });
+  })();
+  </script>
+  {{ else }}
+    {{ $expired := default .Site.Params.PostMeta.expired .Params.Expired }}
+    {{ if $expired }}
+    <div class="post-expired-tip" id="post-expired-tip">
+      <div class="post-expired-title">
+        <i class="fa-solid fa-hourglass-half"></i>
+        <span>{{ T "PostMeta.expired.title" }}</span>
+      </div>
+      <div id="post-expired-content" class="post-expired-content"></div>
+    </div>
+    {{ end }}
+    {{ if .Site.Params.PostMeta.summary }}
+    {{ with .Params.Description }}
+    <div class="post-summary-wrapper">
+      <div class="summary-title">
+        <span><i class="fa-solid fa-list"></i></span>
+        <span>{{ T "PostMeta.summary.title" }}</span>
+      </div>
+      <div class="summary-content">
+        {{ . }}
+      </div>
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ .Summary }}
+    <a id="more"></a>
+    {{ .ContentWithoutSummary }}
   {{ end }}
-  {{ end }}
-  {{/** Started use the read more content anchor the need 
-    Hugo framework min marjo version greater than 0.134.0 **/}}
-  {{ .Summary }}
-  <!-- It's an anchor point to locate read more content start. -->
-  <a id="more"></a>
-  {{ .ContentWithoutSummary }}
 {{ end }}
 {{ end }}
