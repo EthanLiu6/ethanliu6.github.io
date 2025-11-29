@@ -247,9 +247,9 @@ menus:
       pre: list
       weight: 8
 
-    - identifier: coderethan.fun
-      name: coderethan.fun
-      pageRef: /coderethan.fun/
+    - identifier: 旧版博客
+      name: 旧版博客
+      url: /coderethan.fun/
       pre: code
       weight: 9
 
@@ -543,7 +543,7 @@ params:
       icp: 粤ICP备 18047355-1 号
       # 公安网备的省份简称
       provinceAbbr: 沪
-      # 公安网备案号
+      # 公安网备号
       gonganNum: 31011402009770
 
     # 站点支持供应商列表
