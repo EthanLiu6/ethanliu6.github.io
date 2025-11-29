@@ -213,13 +213,13 @@ menus:
 
     - identifier: think
       name: 我的感悟
-      pageRef: /think
+      pageRef: categories/感悟
       pre: book
       weight: 3
 
     - identifier: learn
       name: 我的学习
-      pageRef: /learn
+      pageRef: categories/学习
       pre: book-open
       weight: 4
 
@@ -231,7 +231,7 @@ menus:
 
     - identifier: gonguo
       name: 我的功过
-      pageRef: /gongguo
+      pageRef: categories/学习
       pre: table-list
       weight: 6
 
