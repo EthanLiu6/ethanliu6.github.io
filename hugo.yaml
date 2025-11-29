@@ -247,11 +247,17 @@ menus:
       pre: list
       weight: 8
 
-    - identifier: 旧版博客
-      name: 旧版博客
-      url: /coderethan.fun/
+    - identifier: 旧博客一
+      name: 旧博客一
+      url: https://ethanliu6-blog.github.io
       pre: code
       weight: 9
+
+    - identifier: 旧博客二
+      name: 旧博客二
+      url: /coderethan.fun/
+      pre: code
+      weight: 10
 
 
 
