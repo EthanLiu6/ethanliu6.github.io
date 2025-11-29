@@ -231,7 +231,7 @@ menus:
 
     - identifier: gonguo
       name: 我的功过
-      pageRef: categories/学习
+      pageRef: categories/功过
       pre: table-list
       weight: 6
 
