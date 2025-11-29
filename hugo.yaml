@@ -247,6 +247,12 @@ menus:
       pre: list
       weight: 8
 
+    - identifier: coderethan.fun
+      name: coderethan.fun
+      pageRef: /coderethan.fun/
+      pre: code
+      weight: 9
+
 
 
 
