@@ -2,3 +2,22 @@
 /* Hide the footer language/translation selector and the tool-button that opens it */
 #i18n-translate, .i18n-translate, #goto-i18n-translate { display: none !important; }
 
+/* 浅色行内代码样式优化 */
+p > code, li > code {
+  background: #f8f8f8;
+  color: #333333;
+  border: 1px solid #fae3e3;
+  border-radius: 3px;
+  padding: 2px 6px;
+}
+
+/* 深色模式下的行内代码样式 */
+@media (prefers-color-scheme: dark) {
+  :root[data-theme="dark"] p > code, 
+  :root[data-theme="dark"] li > code {
+    background: #2d2d2d;
+    color: #e6e6e6;
+    border: 1px solid #444444;
+  }
+}
+
