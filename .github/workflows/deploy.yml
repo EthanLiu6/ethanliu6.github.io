@@ -39,6 +39,7 @@ jobs:
         if [ -d "public" ] && [ ! -d "docs" ]; then
           mv public docs
         fi
+        touch docs/.nojekyll
         echo "Build completed successfully"
 
     # ========== 部署到腾讯云 COS ==========
