@@ -2,7 +2,7 @@
 title: "春夏秋冬，生长收蓄"
 date: 2025-12-16
 draft: false
-tags: ["日志", "思考", "规律"]
+tags: ["日志"]
 categories: ["感悟", "100篇日志"]
 ---
 
