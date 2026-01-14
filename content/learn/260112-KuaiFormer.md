@@ -1,6 +1,6 @@
 ---
 title: "LLM4Rec论文阅读: KuaiFormer"
-date: 2026-01-10
+date: 2026-01-12
 draft: false
 tags: ["大模型","推荐系统"]
 categories: ["学习", "LLM4Rec"]
