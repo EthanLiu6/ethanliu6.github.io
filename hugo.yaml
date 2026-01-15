@@ -23,6 +23,9 @@ theme: hugo-theme-next
 # Default language & code for website
 defaultContentLanguage: zh-cn
 languageCode: zh-CN
+# 是否构建未来日期的内容
+# Build content with future dates
+buildFuture: true
 # 多语言配置
 # Multi-language settings
 languages:
