@@ -80,6 +80,10 @@ categories: ["学习", "Ideas"]
 
 ## papers
 
+- ✅小红书-2025-10[HyMiRec: A Hybrid Multi-interest Learning Framework for LLM-based Sequential Recommendation](https://arxiv.org/abs/2510.13738)
+- ✅小红书-2025-10[RED-Rec: CROSS-SCENARIO UNIFIED MODELING OF USER INTERESTS AT BILLION SCALE] 
+> https://github.com/ariesssxu/RedSeqRec?tab=readme-ov-file
+
 - 亚马逊-2025-06 [Large Language Model-Enhanced Reinforcement Learning for Diverse and  Novel Recommendations](https://arxiv.org/pdf/2507.21274)
 
 - 淘宝-2025-02 [Bursting Filter Bubble: Enhancing Serendipity Recommendations with Aligned Large Language Models](https://arxiv.org/pdf/2502.13539)
