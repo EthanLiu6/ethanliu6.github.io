@@ -1,5 +1,5 @@
 ---
-title: "LLM4Rec-Learning-002: 大模型推荐的Pipline"
+title: "LLM4Rec-Learning-002: 生成式推荐的Pipline——TIGER"
 date: 2025-12-24
 draft: false
 tags: ["大模型","推荐系统"]
