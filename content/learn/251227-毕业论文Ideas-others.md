@@ -4,7 +4,7 @@ date: 2025-12-27
 draft: false
 # password: true
 tags: ["大模型","推荐系统"]
-categories: ["学习", "Ideas"]
+categories: ["学习", "LLM4Rec"]
 ---
 
 {{< quote >}}
