@@ -42,22 +42,22 @@ jobs:
         touch docs/.nojekyll
         echo "Build completed successfully"
 
-    # ========== 部署到腾讯云 COS ==========
-    - name: Install coscmd for COS
-      run: |
-        pip install coscmd
+    # # ========== 部署到腾讯云 COS ==========
+    # - name: Install coscmd for COS
+    #   run: |
+    #     pip install coscmd
 
-    - name: Configure coscmd for COS
-      run: |
-        coscmd config -a ${{ secrets.COS_SECRET_ID }} \
-                     -s ${{ secrets.COS_SECRET_KEY }} \
-                     -b ${{ secrets.COS_BUCKET }} \
-                     -r ${{ secrets.COS_REGION }}
+    # - name: Configure coscmd for COS
+    #   run: |
+    #     coscmd config -a ${{ secrets.COS_SECRET_ID }} \
+    #                  -s ${{ secrets.COS_SECRET_KEY }} \
+    #                  -b ${{ secrets.COS_BUCKET }} \
+    #                  -r ${{ secrets.COS_REGION }}
 
-    - name: Sync to COS
-      run: |
-        coscmd upload -r docs/ / --delete
-      # --delete 参数会删除 COS 中多余文件，实现完全同步
+    # - name: Sync to COS
+    #   run: |
+    #     coscmd upload -r docs/ / --delete
+    #   # --delete 参数会删除 COS 中多余文件，实现完全同步
 
     # ========== 部署到 GitHub Pages ==========
     - name: Setup Pages
