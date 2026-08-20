@@ -1,0 +1,23 @@
+{{- $dir := .dir -}}
+{{- $prefix := .prefix -}}
+{{- range readDir $dir -}}
+  {{- if .IsDir -}}
+    {{- partial "sitemap-static.html" (dict "dir" (printf "%s/%s" $dir .Name) "prefix" (printf "%s/%s" $prefix .Name)) -}}
+  {{- else -}}
+    {{- if eq (path.Ext .Name) ".html" -}}
+      {{- if ne .Name "404.html" -}}
+        {{- $rel := printf "%s/%s" $prefix .Name -}}
+        {{- if eq .Name "index.html" -}}
+          {{- $rel = printf "%s/" $prefix -}}
+        {{- end -}}
+        {{- $rel = replace $rel " " "%20" -}}
+<url>
+  <loc>{{ printf "%s%s" site.BaseURL $rel | htmlEscape }}</loc>
+  <lastmod>{{ (.ModTime).Format "2006-01-02" }}</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.5</priority>
+</url>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
