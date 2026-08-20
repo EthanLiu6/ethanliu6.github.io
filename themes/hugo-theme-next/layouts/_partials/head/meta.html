@@ -30,4 +30,4 @@
 {{ end }}
 {{ .Scratch.Set "metaImg" $img }}
 <meta itemprop="image" content="{{ $img | absURL }}" />
-<meta itemprop="keywords" content="{{ if and .IsPage (isset .Params "tags")}}{{ delimit .Params.tags "," }}{{ else }}{{ .Site.Params.keywords }}{{ end }}" />
+<meta itemprop="keywords" content="{{ .Site.Params.keywords }}{{ if and .IsPage (isset .Params "tags") }},{{ delimit .Params.tags "," }}{{ end }}" />
