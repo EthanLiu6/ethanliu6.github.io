@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /learn/251227-毕业论文Ideas-main/
 title: "毕业论文Ideas: 推荐系统同质化问题"
 date: 2025-12-27
 draft: false

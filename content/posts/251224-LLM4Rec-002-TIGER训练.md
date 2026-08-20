@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /learn/251224-LLM4Rec-002-TIGER训练/
 title: "LLM4Rec-Learning-002: 生成式推荐的Pipline——TIGER"
 date: 2025-12-24
 draft: false

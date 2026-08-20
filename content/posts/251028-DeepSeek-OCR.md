@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /learn/251028-DeepSeek-OCR/
 title: "DeepSeek-OCR 论文解读"
 date: 2025-10-28
 draft: false

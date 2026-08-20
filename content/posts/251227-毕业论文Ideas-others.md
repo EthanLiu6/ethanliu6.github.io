@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /learn/251227-毕业论文Ideas-others/
 title: "毕业论文Ideas: 其他Rec的Ideas"
 date: 2025-12-27
 draft: false

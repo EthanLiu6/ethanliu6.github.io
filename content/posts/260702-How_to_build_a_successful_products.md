@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /learn/260702-How_to_build_a_successful_products/
 title: "How to build a successful product"
 date: 2026-07-02
 draft: false
@@ -45,3 +47,8 @@ A successful product is never "finished" — it always grows.
 
 
 ## Oh, but how to making money???
+
+
+
+事实上，我尝试下来，并非如此！！！！！！
+AI给的东西或者方案，看看就行了~

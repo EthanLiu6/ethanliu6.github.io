@@ -1,4 +1,6 @@
 ---
+aliases:
+  - /learn/260112-KuaiFormer/
 title: "LLM4Rec论文阅读: KuaiFormer"
 date: 2026-01-12
 draft: false
