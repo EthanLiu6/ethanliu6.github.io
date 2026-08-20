@@ -298,9 +298,10 @@ params:
   # 站点基本信息
   # Site Information Settings
   author: EthanLiu6
+  authorName: 刘爱辉
   subtitle: 时时勤拂拭，勿使惹尘埃。
   description: 一丁点行动，请放慢脚步。
-  # keywords: Hugo,NexT,主题,简单,强大
+  keywords: "刘爱辉,EthanLiu6,心无旁骛,码伊森,码医森,唤心萌动,唤心科技,AI,人工智能,技术,计科,计算机,Agent,大模型,语言学,逻辑推导,数学,心理学,西南民族大学,西南民大"
 
   # 不同尺寸站点图标
   # Different size of favicon
