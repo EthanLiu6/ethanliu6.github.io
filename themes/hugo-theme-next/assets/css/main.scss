@@ -178,4 +178,4 @@ $second_comment_name        : {{ lower (index $sortNav 1).name }};
 
 // Schemes Layer
 // --------------------------------------------------
-{{ printf "@import '_schemes/%s/';" $P.scheme }}
+{{ printf "@import '_schemes/%s/index';" $P.scheme }}
