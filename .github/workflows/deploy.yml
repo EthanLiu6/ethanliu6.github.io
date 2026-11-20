@@ -31,6 +31,14 @@ jobs:
         hugo-version: 'latest'  # 使用最新版本的 Hugo
         extended: true  # 如果使用了 Sass/SCSS，需要扩展版
 
+    - name: Setup Dart Sass
+      # 新版 Hugo 移除了内嵌的 libsass，编译 SCSS 需要 PATH 中有 Dart Sass
+      run: |
+        SASS_VERSION=1.108.2
+        curl -sLJO "https://github.com/sass/dart-sass/releases/download/${SASS_VERSION}/dart-sass-${SASS_VERSION}-linux-x64.tar.gz"
+        tar -xzf "dart-sass-${SASS_VERSION}-linux-x64.tar.gz"
+        echo "$PWD/dart-sass" >> "$GITHUB_PATH"
+
     - name: Build Hugo site
       run: |
         hugo --minify  # 构建站点，--minify 会压缩 HTML/CSS/JS
